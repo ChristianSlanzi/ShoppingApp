@@ -13,6 +13,7 @@
 		24C5EC8524DC9D490060EB3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C5EC8424DC9D490060EB3A /* Assets.xcassets */; };
 		24C5EC8824DC9D490060EB3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C5EC8624DC9D490060EB3A /* LaunchScreen.storyboard */; };
 		24C5EC9324DC9D4A0060EB3A /* ShoppingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5EC9224DC9D4A0060EB3A /* ShoppingAppTests.swift */; };
+		24C5ECA024DCAA990060EB3A /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5EC9F24DCAA990060EB3A /* CompositionRoot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		24C5EC9224DC9D4A0060EB3A /* ShoppingAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppTests.swift; sourceTree = "<group>"; };
 		24C5EC9424DC9D4A0060EB3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24C5EC9D24DCA3760060EB3A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		24C5EC9F24DCAA990060EB3A /* CompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		24C5EC7A24DC9D480060EB3A /* ShoppingApp */ = {
 			isa = PBXGroup;
 			children = (
+				24C5EC9E24DCAA830060EB3A /* Composition */,
 				24C5EC7B24DC9D480060EB3A /* AppDelegate.swift */,
 				24C5EC7D24DC9D480060EB3A /* SceneDelegate.swift */,
 				24C5EC7F24DC9D480060EB3A /* ViewController.swift */,
@@ -96,6 +99,14 @@
 				24C5EC9424DC9D4A0060EB3A /* Info.plist */,
 			);
 			path = ShoppingAppTests;
+			sourceTree = "<group>";
+		};
+		24C5EC9E24DCAA830060EB3A /* Composition */ = {
+			isa = PBXGroup;
+			children = (
+				24C5EC9F24DCAA990060EB3A /* CompositionRoot.swift */,
+			);
+			path = Composition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C5ECA024DCAA990060EB3A /* CompositionRoot.swift in Sources */,
 				24C5EC8024DC9D480060EB3A /* ViewController.swift in Sources */,
 				24C5EC7C24DC9D480060EB3A /* AppDelegate.swift in Sources */,
 				24C5EC7E24DC9D480060EB3A /* SceneDelegate.swift in Sources */,

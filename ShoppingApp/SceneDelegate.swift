@@ -11,6 +11,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var compositionRoot: Composing!
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -24,7 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-        window?.rootViewController = ViewController()
+        compositionRoot = CompositionRoot()
+        window?.rootViewController = compositionRoot.compose()
         
         window?.makeKeyAndVisible()
     }
