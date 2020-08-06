@@ -11,7 +11,7 @@ import UIKit
 public protocol Composing { func compose() -> UIViewController }
 
 public final class CompositionRoot: Composing {
-    var initialVC: UIViewController?
+    var initialVC: AppFlowController?
 
     public func compose() -> UIViewController {
         //let rootNC = UINavigationController(rootViewController: buildInitialViewController())
@@ -19,7 +19,8 @@ public final class CompositionRoot: Composing {
     }
     
     private func buildInitialViewController() -> UIViewController {
-        initialVC = ViewController()
+        initialVC = AppFlowController()
+        initialVC?.start()
         return initialVC!
     }
     
