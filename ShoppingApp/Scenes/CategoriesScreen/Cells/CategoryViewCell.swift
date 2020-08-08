@@ -20,11 +20,16 @@ final class CategoryViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        setupConstraints()
     }
 
     /// init required by the API to support storyboards
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func set(viewModel: Category) { //TODO: a cell viewModel
+        nameLabel.text = viewModel.name
     }
     
     // MARK: - Layout Methods

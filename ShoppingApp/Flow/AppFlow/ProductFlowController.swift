@@ -39,7 +39,8 @@ final class ProductFlowController: UIViewController, FlowProtocol {
         
         embeddedNavigationController.viewControllers = [productListController]
         */
-        let categoriesViewModel = CategoriesViewModel(input: CategoriesViewModel.Input())
+        let categoriesViewModel = CategoriesViewModel(input: CategoriesViewModel.Input(), dataManager: AppDataManager.shared
+        )
         let categoriesViewController = CategoriesViewController(viewModel: categoriesViewModel)
         categoriesViewController.flowDelegate = self
         

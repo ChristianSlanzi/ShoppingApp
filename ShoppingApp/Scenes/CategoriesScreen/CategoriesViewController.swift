@@ -31,6 +31,7 @@ final class CategoriesViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureCollectionView()
+        viewModel.viewDidLoad()
     }
     
     // MARK: - Layout Methods
@@ -56,12 +57,10 @@ extension CategoriesViewController: UICollectionViewDelegate {
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryViewCell.reuseID, for: indexPath) as! CategoryViewCell
-        //cell.set(viewModel: viewModel.getElement(indexPath))
+        cell.set(viewModel: viewModel.getElementAt(indexPath))
         return cell
     }
-    
 
-    
     // handle user tap on follower list
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //TODO: viewModel.

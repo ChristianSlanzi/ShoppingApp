@@ -21,6 +21,9 @@ protocol CategoriesViewModelType {
 
 final class CategoriesViewModel: CategoriesViewModelType, CategoriesViewModelInputsType, CategoriesViewModelOutputsType {
     
+    private let dataManager: AppDataManager
+    private var categories: [Category] = []
+    
     struct Input {
         //passing in data the viewModel needs from the view controller
     }
@@ -31,8 +34,9 @@ final class CategoriesViewModel: CategoriesViewModelType, CategoriesViewModelInp
     
     private var input: Input
     
-    init(input: Input) {
+    init(input: Input, dataManager: AppDataManager) {
         self.input = input
+        self.dataManager = dataManager
     }
     
     var inputs: CategoriesViewModelInputsType { return self }
@@ -40,6 +44,7 @@ final class CategoriesViewModel: CategoriesViewModelType, CategoriesViewModelInp
     
     //input
     public func viewDidLoad() {
+        categories = dataManager.getAllCategories()
     }
 
 
@@ -48,7 +53,11 @@ final class CategoriesViewModel: CategoriesViewModelType, CategoriesViewModelInp
     
     // MARK: - Helpers
     public func getElementsCount() -> Int {
-        return 10
+        return categories.count
+    }
+    
+    public func getElementAt(_ indexPath: IndexPath) -> Category {
+        return categories[indexPath.row]
     }
 
 }
