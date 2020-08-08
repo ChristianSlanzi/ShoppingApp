@@ -57,7 +57,9 @@ extension CategoriesViewController: UICollectionViewDelegate {
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryViewCell.reuseID, for: indexPath) as! CategoryViewCell
-        cell.set(viewModel: viewModel.getElementAt(indexPath))
+        if let element = viewModel.getElementAt(indexPath) {
+            cell.set(viewModel: element)
+        }
         return cell
     }
 

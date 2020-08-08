@@ -10,6 +10,7 @@ import Foundation
 
 protocol CategoriesViewModelInputsType {
     func viewDidLoad()
+    func didTapCellAt(indexPath: IndexPath)
 }
 protocol CategoriesViewModelOutputsType: AnyObject {
 }
@@ -22,7 +23,7 @@ protocol CategoriesViewModelType {
 final class CategoriesViewModel: CategoriesViewModelType, CategoriesViewModelInputsType, CategoriesViewModelOutputsType {
     
     private let dataManager: AppDataManager
-    private var categories: [Category] = []
+    private var elements: [Category] = []
     
     struct Input {
         //passing in data the viewModel needs from the view controller
@@ -44,7 +45,13 @@ final class CategoriesViewModel: CategoriesViewModelType, CategoriesViewModelInp
     
     //input
     public func viewDidLoad() {
-        categories = dataManager.getAllCategories()
+        elements = dataManager.getAllCategories()
+    }
+    
+    public func didTapCellAt(indexPath: IndexPath) {
+        if let element = getElementAt(indexPath) {
+           //TODO
+        }
     }
 
 
@@ -53,11 +60,11 @@ final class CategoriesViewModel: CategoriesViewModelType, CategoriesViewModelInp
     
     // MARK: - Helpers
     public func getElementsCount() -> Int {
-        return categories.count
+        return elements.count
     }
     
-    public func getElementAt(_ indexPath: IndexPath) -> Category {
-        return categories[indexPath.row]
+    public func getElementAt(_ indexPath: IndexPath) -> Category? {
+        guard indexPath.row < elements.count else { return nil }
+        return elements[indexPath.row]
     }
-
 }
