@@ -1,16 +1,16 @@
 //
-//  CategoriesViewController.swift
+//  ProductsViewController.swift
 //  ShoppingApp
 //
-//  Created by Christian Slanzi on 07.08.20.
+//  Created by Christian Slanzi on 08.08.20.
 //  Copyright © 2020 Christian Slanzi. All rights reserved.
 //
 
 import UIKit
 
-final class CategoriesViewController: UIViewController {
+final class ProductsViewController: UIViewController {
     
-    var viewModel: CategoriesViewModel
+    var viewModel: ProductsViewModel
     
     var flowDelegate: ProductFlowControllerDelegate?
     
@@ -18,7 +18,7 @@ final class CategoriesViewController: UIViewController {
     
     // MARK: - Viewcontroller Lifecycle
     
-    init(viewModel: CategoriesViewModel) {
+    init(viewModel: ProductsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -46,14 +46,14 @@ final class CategoriesViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .systemBackground
-        collectionView.register(CategoryViewCell.self, forCellWithReuseIdentifier: CategoryViewCell.reuseID)
+        collectionView.register(ProductViewCell.self, forCellWithReuseIdentifier: ProductViewCell.reuseID)
     }
     
     // MARK: - MVVM Binding
     private func bind() {
-        viewModel.outputs.startElementTarget = { [weak self] category in
+        viewModel.outputs.startElementTarget = { [weak self] product in
             guard let self = self else { return }
-            self.flowDelegate?.startProductListFor(category: category)
+            //self.flowDelegate?.startProductInfoFor(product: product)
         }
     }
 }
@@ -61,11 +61,11 @@ final class CategoriesViewController: UIViewController {
 // MARK: - Extensions (Delegation Conformance)
 
 /// UICollectionViewDelegate Conformance
-extension CategoriesViewController: UICollectionViewDelegate {
+extension ProductsViewController: UICollectionViewDelegate {
     
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryViewCell.reuseID, for: indexPath) as! CategoryViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductViewCell.reuseID, for: indexPath) as! ProductViewCell
         if let element = viewModel.getElementAt(indexPath) {
             cell.set(viewModel: element)
         }
@@ -78,7 +78,7 @@ extension CategoriesViewController: UICollectionViewDelegate {
     }
 }
 
-extension CategoriesViewController: UICollectionViewDataSource {
+extension ProductsViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
       return 1
     }

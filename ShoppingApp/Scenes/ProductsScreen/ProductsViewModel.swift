@@ -1,5 +1,6 @@
+
 //
-//  CategoriesViewModel.swift
+//  ProductsViewModel.swift
 //  ShoppingApp
 //
 //  Created by Christian Slanzi on 08.08.20.
@@ -8,23 +9,23 @@
 
 import Foundation
 
-protocol CategoriesViewModelInputsType {
+protocol ProductsViewModelInputsType {
     func viewDidLoad()
     func didTapCellAt(indexPath: IndexPath)
 }
-protocol CategoriesViewModelOutputsType: AnyObject {
-    var startElementTarget: ((Category) -> Void) { get set }
+protocol ProductsViewModelOutputsType: AnyObject {
+    var startElementTarget: ((Product) -> Void) { get set }
 }
 
-protocol CategoriesViewModelType {
-    var inputs: CategoriesViewModelInputsType { get }
-    var outputs: CategoriesViewModelOutputsType { get }
+protocol ProductsViewModelType {
+    var inputs: ProductsViewModelInputsType { get }
+    var outputs: ProductsViewModelOutputsType { get }
 }
 
-final class CategoriesViewModel: CategoriesViewModelType, CategoriesViewModelInputsType, CategoriesViewModelOutputsType {
+final class ProductsViewModel: ProductsViewModelType, ProductsViewModelInputsType, ProductsViewModelOutputsType {
     
     private let dataManager: AppDataManager
-    private var elements: [Category] = []
+    private var elements: [Product] = []
     
     struct Input {
         //passing in data the viewModel needs from the view controller
@@ -41,12 +42,12 @@ final class CategoriesViewModel: CategoriesViewModelType, CategoriesViewModelInp
         self.dataManager = dataManager
     }
     
-    var inputs: CategoriesViewModelInputsType { return self }
-    var outputs: CategoriesViewModelOutputsType { return self }
+    var inputs: ProductsViewModelInputsType { return self }
+    var outputs: ProductsViewModelOutputsType { return self }
     
     //input
     public func viewDidLoad() {
-        elements = dataManager.getAllCategories()
+        elements = dataManager.getAllProducts()
     }
     
     public func didTapCellAt(indexPath: IndexPath) {
@@ -56,14 +57,14 @@ final class CategoriesViewModel: CategoriesViewModelType, CategoriesViewModelInp
     }
 
     //output
-    public var startElementTarget: ((Category) -> Void) = { _ in }
+    public var startElementTarget: ((Product) -> Void) = { _ in }
     
     // MARK: - Helpers
     public func getElementsCount() -> Int {
         return elements.count
     }
     
-    public func getElementAt(_ indexPath: IndexPath) -> Category? {
+    public func getElementAt(_ indexPath: IndexPath) -> Product? {
         guard indexPath.row < elements.count else { return nil }
         return elements[indexPath.row]
     }
