@@ -19,15 +19,17 @@ final class MainFlowController: UIViewController, FlowProtocol {
     }
     
     private func startProductFlow() -> UIViewController {
-        let categoriesViewController = CategoriesViewController()
-        categoriesViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
-        return categoriesViewController
+        let productFlowController = ProductFlowController()
+        productFlowController.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
+        productFlowController.start()
+        return productFlowController
     }
     
     private func startShoppingCartFlow() -> UIViewController {
-        let shoppingCartViewController = ShoppingCartViewController()
-        shoppingCartViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
-        return shoppingCartViewController
+        let shoppingCartFlowController = ShoppingCartFlowController()
+        shoppingCartFlowController.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+        shoppingCartFlowController.start()
+        return shoppingCartFlowController
     }
     
 }

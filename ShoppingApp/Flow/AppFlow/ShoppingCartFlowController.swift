@@ -1,0 +1,30 @@
+//
+//  ShoppingCartFlowController.swift
+//  ShoppingApp
+//
+//  Created by Christian Slanzi on 08.08.20.
+//  Copyright © 2020 Christian Slanzi. All rights reserved.
+//
+
+import UIKit
+
+final class ShoppingCartFlowController: UIViewController, FlowProtocol {
+    
+    private var embeddedNavigationController: UINavigationController!
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+
+        embeddedNavigationController = UINavigationController()
+        add(childController: embeddedNavigationController)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func start() {
+        let shoppingCartViewController = ShoppingCartViewController()
+        embeddedNavigationController.viewControllers = [shoppingCartViewController]
+    }
+}

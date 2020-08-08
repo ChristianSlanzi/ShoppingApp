@@ -9,6 +9,20 @@
 import UIKit
 
 final class ProductFlowController: UIViewController, FlowProtocol {
+    
+    private var embeddedNavigationController: UINavigationController!
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+
+        embeddedNavigationController = UINavigationController()
+        add(childController: embeddedNavigationController)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func start() {
         /*
         let productListController = ProductListController(
@@ -21,5 +35,9 @@ final class ProductFlowController: UIViewController, FlowProtocol {
         
         embeddedNavigationController.viewControllers = [productListController]
         */
+        
+        let categoriesViewController = CategoriesViewController()
+        
+        embeddedNavigationController.viewControllers = [categoriesViewController]
     }
 }

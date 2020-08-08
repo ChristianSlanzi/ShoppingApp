@@ -20,6 +20,7 @@
 		24C5ECA024DCAA990060EB3A /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5EC9F24DCAA990060EB3A /* CompositionRoot.swift */; };
 		24C5ECA424DCAC9D0060EB3A /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5ECA324DCAC9D0060EB3A /* AppFlowController.swift */; };
 		24C5ECA924DCB3A20060EB3A /* UIViewController+Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5ECA824DCB3A20060EB3A /* UIViewController+Child.swift */; };
+		24C7CCAD24DEA00100ABFD0A /* ShoppingCartFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7CCAC24DEA00100ABFD0A /* ShoppingCartFlowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		24C5EC9F24DCAA990060EB3A /* CompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
 		24C5ECA324DCAC9D0060EB3A /* AppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowController.swift; sourceTree = "<group>"; };
 		24C5ECA824DCB3A20060EB3A /* UIViewController+Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Child.swift"; sourceTree = "<group>"; };
+		24C7CCAC24DEA00100ABFD0A /* ShoppingCartFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartFlowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				24C5ECA324DCAC9D0060EB3A /* AppFlowController.swift */,
-				24A17CA824DD744A00829470 /* ProductFlowController.swift */,
 				24A17CAA24DD76F100829470 /* MainFlowController.swift */,
+				24A17CA824DD744A00829470 /* ProductFlowController.swift */,
+				24C7CCAC24DEA00100ABFD0A /* ShoppingCartFlowController.swift */,
 			);
 			path = AppFlow;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			files = (
 				24C5ECA424DCAC9D0060EB3A /* AppFlowController.swift in Sources */,
 				24C5ECA024DCAA990060EB3A /* CompositionRoot.swift in Sources */,
+				24C7CCAD24DEA00100ABFD0A /* ShoppingCartFlowController.swift in Sources */,
 				24A17CAE24DD99E800829470 /* CategoriesViewController.swift in Sources */,
 				24C5EC8024DC9D480060EB3A /* WelcomeViewController.swift in Sources */,
 				24A17CB024DD9A3900829470 /* ShoppingCartViewController.swift in Sources */,
