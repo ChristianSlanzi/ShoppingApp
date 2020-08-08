@@ -1,0 +1,79 @@
+//
+//  FunctionalComposition.swift
+//  CommonModule
+//
+//  Created by Christian Slanzi on 31.07.20.
+//  Copyright © 2020 Christian Slanzi. All rights reserved.
+//
+
+// Pipe operator: i.e., 2 |> incr |> square
+precedencegroup ForwardApplication {
+    associativity: left
+}
+
+infix operator |>: ForwardApplication
+
+public func |> <A, B>(a: A, f: (A) -> B) -> B {
+    return f(a)
+}
+
+//forward compose operator
+precedencegroup ForwardComposition {
+    associativity: left
+    //higherThan: ForwardApplication
+    higherThan: EffectfulComposition
+}
+
+infix operator >>>
+
+public func >>> <A, B, C>(f: @escaping (A) -> B, g: @escaping (B) -> C) -> ((A) -> C) {
+    return { a in
+        g(f(a))
+    }
+}
+
+// Fish operator
+precedencegroup EffectfulComposition {
+    associativity: left
+    higherThan: ForwardApplication
+    //lowerThan: ForwardComposition
+}
+
+infix operator >=>: EffectfulComposition
+
+public func >=> <A, B, C>(
+    _ f: @escaping (A) -> B?,
+    _ g: @escaping (B) -> C?
+) -> ((A) -> C?) {
+    return { a in
+        fatalError()
+    }
+}
+
+// Diamond operator
+precedencegroup SingleTypeComposition {
+    associativity: right
+    higherThan: ForwardApplication
+}
+
+infix operator <> : SingleTypeComposition
+
+public func <> <A: AnyObject>(f: @escaping (A) -> A,
+                              g: @escaping (A) -> A) -> (A) -> A {
+   return f >>> g
+}
+
+public func <> <A: AnyObject>(f: @escaping (A) -> Void, g: @escaping (A) -> Void) -> (A) -> Void {
+  return { a in
+    f(a)
+    g(a)
+  }
+}
+
+public func <> <A: AnyObject>(f: @escaping (inout A) -> Void,
+                              g: @escaping (inout A) -> Void) -> (inout A) -> Void {
+   return { a in
+    f(&a)
+    g(&a)
+   }
+}

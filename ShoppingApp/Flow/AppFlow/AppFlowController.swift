@@ -29,7 +29,8 @@ class AppFlowController: UIViewController, FlowProtocol {
     }
     
     private func startWelcomeScreen() {
-        let welcomeViewController = WelcomeViewController()
+        let welcomeViewModel = WelcomeViewModel(input: WelcomeViewModel.Input())
+        let welcomeViewController = WelcomeViewController(viewModel: welcomeViewModel)
         welcomeViewController.flowDelegate = self
         add(childController: welcomeViewController)
     }
