@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ShoppingCartFlowControllerDelegate: AnyObject {
+    
+}
+
 final class ShoppingCartFlowController: UIViewController, FlowProtocol {
     
     private var embeddedNavigationController: UINavigationController!
@@ -27,4 +31,8 @@ final class ShoppingCartFlowController: UIViewController, FlowProtocol {
         let shoppingCartViewController = ShoppingCartViewController()
         embeddedNavigationController.viewControllers = [shoppingCartViewController]
     }
+}
+
+extension ShoppingCartFlowController: ShoppingCartFlowControllerDelegate {
+    
 }

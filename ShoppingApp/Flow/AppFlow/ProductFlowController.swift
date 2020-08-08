@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ProductFlowControllerDelegate: AnyObject {
+    
+}
+
 final class ProductFlowController: UIViewController, FlowProtocol {
     
     private var embeddedNavigationController: UINavigationController!
@@ -35,9 +39,14 @@ final class ProductFlowController: UIViewController, FlowProtocol {
         
         embeddedNavigationController.viewControllers = [productListController]
         */
-        
-        let categoriesViewController = CategoriesViewController()
+        let categoriesViewModel = CategoriesViewModel(input: CategoriesViewModel.Input())
+        let categoriesViewController = CategoriesViewController(viewModel: categoriesViewModel)
+        categoriesViewController.flowDelegate = self
         
         embeddedNavigationController.viewControllers = [categoriesViewController]
     }
+}
+
+extension ProductFlowController: ProductFlowControllerDelegate {
+    
 }

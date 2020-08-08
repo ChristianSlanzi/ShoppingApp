@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MainFlowControllerDelegate: AnyObject {
+    
+}
+
 final class MainFlowController: UIViewController, FlowProtocol {
     
     private let tabController = UITabBarController()
@@ -31,5 +35,9 @@ final class MainFlowController: UIViewController, FlowProtocol {
         shoppingCartFlowController.start()
         return shoppingCartFlowController
     }
+    
+}
+
+extension MainFlowController: MainFlowControllerDelegate {
     
 }

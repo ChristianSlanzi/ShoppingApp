@@ -22,7 +22,7 @@ protocol AppFlowControllerDelegate: AnyObject {
     func welcomeControllerDidFinish(_ flowController: WelcomeViewController)
 }
 
-class AppFlowController: UIViewController, FlowProtocol {
+final class AppFlowController: UIViewController, FlowProtocol {
     
     func start() {
         startWelcomeScreen()
