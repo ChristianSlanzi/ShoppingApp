@@ -14,6 +14,7 @@ final class CategoryViewCell: UICollectionViewCell {
     static let reuseID = "CategoryViewCell"
     
     let nameLabel = UILabel(frame: .zero)
+    let descriptionLabel = UILabel(frame: .zero)
 
     // MARK: - Initializers
 
@@ -30,26 +31,37 @@ final class CategoryViewCell: UICollectionViewCell {
     
     func set(viewModel: Category) { //TODO: a cell viewModel
         nameLabel.text = viewModel.name
+        descriptionLabel.text = viewModel.description
     }
     
     // MARK: - Layout Methods
 
     private func setupViews() {
-        backgroundColor = .yellow//.systemBackground
-        addSubviews(nameLabel)
+        self |> roundedStyle
+        backgroundColor = .lightGray //.systemBackground
+        addSubviews(nameLabel, descriptionLabel)
         nameLabel.text = "category"
+        descriptionLabel.text = "category description"
     }
     
     private func setupConstraints() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+
         let padding: CGFloat = 8
 
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-           nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
             nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
             nameLabel.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
+            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
+            descriptionLabel.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
 }
