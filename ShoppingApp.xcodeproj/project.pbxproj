@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24A17CA924DD744A00829470 /* ProductFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A17CA824DD744A00829470 /* ProductFlowController.swift */; };
+		24A17CAB24DD76F100829470 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A17CAA24DD76F100829470 /* MainFlowController.swift */; };
+		24A17CAE24DD99E800829470 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A17CAD24DD99E800829470 /* CategoriesViewController.swift */; };
+		24A17CB024DD9A3900829470 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A17CAF24DD9A3900829470 /* ShoppingCartViewController.swift */; };
 		24C5EC7C24DC9D480060EB3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5EC7B24DC9D480060EB3A /* AppDelegate.swift */; };
 		24C5EC7E24DC9D480060EB3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5EC7D24DC9D480060EB3A /* SceneDelegate.swift */; };
-		24C5EC8024DC9D480060EB3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5EC7F24DC9D480060EB3A /* ViewController.swift */; };
+		24C5EC8024DC9D480060EB3A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5EC7F24DC9D480060EB3A /* WelcomeViewController.swift */; };
 		24C5EC8524DC9D490060EB3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C5EC8424DC9D490060EB3A /* Assets.xcassets */; };
 		24C5EC8824DC9D490060EB3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C5EC8624DC9D490060EB3A /* LaunchScreen.storyboard */; };
 		24C5EC9324DC9D4A0060EB3A /* ShoppingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5EC9224DC9D4A0060EB3A /* ShoppingAppTests.swift */; };
@@ -29,10 +33,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24A17CA824DD744A00829470 /* ProductFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFlowController.swift; sourceTree = "<group>"; };
+		24A17CAA24DD76F100829470 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
+		24A17CAD24DD99E800829470 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		24A17CAF24DD9A3900829470 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		24C5EC7824DC9D480060EB3A /* ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C5EC7B24DC9D480060EB3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24C5EC7D24DC9D480060EB3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		24C5EC7F24DC9D480060EB3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		24C5EC7F24DC9D480060EB3A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		24C5EC8424DC9D490060EB3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24C5EC8724DC9D490060EB3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24C5EC8924DC9D490060EB3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,6 +71,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24A17CAC24DD990D00829470 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				24C5EC7F24DC9D480060EB3A /* WelcomeViewController.swift */,
+				24A17CAD24DD99E800829470 /* CategoriesViewController.swift */,
+				24A17CAF24DD9A3900829470 /* ShoppingCartViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		24C5EC6F24DC9D480060EB3A = {
 			isa = PBXGroup;
 			children = (
@@ -88,9 +106,9 @@
 				24C5ECA524DCB3600060EB3A /* Utils */,
 				24C5EC9E24DCAA830060EB3A /* Composition */,
 				24C5ECA124DCAC540060EB3A /* Flow */,
+				24A17CAC24DD990D00829470 /* Scenes */,
 				24C5EC7B24DC9D480060EB3A /* AppDelegate.swift */,
 				24C5EC7D24DC9D480060EB3A /* SceneDelegate.swift */,
-				24C5EC7F24DC9D480060EB3A /* ViewController.swift */,
 				24C5EC8424DC9D490060EB3A /* Assets.xcassets */,
 				24C5EC8624DC9D490060EB3A /* LaunchScreen.storyboard */,
 				24C5EC8924DC9D490060EB3A /* Info.plist */,
@@ -127,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				24C5ECA324DCAC9D0060EB3A /* AppFlowController.swift */,
+				24A17CA824DD744A00829470 /* ProductFlowController.swift */,
+				24A17CAA24DD76F100829470 /* MainFlowController.swift */,
 			);
 			path = AppFlow;
 			sourceTree = "<group>";
@@ -257,7 +277,11 @@
 			files = (
 				24C5ECA424DCAC9D0060EB3A /* AppFlowController.swift in Sources */,
 				24C5ECA024DCAA990060EB3A /* CompositionRoot.swift in Sources */,
-				24C5EC8024DC9D480060EB3A /* ViewController.swift in Sources */,
+				24A17CAE24DD99E800829470 /* CategoriesViewController.swift in Sources */,
+				24C5EC8024DC9D480060EB3A /* WelcomeViewController.swift in Sources */,
+				24A17CB024DD9A3900829470 /* ShoppingCartViewController.swift in Sources */,
+				24A17CA924DD744A00829470 /* ProductFlowController.swift in Sources */,
+				24A17CAB24DD76F100829470 /* MainFlowController.swift in Sources */,
 				24C5EC7C24DC9D480060EB3A /* AppDelegate.swift in Sources */,
 				24C5EC7E24DC9D480060EB3A /* SceneDelegate.swift in Sources */,
 				24C5ECA924DCB3A20060EB3A /* UIViewController+Child.swift in Sources */,

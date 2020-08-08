@@ -18,6 +18,10 @@ public protocol FlowProtocol {
     func start()
 }
 
+protocol AppFlowControllerDelegate: AnyObject {
+    func welcomeControllerDidFinish(_ flowController: WelcomeViewController)
+}
+
 class AppFlowController: UIViewController, FlowProtocol {
     
     func start() {
@@ -25,6 +29,22 @@ class AppFlowController: UIViewController, FlowProtocol {
     }
     
     private func startWelcomeScreen() {
-        add(childController: ViewController())
+        let welcomeViewController = WelcomeViewController()
+        welcomeViewController.flowDelegate = self
+        add(childController: welcomeViewController)
     }
+    
+    private func startMainScreen() {
+      let mainFlowController = MainFlowController()
+      //mainFlowController.delegate = self
+      add(childController: mainFlowController)
+      mainFlowController.start()
+    }
+}
+
+extension AppFlowController: AppFlowControllerDelegate {
+  func welcomeControllerDidFinish(_ flowController: WelcomeViewController) {
+    remove(childController: flowController)
+    startMainScreen()
+  }
 }
