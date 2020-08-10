@@ -21,8 +21,17 @@ class AppDataManager {
     }
     
     // MARK: - PUBLIC METHODS
+    public func getAllCategoriesCount() -> Int {
+        return categories.count
+    }
+    
     public func getAllCategories() -> [Category] {
         return categories
+    }
+    
+    public func getCategory(index: Int) -> Category? {
+        guard index < categories.count else { return nil }
+        return categories[index]
     }
     
     public func getAllProducts() -> [Product] {

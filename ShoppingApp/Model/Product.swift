@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Product {
+struct Product: Equatable {
     var id: Int
     var name: String
     var description: String

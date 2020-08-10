@@ -11,8 +11,6 @@ import XCTest
 
 class WelcomeViewModelTests: XCTestCase {
     
-    let TIMEOUT_1_SEC = 1.0
-    
     func testCallbackWhenDidTapStartButton() {
         // given
         let expectation = XCTestExpectation(description: "start callback called")
@@ -27,7 +25,7 @@ class WelcomeViewModelTests: XCTestCase {
         sut.inputs.viewDidLoad()
         sut.inputs.didTapStartButton()
         
-        // Wait until the expectation is fulfilled, with a timeout of 2 seconds.
+        // Wait until the expectation is fulfilled, with a timeout of 1 second.
         wait(for: [expectation], timeout: TIMEOUT_1_SEC)
 
     }
