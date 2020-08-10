@@ -51,6 +51,7 @@ final class ProductDetailsViewController: CustomScrollViewController {
     internal override func setupViews() {
         super.setupViews()
         view.backgroundColor = .systemBackground
+        title = "Product's Info"
         
         productImage = UIImageView()
         productName = UILabel()

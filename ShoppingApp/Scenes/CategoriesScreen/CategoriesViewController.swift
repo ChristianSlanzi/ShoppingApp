@@ -41,6 +41,7 @@ final class CategoriesViewController: UIViewController {
     // MARK: - Layout Methods
     
     private func setupViews() {
+        title = "Categories"
         view.backgroundColor = .systemBackground
         setupCollectionView()
     }

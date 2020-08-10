@@ -24,14 +24,15 @@ final class MainFlowController: UIViewController, FlowProtocol {
     
     private func startProductFlow() -> UIViewController {
         let productFlowController = ProductFlowController()
-        productFlowController.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
+        productFlowController.tabBarItem = UITabBarItem(title: "Shop", image: UIImage(named: "icons-shop"), tag: 0)
         productFlowController.start()
         return productFlowController
     }
     
     private func startShoppingCartFlow() -> UIViewController {
         let shoppingCartFlowController = ShoppingCartFlowController()
-        shoppingCartFlowController.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+        shoppingCartFlowController.tabBarItem =
+            UITabBarItem(title: "Cart", image: UIImage(named: "icons-cart"), tag: 1)
         shoppingCartFlowController.start()
         return shoppingCartFlowController
     }
