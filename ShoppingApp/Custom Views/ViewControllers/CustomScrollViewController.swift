@@ -10,6 +10,8 @@ import UIKit
 
 class CustomScrollViewController: UIViewController {
     
+    var bottomConstraint: NSLayoutConstraint?
+    
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -61,5 +63,42 @@ class CustomScrollViewController: UIViewController {
             scrollContentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
         ])
         
+        bottomConstraint = NSLayoutConstraint(item: scrollContentView, attribute: .bottom,
+                                              relatedBy: .equal, toItem: scrollContentView,
+                                              attribute: .bottom, multiplier: 1, constant: 0)
+        scrollContentView.addConstraint(bottomConstraint!)
+        
+        scrollView.scrollIndicatorInsets = scrollView.contentInset
+        
+    }
+    
+    func addToContentView(_ views: UIView...) {
+        for view in views { scrollContentView.addSubview(view) }
+    }
+    
+    func getContentViewTopAnchor() -> NSLayoutYAxisAnchor {
+        return scrollContentView.topAnchor
+    }
+    func getContentViewBottomAnchor() -> NSLayoutYAxisAnchor {
+        return scrollContentView.bottomAnchor
+    }
+    func getContentViewLeadingAnchor() -> NSLayoutXAxisAnchor {
+        return scrollContentView.leadingAnchor
+    }
+    func getContentViewTrailingAnchor() -> NSLayoutXAxisAnchor {
+        return scrollContentView.trailingAnchor
+    }
+    
+    func setContentViewBottom(view: UIView) {
+        guard let bottomConstraint = bottomConstraint else { return }
+        scrollContentView.removeConstraint(bottomConstraint)
+        self.bottomConstraint = NSLayoutConstraint(item: view, attribute: .bottom,
+        relatedBy: .equal, toItem: scrollContentView,
+        attribute: .bottom, multiplier: 1, constant: 0)
+        scrollContentView.addConstraint(self.bottomConstraint!)
+        scrollContentView.setNeedsUpdateConstraints()
     }
 }
+
+
+
