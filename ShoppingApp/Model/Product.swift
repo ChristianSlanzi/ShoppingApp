@@ -9,10 +9,11 @@
 import Foundation
 
 struct Product: Equatable {
-    var id: Int
+    var id: UInt // A unique product id number among all products of all categories
+    var categoryId: UInt
     var name: String
     var description: String
     var imageUrl: String
     var price: Double
-    var currency: String //create Currency enum
+    var currency: String //TODO: create Currency enum
 }
