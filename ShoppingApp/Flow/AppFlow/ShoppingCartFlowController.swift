@@ -28,7 +28,8 @@ final class ShoppingCartFlowController: UIViewController, FlowProtocol {
     }
     
     func start() {
-        let shoppingCartViewController = ShoppingCartViewController()
+        let viewModel = ShoppingCartViewModel(input: ShoppingCartViewModel.Input())
+        let shoppingCartViewController = ShoppingCartViewController(viewModel: viewModel)
         embeddedNavigationController.viewControllers = [shoppingCartViewController]
     }
 }

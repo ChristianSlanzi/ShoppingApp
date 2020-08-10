@@ -12,7 +12,7 @@ final class ShoppingCartViewController: UIViewController {
     
     // MARK: - Viewcontroller Property
     
-    //var viewModel: ProductDetailsViewModel
+    var viewModel: ShoppingCartViewModel
     
     // MARK: - FlowDelegate Property
     
@@ -22,6 +22,15 @@ final class ShoppingCartViewController: UIViewController {
     
     
     // MARK: - Viewcontroller Lifecycle
+    
+    init(viewModel: ShoppingCartViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
