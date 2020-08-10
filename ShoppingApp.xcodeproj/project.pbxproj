@@ -42,6 +42,7 @@
 		24F50D6E24E1714A001B2A6B /* WelcomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D6D24E1714A001B2A6B /* WelcomeViewModelTests.swift */; };
 		24F50D7024E17533001B2A6B /* CategoriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D6F24E17533001B2A6B /* CategoriesViewModelTests.swift */; };
 		24F50D7324E17583001B2A6B /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D7224E17583001B2A6B /* TestConstants.swift */; };
+		24F50D7524E186D2001B2A6B /* ProductsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D7424E186D2001B2A6B /* ProductsViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		24F50D6D24E1714A001B2A6B /* WelcomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModelTests.swift; sourceTree = "<group>"; };
 		24F50D6F24E17533001B2A6B /* CategoriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModelTests.swift; sourceTree = "<group>"; };
 		24F50D7224E17583001B2A6B /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
+		24F50D7424E186D2001B2A6B /* ProductsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,6 +375,7 @@
 			children = (
 				24F50D6D24E1714A001B2A6B /* WelcomeViewModelTests.swift */,
 				24F50D6F24E17533001B2A6B /* CategoriesViewModelTests.swift */,
+				24F50D7424E186D2001B2A6B /* ProductsViewModelTests.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				24F50D7024E17533001B2A6B /* CategoriesViewModelTests.swift in Sources */,
 				24C5EC9324DC9D4A0060EB3A /* ShoppingAppTests.swift in Sources */,
 				24F50D6E24E1714A001B2A6B /* WelcomeViewModelTests.swift in Sources */,
+				24F50D7524E186D2001B2A6B /* ProductsViewModelTests.swift in Sources */,
 				24F50D7324E17583001B2A6B /* TestConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

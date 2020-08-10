@@ -1,17 +1,19 @@
 //
-//  CategoriesViewModelTests.swift
+//  ProductsViewModelTests.swift
 //  ShoppingAppTests
 //
 //  Created by Christian Slanzi on 10.08.20.
 //  Copyright © 2020 Christian Slanzi. All rights reserved.
 //
 
+import Foundation
+
 import XCTest
 @testable import ShoppingApp
 
-class CategoriesViewModelTests: XCTestCase {
+class ProductsViewModelTests: XCTestCase {
         
-    func testViewDidLoadLoadsCategories() {
+    func testViewDidLoadLoadsProducts() {
         // given
         //let expectation = XCTestExpectation(description: "start callback called")
         
@@ -22,14 +24,14 @@ class CategoriesViewModelTests: XCTestCase {
         sut.inputs.viewDidLoad()
         
         // then
-        XCTAssertEqual(sut.getElementsCount(), dataManager.getAllCategoriesCount())
+        XCTAssertEqual(sut.getElementsCount(), dataManager.getAllProductsCount())
         
         // Wait until the expectation is fulfilled, with a timeout of 1 second.
         //wait(for: [expectation], timeout: TIMEOUT_1_SEC)
 
     }
     
-    func testCacheCategoriesOrderSameAsFromDataManager() {
+    func testCacheProductsOrderSameAsFromDataManager() {
         let dataManager = AppDataManager.shared
         let sut = makeSut(dataManager: dataManager)
         
@@ -37,8 +39,8 @@ class CategoriesViewModelTests: XCTestCase {
         sut.inputs.viewDidLoad()
         
         // then
-        for index in 0..<dataManager.getAllCategoriesCount() {
-            XCTAssertEqual(sut.getElementAt(IndexPath(row: index, section: 0)), dataManager.getCategoryAt(index: index))
+        for index in 0..<dataManager.getAllProductsCount() {
+            XCTAssertEqual(sut.getElementAt(IndexPath(row: index, section: 0)), dataManager.getProductAt(index: index))
         }
         
     }
@@ -50,17 +52,17 @@ class CategoriesViewModelTests: XCTestCase {
         // when
         sut.inputs.viewDidLoad()
         
-        let numberOfCategories = dataManager.getAllCategoriesCount()
+        let numberOfProducts = dataManager.getAllProductsCount()
         //then
-        XCTAssertEqual(sut.getElementAt(IndexPath(row: numberOfCategories, section: 0)), nil)
-        XCTAssertEqual(sut.getElementAt(IndexPath(row: numberOfCategories+1, section: 0)), nil)
+        XCTAssertEqual(sut.getElementAt(IndexPath(row: numberOfProducts, section: 0)), nil)
+        XCTAssertEqual(sut.getElementAt(IndexPath(row: numberOfProducts+1, section: 0)), nil)
     }
     
-    func testCallbackWithSelectedCategoryWhenDidTapCell() {
+    func testCallbackWithSelectedProductWhenDidTapCell() {
         let expectation = XCTestExpectation(description: "start callback called")
         let dataManager = AppDataManager.shared
-        let numberOfCategories = dataManager.getAllCategoriesCount()
-        let index = numberOfCategories - 1
+        let numberOfProducts = dataManager.getAllProductsCount()
+        let index = numberOfProducts - 1
         let indexPath = IndexPath(row: index, section: 0)
         
         let sut = makeSut(dataManager: dataManager)
@@ -80,9 +82,9 @@ class CategoriesViewModelTests: XCTestCase {
     }
     
     // MARK: - Helpers
-    private func makeSut(dataManager: AppDataManager) -> CategoriesViewModel {
-        let input = CategoriesViewModel.Input()
-        let sut = CategoriesViewModel(input: input, dataManager: dataManager)
+    private func makeSut(dataManager: AppDataManager) -> ProductsViewModel {
+        let input = ProductsViewModel.Input()
+        let sut = ProductsViewModel(input: input, dataManager: dataManager)
         return sut
     }
 }

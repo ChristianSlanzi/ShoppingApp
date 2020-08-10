@@ -29,13 +29,22 @@ class AppDataManager {
         return categories
     }
     
-    public func getCategory(index: Int) -> Category? {
+    public func getCategoryAt(index: Int) -> Category? {
         guard index < categories.count else { return nil }
         return categories[index]
     }
     
+    public func getAllProductsCount() -> Int {
+        return products.count
+    }
+    
     public func getAllProducts() -> [Product] {
         return products
+    }
+    
+    public func getProductAt(index: Int) -> Product? {
+        guard index < products.count else { return nil }
+        return products[index]
     }
 }
 
