@@ -44,6 +44,7 @@
 		24F50D7324E17583001B2A6B /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D7224E17583001B2A6B /* TestConstants.swift */; };
 		24F50D7524E186D2001B2A6B /* ProductsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D7424E186D2001B2A6B /* ProductsViewModelTests.swift */; };
 		24F50D7824E19CD3001B2A6B /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D7724E19CD3001B2A6B /* Observable.swift */; };
+		24F50D7A24E1BD9B001B2A6B /* ProductDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D7924E1BD9B001B2A6B /* ProductDetailsViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		24F50D7224E17583001B2A6B /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 		24F50D7424E186D2001B2A6B /* ProductsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModelTests.swift; sourceTree = "<group>"; };
 		24F50D7724E19CD3001B2A6B /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		24F50D7924E1BD9B001B2A6B /* ProductDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -379,6 +381,7 @@
 				24F50D6D24E1714A001B2A6B /* WelcomeViewModelTests.swift */,
 				24F50D6F24E17533001B2A6B /* CategoriesViewModelTests.swift */,
 				24F50D7424E186D2001B2A6B /* ProductsViewModelTests.swift */,
+				24F50D7924E1BD9B001B2A6B /* ProductDetailsViewModelTests.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				24F50D6E24E1714A001B2A6B /* WelcomeViewModelTests.swift in Sources */,
 				24F50D7524E186D2001B2A6B /* ProductsViewModelTests.swift in Sources */,
 				24F50D7324E17583001B2A6B /* TestConstants.swift in Sources */,
+				24F50D7A24E1BD9B001B2A6B /* ProductDetailsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
