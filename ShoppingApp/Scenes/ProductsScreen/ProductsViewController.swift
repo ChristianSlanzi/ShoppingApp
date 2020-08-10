@@ -53,7 +53,7 @@ final class ProductsViewController: UIViewController {
     private func bind() {
         viewModel.outputs.startElementTarget = { [weak self] product in
             guard let self = self else { return }
-            //self.flowDelegate?.startProductInfoFor(product: product)
+            self.flowDelegate?.startProductDetailsFor(product: product)
         }
     }
 }

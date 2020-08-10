@@ -10,6 +10,7 @@ import UIKit
 
 protocol ProductFlowControllerDelegate: AnyObject {
     func startProductListFor(category: Category)
+    func startProductDetailsFor(product: Product)
 }
 
 final class ProductFlowController: UIViewController, FlowProtocol {
@@ -56,5 +57,13 @@ extension ProductFlowController: ProductFlowControllerDelegate {
         productsViewController.flowDelegate = self
         
         embeddedNavigationController.pushViewController(productsViewController, animated: true)
+    }
+    
+    func startProductDetailsFor(product: Product) {
+        let productDetailsViewModel = ProductDetailsViewModel(input: ProductDetailsViewModel.Input())
+        let productDetailsViewController = ProductDetailsViewController(viewModel: productDetailsViewModel)
+        productDetailsViewController.flowDelegate = self
+        
+        embeddedNavigationController.pushViewController(productDetailsViewController, animated: true)
     }
 }
