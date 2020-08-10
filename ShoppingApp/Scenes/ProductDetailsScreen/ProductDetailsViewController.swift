@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ProductDetailsViewController: UIViewController {
+final class ProductDetailsViewController: CustomScrollViewController {
     
     var viewModel: ProductDetailsViewModel
     
@@ -18,7 +18,7 @@ final class ProductDetailsViewController: UIViewController {
     
     init(viewModel: ProductDetailsViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init()
         bind()
         viewModel.viewDidLoad()
     }
@@ -34,22 +34,18 @@ final class ProductDetailsViewController: UIViewController {
     }
     
     // MARK: - Layout Methods
-    private func setupViews() {
+    internal override func setupViews() {
+        super.setupViews()
         view.backgroundColor = .systemTeal
         
+    }
+    
+    internal override func setupConstraints() {
+        super.setupConstraints()
     }
     
     // MARK: - MVVM Binding
     private func bind() {
         //viewModel.outputs.
-    }
-}
-
-// MARK: - UI Costraints
-
-extension ProductDetailsViewController {
-    
-    private func setupConstraints() {
-        
     }
 }
