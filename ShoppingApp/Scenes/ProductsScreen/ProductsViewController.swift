@@ -65,6 +65,7 @@ final class ProductsViewController: UIViewController {
     }
     
     // MARK: - MVVM Binding
+    
     private func bind() {
         viewModel.outputs.startElementTarget = { [weak self] product in
             guard let self = self else { return }

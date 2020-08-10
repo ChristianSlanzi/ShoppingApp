@@ -28,7 +28,6 @@ class WelcomeViewController: UIViewController {
     init(viewModel: WelcomeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        bind()
     }
     
     required init?(coder: NSCoder) {
@@ -40,6 +39,7 @@ class WelcomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupViews()
         setupCostraints()
+        bind()
     }
     
     override func viewDidAppear(_ animated: Bool) {
