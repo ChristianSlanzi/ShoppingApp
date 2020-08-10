@@ -39,6 +39,7 @@
 		24F50D6624E13351001B2A6B /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D6524E13351001B2A6B /* ProductDetailsViewController.swift */; };
 		24F50D6824E133E5001B2A6B /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D6724E133E5001B2A6B /* ProductDetailsViewModel.swift */; };
 		24F50D6B24E13FA1001B2A6B /* CustomScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D6A24E13FA1001B2A6B /* CustomScrollViewController.swift */; };
+		24F50D6E24E1714A001B2A6B /* WelcomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D6D24E1714A001B2A6B /* WelcomeViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		24F50D6524E13351001B2A6B /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		24F50D6724E133E5001B2A6B /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
 		24F50D6A24E13FA1001B2A6B /* CustomScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollViewController.swift; sourceTree = "<group>"; };
+		24F50D6D24E1714A001B2A6B /* WelcomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 		24C5EC9124DC9D4A0060EB3A /* ShoppingAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				24F50D6C24E170AA001B2A6B /* Scenes */,
 				24C5EC9224DC9D4A0060EB3A /* ShoppingAppTests.swift */,
 				24C5EC9424DC9D4A0060EB3A /* Info.plist */,
 			);
@@ -358,6 +361,14 @@
 				24F50D6A24E13FA1001B2A6B /* CustomScrollViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		24F50D6C24E170AA001B2A6B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				24F50D6D24E1714A001B2A6B /* WelcomeViewModelTests.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -497,6 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C5EC9324DC9D4A0060EB3A /* ShoppingAppTests.swift in Sources */,
+				24F50D6E24E1714A001B2A6B /* WelcomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
