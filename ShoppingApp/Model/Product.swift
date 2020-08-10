@@ -13,4 +13,6 @@ struct Product: Equatable {
     var name: String
     var description: String
     var imageUrl: String
+    var price: Double
+    var currency: String //create Currency enum
 }

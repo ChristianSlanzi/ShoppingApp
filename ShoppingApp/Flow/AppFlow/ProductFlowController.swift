@@ -60,7 +60,7 @@ extension ProductFlowController: ProductFlowControllerDelegate {
     }
     
     func startProductDetailsFor(product: Product) {
-        let productDetailsViewModel = ProductDetailsViewModel(input: ProductDetailsViewModel.Input())
+        let productDetailsViewModel = ProductDetailsViewModel(input: ProductDetailsViewModel.Input(), element: product)
         let productDetailsViewController = ProductDetailsViewController(viewModel: productDetailsViewModel)
         productDetailsViewController.flowDelegate = self
         

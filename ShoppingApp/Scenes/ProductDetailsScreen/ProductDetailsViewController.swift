@@ -29,7 +29,6 @@ final class ProductDetailsViewController: CustomScrollViewController {
     init(viewModel: ProductDetailsViewModel) {
         self.viewModel = viewModel
         super.init()
-        bind()
         viewModel.viewDidLoad()
     }
     
@@ -41,6 +40,7 @@ final class ProductDetailsViewController: CustomScrollViewController {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
+        bind()
     }
     
     // MARK: - Layout Methods
@@ -91,7 +91,7 @@ final class ProductDetailsViewController: CustomScrollViewController {
         let topAnchor = getContentViewTopAnchor()
         let leadingAnchor = getContentViewLeadingAnchor()
         let trailingAnchor = getContentViewTrailingAnchor()
-        let bottomAnchor = getContentViewBottomAnchor()
+        //let bottomAnchor = getContentViewBottomAnchor()
         
         NSLayoutConstraint.activate([
             productImage.topAnchor.constraint(equalTo: topAnchor, constant: 20),
@@ -147,6 +147,25 @@ final class ProductDetailsViewController: CustomScrollViewController {
     
     // MARK: - MVVM Binding
     private func bind() {
-        //viewModel.outputs.
+        viewModel.output.name.bind { [weak self] (name) in
+            guard let self = self else { return }
+            self.productName.text = name
+        }
+        viewModel.output.price.bind { [weak self] (price) in
+            guard let self = self else { return }
+            self.productPrice.text = price
+        }
+        viewModel.output.description.bind { [weak self] (description) in
+            guard let self = self else { return }
+            self.productDescription.text = description
+        }
+        viewModel.output.imageUrl.bind { [weak self] (imageUrl) in
+            guard let self = self else { return }
+            
+            //TODO load the image... viewModel should not know about uikit
+            // but it could load the image as Data
+            // so the viewModel could do loading and caching using a service injected as Dependency.
+            self.productImage.image = UIImage(named: imageUrl)
+        }
     }
 }

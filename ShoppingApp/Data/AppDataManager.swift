@@ -66,15 +66,15 @@ extension AppDataManager {
         self.categories = categories
         
         let products = [
-            Product(id: 0, name: "Product 0", description: "Product 0 description", imageUrl: "img_"+"product0"),
-            Product(id: 1, name: "Product 1", description: "Product 1 description", imageUrl: "img_"+"product1"),
-            Product(id: 2, name: "Product 2", description: "Product 2 description", imageUrl: "img_"+"product2"),
-            Product(id: 3, name: "Product 3", description: "Product 3 description", imageUrl: "img_"+"product3"),
-            Product(id: 4, name: "Product 4", description: "Product 4 description", imageUrl: "img_"+"product4"),
-            Product(id: 5, name: "Product 5", description: "Product 5 description", imageUrl: "img_"+"product5"),
-            Product(id: 6, name: "Product 6", description: "Product 6 description", imageUrl: "img_"+"product6"),
-            Product(id: 7, name: "Product 7", description: "Product 7 description", imageUrl: "img_"+"product7"),
-            Product(id: 8, name: "Product 8", description: "Product 8 description", imageUrl: "img_"+"product8")
+            Product(id: 0, name: "Product 0", description: "Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
+            Product(id: 1, name: "Product 1", description: "Product 1 description", imageUrl: "img_"+"product1", price: 10, currency: "Euro"),
+            Product(id: 2, name: "Product 2", description: "Product 2 description", imageUrl: "img_"+"product2", price: 15, currency: "Euro"),
+            Product(id: 3, name: "Product 3", description: "Product 3 description", imageUrl: "img_"+"product3", price: 20, currency: "Euro"),
+            Product(id: 4, name: "Product 4", description: "Product 4 description", imageUrl: "img_"+"product4", price: 30, currency: "Euro"),
+            Product(id: 5, name: "Product 5", description: "Product 5 description", imageUrl: "img_"+"product5", price: 25, currency: "Euro"),
+            Product(id: 6, name: "Product 6", description: "Product 6 description", imageUrl: "img_"+"product6", price: 23.5, currency: "Euro"),
+            Product(id: 7, name: "Product 7", description: "Product 7 description", imageUrl: "img_"+"product7", price: 11, currency: "Euro"),
+            Product(id: 8, name: "Product 8", description: "Product 8 description", imageUrl: "img_"+"product8", price: 99.9, currency: "Euro")
         ]
         self.products = products
     }
