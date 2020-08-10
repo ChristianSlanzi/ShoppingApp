@@ -10,12 +10,20 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    // MARK: - Viewcontroller Property
+    
+    var viewModel: WelcomeViewModel
+    
+    // MARK: - FlowDelegate Property
+    
     var flowDelegate: AppFlowControllerDelegate?
+    
+    // MARK: - UI Properties
     
     let welcomeLabel = UILabel(frame: .zero)
     let startButton = CustomButton()
     
-    var viewModel: WelcomeViewModel
+    // MARK: - Viewcontroller Lifecycle
     
     init(viewModel: WelcomeViewModel) {
         self.viewModel = viewModel
@@ -42,16 +50,7 @@ class WelcomeViewController: UIViewController {
        // }
     }
     
-    @objc private func didTapButton(_ sender: Any) {
-        viewModel.inputs.didTapStartButton()
-    }
-    
-    private func bind() {
-        viewModel.outputs.showMainScreen = {
-            //guard let self = self else { return }
-            self.flowDelegate?.welcomeControllerDidFinish(self)
-        }
-    }
+    // MARK: - Layout Methods
     
     private func setupViews() {
         view.backgroundColor = .white
@@ -63,6 +62,19 @@ class WelcomeViewController: UIViewController {
         
         view.addSubviews(welcomeLabel, startButton)
         
+    }
+    
+    // MARK: - MVVM Binding
+    
+    @objc private func didTapButton(_ sender: Any) {
+        viewModel.inputs.didTapStartButton()
+    }
+    
+    private func bind() {
+        viewModel.outputs.showMainScreen = {
+            //guard let self = self else { return }
+            self.flowDelegate?.welcomeControllerDidFinish(self)
+        }
     }
 }
 

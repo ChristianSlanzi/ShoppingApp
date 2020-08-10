@@ -11,12 +11,15 @@ import UIKit
 final class ProductDetailsViewController: CustomScrollViewController {
     
     // MARK: - Viewcontroller Property
+    
     var viewModel: ProductDetailsViewModel
     
     // MARK: - FlowDelegate Property
+    
     var flowDelegate: ProductFlowControllerDelegate?
     
     // MARK: - UI Properties
+    
     var productImage: UIImageView!
     var productName: UILabel!
     var productPrice: UILabel!
@@ -29,7 +32,6 @@ final class ProductDetailsViewController: CustomScrollViewController {
     init(viewModel: ProductDetailsViewModel) {
         self.viewModel = viewModel
         super.init()
-        viewModel.viewDidLoad()
     }
     
     required init?(coder: NSCoder) {
@@ -38,12 +40,14 @@ final class ProductDetailsViewController: CustomScrollViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDidLoad()
         setupViews()
         setupConstraints()
         bind()
     }
     
     // MARK: - Layout Methods
+    
     internal override func setupViews() {
         super.setupViews()
         view.backgroundColor = .systemBackground
@@ -146,6 +150,7 @@ final class ProductDetailsViewController: CustomScrollViewController {
     }
     
     // MARK: - MVVM Binding
+    
     private func bind() {
         viewModel.output.name.bind { [weak self] (name) in
             guard let self = self else { return }

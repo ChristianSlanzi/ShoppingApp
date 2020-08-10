@@ -10,9 +10,15 @@ import UIKit
 
 final class ProductsViewController: UIViewController {
     
+    // MARK: - Viewcontroller Property
+    
     var viewModel: ProductsViewModel
     
+    // MARK: - FlowDelegate Property
+    
     var flowDelegate: ProductFlowControllerDelegate?
+    
+    // MARK: - UI Properties
     
     var collectionView: UICollectionView!
     
@@ -29,15 +35,20 @@ final class ProductsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        configureCollectionView()
-        bind()
         viewModel.viewDidLoad()
+        setupViews()
+        setupConstraints()
+        bind()
     }
     
     // MARK: - Layout Methods
     
-    private func configureCollectionView() {
+    private func setupViews() {
+        view.backgroundColor = .systemBackground
+        setupCollectionView()
+    }
+    
+    private func setupCollectionView() {
         collectionView = UICollectionView(frame: view.bounds,
                                           collectionViewLayout: CollectionViewHelper.createColumnedFlowLayout(in: view, numberOfColums: 1, itemHeight: 200)
         )
@@ -47,6 +58,10 @@ final class ProductsViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.backgroundColor = .systemBackground
         collectionView.register(ProductViewCell.self, forCellWithReuseIdentifier: ProductViewCell.reuseID)
+    }
+    
+    private func setupConstraints() {
+        
     }
     
     // MARK: - MVVM Binding
