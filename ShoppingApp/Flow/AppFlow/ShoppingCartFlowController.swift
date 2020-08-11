@@ -28,7 +28,9 @@ final class ShoppingCartFlowController: UIViewController, FlowProtocol {
     }
     
     func start() {
-        let viewModel = ShoppingCartViewModel(input: ShoppingCartViewModel.Input())
+        let dbService = RealmDataManager(RealmProvider.default)
+        let orderRepo = OrderRepository(dbManager: dbService)
+        let viewModel = ShoppingCartViewModel(input: ShoppingCartViewModel.Input(), orderRepository: orderRepo)
         let shoppingCartViewController = ShoppingCartViewController(viewModel: viewModel)
         embeddedNavigationController.viewControllers = [shoppingCartViewController]
     }

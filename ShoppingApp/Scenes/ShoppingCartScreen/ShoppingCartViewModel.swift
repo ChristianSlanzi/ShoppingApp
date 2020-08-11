@@ -31,13 +31,15 @@ final class ShoppingCartViewModel: ShoppingCartViewModelType, ShoppingCartViewMo
 
     }
     
+    let orderRepository: OrderRepositoryProtocol
+    
     private var input: Input
     public var output: Output
     
-    init(input: Input) {
+    init(input: Input, orderRepository: OrderRepositoryProtocol) {
         self.input = input
         self.output = Output()
-        
+        self.orderRepository = orderRepository
     }
     
     var inputs: ShoppingCartViewModelInputsType { return self }
