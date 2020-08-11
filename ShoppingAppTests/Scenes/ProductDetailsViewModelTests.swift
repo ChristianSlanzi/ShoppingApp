@@ -42,7 +42,7 @@ class ProductDetailsViewModelTests: XCTestCase {
     }
     
     private func makeTestProduct() -> Product {
-        let product = Product(id: 0, name: "Test Product", description: "Test Product Description", imageUrl: "test-product-url", price: 10.0, currency: "Euro")
+        let product = Product(id: 0, categoryId: 0, name: "Test Product", description: "Test Product Description", imageUrl: "test-product-url", price: 10.0, currency: "Euro")
         return product
     }
 }

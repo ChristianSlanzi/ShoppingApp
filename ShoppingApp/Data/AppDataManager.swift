@@ -42,6 +42,10 @@ class AppDataManager {
         return products
     }
     
+    public func getAllProductsCountFor(categoryId: Int) -> Int {
+        return getAllProductsFor(categoryId: categoryId).count
+    }
+    
     public func getAllProductsFor(categoryId: Int) -> [Product] {
         return products.filter { (product) -> Bool in
             return product.categoryId == categoryId
