@@ -15,6 +15,7 @@ final class CategoryViewCell: UICollectionViewCell {
     
     let nameLabel = UILabel(frame: .zero)
     let descriptionLabel = UILabel(frame: .zero)
+    let imageView = UIImageView(frame: .zero)
 
     // MARK: - Initializers
 
@@ -32,6 +33,7 @@ final class CategoryViewCell: UICollectionViewCell {
     func set(viewModel: Category) { //TODO: a cell viewModel
         nameLabel.text = viewModel.name
         descriptionLabel.text = viewModel.description
+        imageView.image = UIImage(named: viewModel.imageUrl)
     }
     
     // MARK: - Layout Methods
@@ -39,29 +41,47 @@ final class CategoryViewCell: UICollectionViewCell {
     private func setupViews() {
         self |> roundedStyle
         backgroundColor = .lightGray //.systemBackground
-        addSubviews(nameLabel, descriptionLabel)
+        addSubviews(imageView, nameLabel, descriptionLabel)
+        
         nameLabel.text = "category"
+        nameLabel.textColor = .white
+        
         descriptionLabel.text = "category description"
+        descriptionLabel.textColor = .white
+        
+        imageView.backgroundColor = .lightGray
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
     }
     
     private func setupConstraints() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
 
-        let padding: CGFloat = 8
+        let vPadding: CGFloat = 12
+        let hPadding: CGFloat = 8
+        let labelHeight: CGFloat = 20
 
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
-            nameLabel.heightAnchor.constraint(equalToConstant: 20)
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
-            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
-            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
-            descriptionLabel.heightAnchor.constraint(equalToConstant: 60)
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: vPadding),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: hPadding),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -hPadding),
+            nameLabel.heightAnchor.constraint(equalToConstant: labelHeight)
+        ])
+        
+        NSLayoutConstraint.activate([
+            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -vPadding),
+            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: hPadding),
+            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -hPadding),
+            descriptionLabel.heightAnchor.constraint(equalToConstant: labelHeight)
         ])
     }
 }
