@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  ShoppingApp
+
+  Created by Christian Slanzi on 11.08.20.
+  Copyright © 2020 Christian Slanzi. All rights reserved.
+*/
+
+// MARK: - Data localization: TODO replace with json
+"category_0_name" = "Sales";
+"category_0_description" = "Sales";
+"category_0_image" = "img-sales";
+
+// MARK: - App localization
+
+//ERRORS
+"error_generic_title" = "Error";
+"error_generic_message" = "Something went wrong";
