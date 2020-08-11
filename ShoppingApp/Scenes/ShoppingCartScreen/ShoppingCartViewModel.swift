@@ -22,6 +22,7 @@ protocol ShoppingCartViewModelType {
 final class ShoppingCartViewModel: ShoppingCartViewModelType, ShoppingCartViewModelInputsType, ShoppingCartViewModelOutputsType {
     
     //private var elements: Observable<[Product]>
+    private var elements: [CartItemDTO] = []
     
     struct Input {
         //passing in data the viewModel needs from the view controller
@@ -52,5 +53,12 @@ final class ShoppingCartViewModel: ShoppingCartViewModelType, ShoppingCartViewMo
     //output
     
     // MARK: - Helpers
-
+    public func getElementsCount() -> Int {
+        return elements.count
+    }
+    
+    public func getElementAt(_ indexPath: IndexPath) -> CartItemDTO? {
+        guard indexPath.row < elements.count else { return nil }
+        return elements[indexPath.row]
+    }
 }
