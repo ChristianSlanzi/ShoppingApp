@@ -43,7 +43,9 @@ class AppDataManager {
     }
     
     public func getAllProductsFor(categoryId: Int) -> [Product] {
-        return products
+        return products.filter { (product) -> Bool in
+            return product.categoryId == categoryId
+        }
     }
     
     public func getProductAt(index: Int) -> Product? {
@@ -71,15 +73,50 @@ extension AppDataManager {
         self.categories = categories
         
         let products = [
-            Product(id: 0, categoryId: 0, name: "Product 0", description: "Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
-            Product(id: 1, categoryId: 0, name: "Product 1", description: "Product 1 description", imageUrl: "img_"+"product1", price: 10, currency: "Euro"),
-            Product(id: 2, categoryId: 0, name: "Product 2", description: "Product 2 description", imageUrl: "img_"+"product2", price: 15, currency: "Euro"),
-            Product(id: 3, categoryId: 0, name: "Product 3", description: "Product 3 description", imageUrl: "img_"+"product3", price: 20, currency: "Euro"),
-            Product(id: 4, categoryId: 0, name: "Product 4", description: "Product 4 description", imageUrl: "img_"+"product4", price: 30, currency: "Euro"),
-            Product(id: 5, categoryId: 0, name: "Product 5", description: "Product 5 description", imageUrl: "img_"+"product5", price: 25, currency: "Euro"),
-            Product(id: 6, categoryId: 0, name: "Product 6", description: "Product 6 description", imageUrl: "img_"+"product6", price: 23.5, currency: "Euro"),
-            Product(id: 7, categoryId: 0, name: "Product 7", description: "Product 7 description", imageUrl: "img_"+"product7", price: 11, currency: "Euro"),
-            Product(id: 8, categoryId: 0, name: "Product 8", description: "Product 8 description", imageUrl: "img_"+"product8", price: 99.9, currency: "Euro")
+            // Category 0
+            Product(id: 0, categoryId: 0, name: "Cat 0 Product 0", description: "Cat 0 Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
+            Product(id: 1, categoryId: 0, name: "Cat 0 Product 1", description: "Cat 0 Product 1 description", imageUrl: "img_"+"product1", price: 10, currency: "Euro"),
+            Product(id: 2, categoryId: 0, name: "Cat 0 Product 2", description: "Cat 0 Product 2 description", imageUrl: "img_"+"product2", price: 15, currency: "Euro"),
+            Product(id: 3, categoryId: 0, name: "Cat 0 Product 3", description: "Cat 0 Product 3 description", imageUrl: "img_"+"product3", price: 20, currency: "Euro"),
+            Product(id: 4, categoryId: 0, name: "Cat 0 Product 4", description: "Cat 0 Product 4 description", imageUrl: "img_"+"product4", price: 30, currency: "Euro"),
+            Product(id: 5, categoryId: 0, name: "Cat 0 Product 5", description: "Cat 0 Product 5 description", imageUrl: "img_"+"product5", price: 25, currency: "Euro"),
+            Product(id: 6, categoryId: 0, name: "Cat 0 Product 6", description: "Cat 0 Product 6 description", imageUrl: "img_"+"product6", price: 23.5, currency: "Euro"),
+            Product(id: 7, categoryId: 0, name: "Cat 0 Product 7", description: "Cat 0 Product 7 description", imageUrl: "img_"+"product7", price: 11, currency: "Euro"),
+            Product(id: 8, categoryId: 0, name: "Cat 0 Product 8", description: "Cat 0 Product 8 description", imageUrl: "img_"+"product8", price: 99.9, currency: "Euro"),
+            // Category 1
+            Product(id: 10, categoryId: 1, name: "Cat 1 Product 0", description: "Cat 1 Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
+            Product(id: 11, categoryId: 1, name: "Cat 1 Product 1", description: "Cat 1 Product 1 description", imageUrl: "img_"+"product1", price: 10, currency: "Euro"),
+            Product(id: 12, categoryId: 1, name: "Cat 1 Product 2", description: "Cat 1 Product 2 description", imageUrl: "img_"+"product2", price: 15, currency: "Euro"),
+            Product(id: 13, categoryId: 1, name: "Cat 1 Product 3", description: "Cat 1 Product 3 description", imageUrl: "img_"+"product3", price: 20, currency: "Euro"),
+            // Category 2
+            Product(id: 10, categoryId: 2, name: "Cat 2 Product 0", description: "Cat 2 Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
+            Product(id: 11, categoryId: 2, name: "Cat 2 Product 1", description: "Cat 2 Product 1 description", imageUrl: "img_"+"product1", price: 10, currency: "Euro"),
+            Product(id: 12, categoryId: 2, name: "Cat 2 Product 2", description: "Cat 2 Product 2 description", imageUrl: "img_"+"product2", price: 15, currency: "Euro"),
+            Product(id: 13, categoryId: 2, name: "Cat 2 Product 3", description: "Cat 2 Product 3 description", imageUrl: "img_"+"product3", price: 20, currency: "Euro"),
+            // Category 3
+            Product(id: 10, categoryId: 3, name: "Cat 3 Product 0", description: "Cat 3 Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
+            Product(id: 11, categoryId: 3, name: "Cat 3 Product 1", description: "Cat 3 Product 1 description", imageUrl: "img_"+"product1", price: 10, currency: "Euro"),
+            Product(id: 12, categoryId: 3, name: "Cat 3 Product 2", description: "Cat 3 Product 2 description", imageUrl: "img_"+"product2", price: 15, currency: "Euro"),
+            Product(id: 13, categoryId: 3, name: "Cat 3 Product 3", description: "Cat 3 Product 3 description", imageUrl: "img_"+"product3", price: 20, currency: "Euro"),
+            // Category 4
+            Product(id: 10, categoryId: 4, name: "Cat 4 Product 0", description: "Cat 4 Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
+            Product(id: 11, categoryId: 4, name: "Cat 4 Product 1", description: "Cat 4 Product 1 description", imageUrl: "img_"+"product1", price: 10, currency: "Euro"),
+            // Category 5
+            Product(id: 10, categoryId: 5, name: "Cat 5 Product 0", description: "Cat 5 Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
+            // Category 6
+            Product(id: 10, categoryId: 6, name: "Cat 6 Product 0", description: "Cat 6 Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
+            Product(id: 11, categoryId: 6, name: "Cat 6 Product 1", description: "Cat 6 Product 1 description", imageUrl: "img_"+"product1", price: 10, currency: "Euro"),
+            // Category 7
+            Product(id: 10, categoryId: 7, name: "Cat 7 Product 0", description: "Cat 7 Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
+            Product(id: 11, categoryId: 7, name: "Cat 7 Product 1", description: "Cat 7 Product 1 description", imageUrl: "img_"+"product1", price: 10, currency: "Euro"),
+            Product(id: 12, categoryId: 7, name: "Cat 7 Product 2", description: "Cat 7 Product 2 description", imageUrl: "img_"+"product2", price: 15, currency: "Euro"),
+            // Category 8
+            Product(id: 10, categoryId: 8, name: "Cat 8 Product 0", description: "Cat 8 Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
+            Product(id: 11, categoryId: 8, name: "Cat 8 Product 1", description: "Cat 8 Product 1 description", imageUrl: "img_"+"product1", price: 10, currency: "Euro"),
+            Product(id: 12, categoryId: 8, name: "Cat 8 Product 2", description: "Cat 8 Product 2 description", imageUrl: "img_"+"product2", price: 15, currency: "Euro"),
+            Product(id: 13, categoryId: 8, name: "Cat 8 Product 3", description: "Cat 8 Product 3 description", imageUrl: "img_"+"product3", price: 20, currency: "Euro"),
+            // Category 9
+            Product(id: 10, categoryId: 9, name: "Cat 9 Product 0", description: "Cat 9 Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro")
         ]
         self.products = products
     }

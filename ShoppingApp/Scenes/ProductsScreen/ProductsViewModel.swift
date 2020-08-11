@@ -29,6 +29,7 @@ final class ProductsViewModel: ProductsViewModelType, ProductsViewModelInputsTyp
     
     struct Input {
         //passing in data the viewModel needs from the view controller
+        let category: Category
     }
     
     struct Output {
@@ -47,7 +48,7 @@ final class ProductsViewModel: ProductsViewModelType, ProductsViewModelInputsTyp
     
     //input
     public func viewDidLoad() {
-        elements = dataManager.getAllProducts()
+        elements = dataManager.getAllProductsFor(categoryId: input.category.id)
     }
     
     public func didTapCellAt(indexPath: IndexPath) {
