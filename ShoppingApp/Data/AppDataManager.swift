@@ -60,10 +60,10 @@ extension AppDataManager {
             Category(id: 0, name: "category_0_name".localized, description: "category_0_description".localized, imageUrl: "category_0_image".localized),
             Category(id: 1, name: "Bath", description: "Bath tools", imageUrl: "cat-"+"bathroom"),
             Category(id: 2, name: "Bedroom", description: "Bedroom tools", imageUrl: "cat-"+"bedroom"),
-            Category(id: 3, name: "Furniture", description: "Furniture tools", imageUrl: "cat-"+"furniture"),
+            Category(id: 3, name: "Office", description: "Office tools", imageUrl: "cat-"+"office"),
             Category(id: 4, name: "Kitchen", description: "Kitchen tools", imageUrl: "cat-"+"kitchen"),
             Category(id: 5, name: "Dining & Entertaining", description: "Dining & Entertaining tools", imageUrl: "cat-"+"dining"),
-            Category(id: 6, name: "Outdoor & Garden", description: "Outdoor & Garden tools", imageUrl: "cat-"+"outdoor"),
+            Category(id: 6, name: "Outdoor & Garden", description: "Outdoor & Garden tools", imageUrl: "cat-"+"garden"),
             Category(id: 7, name: "Holidays", description: "Holidays tools", imageUrl: "cat-"+"holidays"),
             Category(id: 8, name: "Cleaning", description: "Cleaning tools", imageUrl: "cat-"+"cleaning"),
             Category(id: 9, name: "Decor", description: "Decor tools", imageUrl: "cat-"+"decor")

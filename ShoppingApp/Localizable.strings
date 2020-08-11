@@ -9,7 +9,7 @@
 // MARK: - Data localization: TODO replace with json
 "category_0_name" = "Sales";
 "category_0_description" = "Sales";
-"category_0_image" = "img-sales";
+"category_0_image" = "cat-sales";
 
 // MARK: - App localization
 
