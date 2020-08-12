@@ -24,8 +24,8 @@ final class ProductDetailsViewController: CustomScrollViewController {
     var productName: UILabel!
     var productPrice: UILabel!
     var productDescription: UILabel!
-    var addToCartButton: UIButton!
-    var orderNowButton: UIButton!
+    var addToCartButton: CustomButton!
+    var orderNowButton: CustomButton!
     
     // MARK: - Viewcontroller Lifecycle
     
@@ -54,26 +54,28 @@ final class ProductDetailsViewController: CustomScrollViewController {
         title = "Product's Info"
         
         productImage = UIImageView()
+        productImage |> roundedStyle
+        productImage.backgroundColor = .lightGray
+        
         productName = UILabel()
         productName.text = "Product name"
+        productName.backgroundColor = .white
+        
         productPrice = UILabel()
         productPrice.text = "Product price"
+        productPrice.backgroundColor = .white
+        
         productDescription = UILabel()
         productDescription.text = "Product description"
-        addToCartButton = UIButton()
-        addToCartButton.setTitle("Add to cart", for: .normal)
-        orderNowButton = UIButton()
-        orderNowButton.setTitle("Order now", for: .normal)
-        
-        productImage.backgroundColor = .systemTeal
-        productName.backgroundColor = .systemYellow
-        productPrice.backgroundColor = .systemYellow
         productDescription.backgroundColor = .systemYellow
-        addToCartButton.backgroundColor = .blue
-        orderNowButton.backgroundColor = .blue
         
-        //productImage.image = UIImage(named: <#T##String#>)
+        addToCartButton = CustomButton()
+        addToCartButton.set(backgroundColor: .systemYellow, title: "Add to cart")
         
+        orderNowButton = CustomButton()
+        orderNowButton.set(backgroundColor: .systemGreen, title: "Order now")
+        
+
         addToContentView(productImage,
                          productName,
                          productPrice,

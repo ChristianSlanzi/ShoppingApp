@@ -94,7 +94,7 @@ extension AppDataManager {
             Product(id: 13, categoryId: 1, name: "Cat 1 Product 3", description: "Cat 1 Product 3 description", imageUrl: "img_"+"product3", price: 20, currency: "Euro"),
             // Category 2
             Product(id: 10, categoryId: 2, name: "Cat 2 Product 0", description: "Cat 2 Product 0 description", imageUrl: "dark-wall-bedside-table", price: 40, currency: "Euro"),
-            Product(id: 11, categoryId: 2, name: "Cat 2 Product 1", description: "Cat 2 Product 1 description", imageUrl: "img_"+"product1", price: 10, currency: "Euro"),
+            Product(id: 11, categoryId: 2, name: "Cat 2 Product 1", description: "Cat 2 Product 1 description", imageUrl: "copper-light-in-bedroom", price: 20, currency: "Euro"),
             Product(id: 12, categoryId: 2, name: "Cat 2 Product 2", description: "Cat 2 Product 2 description", imageUrl: "img_"+"product2", price: 15, currency: "Euro"),
             Product(id: 13, categoryId: 2, name: "Cat 2 Product 3", description: "Cat 2 Product 3 description", imageUrl: "img_"+"product3", price: 20, currency: "Euro"),
             // Category 3

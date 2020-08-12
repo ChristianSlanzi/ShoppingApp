@@ -94,7 +94,7 @@ class CustomScrollViewController: UIViewController {
         scrollContentView.removeConstraint(bottomConstraint)
         self.bottomConstraint = NSLayoutConstraint(item: view, attribute: .bottom,
         relatedBy: .equal, toItem: scrollContentView,
-        attribute: .bottom, multiplier: 1, constant: 0)
+        attribute: .bottom, multiplier: 1, constant: -20)
         scrollContentView.addConstraint(self.bottomConstraint!)
         scrollContentView.setNeedsUpdateConstraints()
     }
