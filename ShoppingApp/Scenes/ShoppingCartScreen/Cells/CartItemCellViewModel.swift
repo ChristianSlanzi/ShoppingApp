@@ -10,6 +10,7 @@ import Foundation
 
 protocol CartItemCellViewModelInputsType {
     func viewDidLoad()
+    var addToCartClosure: BagClosure { get set }
 }
 protocol CartItemCellViewModelOutputsType: AnyObject {
 
@@ -35,6 +36,8 @@ final class CartItemCellViewModel: CartItemCellViewModelType, CartItemCellViewMo
         var imageUrl: Observable<String> = Observable("")
     }
     
+    var cartValue: CartValueViewModel
+    
     private var input: Input
     public var output: Output
     
@@ -42,7 +45,7 @@ final class CartItemCellViewModel: CartItemCellViewModelType, CartItemCellViewMo
         self.input = input
         self.output = Output()
         self.dataManager = dataManager
-        
+        self.cartValue = CartValueViewModel(id: input.cartItem.value.productId, stepValue: input.cartItem.value.quantity)
         bind()
     }
     
@@ -51,6 +54,10 @@ final class CartItemCellViewModel: CartItemCellViewModelType, CartItemCellViewMo
     
     //input
     public func viewDidLoad() {
+    }
+    
+    public var addToCartClosure: BagClosure = { result in
+        
     }
     
 

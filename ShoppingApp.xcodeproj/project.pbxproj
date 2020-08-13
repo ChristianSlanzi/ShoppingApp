@@ -41,6 +41,8 @@
 		24ACB3D324E1E76400AF2AB7 /* ShoppingCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ACB3D224E1E76400AF2AB7 /* ShoppingCartViewModel.swift */; };
 		24ACB3D524E1EBD900AF2AB7 /* OrderDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ACB3D424E1EBD900AF2AB7 /* OrderDTO.swift */; };
 		24ACB3D724E1ED5400AF2AB7 /* CartItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ACB3D624E1ED5400AF2AB7 /* CartItemDTO.swift */; };
+		24B7A47D24E589FF00A69FCD /* AddToBagControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B7A47C24E589FF00A69FCD /* AddToBagControl.swift */; };
+		24B7A48024E58BCD00A69FCD /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B7A47F24E58BCD00A69FCD /* UIColor+Ext.swift */; };
 		24C5EC7C24DC9D480060EB3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5EC7B24DC9D480060EB3A /* AppDelegate.swift */; };
 		24C5EC7E24DC9D480060EB3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5EC7D24DC9D480060EB3A /* SceneDelegate.swift */; };
 		24C5EC8024DC9D480060EB3A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5EC7F24DC9D480060EB3A /* WelcomeViewController.swift */; };
@@ -117,6 +119,8 @@
 		24ACB3D224E1E76400AF2AB7 /* ShoppingCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewModel.swift; sourceTree = "<group>"; };
 		24ACB3D424E1EBD900AF2AB7 /* OrderDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDTO.swift; sourceTree = "<group>"; };
 		24ACB3D624E1ED5400AF2AB7 /* CartItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemDTO.swift; sourceTree = "<group>"; };
+		24B7A47C24E589FF00A69FCD /* AddToBagControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToBagControl.swift; sourceTree = "<group>"; };
+		24B7A47F24E58BCD00A69FCD /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		24C5EC7824DC9D480060EB3A /* ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C5EC7B24DC9D480060EB3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24C5EC7D24DC9D480060EB3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -467,6 +471,22 @@
 			path = ShoppingCartScreen;
 			sourceTree = "<group>";
 		};
+		24B7A47B24E589DE00A69FCD /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				24B7A47C24E589FF00A69FCD /* AddToBagControl.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		24B7A47E24E58A2900A69FCD /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				24B7A47F24E58BCD00A69FCD /* UIColor+Ext.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
 		24C5EC6F24DC9D480060EB3A = {
 			isa = PBXGroup;
 			children = (
@@ -564,6 +584,7 @@
 		24C5ECA624DCB36A0060EB3A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				24B7A47E24E58A2900A69FCD /* UIColor */,
 				245ABD2324E34BC300F857BE /* UITableView */,
 				240F3F1124E2EE5400FC8BE0 /* URL */,
 				240F3F0524E2940400FC8BE0 /* String */,
@@ -584,6 +605,7 @@
 		24C7CCAE24DEAFC400ABFD0A /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				24B7A47B24E589DE00A69FCD /* Controls */,
 				24F50D6924E13F85001B2A6B /* ViewControllers */,
 				24C7CCAF24DEB00100ABFD0A /* Buttons */,
 			);
@@ -864,6 +886,7 @@
 				24C7CCB924DEB0F400ABFD0A /* AppStyle.swift in Sources */,
 				245ABD2524E34C0700F857BE /* UITableView+Ext.swift in Sources */,
 				24AAECEA24DF038D002A46BE /* AppDataManager.swift in Sources */,
+				24B7A47D24E589FF00A69FCD /* AddToBagControl.swift in Sources */,
 				24ACB3D724E1ED5400AF2AB7 /* CartItemDTO.swift in Sources */,
 				24A7471724DEC4980066A4DB /* CollectionViewHelper.swift in Sources */,
 				24A17CA924DD744A00829470 /* ProductFlowController.swift in Sources */,
@@ -889,6 +912,7 @@
 				245ABD2224E33D5700F857BE /* CartItemDAO.swift in Sources */,
 				24C5ECA924DCB3A20060EB3A /* UIViewController+Child.swift in Sources */,
 				24E1F1AD24E42E2100042FCA /* CartItemCellViewModel.swift in Sources */,
+				24B7A48024E58BCD00A69FCD /* UIColor+Ext.swift in Sources */,
 				24E1F1AB24E3F49A00042FCA /* CartRepository.swift in Sources */,
 				24A7471A24DEC6170066A4DB /* CategoriesViewModel.swift in Sources */,
 				240F3F2D24E2F1E600FC8BE0 /* RealmProvider.swift in Sources */,

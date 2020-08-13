@@ -18,6 +18,7 @@ final class CartItemViewCell: UITableViewCell {
     // MARK: - UI Properties
     let productImageView = UIImageView(frame: .zero)
     let productNameLabel = UILabel(frame: .zero)
+    let quantityControl = AddToBagControl(frame: .zero)
     
     // MARK: - Initializers
     
@@ -37,7 +38,9 @@ final class CartItemViewCell: UITableViewCell {
     
     /// call from cellForRowAtIndexPath to set this cell's properties
      func set(viewModel: CartItemCellViewModel?) {
+        guard let viewModel = viewModel else { return }
         self.viewModel = viewModel
+        quantityControl.configure(usingViewModel: viewModel.cartValue, bagClosure: viewModel.addToCartClosure)
         bind()
      }
     
@@ -53,7 +56,8 @@ final class CartItemViewCell: UITableViewCell {
     private func setupViews() {
         productImageView.backgroundColor = .lightGray
         productImageView |> roundedStyle
-        addSubviews(productImageView, productNameLabel)
+        
+        addSubviews(productImageView, productNameLabel, quantityControl)
     }
     
     private func setupConstraints() {
@@ -62,6 +66,7 @@ final class CartItemViewCell: UITableViewCell {
         
         productImageView.translatesAutoresizingMaskIntoConstraints = false
         productNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        quantityControl.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             productImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
@@ -72,7 +77,12 @@ final class CartItemViewCell: UITableViewCell {
             productNameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             productNameLabel.leadingAnchor.constraint(equalTo: productImageView.trailingAnchor, constant: 24),
             productNameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
-            productNameLabel.heightAnchor.constraint(equalToConstant: 40)
+            productNameLabel.heightAnchor.constraint(equalToConstant: 40),
+            
+            quantityControl.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            quantityControl.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
+            quantityControl.widthAnchor.constraint(equalToConstant: 100),
+            quantityControl.heightAnchor.constraint(equalToConstant: 30)
             
         ])
     }
