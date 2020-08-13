@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "natural-wooden-dining.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

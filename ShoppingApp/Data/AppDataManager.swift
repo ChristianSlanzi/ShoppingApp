@@ -90,8 +90,8 @@ extension AppDataManager {
         
         let products = [
             // Category 0
-            Product(id: 0, categoryId: 0, name: "Cat 0 Product 0", description: "Cat 0 Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
-            Product(id: 1, categoryId: 0, name: "Cat 0 Product 1", description: "Cat 0 Product 1 description", imageUrl: "img_"+"product1", price: 10, currency: "Euro"),
+            Product(id: 0, categoryId: 0, name: "Cat 0 Product 0", description: "Cat 0 Product 0 description", imageUrl: "clothes-sales", price: 20, currency: "Euro"),
+            Product(id: 1, categoryId: 0, name: "Cat 0 Product 1", description: "Cat 0 Product 1 description", imageUrl: "pool-floaty-fun", price: 10, currency: "Euro"),
             Product(id: 2, categoryId: 0, name: "Cat 0 Product 2", description: "Cat 0 Product 2 description", imageUrl: "img_"+"product2", price: 15, currency: "Euro"),
             Product(id: 3, categoryId: 0, name: "Cat 0 Product 3", description: "Cat 0 Product 3 description", imageUrl: "img_"+"product3", price: 20, currency: "Euro"),
             Product(id: 4, categoryId: 0, name: "Cat 0 Product 4", description: "Cat 0 Product 4 description", imageUrl: "img_"+"product4", price: 30, currency: "Euro"),
@@ -100,15 +100,13 @@ extension AppDataManager {
             Product(id: 7, categoryId: 0, name: "Cat 0 Product 7", description: "Cat 0 Product 7 description", imageUrl: "img_"+"product7", price: 11, currency: "Euro"),
             Product(id: 8, categoryId: 0, name: "Cat 0 Product 8", description: "Cat 0 Product 8 description", imageUrl: "img_"+"product8", price: 99.9, currency: "Euro"),
             // Category 1
-            Product(id: 10, categoryId: 1, name: "Cat 1 Product 0", description: "Cat 1 Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
-            Product(id: 11, categoryId: 1, name: "Cat 1 Product 1", description: "Cat 1 Product 1 description", imageUrl: "img_"+"product1", price: 10, currency: "Euro"),
-            Product(id: 12, categoryId: 1, name: "Cat 1 Product 2", description: "Cat 1 Product 2 description", imageUrl: "img_"+"product2", price: 15, currency: "Euro"),
-            Product(id: 13, categoryId: 1, name: "Cat 1 Product 3", description: "Cat 1 Product 3 description", imageUrl: "img_"+"product3", price: 20, currency: "Euro"),
+            Product(id: 10, categoryId: 1, name: "Cat 1 Product 0", description: "Cat 1 Product 0 description", imageUrl: "cafe-table-bath", price: 20, currency: "Euro"),
+            Product(id: 11, categoryId: 1, name: "Cat 1 Product 1", description: "Cat 1 Product 1 description", imageUrl: "classic-tube", price: 10, currency: "Euro"),
+            Product(id: 12, categoryId: 1, name: "Cat 1 Product 2", description: "Cat 1 Product 2 description", imageUrl: "rosa-bath", price: 15, currency: "Euro"),
+            Product(id: 13, categoryId: 1, name: "Cat 1 Product 3", description: "Cat 1 Product 3 description", imageUrl: "shower-tube", price: 20, currency: "Euro"),
             // Category 2
             Product(id: 20, categoryId: 2, name: "Cat 2 Product 0", description: "Cat 2 Product 0 description", imageUrl: "dark-wall-bedside-table", price: 40, currency: "Euro"),
             Product(id: 21, categoryId: 2, name: "Cat 2 Product 1", description: "Cat 2 Product 1 description", imageUrl: "copper-light-in-bedroom", price: 20, currency: "Euro"),
-            Product(id: 22, categoryId: 2, name: "Cat 2 Product 2", description: "Cat 2 Product 2 description", imageUrl: "img_"+"product2", price: 15, currency: "Euro"),
-            Product(id: 23, categoryId: 2, name: "Cat 2 Product 3", description: "Cat 2 Product 3 description", imageUrl: "img_"+"product3", price: 20, currency: "Euro"),
             // Category 3
             Product(id: 30, categoryId: 3, name: "Cat 3 Product 0", description: "Cat 3 Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
             Product(id: 31, categoryId: 3, name: "Cat 3 Product 1", description: "Cat 3 Product 1 description", imageUrl: "img_"+"product1", price: 10, currency: "Euro"),
@@ -120,7 +118,7 @@ extension AppDataManager {
             // Category 5
             Product(id: 50, categoryId: 5, name: "Cat 5 Product 0", description: "Cat 5 Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
             // Category 6
-            Product(id: 60, categoryId: 6, name: "Cat 6 Product 0", description: "Cat 6 Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
+            Product(id: 60, categoryId: 6, name: "Cat 6 Product 0", description: "Cat 6 Product 0 description", imageUrl: "natural-wooden-dining", price: 20, currency: "Euro"),
             Product(id: 61, categoryId: 6, name: "Cat 6 Product 1", description: "Cat 6 Product 1 description", imageUrl: "img_"+"product1", price: 10, currency: "Euro"),
             // Category 7
             Product(id: 70, categoryId: 7, name: "Cat 7 Product 0", description: "Cat 7 Product 0 description", imageUrl: "img_"+"product0", price: 20, currency: "Euro"),
