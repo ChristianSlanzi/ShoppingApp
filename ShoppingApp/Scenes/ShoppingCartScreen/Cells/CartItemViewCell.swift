@@ -54,6 +54,9 @@ final class CartItemViewCell: UITableViewCell {
     }
     
     private func setupViews() {
+        accessoryType = .none
+        selectionStyle = .none
+        
         productImageView.backgroundColor = .lightGray
         productImageView |> roundedStyle
         
@@ -61,7 +64,6 @@ final class CartItemViewCell: UITableViewCell {
     }
     
     private func setupConstraints() {
-        accessoryType = .disclosureIndicator
         let padding: CGFloat = 12
         
         productImageView.translatesAutoresizingMaskIntoConstraints = false

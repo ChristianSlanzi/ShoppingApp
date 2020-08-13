@@ -19,7 +19,7 @@ extension CartItemDTO: MappableProtocol {
     func mapToPersistenceObject() -> CartItemDAO {
         let item = CartItemDAO()
         item.productId = productId
-
+        item.quantity = quantity
         return item
     }
     static func mapFromPersistenceObject(_ object: CartItemDAO) -> CartItemDTO {

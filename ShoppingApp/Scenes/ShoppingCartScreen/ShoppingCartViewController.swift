@@ -138,7 +138,7 @@ extension ShoppingCartViewController: UITableViewDataSource {
 extension ShoppingCartViewController: UITableViewDelegate{
     
     // didselectrow - show followers from selected favorite
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //viewModel.didSelectRowAt(indexPath)
-    }
+    //}
 }

@@ -50,12 +50,14 @@ class AddToBagControl: UIControl, CustomViewProtocol {
     lazy var plusButton: UIButton = {
         let button = UIButton()
         button.setTitle("+", for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(incrementButton), for: .touchUpInside)
         return button
     }()
     lazy var minusButton: UIButton = {
         let button = UIButton()
         button.setTitle("-", for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(decrementButton(_:)), for: .touchUpInside)
         return button
     }()
