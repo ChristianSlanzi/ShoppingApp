@@ -9,8 +9,8 @@
 import Foundation
 
 struct Product: Equatable {
-    var id: UInt // A unique product id number among all products of all categories
-    var categoryId: UInt
+    var id: Int // A unique product id number among all products of all categories
+    var categoryId: Int
     var name: String
     var description: String
     var imageUrl: String

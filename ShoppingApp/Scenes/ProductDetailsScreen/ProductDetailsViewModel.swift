@@ -10,6 +10,8 @@ import Foundation
 
 protocol ProductDetailsViewModelInputsType {
     func viewDidLoad()
+    func didTapAddToCartButton()
+    func didTapOrderNowButton()
 }
 protocol ProductDetailsViewModelOutputsType: AnyObject {
 }
@@ -34,20 +36,21 @@ final class ProductDetailsViewModel: ProductDetailsViewModelType, ProductDetails
         var imageUrl: Observable<String> = Observable("")
     }
     
+    let cartRepository: CartRepositoryProtocol
+    let orderRepository: OrderRepositoryProtocol
+    
     private var input: Input
     public var output: Output
     
-    init(input: Input, element: Product) {
+    init(input: Input, element: Product, orderRepository: OrderRepositoryProtocol, cartRepository: CartRepositoryProtocol) {
+        
         self.input = input
         self.output = Output()
+        self.cartRepository = cartRepository
+        self.orderRepository = orderRepository
         self.element = Observable(element)
-        self.element.bind { [weak self] (element) in
-            guard let self = self else { return }
-            self.output.name = Observable(element.name)
-            self.output.price = Observable("\(element.price) " + element.currency)
-            self.output.description = Observable(element.description)
-            self.output.imageUrl = Observable(element.imageUrl)
-        }
+        
+        bind()
     }
     
     var inputs: ProductDetailsViewModelInputsType { return self }
@@ -56,8 +59,29 @@ final class ProductDetailsViewModel: ProductDetailsViewModelType, ProductDetails
     //input
     public func viewDidLoad() {
     }
+    
+    public func didTapAddToCartButton() {
+        let product = element.value
+        let itemDTO = CartItemDTO(productId: product.id, quantity: 1)
+        cartRepository.saveCartItem(cartItem: itemDTO)
+    }
+    
+    public func didTapOrderNowButton() {
+        //orderRepository.saveOrder(order: <#T##OrderDTO#>)
+    }
 
     //output
+    
+    // Binding
+    private func bind() {
+       self.element.bind { [weak self] (element) in
+            guard let self = self else { return }
+            self.output.name = Observable(element.name)
+            self.output.price = Observable("\(element.price) " + element.currency)
+            self.output.description = Observable(element.description)
+            self.output.imageUrl = Observable(element.imageUrl)
+        }
+    }
     
     // MARK: - Helpers
 

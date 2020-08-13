@@ -34,10 +34,15 @@ final class ShoppingCartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //viewModel.viewDidLoad()
+        viewModel.viewDidLoad()
         setupViews()
         setupConstraints()
         bind()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.viewDidLoad()
     }
     
     // MARK: - Layout Methods
@@ -63,6 +68,13 @@ final class ShoppingCartViewController: UIViewController {
     // MARK: - MVVM Binding
     
     private func bind() {
+        viewModel.outputs.reloadData = { [weak self] in
+            guard let self = self else { return }
+
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 }
 
@@ -75,10 +87,7 @@ extension ShoppingCartViewController {
         //let topConstraintConstant: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 20 : 80
 
         NSLayoutConstraint.activate([
-            //tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: topConstraintConstant),
-            
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
-            constant: 0),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -97,7 +106,7 @@ extension ShoppingCartViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CartItemViewCell.reuseID, for: indexPath) as! CartItemViewCell
-        //TODO cell.set(favorite: viewModel.favorites[indexPath.row])
+        cell.set(viewModel: viewModel.getCellViewModel(indexPath))
         return cell
     }
 

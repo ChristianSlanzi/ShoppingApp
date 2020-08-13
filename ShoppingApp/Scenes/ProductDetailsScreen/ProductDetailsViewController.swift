@@ -71,10 +71,11 @@ final class ProductDetailsViewController: CustomScrollViewController {
         
         addToCartButton = CustomButton()
         addToCartButton.set(backgroundColor: .systemYellow, title: "Add to cart")
+        addToCartButton.addTarget(self, action: #selector(didTapAddToCartButton), for: .touchUpInside)
         
         orderNowButton = CustomButton()
         orderNowButton.set(backgroundColor: .systemGreen, title: "Order now")
-        
+        orderNowButton.addTarget(self, action: #selector(didTapOrderNowButton), for: .touchUpInside)
 
         addToContentView(productImage,
                          productName,
@@ -153,6 +154,13 @@ final class ProductDetailsViewController: CustomScrollViewController {
     }
     
     // MARK: - MVVM Binding
+    @objc private func didTapAddToCartButton(_ sender: Any) {
+        viewModel.inputs.didTapAddToCartButton()
+    }
+    
+    @objc private func didTapOrderNowButton(_ sender: Any) {
+        viewModel.inputs.didTapOrderNowButton()
+    }
     
     private func bind() {
         viewModel.output.name.bind { [weak self] (name) in

@@ -60,7 +60,11 @@ extension ProductFlowController: ProductFlowControllerDelegate {
     }
     
     func startProductDetailsFor(product: Product) {
-        let productDetailsViewModel = ProductDetailsViewModel(input: ProductDetailsViewModel.Input(), element: product)
+        let dbService = RealmDataManager(RealmProvider.default)
+        let orderRepo = OrderRepository(dbManager: dbService)
+        let cartRepo = CartRepository(dbManager: dbService)
+        
+        let productDetailsViewModel = ProductDetailsViewModel(input: ProductDetailsViewModel.Input(), element: product, orderRepository: orderRepo, cartRepository: cartRepo)
         let productDetailsViewController = ProductDetailsViewController(viewModel: productDetailsViewModel)
         productDetailsViewController.flowDelegate = self
         
