@@ -31,6 +31,7 @@ class ProductsViewModelTests: XCTestCase {
 
     }
     
+    /*
     func testCacheProductsOrderSameAsFromDataManager() {
         let dataManager = AppDataManager.shared
         let sut = makeSut(dataManager: dataManager)
@@ -42,8 +43,7 @@ class ProductsViewModelTests: XCTestCase {
         for index in 0..<dataManager.getAllProductsCountFor(categoryId: 0) {
             XCTAssertEqual(sut.getElementAt(IndexPath(row: index, section: 0)), dataManager.getProductAt(index: index))
         }
-        
-    }
+    }*/
     
     func testCategoryNotFoundIfIndexOutOfBounds() {
         let dataManager = AppDataManager.shared

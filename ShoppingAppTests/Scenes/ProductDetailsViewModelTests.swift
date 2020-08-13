@@ -37,7 +37,7 @@ class ProductDetailsViewModelTests: XCTestCase {
     // MARK: - Helpers
     private func makeSut(product: Product) -> ProductDetailsViewModel {
         let input = ProductDetailsViewModel.Input()
-        let sut = ProductDetailsViewModel(input: input, element: product)
+        let sut = ProductDetailsViewModel(input: input, element: product, orderRepository: DummyOrderRepository(), cartRepository: DummyCartRepository())
         return sut
     }
     
@@ -45,4 +45,18 @@ class ProductDetailsViewModelTests: XCTestCase {
         let product = Product(id: 0, categoryId: 0, name: "Test Product", description: "Test Product Description", imageUrl: "test-product-url", price: 10.0, currency: "Euro")
         return product
     }
+    
+
+}
+
+fileprivate class DummyOrderRepository: OrderRepositoryProtocol {
+    func getAllOrders(on sort: Sorted?, completionHandler: ([OrderDTO]) -> Void) {}
+    func saveOrder(order: OrderDTO) {}
+    func updateOrder(_ order: OrderDTO) {}
+}
+
+fileprivate class DummyCartRepository: CartRepositoryProtocol {
+    func getAllCartItems(on sort: Sorted?, completionHandler: ([CartItemDTO]) -> Void) {}
+    func saveCartItem(cartItem: CartItemDTO) {}
+    func updateCartItem(_ cartItem: CartItemDTO) {}
 }
