@@ -91,14 +91,7 @@ extension AppDataManager {
         let products = [
             // Category 0
             Product(id: 0, categoryId: 0, name: "Cat 0 Product 0", description: "Cat 0 Product 0 description", imageUrl: "clothes-sales", price: 20, currency: "Euro"),
-            Product(id: 1, categoryId: 0, name: "Cat 0 Product 1", description: "Cat 0 Product 1 description", imageUrl: "pool-floaty-fun", price: 10, currency: "Euro"),
-            Product(id: 2, categoryId: 0, name: "Cat 0 Product 2", description: "Cat 0 Product 2 description", imageUrl: "img_"+"product2", price: 15, currency: "Euro"),
-            Product(id: 3, categoryId: 0, name: "Cat 0 Product 3", description: "Cat 0 Product 3 description", imageUrl: "img_"+"product3", price: 20, currency: "Euro"),
-            Product(id: 4, categoryId: 0, name: "Cat 0 Product 4", description: "Cat 0 Product 4 description", imageUrl: "img_"+"product4", price: 30, currency: "Euro"),
-            Product(id: 5, categoryId: 0, name: "Cat 0 Product 5", description: "Cat 0 Product 5 description", imageUrl: "img_"+"product5", price: 25, currency: "Euro"),
-            Product(id: 6, categoryId: 0, name: "Cat 0 Product 6", description: "Cat 0 Product 6 description", imageUrl: "img_"+"product6", price: 23.5, currency: "Euro"),
-            Product(id: 7, categoryId: 0, name: "Cat 0 Product 7", description: "Cat 0 Product 7 description", imageUrl: "img_"+"product7", price: 11, currency: "Euro"),
-            Product(id: 8, categoryId: 0, name: "Cat 0 Product 8", description: "Cat 0 Product 8 description", imageUrl: "img_"+"product8", price: 99.9, currency: "Euro"),
+            Product(id: 1, categoryId: 0, name: "Cat 0 Product 1", description: "Cat 0 Product 1 description", imageUrl: "pool-floaty-fun", price: 10, currency: "Euro"), 
             // Category 1
             Product(id: 10, categoryId: 1, name: "Cat 1 Product 0", description: "Cat 1 Product 0 description", imageUrl: "cafe-table-bath", price: 20, currency: "Euro"),
             Product(id: 11, categoryId: 1, name: "Cat 1 Product 1", description: "Cat 1 Product 1 description", imageUrl: "classic-tube", price: 10, currency: "Euro"),
