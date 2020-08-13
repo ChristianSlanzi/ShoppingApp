@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ShoppingCartFlowControllerDelegate: AnyObject {
-    
+    func startOrderSummary()
 }
 
 final class ShoppingCartFlowController: UIViewController, FlowProtocol {
@@ -34,10 +34,15 @@ final class ShoppingCartFlowController: UIViewController, FlowProtocol {
         let appDataManager = AppDataManager.shared
         let viewModel = ShoppingCartViewModel(input: ShoppingCartViewModel.Input(), orderRepository: orderRepo, cartRepository: cartRepo, dataManager: appDataManager)
         let shoppingCartViewController = ShoppingCartViewController(viewModel: viewModel)
+        shoppingCartViewController.flowDelegate = self
         embeddedNavigationController.viewControllers = [shoppingCartViewController]
     }
 }
 
 extension ShoppingCartFlowController: ShoppingCartFlowControllerDelegate {
-    
+    func startOrderSummary() {
+        let viewModel = OrderSummaryViewModel(input: OrderSummaryViewModel.Input())
+        let orderSummaryViewController = OrderSummaryViewController(viewModel: viewModel)
+        embeddedNavigationController.pushViewController(orderSummaryViewController, animated: true)
+    }
 }

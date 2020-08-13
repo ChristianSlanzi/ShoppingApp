@@ -10,9 +10,11 @@ import Foundation
 
 protocol ShoppingCartViewModelInputsType {
     func viewDidLoad()
+    func didTapOrderButton()
 }
 protocol ShoppingCartViewModelOutputsType: AnyObject {
     var reloadData: (() -> Void) { get set }
+    var showOrderSummaryScreen: (() -> Void) { get set }
 }
 
 protocol ShoppingCartViewModelType {
@@ -58,9 +60,14 @@ final class ShoppingCartViewModel: ShoppingCartViewModelType, ShoppingCartViewMo
         })
         self.outputs.reloadData()
     }
+    
+    public func didTapOrderButton() {
+        showOrderSummaryScreen()
+    }
 
     //output
     public var reloadData: (() -> Void) = { }
+    public var showOrderSummaryScreen: (() -> Void) = { }
     
     // MARK: - Helpers
     public func getElementsCount() -> Int {

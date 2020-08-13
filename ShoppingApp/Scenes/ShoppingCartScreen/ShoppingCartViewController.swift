@@ -20,6 +20,7 @@ final class ShoppingCartViewController: UIViewController {
     
     // MARK: - UI Properties
     let tableView = UITableView()
+    let orderButton = CustomButton()
     
     // MARK: - Viewcontroller Lifecycle
     
@@ -48,13 +49,15 @@ final class ShoppingCartViewController: UIViewController {
     // MARK: - Layout Methods
     
     private func setupViews() {
-        view.backgroundColor = .systemGray
+        view.backgroundColor = .white
         title = "Shopping Cart"
         setupTableView()
+        orderButton.set(backgroundColor: .systemGreen, title: "Order now")
+        orderButton.addTarget(self, action: #selector(didTapOrderButton), for: .touchUpInside)
     }
     
     private func setupTableView() {
-        view.addSubview(tableView)
+        view.addSubviews(tableView, orderButton)
         //tableView.frame = view.bounds
         tableView.rowHeight = 80
         tableView.delegate = self
@@ -75,6 +78,15 @@ final class ShoppingCartViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        viewModel.outputs.showOrderSummaryScreen = {
+            //guard let self = self else { return }
+            self.flowDelegate?.startOrderSummary()
+        }
+    }
+    
+    @objc private func didTapOrderButton(_ sender: Any) {
+        viewModel.inputs.didTapOrderButton()
     }
 }
 
@@ -83,14 +95,22 @@ final class ShoppingCartViewController: UIViewController {
 extension ShoppingCartViewController {
     private func setupConstraints() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
-
+        orderButton.translatesAutoresizingMaskIntoConstraints = false
+        
         //let topConstraintConstant: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 20 : 80
 
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: orderButton.topAnchor, constant: -20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            orderButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            orderButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            orderButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            orderButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 }
