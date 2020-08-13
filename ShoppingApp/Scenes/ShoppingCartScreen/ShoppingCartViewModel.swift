@@ -75,6 +75,6 @@ final class ShoppingCartViewModel: ShoppingCartViewModelType, ShoppingCartViewMo
     public func getCellViewModel(_ indexPath: IndexPath) -> CartItemCellViewModel? {
         guard let element = getElementAt(indexPath) else { return nil }
         return CartItemCellViewModel(input: CartItemCellViewModel.Input(cartItem:
-        Observable(element)), dataManager: dataManager)
+        Observable(element)), dataManager: dataManager, cartRepository: cartRepository)
     }
 }
