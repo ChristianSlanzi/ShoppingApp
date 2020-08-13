@@ -23,7 +23,8 @@ final class CartItemViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configure()
+        setupViews()
+        setupConstraints()
         bind()
     }
     
@@ -49,9 +50,13 @@ final class CartItemViewCell: UITableViewCell {
         })
     }
     
-    private func configure() {
+    private func setupViews() {
+        productImageView.backgroundColor = .lightGray
+        productImageView |> roundedStyle
         addSubviews(productImageView, productNameLabel)
-        
+    }
+    
+    private func setupConstraints() {
         accessoryType = .disclosureIndicator
         let padding: CGFloat = 12
         
