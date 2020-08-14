@@ -12,8 +12,9 @@ import RealmSwift
 protocol CartRepositoryProtocol {
     
     // MARK: - Methods
+    func getCartItemFor(productId: Int, completionHandler: (CartItemDTO?) -> Void)
     func getAllCartItems(on sort: Sorted?, completionHandler: ([CartItemDTO]) -> Void)
-    func saveCartItem(cartItem: CartItemDTO)
+    func saveCartItem(_ cartItem: CartItemDTO)
     func updateCartItem(_ cartItem: CartItemDTO)
 }
 
@@ -26,13 +27,18 @@ class CartRepository: BaseRepository<CartItemDTO> {
 extension CartRepository: CartRepositoryProtocol {
     
     // MARK: - Methods
+    func getCartItemFor(productId: Int, completionHandler: (CartItemDTO?) -> Void) {
+        super.fetch(CartItemDAO.self, predicate: nil, sorted: nil) { (cartItems) in
+            completionHandler(cartItems.map { CartItemDTO.mapFromPersistenceObject($0) }.first)
+        }
+    }
     func getAllCartItems(on sort: Sorted?, completionHandler: ([CartItemDTO]) -> Void) {
         super.fetch(CartItemDAO.self, predicate: nil, sorted: sort) { (cartItems) in
             completionHandler(cartItems.map { CartItemDTO.mapFromPersistenceObject($0) })
         }
     }
     
-    func saveCartItem(cartItem: CartItemDTO) {
+    func saveCartItem(_ cartItem: CartItemDTO) {
         do {
             try super.save(object: cartItem.mapToPersistenceObject())
         } catch {

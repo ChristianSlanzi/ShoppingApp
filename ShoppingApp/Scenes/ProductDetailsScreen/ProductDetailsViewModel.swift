@@ -62,8 +62,15 @@ final class ProductDetailsViewModel: ProductDetailsViewModelType, ProductDetails
     
     public func didTapAddToCartButton() {
         let product = element.value
-        let itemDTO = CartItemDTO(productId: product.id, quantity: 1)
-        cartRepository.saveCartItem(cartItem: itemDTO)
+        cartRepository.getCartItemFor(productId: product.id) { (item) in
+            guard let item = item else {
+                let itemDTO = CartItemDTO(productId: product.id, quantity: 1)
+                cartRepository.saveCartItem(itemDTO)
+                return
+            }
+            let itemDTO = CartItemDTO(productId: product.id, quantity: item.quantity + 1)
+            cartRepository.updateCartItem(itemDTO)
+        }
     }
     
     public func didTapOrderNowButton() {
