@@ -41,8 +41,18 @@ final class ShoppingCartFlowController: UIViewController, FlowProtocol {
 
 extension ShoppingCartFlowController: ShoppingCartFlowControllerDelegate {
     func startOrderSummary() {
-        let viewModel = OrderSummaryViewModel(input: OrderSummaryViewModel.Input())
+        let dbService = RealmDataManager(RealmProvider.default)
+        let cartRepo = CartRepository(dbManager: dbService)
+        let orderRepo = OrderRepository(dbManager: dbService)
+        let appDataManager = AppDataManager.shared
+        let viewModel = OrderSummaryViewModel(input: OrderSummaryViewModel.Input(), orderRepository: orderRepo, cartRepository: cartRepo, dataManager: appDataManager)
         let orderSummaryViewController = OrderSummaryViewController(viewModel: viewModel)
         embeddedNavigationController.pushViewController(orderSummaryViewController, animated: true)
+    }
+    
+    func startDelivery() {
+        let viewModel = DeliveryViewModel(input: DeliveryViewModel.Input())
+        let deliveryViewController = DeliveryViewController(viewModel: viewModel)
+        embeddedNavigationController.pushViewController(deliveryViewController, animated: true)
     }
 }
