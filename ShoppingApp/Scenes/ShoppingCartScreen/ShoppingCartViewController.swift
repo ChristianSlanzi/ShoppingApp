@@ -51,13 +51,16 @@ final class ShoppingCartViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .white
         title = "Shopping Cart"
+        
         setupTableView()
-        orderButton.set(backgroundColor: .systemGreen, title: "Order now")
+        
+        orderButton.set(backgroundColor: .systemGreen, title: "Order Summary")
         orderButton.addTarget(self, action: #selector(didTapOrderButton), for: .touchUpInside)
+        
+        view.addSubviews(tableView, orderButton)
     }
     
     private func setupTableView() {
-        view.addSubviews(tableView, orderButton)
         //tableView.frame = view.bounds
         tableView.rowHeight = 80
         tableView.delegate = self
