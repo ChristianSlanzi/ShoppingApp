@@ -56,14 +56,14 @@ final class DeliveryViewController: CustomScrollViewController {
         super.setupViews()
         view.backgroundColor = .white
         
-        firstNameTextField = CustomTextField()
-        lastNameTextField = CustomTextField()
-        phoneTextField = CustomTextField()
-        mailTextField = CustomTextField()
-        billingAddressTextField = CustomTextField()
-        shippingAddressTextField = CustomTextField()
-        cityTextField = CustomTextField()
-        zipCodetextField = CustomTextField()
+        firstNameTextField = CustomTextField(placeholder: "First Name")
+        lastNameTextField = CustomTextField(placeholder: "Last Name")
+        phoneTextField = CustomTextField(placeholder: "Telephone Number")
+        mailTextField = CustomTextField(placeholder: "E-Mail Address")
+        billingAddressTextField = CustomTextField(placeholder: "Billing Address")
+        shippingAddressTextField = CustomTextField(placeholder: "Shipping Address")
+        cityTextField = CustomTextField(placeholder: "City")
+        zipCodetextField = CustomTextField(placeholder: "Zip Code")
         
         commentsTextView = UITextView()
         commentsTextView |> roundedStyle <> borderStyle(color: .lightGray, width: 1)
@@ -99,76 +99,81 @@ final class DeliveryViewController: CustomScrollViewController {
         let trailingAnchor = getContentViewTrailingAnchor()
         //let bottomAnchor = getContentViewBottomAnchor()
         
+        let topPadding = CGFloat(30)
+        let hPadding = CGFloat(20)
+        let fieldHeight = CGFloat(40)
+        let textHeight = CGFloat(90)
+        
         NSLayoutConstraint.activate([
-            firstNameTextField.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            firstNameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            firstNameTextField.topAnchor.constraint(equalTo: topAnchor, constant: topPadding),
+            firstNameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: hPadding),
             firstNameTextField.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            firstNameTextField.heightAnchor.constraint(equalToConstant: 30)
+                .constraint(equalTo: trailingAnchor, constant: -hPadding),
+            firstNameTextField.heightAnchor.constraint(equalToConstant: fieldHeight)
         ])
         
         NSLayoutConstraint.activate([
-            lastNameTextField.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: 20),
-            lastNameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            lastNameTextField.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: topPadding),
+            lastNameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: hPadding),
             lastNameTextField.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            lastNameTextField.heightAnchor.constraint(equalToConstant: 30)
+                .constraint(equalTo: trailingAnchor, constant: -hPadding),
+            lastNameTextField.heightAnchor.constraint(equalToConstant: fieldHeight)
         ])
         
         NSLayoutConstraint.activate([
-            phoneTextField.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 20),
-            phoneTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            phoneTextField.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: topPadding),
+            phoneTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: hPadding),
             phoneTextField.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            phoneTextField.heightAnchor.constraint(equalToConstant: 30)
+                .constraint(equalTo: trailingAnchor, constant: -hPadding),
+            phoneTextField.heightAnchor.constraint(equalToConstant: fieldHeight)
         ])
         
         NSLayoutConstraint.activate([
-            mailTextField.topAnchor.constraint(equalTo: phoneTextField.bottomAnchor, constant: 20),
-            mailTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            mailTextField.topAnchor.constraint(equalTo: phoneTextField.bottomAnchor, constant: topPadding),
+            mailTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: hPadding),
             mailTextField.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            mailTextField.heightAnchor.constraint(equalToConstant: 30)
+                .constraint(equalTo: trailingAnchor, constant: -hPadding),
+            mailTextField.heightAnchor.constraint(equalToConstant: fieldHeight)
         ])
         
         NSLayoutConstraint.activate([
-            billingAddressTextField.topAnchor.constraint(equalTo: mailTextField.bottomAnchor, constant: 20),
-            billingAddressTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            billingAddressTextField.topAnchor.constraint(equalTo: mailTextField.bottomAnchor, constant: topPadding),
+            billingAddressTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: hPadding),
             billingAddressTextField.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            billingAddressTextField.heightAnchor.constraint(equalToConstant: 30)
+                .constraint(equalTo: trailingAnchor, constant: -hPadding),
+            billingAddressTextField.heightAnchor.constraint(equalToConstant: fieldHeight)
         ])
         
         NSLayoutConstraint.activate([
-            shippingAddressTextField.topAnchor.constraint(equalTo: billingAddressTextField.bottomAnchor, constant: 20),
-            shippingAddressTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            shippingAddressTextField.topAnchor.constraint(equalTo: billingAddressTextField.bottomAnchor, constant: topPadding),
+            shippingAddressTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: hPadding),
             shippingAddressTextField.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            shippingAddressTextField.heightAnchor.constraint(equalToConstant: 30)
+                .constraint(equalTo: trailingAnchor, constant: -hPadding),
+            shippingAddressTextField.heightAnchor.constraint(equalToConstant: fieldHeight)
         ])
         
         NSLayoutConstraint.activate([
-            cityTextField.topAnchor.constraint(equalTo: shippingAddressTextField.bottomAnchor, constant: 20),
-            cityTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            cityTextField.topAnchor.constraint(equalTo: shippingAddressTextField.bottomAnchor, constant: topPadding),
+            cityTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: hPadding),
             cityTextField.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            cityTextField.heightAnchor.constraint(equalToConstant: 30)
+                .constraint(equalTo: trailingAnchor, constant: -hPadding),
+            cityTextField.heightAnchor.constraint(equalToConstant: fieldHeight)
         ])
         
         NSLayoutConstraint.activate([
-            zipCodetextField.topAnchor.constraint(equalTo: cityTextField.bottomAnchor, constant: 20),
-            zipCodetextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            zipCodetextField.topAnchor.constraint(equalTo: cityTextField.bottomAnchor, constant: topPadding),
+            zipCodetextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: hPadding),
             zipCodetextField.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            zipCodetextField.heightAnchor.constraint(equalToConstant: 30)
+                .constraint(equalTo: trailingAnchor, constant: -hPadding),
+            zipCodetextField.heightAnchor.constraint(equalToConstant: fieldHeight)
         ])
         
         NSLayoutConstraint.activate([
-            commentsTextView.topAnchor.constraint(equalTo: zipCodetextField.bottomAnchor, constant: 20),
-            commentsTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            commentsTextView.topAnchor.constraint(equalTo: zipCodetextField.bottomAnchor, constant: topPadding),
+            commentsTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: hPadding),
             commentsTextView.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            commentsTextView.heightAnchor.constraint(equalToConstant: 90)
+                .constraint(equalTo: trailingAnchor, constant: -hPadding),
+            commentsTextView.heightAnchor.constraint(equalToConstant: textHeight)
         ])
         
         setContentViewBottom(view: commentsTextView)
