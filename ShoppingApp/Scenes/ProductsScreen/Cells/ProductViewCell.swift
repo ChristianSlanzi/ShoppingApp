@@ -43,10 +43,10 @@ final class ProductViewCell: UICollectionViewCell {
         backgroundColor = .lightGray //.systemBackground
         addSubviews(imageView, nameLabel, descriptionLabel)
         
-        nameLabel.text = "product"
+        nameLabel.text = "products_product_placeholder".localized
         nameLabel.textColor = .white
         
-        descriptionLabel.text = "product description"
+        descriptionLabel.text = "products_description_placeholder".localized
         descriptionLabel.textColor = .white
         
         imageView.backgroundColor = .lightGray

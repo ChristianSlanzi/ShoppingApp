@@ -50,11 +50,11 @@ final class ShoppingCartViewController: UIViewController {
     
     private func setupViews() {
         view.backgroundColor = .white
-        title = "Shopping Cart"
+        title = "shoppingcart_screen_title".localized
         
         setupTableView()
         
-        orderSummaryButton.set(backgroundColor: .systemGreen, title: "Order Summary")
+        orderSummaryButton.set(backgroundColor: .systemGreen, title: "shoppingcart_ordersummary_button".localized)
         orderSummaryButton.addTarget(self, action: #selector(didTapOrderSummaryButton), for: .touchUpInside)
         
         view.addSubviews(tableView, orderSummaryButton)

@@ -51,30 +51,31 @@ final class ProductDetailsViewController: CustomScrollViewController {
     internal override func setupViews() {
         super.setupViews()
         view.backgroundColor = .systemBackground
-        title = "Product's Info"
+        title = "productinfo_screen_title".localized
         
         productImage = UIImageView()
         productImage |> roundedStyle
         productImage.backgroundColor = .lightGray
         
         productName = UILabel()
-        productName.text = "Product name"
+        productName.text = "productinfo_product_placeholder".localized
+        
         productName.backgroundColor = .white
         
         productPrice = UILabel()
-        productPrice.text = "Product price"
+        productPrice.text = "productinfo_price_placeholder".localized
         productPrice.backgroundColor = .white
         
         productDescription = UILabel()
-        productDescription.text = "Product description"
+        productDescription.text = "productinfo_description_placeholder".localized
         productDescription.backgroundColor = .systemYellow
         
         addToCartButton = CustomButton()
-        addToCartButton.set(backgroundColor: .systemYellow, title: "Add to cart")
+        addToCartButton.set(backgroundColor: .systemYellow, title: "productinfo_addtocart_button".localized)
         addToCartButton.addTarget(self, action: #selector(didTapAddToCartButton), for: .touchUpInside)
         
         orderNowButton = CustomButton()
-        orderNowButton.set(backgroundColor: .systemGreen, title: "Order now")
+        orderNowButton.set(backgroundColor: .systemGreen, title: "productinfo_ordernow_button".localized)
         orderNowButton.addTarget(self, action: #selector(didTapOrderNowButton), for: .touchUpInside)
 
         addToContentView(productImage,

@@ -45,7 +45,7 @@ final class ProductsViewController: UIViewController {
     
     private func setupViews() {
         view.backgroundColor = .systemBackground
-        title = "Products"
+        title = "products_screen_title".localized
         setupCollectionView()
     }
     

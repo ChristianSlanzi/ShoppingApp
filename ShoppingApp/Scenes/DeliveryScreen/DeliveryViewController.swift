@@ -55,15 +55,16 @@ final class DeliveryViewController: CustomScrollViewController {
     internal override func setupViews() {
         super.setupViews()
         view.backgroundColor = .white
+        title = "orderdelivery_screen_title".localized
         
-        firstNameTextField = CustomTextField(placeholder: "First Name")
-        lastNameTextField = CustomTextField(placeholder: "Last Name")
-        phoneTextField = CustomTextField(placeholder: "Telephone Number")
-        mailTextField = CustomTextField(placeholder: "E-Mail Address")
-        billingAddressTextField = CustomTextField(placeholder: "Billing Address")
-        shippingAddressTextField = CustomTextField(placeholder: "Shipping Address")
-        cityTextField = CustomTextField(placeholder: "City")
-        zipCodetextField = CustomTextField(placeholder: "Zip Code")
+        firstNameTextField = CustomTextField(placeholder: "orderdelivery_firstname_placeholder".localized)
+        lastNameTextField = CustomTextField(placeholder: "orderdelivery_lastname_placeholder".localized)
+        phoneTextField = CustomTextField(placeholder: "orderdelivery_phone_placeholder".localized)
+        mailTextField = CustomTextField(placeholder: "orderdelivery_mail_placeholder".localized)
+        billingAddressTextField = CustomTextField(placeholder: "orderdelivery_billing_placeholder".localized)
+        shippingAddressTextField = CustomTextField(placeholder: "orderdelivery_shipping_placeholder".localized)
+        cityTextField = CustomTextField(placeholder: "orderdelivery_city_placeholder".localized)
+        zipCodetextField = CustomTextField(placeholder: "orderdelivery_zipcode_placeholder".localized)
         
         commentsTextView = UITextView()
         commentsTextView |> roundedStyle <> borderStyle(color: .lightGray, width: 1)

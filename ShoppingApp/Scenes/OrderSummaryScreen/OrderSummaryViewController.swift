@@ -45,11 +45,11 @@ final class OrderSummaryViewController: UIViewController {
     
     private func setupViews() {
         view.backgroundColor = .systemGray
-        title = "Order Summary"
+        title = "ordersummary_screen_title".localized
         
         setupTableView()
         
-        orderDeliveryButton.set(backgroundColor: .systemGreen, title: "Order now")
+        orderDeliveryButton.set(backgroundColor: .systemGreen, title: "ordersummary_delivery_button".localized)
         orderDeliveryButton.addTarget(self, action: #selector(didTapOrderDeliveryButton), for: .touchUpInside)
         
         view.addSubviews(tableView, orderDeliveryButton)

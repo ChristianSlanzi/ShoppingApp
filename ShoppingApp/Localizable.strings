@@ -6,6 +6,52 @@
   Copyright © 2020 Christian Slanzi. All rights reserved.
 */
 
+// MARK: - Welcome Screen
+"welcome_label_title" = "Welcome to the Shopping App!";
+"welcome_start_button" = "Start";
+
+// MARK: - TabBar
+"tabbar_shop_title" = "Shop";
+"tabbar_cart_title" = "Cart";
+
+// MARK: - Categories Screen
+"categories_screen_title" = "Categories";
+"categories_category_placeholder" = "Category";
+"categories_description_placeholder" = "Category description";
+
+// MARK: - Products Screen
+"products_screen_title" = "Products";
+"products_product_placeholder" = "Product";
+"products_description_placeholder" = "Product description";
+
+// MARK: - Product Info Screen
+"productinfo_screen_title" = "Product's Info";
+"productinfo_product_placeholder" = "Product name";
+"productinfo_price_placeholder" = "Product price";
+"productinfo_description_placeholder" = "Product description";
+"productinfo_addtocart_button" = "Add to cart";
+"productinfo_ordernow_button" = "Order now";
+
+// MARK: - Shopping Cart Screen
+"shoppingcart_screen_title" = "Shopping Cart";
+"shoppingcart_ordersummary_button" = "Order Summary";
+
+// MARK: - Order Summary Screen
+"ordersummary_screen_title" = "Order Summary";
+"ordersummary_delivery_button" = "Order Delivery";
+
+// MARK: - Order Delivery Screen
+"orderdelivery_screen_title" = "Order Delivery";
+"orderdelivery_firstname_placeholder" = "First Name";
+"orderdelivery_lastname_placeholder" = "Last Name";
+"orderdelivery_phone_placeholder" = "Telephone Number";
+"orderdelivery_mail_placeholder" = "E-Mail Address";
+"orderdelivery_billing_placeholder" = "Billing Address";
+"orderdelivery_shipping_placeholder" = "Shipping Address";
+"orderdelivery_city_placeholder" = "City";
+"orderdelivery_zipcode_placeholder" = "Zip Code";
+"orderdelivery_payment_button" = "Order Payment";
+
 // MARK: - Data localization: TODO replace with json
 "category_0_name" = "Sales";
 "category_0_description" = "Sales";

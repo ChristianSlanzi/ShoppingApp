@@ -41,7 +41,7 @@ final class CategoriesViewController: UIViewController {
     // MARK: - Layout Methods
     
     private func setupViews() {
-        title = "Categories"
+        title = "categories_screen_title".localized
         view.backgroundColor = .systemBackground
         setupCollectionView()
     }

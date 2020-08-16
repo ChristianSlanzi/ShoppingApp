@@ -43,10 +43,10 @@ final class CategoryViewCell: UICollectionViewCell {
         backgroundColor = .lightGray //.systemBackground
         addSubviews(imageView, nameLabel, descriptionLabel)
         
-        nameLabel.text = "category"
+        nameLabel.text = "categories_category_placeholder".localized
         nameLabel.textColor = .white
         
-        descriptionLabel.text = "category description"
+        descriptionLabel.text = "categories_description_placeholder".localized
         descriptionLabel.textColor = .white
         
         imageView.backgroundColor = .lightGray

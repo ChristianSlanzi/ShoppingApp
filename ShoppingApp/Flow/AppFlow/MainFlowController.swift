@@ -24,7 +24,7 @@ final class MainFlowController: UIViewController, FlowProtocol {
     
     private func startProductFlow() -> UIViewController {
         let productFlowController = ProductFlowController()
-        productFlowController.tabBarItem = UITabBarItem(title: "Shop", image: UIImage(named: "icons-shop"), tag: 0)
+        productFlowController.tabBarItem = UITabBarItem(title: "tabbar_shop_title".localized, image: UIImage(named: "icons-shop"), tag: 0)
         productFlowController.start()
         return productFlowController
     }
@@ -32,7 +32,7 @@ final class MainFlowController: UIViewController, FlowProtocol {
     private func startShoppingCartFlow() -> UIViewController {
         let shoppingCartFlowController = ShoppingCartFlowController()
         shoppingCartFlowController.tabBarItem =
-            UITabBarItem(title: "Cart", image: UIImage(named: "icons-cart"), tag: 1)
+            UITabBarItem(title: "tabbar_cart_title".localized, image: UIImage(named: "icons-cart"), tag: 1)
         shoppingCartFlowController.start()
         return shoppingCartFlowController
     }

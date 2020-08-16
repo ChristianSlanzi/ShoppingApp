@@ -55,9 +55,9 @@ final class WelcomeViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .white
         
-        welcomeLabel.text = "Welcome to the Shopping App!"
+        welcomeLabel.text = "welcome_label_title".localized
         
-        startButton.set(backgroundColor: .systemGreen, title: "Start")
+        startButton.set(backgroundColor: .systemGreen, title: "welcome_start_button".localized)
         startButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         
         view.addSubviews(welcomeLabel, startButton)
