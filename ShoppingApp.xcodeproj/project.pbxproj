@@ -24,6 +24,7 @@
 		24144D2124E6933400DD9B96 /* CartItemSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24144D2024E6933400DD9B96 /* CartItemSummaryViewModel.swift */; };
 		241EC35824E84ED200DB3E1C /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241EC35724E84ED200DB3E1C /* DeliveryViewController.swift */; };
 		241EC35A24E84F1000DB3E1C /* DeliveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241EC35924E84F1000DB3E1C /* DeliveryViewModel.swift */; };
+		245577AF24E93F9400CE2A05 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245577AE24E93F9400CE2A05 /* CustomTextField.swift */; };
 		245ABD2024E33ACA00F857BE /* OrderDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245ABD1F24E33ACA00F857BE /* OrderDAO.swift */; };
 		245ABD2224E33D5700F857BE /* CartItemDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245ABD2124E33D5700F857BE /* CartItemDAO.swift */; };
 		245ABD2524E34C0700F857BE /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245ABD2424E34C0700F857BE /* UITableView+Ext.swift */; };
@@ -108,6 +109,7 @@
 		24144D2024E6933400DD9B96 /* CartItemSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemSummaryViewModel.swift; sourceTree = "<group>"; };
 		241EC35724E84ED200DB3E1C /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
 		241EC35924E84F1000DB3E1C /* DeliveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewModel.swift; sourceTree = "<group>"; };
+		245577AE24E93F9400CE2A05 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		245ABD1F24E33ACA00F857BE /* OrderDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDAO.swift; sourceTree = "<group>"; };
 		245ABD2124E33D5700F857BE /* CartItemDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemDAO.swift; sourceTree = "<group>"; };
 		245ABD2424E34C0700F857BE /* UITableView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
@@ -381,6 +383,14 @@
 			path = PaymentScreen;
 			sourceTree = "<group>";
 		};
+		245577AD24E93F3C00CE2A05 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				245577AE24E93F9400CE2A05 /* CustomTextField.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
 		245ABD1E24E3376600F857BE /* DAO */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,14 +430,14 @@
 		24A17CAC24DD990D00829470 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				241EC35624E84E3E00DB3E1C /* PaymentScreen */,
-				241EC35524E84E2E00DB3E1C /* DeliveryScreen */,
 				24C7CCBA24DEB19300ABFD0A /* WelcomeScreen */,
 				24A7471824DEC5E70066A4DB /* CategoriesScreen */,
 				24AAECEE24DF4E9C002A46BE /* ProductsScreen */,
 				24F50D6424E132E1001B2A6B /* ProductDetailsScreen */,
 				24ACB3D124E1E73600AF2AB7 /* ShoppingCartScreen */,
 				248A86F524E5EB6000EEC2F2 /* OrderSummaryScreen */,
+				241EC35524E84E2E00DB3E1C /* DeliveryScreen */,
+				241EC35624E84E3E00DB3E1C /* PaymentScreen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -655,6 +665,7 @@
 		24C7CCAE24DEAFC400ABFD0A /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				245577AD24E93F3C00CE2A05 /* Text */,
 				24B7A47B24E589DE00A69FCD /* Controls */,
 				24F50D6924E13F85001B2A6B /* ViewControllers */,
 				24C7CCAF24DEB00100ABFD0A /* Buttons */,
@@ -958,6 +969,7 @@
 				24AAECE724DEF9A5002A46BE /* CategoryViewCell.swift in Sources */,
 				245ABD2024E33ACA00F857BE /* OrderDAO.swift in Sources */,
 				24C5EC7C24DC9D480060EB3A /* AppDelegate.swift in Sources */,
+				245577AF24E93F9400CE2A05 /* CustomTextField.swift in Sources */,
 				24AAECF224DF4F7F002A46BE /* ProductsViewModel.swift in Sources */,
 				24ACB3D324E1E76400AF2AB7 /* ShoppingCartViewModel.swift in Sources */,
 				24AAECF724DF51A9002A46BE /* ProductViewCell.swift in Sources */,

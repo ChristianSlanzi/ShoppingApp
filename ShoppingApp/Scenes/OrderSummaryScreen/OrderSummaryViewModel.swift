@@ -10,9 +10,11 @@ import Foundation
 
 protocol OrderSummaryViewModelInputsType {
     func viewDidLoad()
+    func didTapOrderDeliveryButton()
 }
 protocol OrderSummaryViewModelOutputsType: AnyObject {
     var reloadData: (() -> Void) { get set }
+    var showOrderDeliveryScreen: (() -> Void) { get set }
 }
 
 protocol OrderSummaryViewModelType {
@@ -56,9 +58,14 @@ final class OrderSummaryViewModel: OrderSummaryViewModelType, OrderSummaryViewMo
         })
         self.outputs.reloadData()
     }
+    
+    public func didTapOrderDeliveryButton() {
+        showOrderDeliveryScreen()
+    }
 
     //output
     public var reloadData: (() -> Void) = { }
+    public var showOrderDeliveryScreen: (() -> Void) = { }
 
     // MARK: - Helpers
     public func getElementsCount() -> Int {

@@ -10,6 +10,7 @@ import UIKit
 
 protocol ShoppingCartFlowControllerDelegate: AnyObject {
     func startOrderSummary()
+    func startOrderDelivery()
 }
 
 final class ShoppingCartFlowController: UIViewController, FlowProtocol {
@@ -47,10 +48,11 @@ extension ShoppingCartFlowController: ShoppingCartFlowControllerDelegate {
         let appDataManager = AppDataManager.shared
         let viewModel = OrderSummaryViewModel(input: OrderSummaryViewModel.Input(), orderRepository: orderRepo, cartRepository: cartRepo, dataManager: appDataManager)
         let orderSummaryViewController = OrderSummaryViewController(viewModel: viewModel)
+        orderSummaryViewController.flowDelegate = self
         embeddedNavigationController.pushViewController(orderSummaryViewController, animated: true)
     }
     
-    func startDelivery() {
+    func startOrderDelivery() {
         let viewModel = DeliveryViewModel(input: DeliveryViewModel.Input())
         let deliveryViewController = DeliveryViewController(viewModel: viewModel)
         embeddedNavigationController.pushViewController(deliveryViewController, animated: true)

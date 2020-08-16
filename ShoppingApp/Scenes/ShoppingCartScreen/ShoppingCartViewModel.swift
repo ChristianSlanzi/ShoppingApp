@@ -10,7 +10,7 @@ import Foundation
 
 protocol ShoppingCartViewModelInputsType {
     func viewDidLoad()
-    func didTapOrderButton()
+    func didTapOrderSummaryButton()
 }
 protocol ShoppingCartViewModelOutputsType: AnyObject {
     var reloadData: (() -> Void) { get set }
@@ -61,7 +61,7 @@ final class ShoppingCartViewModel: ShoppingCartViewModelType, ShoppingCartViewMo
         self.outputs.reloadData()
     }
     
-    public func didTapOrderButton() {
+    public func didTapOrderSummaryButton() {
         showOrderSummaryScreen()
     }
 

@@ -38,7 +38,7 @@ final class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupViews()
-        setupCostraints()
+        setupConstraints()
         bind()
     }
     
@@ -81,7 +81,7 @@ final class WelcomeViewController: UIViewController {
 // MARK: - UI Costraints
 
 extension WelcomeViewController {
-    private func setupCostraints() {
+    private func setupConstraints() {
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
