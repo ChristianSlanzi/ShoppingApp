@@ -21,6 +21,8 @@
 		240F3F2E24E2F1E600FC8BE0 /* RealmDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240F3F2C24E2F1E600FC8BE0 /* RealmDataManager.swift */; };
 		240F3F3124E31EF000FC8BE0 /* OrderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240F3F3024E31EF000FC8BE0 /* OrderRepository.swift */; };
 		2413914024EABC1200422B32 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413913F24EABC1200422B32 /* UIViewController+Ext.swift */; };
+		2413914224EACC5A00422B32 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413914124EACC5A00422B32 /* PaymentViewController.swift */; };
+		2413914424EACC7500422B32 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413914324EACC7500422B32 /* PaymentViewModel.swift */; };
 		24144D1F24E692EC00DD9B96 /* CartItemSummaryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24144D1E24E692EC00DD9B96 /* CartItemSummaryViewCell.swift */; };
 		24144D2124E6933400DD9B96 /* CartItemSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24144D2024E6933400DD9B96 /* CartItemSummaryViewModel.swift */; };
 		241EC35824E84ED200DB3E1C /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241EC35724E84ED200DB3E1C /* DeliveryViewController.swift */; };
@@ -107,6 +109,8 @@
 		240F3F2C24E2F1E600FC8BE0 /* RealmDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDataManager.swift; sourceTree = "<group>"; };
 		240F3F3024E31EF000FC8BE0 /* OrderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRepository.swift; sourceTree = "<group>"; };
 		2413913F24EABC1200422B32 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		2413914124EACC5A00422B32 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		2413914324EACC7500422B32 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		24144D1E24E692EC00DD9B96 /* CartItemSummaryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemSummaryViewCell.swift; sourceTree = "<group>"; };
 		24144D2024E6933400DD9B96 /* CartItemSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemSummaryViewModel.swift; sourceTree = "<group>"; };
 		241EC35724E84ED200DB3E1C /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
@@ -381,6 +385,8 @@
 		241EC35624E84E3E00DB3E1C /* PaymentScreen */ = {
 			isa = PBXGroup;
 			children = (
+				2413914124EACC5A00422B32 /* PaymentViewController.swift */,
+				2413914324EACC7500422B32 /* PaymentViewModel.swift */,
 			);
 			path = PaymentScreen;
 			sourceTree = "<group>";
@@ -948,6 +954,7 @@
 				240F3F1E24E2EFA000FC8BE0 /* MappableProtocol.swift in Sources */,
 				24144D1F24E692EC00DD9B96 /* CartItemSummaryViewCell.swift in Sources */,
 				24C5EC8024DC9D480060EB3A /* WelcomeViewController.swift in Sources */,
+				2413914424EACC7500422B32 /* PaymentViewModel.swift in Sources */,
 				240F3F3124E31EF000FC8BE0 /* OrderRepository.swift in Sources */,
 				24AAECF424DF4FBE002A46BE /* Product.swift in Sources */,
 				24A17CB024DD9A3900829470 /* ShoppingCartViewController.swift in Sources */,
@@ -974,6 +981,7 @@
 				245ABD2024E33ACA00F857BE /* OrderDAO.swift in Sources */,
 				24C5EC7C24DC9D480060EB3A /* AppDelegate.swift in Sources */,
 				245577AF24E93F9400CE2A05 /* CustomTextField.swift in Sources */,
+				2413914224EACC5A00422B32 /* PaymentViewController.swift in Sources */,
 				24AAECF224DF4F7F002A46BE /* ProductsViewModel.swift in Sources */,
 				24ACB3D324E1E76400AF2AB7 /* ShoppingCartViewModel.swift in Sources */,
 				24AAECF724DF51A9002A46BE /* ProductViewCell.swift in Sources */,

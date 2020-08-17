@@ -30,6 +30,7 @@ final class DeliveryViewController: CustomScrollViewController {
     var zipCodetextField: UITextField!
     
     var commentsTextView: UITextView!
+    let confirmDetailsButton = CustomButton()
     
     // MARK: - Viewcontroller Lifecycle
     
@@ -69,6 +70,9 @@ final class DeliveryViewController: CustomScrollViewController {
         commentsTextView = UITextView()
         commentsTextView |> roundedStyle <> borderStyle(color: .lightGray, width: 1)
         
+        confirmDetailsButton.set(backgroundColor: .systemGreen, title: "orderdelivery_confirmdetails_button".localized)
+        confirmDetailsButton.addTarget(self, action: #selector(didTapConfirmDetailsButton), for: .touchUpInside)
+        
         addToContentView(firstNameTextField,
                          lastNameTextField,
                          phoneTextField,
@@ -77,9 +81,14 @@ final class DeliveryViewController: CustomScrollViewController {
                          shippingAddressTextField,
                          cityTextField,
                          zipCodetextField,
-                         commentsTextView
+                         commentsTextView,
+                         confirmDetailsButton
         )
         
+    }
+    
+    @objc private func didTapConfirmDetailsButton(_ sender: Any) {
+        viewModel.inputs.didTapConfirmDetailsButton()
     }
     
     internal override func setupConstraints() {
@@ -177,12 +186,23 @@ final class DeliveryViewController: CustomScrollViewController {
             commentsTextView.heightAnchor.constraint(equalToConstant: textHeight)
         ])
         
-        setContentViewBottom(view: commentsTextView)
+        NSLayoutConstraint.activate([
+            confirmDetailsButton.topAnchor.constraint(equalTo: commentsTextView.bottomAnchor, constant: topPadding),
+            confirmDetailsButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: hPadding),
+            confirmDetailsButton.trailingAnchor
+                .constraint(equalTo: trailingAnchor, constant: -hPadding),
+            confirmDetailsButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        setContentViewBottom(view: confirmDetailsButton)
     }
     
     // MARK: - MVVM Binding
     
     private func bind() {
+        viewModel.outputs.showPaymentScreen = {
+            self.flowDelegate?.startPayment()
+        }
 
     }
 }

@@ -10,8 +10,10 @@ import Foundation
 
 protocol DeliveryViewModelInputsType {
     func viewDidLoad()
+    func didTapConfirmDetailsButton()
 }
 protocol DeliveryViewModelOutputsType: AnyObject {
+    var showPaymentScreen: (() -> Void) { get set }
 }
 
 protocol DeliveryViewModelType {
@@ -41,9 +43,18 @@ final class DeliveryViewModel: DeliveryViewModelType, DeliveryViewModelInputsTyp
     //input
     public func viewDidLoad() {
     }
+    
+    public func didTapConfirmDetailsButton() {
+        //TODO:
+        // check that all fields are ok
+        // save delivery details
+        
+        // move to payment screen
+        showPaymentScreen()
+    }
 
     //output
-
+    public var showPaymentScreen: (() -> Void) = { }
     
     // MARK: - Helpers
     

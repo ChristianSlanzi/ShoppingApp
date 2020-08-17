@@ -51,6 +51,10 @@
 "orderdelivery_city_placeholder" = "City";
 "orderdelivery_zipcode_placeholder" = "Zip Code";
 "orderdelivery_payment_button" = "Order Payment";
+"orderdelivery_confirmdetails_button" = "Confirm Details";
+
+// MARK: - Payment Screen
+"payment_screen_title" = "Order Payment";
 
 // MARK: - Data localization: TODO replace with json
 "category_0_name" = "Sales";

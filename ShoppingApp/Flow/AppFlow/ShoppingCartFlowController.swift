@@ -11,6 +11,7 @@ import UIKit
 protocol ShoppingCartFlowControllerDelegate: AnyObject {
     func startOrderSummary()
     func startOrderDelivery()
+    func startPayment()
 }
 
 final class ShoppingCartFlowController: UIViewController, FlowProtocol {
@@ -55,6 +56,14 @@ extension ShoppingCartFlowController: ShoppingCartFlowControllerDelegate {
     func startOrderDelivery() {
         let viewModel = DeliveryViewModel(input: DeliveryViewModel.Input())
         let deliveryViewController = DeliveryViewController(viewModel: viewModel)
+        deliveryViewController.flowDelegate = self
         embeddedNavigationController.pushViewController(deliveryViewController, animated: true)
+    }
+    
+    func startPayment() {
+        let viewModel = PaymentViewModel(input: PaymentViewModel.Input())
+        let paymentViewController = PaymentViewController(viewModel: viewModel)
+        paymentViewController.flowDelegate = self
+        embeddedNavigationController.pushViewController(paymentViewController, animated: true)
     }
 }
