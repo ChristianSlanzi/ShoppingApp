@@ -11,6 +11,8 @@ import UIKit
 /// An appwide custom TextField utility class
 class CustomTextField: UITextField {
 
+    let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    
     var floatingLabel: UILabel = UILabel(frame: CGRect.zero) // Label
     var floatingLabelHeight: CGFloat = 12 // Default height
     
@@ -112,5 +114,17 @@ class CustomTextField: UITextField {
             self.placeholder = self._placeholder
         }
         self.layer.borderColor = UIColor.lightGray.cgColor
+    }
+
+    override open func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+
+    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+
+    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
     }
 }
