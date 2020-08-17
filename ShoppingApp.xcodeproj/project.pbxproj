@@ -23,6 +23,13 @@
 		2413914024EABC1200422B32 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413913F24EABC1200422B32 /* UIViewController+Ext.swift */; };
 		2413914224EACC5A00422B32 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413914124EACC5A00422B32 /* PaymentViewController.swift */; };
 		2413914424EACC7500422B32 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413914324EACC7500422B32 /* PaymentViewModel.swift */; };
+		2413914D24EAD8B000422B32 /* FieldValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413914624EAD8B000422B32 /* FieldValidatable.swift */; };
+		2413914E24EAD8B000422B32 /* PasswordRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413914824EAD8B000422B32 /* PasswordRule.swift */; };
+		2413914F24EAD8B000422B32 /* MinimumLenghtRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413914924EAD8B000422B32 /* MinimumLenghtRule.swift */; };
+		2413915024EAD8B000422B32 /* EmailRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413914A24EAD8B000422B32 /* EmailRule.swift */; };
+		2413915124EAD8B000422B32 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413914B24EAD8B000422B32 /* Rule.swift */; };
+		2413915224EAD8B000422B32 /* RequiredRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413914C24EAD8B000422B32 /* RequiredRule.swift */; };
+		2413915424EADA0000422B32 /* ValidableTextControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413915324EADA0000422B32 /* ValidableTextControl.swift */; };
 		24144D1F24E692EC00DD9B96 /* CartItemSummaryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24144D1E24E692EC00DD9B96 /* CartItemSummaryViewCell.swift */; };
 		24144D2124E6933400DD9B96 /* CartItemSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24144D2024E6933400DD9B96 /* CartItemSummaryViewModel.swift */; };
 		241EC35824E84ED200DB3E1C /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241EC35724E84ED200DB3E1C /* DeliveryViewController.swift */; };
@@ -111,6 +118,13 @@
 		2413913F24EABC1200422B32 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		2413914124EACC5A00422B32 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		2413914324EACC7500422B32 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
+		2413914624EAD8B000422B32 /* FieldValidatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldValidatable.swift; sourceTree = "<group>"; };
+		2413914824EAD8B000422B32 /* PasswordRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordRule.swift; sourceTree = "<group>"; };
+		2413914924EAD8B000422B32 /* MinimumLenghtRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinimumLenghtRule.swift; sourceTree = "<group>"; };
+		2413914A24EAD8B000422B32 /* EmailRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailRule.swift; sourceTree = "<group>"; };
+		2413914B24EAD8B000422B32 /* Rule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
+		2413914C24EAD8B000422B32 /* RequiredRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequiredRule.swift; sourceTree = "<group>"; };
+		2413915324EADA0000422B32 /* ValidableTextControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidableTextControl.swift; sourceTree = "<group>"; };
 		24144D1E24E692EC00DD9B96 /* CartItemSummaryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemSummaryViewCell.swift; sourceTree = "<group>"; };
 		24144D2024E6933400DD9B96 /* CartItemSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemSummaryViewModel.swift; sourceTree = "<group>"; };
 		241EC35724E84ED200DB3E1C /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
@@ -364,6 +378,27 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		2413914524EAD8B000422B32 /* FieldValidator */ = {
+			isa = PBXGroup;
+			children = (
+				2413914624EAD8B000422B32 /* FieldValidatable.swift */,
+				2413914724EAD8B000422B32 /* Rules */,
+			);
+			path = FieldValidator;
+			sourceTree = "<group>";
+		};
+		2413914724EAD8B000422B32 /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				2413914B24EAD8B000422B32 /* Rule.swift */,
+				2413914C24EAD8B000422B32 /* RequiredRule.swift */,
+				2413914924EAD8B000422B32 /* MinimumLenghtRule.swift */,
+				2413914A24EAD8B000422B32 /* EmailRule.swift */,
+				2413914824EAD8B000422B32 /* PasswordRule.swift */,
+			);
+			path = Rules;
+			sourceTree = "<group>";
+		};
 		24144D1D24E692B500DD9B96 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +430,7 @@
 			isa = PBXGroup;
 			children = (
 				245577AE24E93F9400CE2A05 /* CustomTextField.swift */,
+				2413915324EADA0000422B32 /* ValidableTextControl.swift */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -461,6 +497,7 @@
 		24A7471424DEC4780066A4DB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2413914524EAD8B000422B32 /* FieldValidator */,
 				24A7471524DEC4980066A4DB /* CollectionViews */,
 			);
 			path = Helpers;
@@ -952,6 +989,7 @@
 				24F50D6624E13351001B2A6B /* ProductDetailsViewController.swift in Sources */,
 				24144D2124E6933400DD9B96 /* CartItemSummaryViewModel.swift in Sources */,
 				240F3F1E24E2EFA000FC8BE0 /* MappableProtocol.swift in Sources */,
+				2413915124EAD8B000422B32 /* Rule.swift in Sources */,
 				24144D1F24E692EC00DD9B96 /* CartItemSummaryViewCell.swift in Sources */,
 				24C5EC8024DC9D480060EB3A /* WelcomeViewController.swift in Sources */,
 				2413914424EACC7500422B32 /* PaymentViewModel.swift in Sources */,
@@ -961,6 +999,7 @@
 				24C7CCB924DEB0F400ABFD0A /* AppStyle.swift in Sources */,
 				245ABD2524E34C0700F857BE /* UITableView+Ext.swift in Sources */,
 				24AAECEA24DF038D002A46BE /* AppDataManager.swift in Sources */,
+				2413914E24EAD8B000422B32 /* PasswordRule.swift in Sources */,
 				248A86F924E5EBDF00EEC2F2 /* OrderSummaryViewModel.swift in Sources */,
 				24B7A47D24E589FF00A69FCD /* AddToBagControl.swift in Sources */,
 				241EC35A24E84F1000DB3E1C /* DeliveryViewModel.swift in Sources */,
@@ -974,12 +1013,16 @@
 				24A17CAB24DD76F100829470 /* MainFlowController.swift in Sources */,
 				240F3F0724E2942600FC8BE0 /* String+Ext.swift in Sources */,
 				24C7CCB124DEB01900ABFD0A /* CustomButton.swift in Sources */,
+				2413915024EAD8B000422B32 /* EmailRule.swift in Sources */,
 				24F50D6B24E13FA1001B2A6B /* CustomScrollViewController.swift in Sources */,
 				240F3F2E24E2F1E600FC8BE0 /* RealmDataManager.swift in Sources */,
+				2413914D24EAD8B000422B32 /* FieldValidatable.swift in Sources */,
 				240F3F1F24E2EFA000FC8BE0 /* DataManagement.swift in Sources */,
 				24AAECE724DEF9A5002A46BE /* CategoryViewCell.swift in Sources */,
 				245ABD2024E33ACA00F857BE /* OrderDAO.swift in Sources */,
+				2413915224EAD8B000422B32 /* RequiredRule.swift in Sources */,
 				24C5EC7C24DC9D480060EB3A /* AppDelegate.swift in Sources */,
+				2413914F24EAD8B000422B32 /* MinimumLenghtRule.swift in Sources */,
 				245577AF24E93F9400CE2A05 /* CustomTextField.swift in Sources */,
 				2413914224EACC5A00422B32 /* PaymentViewController.swift in Sources */,
 				24AAECF224DF4F7F002A46BE /* ProductsViewModel.swift in Sources */,
@@ -993,6 +1036,7 @@
 				24C5ECA924DCB3A20060EB3A /* UIViewController+Child.swift in Sources */,
 				24E1F1AD24E42E2100042FCA /* CartItemCellViewModel.swift in Sources */,
 				24B7A48024E58BCD00A69FCD /* UIColor+Ext.swift in Sources */,
+				2413915424EADA0000422B32 /* ValidableTextControl.swift in Sources */,
 				24E1F1AB24E3F49A00042FCA /* CartRepository.swift in Sources */,
 				24A7471A24DEC6170066A4DB /* CategoriesViewModel.swift in Sources */,
 				240F3F2D24E2F1E600FC8BE0 /* RealmProvider.swift in Sources */,

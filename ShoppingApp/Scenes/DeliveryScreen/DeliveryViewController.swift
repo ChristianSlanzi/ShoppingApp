@@ -20,14 +20,14 @@ final class DeliveryViewController: CustomScrollViewController {
     
     // MARK: - UI Properties
     
-    var firstNameTextField: UITextField!
-    var lastNameTextField: UITextField!
-    var phoneTextField: UITextField!
-    var mailTextField: UITextField!
-    var billingAddressTextField: UITextField!
-    var shippingAddressTextField: UITextField!
-    var cityTextField: UITextField!
-    var zipCodetextField: UITextField!
+    var firstNameTextField = ValidableTextControl()
+    var lastNameTextField = ValidableTextControl()
+    var phoneTextField = ValidableTextControl()
+    var mailTextField = ValidableTextControl()
+    var billingAddressTextField = ValidableTextControl()
+    var shippingAddressTextField = ValidableTextControl()
+    var cityTextField = ValidableTextControl()
+    var zipCodetextField = ValidableTextControl()
     
     var commentsTextView: UITextView!
     let confirmDetailsButton = CustomButton()
@@ -46,8 +46,8 @@ final class DeliveryViewController: CustomScrollViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
-        setupViews()
-        setupConstraints()
+        //setupViews()
+        //setupConstraints()
         bind()
     }
     
@@ -58,15 +58,46 @@ final class DeliveryViewController: CustomScrollViewController {
         view.backgroundColor = .white
         title = "orderdelivery_screen_title".localized
         
-        firstNameTextField = CustomTextField(placeholder: "orderdelivery_firstname_placeholder".localized)
-        lastNameTextField = CustomTextField(placeholder: "orderdelivery_lastname_placeholder".localized)
-        phoneTextField = CustomTextField(placeholder: "orderdelivery_phone_placeholder".localized)
-        mailTextField = CustomTextField(placeholder: "orderdelivery_mail_placeholder".localized)
-        billingAddressTextField = CustomTextField(placeholder: "orderdelivery_billing_placeholder".localized)
-        shippingAddressTextField = CustomTextField(placeholder: "orderdelivery_shipping_placeholder".localized)
-        cityTextField = CustomTextField(placeholder: "orderdelivery_city_placeholder".localized)
-        zipCodetextField = CustomTextField(placeholder: "orderdelivery_zipcode_placeholder".localized)
+        firstNameTextField
+            .configure(title: "orderdelivery_firstname_placeholder".localized,
+                       validationRules: [RequiredRule()],
+                       contentType: .username)
         
+        lastNameTextField
+            .configure(title: "orderdelivery_lastname_placeholder".localized,
+                       validationRules: [RequiredRule()],
+                       contentType: .username)
+        
+        phoneTextField
+            .configure(title: "orderdelivery_phone_placeholder".localized,
+                       validationRules: [RequiredRule()],
+                       contentType: .telephoneNumber)
+
+        mailTextField
+            .configure(title: "orderdelivery_mail_placeholder".localized,
+                       validationRules: [RequiredRule(), EmailRule()],
+                       contentType: .emailAddress)
+     
+        billingAddressTextField
+            .configure(title: "orderdelivery_billing_placeholder".localized,
+                       validationRules: [RequiredRule()],
+                       contentType: .streetAddressLine1)
+            
+        shippingAddressTextField
+            .configure(title: "orderdelivery_shipping_placeholder".localized,
+                       validationRules: [RequiredRule()],
+                       contentType: .streetAddressLine1)
+            
+        cityTextField
+            .configure(title: "orderdelivery_city_placeholder".localized,
+                       validationRules: [RequiredRule()],
+                       contentType: .addressCity)
+            
+        zipCodetextField
+            .configure(title: "orderdelivery_zipcode_placeholder".localized,
+                       validationRules: [RequiredRule()],
+                       contentType: .postalCode)
+                    
         commentsTextView = UITextView()
         commentsTextView |> roundedStyle <> borderStyle(color: .lightGray, width: 1)
         

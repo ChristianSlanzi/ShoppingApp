@@ -82,6 +82,7 @@ class CustomTextField: UITextField {
     
     public func setPlaceholder(_ text: String) {
         placeholder = text
+        self._placeholder = placeholder
     }
     
     // Add a floating label to the view on becoming first responder
@@ -98,7 +99,7 @@ class CustomTextField: UITextField {
             self.addSubview(self.floatingLabel)
           
             self.floatingLabel.bottomAnchor.constraint(equalTo:
-            self.topAnchor, constant: -10).isActive = true // Place our label 10pts above the text field
+            self.topAnchor, constant: -2).isActive = true // Place our label 10pts above the text field
             // Remove the placeholder
             self.placeholder = ""
         }
