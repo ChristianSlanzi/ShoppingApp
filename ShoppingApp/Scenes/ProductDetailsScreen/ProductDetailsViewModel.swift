@@ -14,6 +14,7 @@ protocol ProductDetailsViewModelInputsType {
     func didTapOrderNowButton()
 }
 protocol ProductDetailsViewModelOutputsType: AnyObject {
+    var didAddElementToCart: ()->Void { get set }
 }
 
 protocol ProductDetailsViewModelType {
@@ -66,10 +67,12 @@ final class ProductDetailsViewModel: ProductDetailsViewModelType, ProductDetails
             guard let item = item else {
                 let itemDTO = CartItemDTO(productId: product.id, quantity: 1)
                 cartRepository.saveCartItem(itemDTO)
+                didAddElementToCart()
                 return
             }
             let itemDTO = CartItemDTO(productId: product.id, quantity: item.quantity + 1)
             cartRepository.updateCartItem(itemDTO)
+            didAddElementToCart()
         }
     }
     
@@ -78,6 +81,7 @@ final class ProductDetailsViewModel: ProductDetailsViewModelType, ProductDetails
     }
 
     //output
+    var didAddElementToCart: () -> Void = {}
     
     // Binding
     private func bind() {

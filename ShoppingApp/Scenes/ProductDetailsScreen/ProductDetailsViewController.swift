@@ -184,5 +184,9 @@ final class ProductDetailsViewController: CustomScrollViewController {
             // so the viewModel could do loading and caching using a service injected as Dependency.
             self.productImage.image = UIImage(named: imageUrl)
         }
+        
+        viewModel.outputs.didAddElementToCart = {
+            self.presentAlertOnMainThread(title: "Cart", message: "Product was successfully added to cart", buttonTitle: "Ok")
+        }
     }
 }
