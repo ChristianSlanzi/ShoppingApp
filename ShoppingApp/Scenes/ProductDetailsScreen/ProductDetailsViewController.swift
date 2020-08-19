@@ -67,8 +67,9 @@ final class ProductDetailsViewController: CustomScrollViewController {
         productPrice.backgroundColor = .white
         
         productDescription = UILabel()
+        productDescription.numberOfLines = 0
         productDescription.text = "productinfo_description_placeholder".localized
-        productDescription.backgroundColor = .systemYellow
+        productDescription.backgroundColor = .white
         
         addToCartButton = CustomButton()
         addToCartButton.set(backgroundColor: .systemYellow, title: "productinfo_addtocart_button".localized)
@@ -131,7 +132,7 @@ final class ProductDetailsViewController: CustomScrollViewController {
             productDescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             productDescription.trailingAnchor
                 .constraint(equalTo: trailingAnchor, constant: -20),
-            productDescription.heightAnchor.constraint(equalToConstant: 250)
+            productDescription.heightAnchor.constraint(greaterThanOrEqualToConstant: 30)
         ])
         
         NSLayoutConstraint.activate([

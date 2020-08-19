@@ -95,7 +95,7 @@ extension AppDataManager {
             // Category 1
             Product(id: 10, categoryId: 1, name: "Cat 1 Product 0", description: "Cat 1 Product 0 description", imageUrl: "cafe-table-bath", price: 20, currency: "Euro"),
             Product(id: 11, categoryId: 1, name: "Cat 1 Product 1", description: "Cat 1 Product 1 description", imageUrl: "classic-tube", price: 10, currency: "Euro"),
-            Product(id: 12, categoryId: 1, name: "Cat 1 Product 2", description: "Cat 1 Product 2 description", imageUrl: "rosa-bath", price: 15, currency: "Euro"),
+            Product(id: 12, categoryId: 1, name: "Cat 1 Product 2", description: "Cat 1 Product 2 description\nthis is a long description that goes in multiple lines to demostrate the correctness of the dynamic auto layout constraints.", imageUrl: "rosa-bath", price: 15, currency: "Euro"),
             Product(id: 13, categoryId: 1, name: "Cat 1 Product 3", description: "Cat 1 Product 3 description", imageUrl: "shower-tube", price: 20, currency: "Euro"),
             // Category 2
             Product(id: 20, categoryId: 2, name: "Cat 2 Product 0", description: "Cat 2 Product 0 description", imageUrl: "dark-wall-bedside-table", price: 40, currency: "Euro"),
