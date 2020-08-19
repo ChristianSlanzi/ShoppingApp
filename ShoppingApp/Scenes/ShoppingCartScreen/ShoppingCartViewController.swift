@@ -139,8 +139,6 @@ extension ShoppingCartViewController: UITableViewDataSource {
                    forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
         
-        //TODO
-        /*
         viewModel.deleteElementAt(indexPath) { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -152,7 +150,6 @@ extension ShoppingCartViewController: UITableViewDataSource {
                 break
             }
         }
-        */
     }
 }
 

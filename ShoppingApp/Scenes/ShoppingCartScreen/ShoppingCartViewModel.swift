@@ -84,4 +84,18 @@ final class ShoppingCartViewModel: ShoppingCartViewModelType, ShoppingCartViewMo
         return CartItemCellViewModel(input: CartItemCellViewModel.Input(cartItem:
         Observable(element)), dataManager: dataManager, cartRepository: cartRepository)
     }
+    
+    public func deleteElementAt(_ indexPath: IndexPath, _ completion: @escaping (Result<Void, CartRepositoryError>)-> Void) {
+        
+        guard let element = getElementAt(indexPath) else { return } //TODO send a completion error
+        
+        cartRepository.removeCartItemFor(productId: element.productId) { result in
+            if result == true {
+                elements.remove(at: indexPath.row)
+                completion(.success(()))
+                return
+            }
+            completion(.failure(.unableToDelete))
+        }
+    }
 }
