@@ -13,6 +13,7 @@ import RealmSwift
     dynamic var id: Int = 0
     dynamic var items = List<CartItemDAO>()
     dynamic var createdAt = Date()
+    dynamic var shipping: DeliveryDAO?
     
     override static func primaryKey() -> String? {
         return "id"
