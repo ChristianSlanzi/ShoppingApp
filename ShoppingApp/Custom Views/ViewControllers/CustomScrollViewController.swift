@@ -47,7 +47,7 @@ class CustomScrollViewController: UIViewController {
         
     }
     
-    func setupConstraints() {
+    @objc dynamic func setupConstraints() {
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
