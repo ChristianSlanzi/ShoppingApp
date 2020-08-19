@@ -15,6 +15,7 @@ protocol ProductDetailsViewModelInputsType {
 }
 protocol ProductDetailsViewModelOutputsType: AnyObject {
     var didAddElementToCart: ()->Void { get set }
+    var startOrderSummaryScreen: (() -> Void) { get set }
 }
 
 protocol ProductDetailsViewModelType {
@@ -62,26 +63,17 @@ final class ProductDetailsViewModel: ProductDetailsViewModelType, ProductDetails
     }
     
     public func didTapAddToCartButton() {
-        let product = element.value
-        cartRepository.getCartItemFor(productId: product.id) { (item) in
-            guard let item = item else {
-                let itemDTO = CartItemDTO(productId: product.id, quantity: 1)
-                cartRepository.saveCartItem(itemDTO)
-                didAddElementToCart()
-                return
-            }
-            let itemDTO = CartItemDTO(productId: product.id, quantity: item.quantity + 1)
-            cartRepository.updateCartItem(itemDTO)
-            didAddElementToCart()
-        }
+        addProductToCart()
     }
     
     public func didTapOrderNowButton() {
-        //orderRepository.saveOrder(order: <#T##OrderDTO#>)
+        addProductToCart()
+        startOrderSummaryScreen()
     }
 
     //output
-    var didAddElementToCart: () -> Void = {}
+    public var didAddElementToCart: () -> Void = {}
+    public var startOrderSummaryScreen: (() -> Void) = { }
     
     // Binding
     private func bind() {
@@ -95,5 +87,18 @@ final class ProductDetailsViewModel: ProductDetailsViewModelType, ProductDetails
     }
     
     // MARK: - Helpers
-
+    private func addProductToCart() {
+        let product = element.value
+        cartRepository.getCartItemFor(productId: product.id) { (item) in
+            guard let item = item else {
+                let itemDTO = CartItemDTO(productId: product.id, quantity: 1)
+                cartRepository.saveCartItem(itemDTO)
+                didAddElementToCart()
+                return
+            }
+            let itemDTO = CartItemDTO(productId: product.id, quantity: item.quantity + 1)
+            cartRepository.updateCartItem(itemDTO)
+            didAddElementToCart()
+        }
+    }
 }

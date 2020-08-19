@@ -14,7 +14,7 @@ protocol ShoppingCartViewModelInputsType {
 }
 protocol ShoppingCartViewModelOutputsType: AnyObject {
     var reloadData: (() -> Void) { get set }
-    var showOrderSummaryScreen: (() -> Void) { get set }
+    var startOrderSummaryScreen: (() -> Void) { get set }
 }
 
 protocol ShoppingCartViewModelType {
@@ -62,12 +62,12 @@ final class ShoppingCartViewModel: ShoppingCartViewModelType, ShoppingCartViewMo
     }
     
     public func didTapOrderSummaryButton() {
-        showOrderSummaryScreen()
+        startOrderSummaryScreen()
     }
 
     //output
     public var reloadData: (() -> Void) = { }
-    public var showOrderSummaryScreen: (() -> Void) = { }
+    public var startOrderSummaryScreen: (() -> Void) = { }
     
     // MARK: - Helpers
     public func getElementsCount() -> Int {

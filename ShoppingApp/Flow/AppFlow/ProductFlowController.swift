@@ -11,13 +11,17 @@ import UIKit
 protocol ProductFlowControllerDelegate: AnyObject {
     func startProductListFor(category: Category)
     func startProductDetailsFor(product: Product)
+    
+    func startOrderSummary()
 }
 
 final class ProductFlowController: UIViewController, FlowProtocol {
     
+    private var parentFlowController: FlowProtocol
     private var embeddedNavigationController: UINavigationController!
     
-    init() {
+    init(parent: FlowProtocol) {
+        parentFlowController = parent
         super.init(nibName: nil, bundle: nil)
 
         embeddedNavigationController = UINavigationController()
@@ -69,5 +73,9 @@ extension ProductFlowController: ProductFlowControllerDelegate {
         productDetailsViewController.flowDelegate = self
         
         embeddedNavigationController.pushViewController(productDetailsViewController, animated: true)
+    }
+    
+    func startOrderSummary() {
+        parentFlowController.start()
     }
 }

@@ -82,7 +82,7 @@ final class ShoppingCartViewController: UIViewController {
             }
         }
         
-        viewModel.outputs.showOrderSummaryScreen = {
+        viewModel.outputs.startOrderSummaryScreen = {
             //guard let self = self else { return }
             self.flowDelegate?.startOrderSummary()
         }

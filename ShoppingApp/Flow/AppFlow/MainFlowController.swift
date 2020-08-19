@@ -23,7 +23,7 @@ final class MainFlowController: UIViewController, FlowProtocol {
     }
     
     private func startProductFlow() -> UIViewController {
-        let productFlowController = ProductFlowController()
+        let productFlowController = ProductFlowController(parent: self)
         productFlowController.tabBarItem = UITabBarItem(title: "tabbar_shop_title".localized, image: UIImage(named: "icons-shop"), tag: 0)
         productFlowController.start()
         return productFlowController

@@ -189,5 +189,9 @@ final class ProductDetailsViewController: CustomScrollViewController {
         viewModel.outputs.didAddElementToCart = {
             self.presentAlertOnMainThread(title: "Cart", message: "Product was successfully added to cart", buttonTitle: "Ok")
         }
+        
+        viewModel.outputs.startOrderSummaryScreen = {
+            self.flowDelegate?.startOrderSummary()
+        }
     }
 }
