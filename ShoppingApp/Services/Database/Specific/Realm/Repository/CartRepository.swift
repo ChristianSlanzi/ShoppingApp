@@ -6,7 +6,7 @@
 //  Copyright © 2020 Christian Slanzi. All rights reserved.
 //
 
-import RealmSwift
+import Foundation
 
 /// Error Messages with raw values for user display
 enum CartRepositoryError: String, Error {
@@ -36,7 +36,7 @@ extension CartRepository: CartRepositoryProtocol {
 
     // MARK: - Methods
     func getCartItemFor(productId: Int, completionHandler: (CartItemDTO?) -> Void) {
-        super.fetch(CartItemDAO.self, predicate: nil, sorted: nil) { (cartItems) in
+        super.fetch(CartItemDAO.self, predicate: NSPredicate(format: "productId = \(productId)"), sorted: nil) { (cartItems) in
             completionHandler(cartItems.map { CartItemDTO.mapFromPersistenceObject($0) }.first)
         }
     }
@@ -63,19 +63,17 @@ extension CartRepository: CartRepositoryProtocol {
     }
     
     func removeCartItemFor(productId: Int, completionHandler: (Bool) -> Void) {
-        do {
-          let realm = try! Realm() //not so good... if you have multiple users, you need multiple db so it needs to be built from a configuration. //TODO
-            try realm.write {
-                if let realmObject = realm.objects(CartItemDAO.self).first(where: { $0.productId == productId }) {
-                    realm.delete(realmObject)
+        
+        super.fetch(CartItemDAO.self, predicate: NSPredicate(format: "productId = \(productId)"), sorted: nil) { (cartItems) in
+            
+            _ = cartItems.map { item in do {
+                try super.delete(object: item)
+                completionHandler(true)
+                } catch {
+                print(error.localizedDescription)
+                completionHandler(false)
                 }
             }
-        } catch {
-            print("Something went wrong with error: \(error)")
-            completionHandler(false)
         }
-        
-        completionHandler(true)
     }
-    
 }
