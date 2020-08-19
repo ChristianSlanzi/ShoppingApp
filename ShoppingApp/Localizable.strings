@@ -55,6 +55,9 @@
 
 // MARK: - Payment Screen
 "payment_screen_title" = "Order Payment";
+"payment_cardnumber_placeholder" = "Card Number";
+"payment_expiration_placeholder" = "Expires in";
+"payment_cvv_placeholder" = "Cvv";
 
 // MARK: - Data localization: TODO replace with json
 "category_0_name" = "Sales";

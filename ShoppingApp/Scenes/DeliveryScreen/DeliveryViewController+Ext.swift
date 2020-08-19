@@ -53,13 +53,13 @@ extension DeliveryViewController {
                        contentType: .postalCode)
         
         fields = [firstNameTextField,
-        lastNameTextField,
-        phoneTextField,
-        mailTextField,
-        billingAddressTextField,
-        shippingAddressTextField,
-        cityTextField,
-        zipCodetextField]
+                  lastNameTextField,
+                  phoneTextField,
+                  mailTextField,
+                  billingAddressTextField,
+                  shippingAddressTextField,
+                  cityTextField,
+                  zipCodetextField]
     }
     
     override func setupConstraints() {

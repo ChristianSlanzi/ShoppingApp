@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PaymentViewController: UIViewController {
+final class PaymentViewController: CustomScrollViewController {
     
     // MARK: - Viewcontroller Property
     
@@ -19,13 +19,19 @@ final class PaymentViewController: UIViewController {
     var flowDelegate: ShoppingCartFlowControllerDelegate?
     
     // MARK: - UI Properties
-
+    var cardNumberTextField = ValidableTextControl()
+    var expiresInTextField = ValidableTextControl()
+    var cvvTextField = ValidableTextControl()
+    
+    var fields = [ValidableTextControl]()
+    
+    let confirmDetailsButton = CustomButton()
     
     // MARK: - Viewcontroller Lifecycle
     
     init(viewModel: PaymentViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
     
     required init?(coder: NSCoder) {
@@ -35,20 +41,33 @@ final class PaymentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
-        setupViews()
-        setupConstraints()
         bind()
     }
     
     // MARK: - Layout Methods
     
-    private func setupViews() {
+    internal override func setupViews() {
+        super.setupViews()
         view.backgroundColor = .systemGray
         title = "payment_screen_title".localized
         
-
+        setupFields()
+        
+        confirmDetailsButton.set(backgroundColor: .systemGreen, title: "orderdelivery_confirmdetails_button".localized)
+        confirmDetailsButton.addTarget(self, action: #selector(didTapConfirmDetailsButton), for: .touchUpInside)
+        
+        for field in fields { addToContentView(field) }
+        addToContentView( confirmDetailsButton )
     }
     
+    @objc private func didTapConfirmDetailsButton(_ sender: Any) {
+        viewModel.validate(usingFields: fields) { (isValid) in
+            if isValid {
+                // We will proceed to next screen
+                viewModel.inputs.didTapConfirmDetailsButton()
+            }
+        }
+    }
     
     // MARK: - MVVM Binding
     
@@ -57,13 +76,5 @@ final class PaymentViewController: UIViewController {
     }
     
 
-}
-
-// MARK: - UI Costraints
-
-extension PaymentViewController {
-    private func setupConstraints() {
-
-    }
 }
 
