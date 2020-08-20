@@ -12,8 +12,10 @@ protocol DeliveryViewModelInputsType {
     func viewDidLoad()
     func didTapConfirmDetailsButton()
     func validate(usingFields fields: [FieldValidatable], completion: (Bool) -> ())
+    func saveDeliveryDetails(_ deliveryDTO: DeliveryDTO)
 }
 protocol DeliveryViewModelOutputsType: AnyObject {
+    var reloadData: (() -> Void) { get set }
     var updateInvalidFields: (() -> Void) { get set }
     var showPaymentScreen: (() -> Void) { get set }
 }
@@ -25,6 +27,8 @@ protocol DeliveryViewModelType {
 
 final class DeliveryViewModel: DeliveryViewModelType, DeliveryViewModelInputsType, DeliveryViewModelOutputsType {
     
+    private var elements: [DeliveryDTO] = []
+    
     struct Input {
         //passing in data the viewModel needs from the view controller
     }
@@ -33,10 +37,13 @@ final class DeliveryViewModel: DeliveryViewModelType, DeliveryViewModelInputsTyp
         
     }
     
+    let deliveryRepository: DeliveryRepositoryProtocol
+    
     private var input: Input
     
-    init(input: Input) {
+    init(input: Input, deliveryRepository: DeliveryRepositoryProtocol) {
         self.input = input
+        self.deliveryRepository = deliveryRepository
     }
     
     var inputs: DeliveryViewModelInputsType { return self }
@@ -44,9 +51,13 @@ final class DeliveryViewModel: DeliveryViewModelType, DeliveryViewModelInputsTyp
     
     //input
     public func viewDidLoad() {
+        deliveryRepository.getAllDeliverys(on: nil) { (items) in
+            self.elements = items
+        }
+        self.outputs.reloadData()
     }
     
-    func validate(usingFields fields: [FieldValidatable], completion: (Bool) -> ()) {
+    public func validate(usingFields fields: [FieldValidatable], completion: (Bool) -> ()) {
         
         var isValid = true
         fields.forEach { (field) in
@@ -67,20 +78,31 @@ final class DeliveryViewModel: DeliveryViewModelType, DeliveryViewModelInputsTyp
         completion(isValid)
     }
     
-    public func didTapConfirmDetailsButton() {
-        //TODO:
-        // check that all fields are ok
+    public func saveDeliveryDetails(_ deliveryDTO: DeliveryDTO) {
         // save delivery details
-        
+        deliveryRepository.getDeliveryFor(phoneNumber: deliveryDTO.phoneNumber) { (item) in
+            guard item != nil else {
+                deliveryRepository.saveDelivery(delivery: deliveryDTO)
+                return
+            }
+            deliveryRepository.updateDelivery(deliveryDTO)
+        }
+    }
+    
+    public func didTapConfirmDetailsButton() {
         // move to payment screen
         outputs.showPaymentScreen()
     }
 
     //output
+    public var reloadData: (() -> Void) = { }
     public var updateInvalidFields: (() -> Void) = { }
     public var showPaymentScreen: (() -> Void) = { }
     
     // MARK: - Helpers
-    
+    public func getElementAt(_ indexPath: IndexPath) -> DeliveryDTO? {
+        guard indexPath.row < elements.count else { return nil }
+        return elements[indexPath.row]
+    }
 
 }

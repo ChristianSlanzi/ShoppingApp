@@ -51,6 +51,7 @@
 		24A7471324DEB6530066A4DB /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A7471224DEB6530066A4DB /* UIView+Ext.swift */; };
 		24A7471724DEC4980066A4DB /* CollectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A7471624DEC4980066A4DB /* CollectionViewHelper.swift */; };
 		24A7471A24DEC6170066A4DB /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A7471924DEC6160066A4DB /* CategoriesViewModel.swift */; };
+		24A9135A24EEC23F00045B19 /* DeliveryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A9135924EEC23F00045B19 /* DeliveryRepository.swift */; };
 		24AAECE724DEF9A5002A46BE /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AAECE624DEF9A5002A46BE /* CategoryViewCell.swift */; };
 		24AAECEA24DF038D002A46BE /* AppDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AAECE924DF038D002A46BE /* AppDataManager.swift */; };
 		24AAECED24DF0618002A46BE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AAECEC24DF0618002A46BE /* Category.swift */; };
@@ -150,6 +151,7 @@
 		24A7471224DEB6530066A4DB /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		24A7471624DEC4980066A4DB /* CollectionViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewHelper.swift; sourceTree = "<group>"; };
 		24A7471924DEC6160066A4DB /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		24A9135924EEC23F00045B19 /* DeliveryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRepository.swift; sourceTree = "<group>"; };
 		24AAECE624DEF9A5002A46BE /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 		24AAECE924DF038D002A46BE /* AppDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataManager.swift; sourceTree = "<group>"; };
 		24AAECEC24DF0618002A46BE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 			children = (
 				240F3F3024E31EF000FC8BE0 /* OrderRepository.swift */,
 				24E1F1AA24E3F49A00042FCA /* CartRepository.swift */,
+				24A9135924EEC23F00045B19 /* DeliveryRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -1011,6 +1014,7 @@
 				24A17CB024DD9A3900829470 /* ShoppingCartViewController.swift in Sources */,
 				24C7CCB924DEB0F400ABFD0A /* AppStyle.swift in Sources */,
 				245ABD2524E34C0700F857BE /* UITableView+Ext.swift in Sources */,
+				24A9135A24EEC23F00045B19 /* DeliveryRepository.swift in Sources */,
 				24AAECEA24DF038D002A46BE /* AppDataManager.swift in Sources */,
 				2413914E24EAD8B000422B32 /* PasswordRule.swift in Sources */,
 				248A86F924E5EBDF00EEC2F2 /* OrderSummaryViewModel.swift in Sources */,

@@ -54,7 +54,9 @@ extension ShoppingCartFlowController: ShoppingCartFlowControllerDelegate {
     }
     
     func startOrderDelivery() {
-        let viewModel = DeliveryViewModel(input: DeliveryViewModel.Input())
+        let dbService = RealmDataManager(RealmProvider.default)
+        let deliveryRepo = DeliveryRepository(dbManager: dbService)
+        let viewModel = DeliveryViewModel(input: DeliveryViewModel.Input(), deliveryRepository: deliveryRepo)
         let deliveryViewController = DeliveryViewController(viewModel: viewModel)
         deliveryViewController.flowDelegate = self
         embeddedNavigationController.pushViewController(deliveryViewController, animated: true)

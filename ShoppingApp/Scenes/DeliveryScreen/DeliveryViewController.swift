@@ -46,8 +46,8 @@ final class DeliveryViewController: CustomScrollViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.viewDidLoad()
         bind()
+        viewModel.viewDidLoad()
     }
     
     // MARK: - Layout Methods
@@ -72,6 +72,16 @@ final class DeliveryViewController: CustomScrollViewController {
     @objc private func didTapConfirmDetailsButton(_ sender: Any) {
         viewModel.validate(usingFields: fields) { (isValid) in
             if isValid {
+                // Create and save Delivery
+                let deliveryDTO = DeliveryDTO(firstName: firstNameTextField.validationText,
+                                              lastName: firstNameTextField.validationText,
+                                              phoneNumber: phoneTextField.validationText,
+                                              emailAddress: mailTextField.validationText,
+                                              billingAddress: billingAddressTextField.validationText,
+                                              shippingAddress: shippingAddressTextField.validationText,
+                                              city: cityTextField.validationText,
+                                              zipCode: zipCodetextField.validationText)
+                viewModel.inputs.saveDeliveryDetails(deliveryDTO)
                 // We will proceed to next screen
                 viewModel.inputs.didTapConfirmDetailsButton()
             }
@@ -81,6 +91,22 @@ final class DeliveryViewController: CustomScrollViewController {
     // MARK: - MVVM Binding
     
     private func bind() {
+        viewModel.outputs.reloadData = { [weak self] in
+            guard let self = self else { return }
+
+            DispatchQueue.main.async {
+                guard let delivery = self.viewModel.getElementAt(IndexPath(row: 0, section: 0)) else { return }
+                self.firstNameTextField.inputTextField.text = delivery.firstName
+                self.lastNameTextField.inputTextField.text = delivery.lastName
+                self.phoneTextField.inputTextField.text = delivery.phoneNumber
+                self.mailTextField.inputTextField.text = delivery.emailAddress
+                self.billingAddressTextField.inputTextField.text = delivery.billingAddress
+                self.shippingAddressTextField.inputTextField.text = delivery.shippingAddress
+                self.cityTextField.inputTextField.text = delivery.city
+                self.zipCodetextField.inputTextField.text = delivery.zipCode
+            }
+        }
+        
         viewModel.outputs.showPaymentScreen = {
             self.flowDelegate?.startPayment()
         }
