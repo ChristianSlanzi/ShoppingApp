@@ -32,10 +32,10 @@ final class CategoriesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.viewDidLoad()
         setupViews()
         setupConstraints()
         bind()
+        viewModel.viewDidLoad()
     }
     
     // MARK: - Layout Methods

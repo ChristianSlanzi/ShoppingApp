@@ -35,10 +35,10 @@ final class ShoppingCartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.viewDidLoad()
         setupViews()
         setupConstraints()
         bind()
+        viewModel.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {

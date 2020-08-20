@@ -40,8 +40,8 @@ final class PaymentViewController: CustomScrollViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.viewDidLoad()
         bind()
+        viewModel.viewDidLoad()
     }
     
     // MARK: - Layout Methods
@@ -74,7 +74,5 @@ final class PaymentViewController: CustomScrollViewController {
     private func bind() {
 
     }
-    
-
 }
 

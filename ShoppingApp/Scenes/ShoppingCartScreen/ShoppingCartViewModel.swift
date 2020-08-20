@@ -57,8 +57,8 @@ final class ShoppingCartViewModel: ShoppingCartViewModelType, ShoppingCartViewMo
     public func viewDidLoad() {
         cartRepository.getAllCartItems(on: nil, completionHandler: { (items) in
             self.elements = items
+            self.outputs.reloadData()
         })
-        self.outputs.reloadData()
     }
     
     public func didTapOrderSummaryButton() {

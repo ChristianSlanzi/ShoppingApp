@@ -35,10 +35,10 @@ final class ProductsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.viewDidLoad()
         setupViews()
         setupConstraints()
         bind()
+        viewModel.viewDidLoad()
     }
     
     // MARK: - Layout Methods

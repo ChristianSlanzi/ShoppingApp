@@ -40,6 +40,7 @@ final class WelcomeViewController: UIViewController {
         setupViews()
         setupConstraints()
         bind()
+        viewModel.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
