@@ -63,7 +63,14 @@ extension ShoppingCartFlowController: ShoppingCartFlowControllerDelegate {
     }
     
     func startPayment() {
-        let viewModel = PaymentViewModel(input: PaymentViewModel.Input())
+        let dbService = RealmDataManager(RealmProvider.default)
+        let cartRepo = CartRepository(dbManager: dbService)
+        let deliveryRepo = DeliveryRepository(dbManager: dbService)
+        let orderRepo = OrderRepository(dbManager: dbService)
+        let viewModel = PaymentViewModel(input: PaymentViewModel.Input(),
+                                         cartRepository: cartRepo,
+                                         deliveryRepository: deliveryRepo,
+                                         orderRepository: orderRepo)
         let paymentViewController = PaymentViewController(viewModel: viewModel)
         paymentViewController.flowDelegate = self
         embeddedNavigationController.pushViewController(paymentViewController, animated: true)

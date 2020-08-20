@@ -73,15 +73,14 @@ final class DeliveryViewController: CustomScrollViewController {
         viewModel.validate(usingFields: fields) { (isValid) in
             if isValid {
                 // Create and save Delivery
-                let deliveryDTO = DeliveryDTO(firstName: firstNameTextField.validationText,
-                                              lastName: firstNameTextField.validationText,
-                                              phoneNumber: phoneTextField.validationText,
-                                              emailAddress: mailTextField.validationText,
-                                              billingAddress: billingAddressTextField.validationText,
-                                              shippingAddress: shippingAddressTextField.validationText,
-                                              city: cityTextField.validationText,
-                                              zipCode: zipCodetextField.validationText)
-                viewModel.inputs.saveDeliveryDetails(deliveryDTO)
+                viewModel.inputs.saveDeliveryDetails(firstName: firstNameTextField.validationText,
+                                                     lastName: lastNameTextField.validationText,
+                                                     phoneNumber: phoneTextField.validationText,
+                                                     email: mailTextField.validationText,
+                                                     billAddress: billingAddressTextField.validationText,
+                                                     shipAddress: shippingAddressTextField.validationText,
+                                                     city: cityTextField.validationText,
+                                                     zip: zipCodetextField.validationText)
                 // We will proceed to next screen
                 viewModel.inputs.didTapConfirmDetailsButton()
             }

@@ -9,7 +9,7 @@
 import Foundation
 
 struct OrderDTO: Storable {
-    var id: Int // A unique order id
+    var id: String // A unique order id
     var items: [CartItemDTO] //TODO: or OrderItem?
     var createdAt: Date
     //shipping details

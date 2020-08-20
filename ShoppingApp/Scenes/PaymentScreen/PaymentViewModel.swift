@@ -32,10 +32,20 @@ final class PaymentViewModel: PaymentViewModelType, PaymentViewModelInputsType, 
         
     }
     
+    let cartRepository: CartRepositoryProtocol
+    let deliveryRepository: DeliveryRepositoryProtocol
+    let orderRepository: OrderRepositoryProtocol
+    
     private var input: Input
     
-    init(input: Input) {
+    init(input: Input,
+         cartRepository: CartRepositoryProtocol,
+         deliveryRepository: DeliveryRepositoryProtocol,
+         orderRepository: OrderRepositoryProtocol) {
         self.input = input
+        self.cartRepository = cartRepository
+        self.deliveryRepository = deliveryRepository
+        self.orderRepository = orderRepository
     }
     
     var inputs: PaymentViewModelInputsType { return self }
@@ -64,6 +74,34 @@ final class PaymentViewModel: PaymentViewModelType, PaymentViewModelInputsType, 
         //    self.view.updateProgress(isCompleted: false)
         //}
         completion(isValid)
+    }
+    
+    public func saveOrderWithPayment(cardNumber: String,
+                                     expiresIn: String,
+                                     ccv: String) {
+        
+        // retrieve cart items
+        cartRepository.getAllCartItems(on: nil) { (items) in
+            guard !items.isEmpty else { return } //TODO: show error
+            
+            // retrieve delivery options
+            deliveryRepository.getAllDeliverys(on: nil) { (deliveries) in
+                guard let deliveryDTO = deliveries.first else { return } // TODO: show error
+                
+                // create order
+                let orderDTO = OrderDTO(id: UUID().uuidString,
+                                        items: items,
+                                        createdAt: Date(),
+                                        shipping: deliveryDTO)
+                
+                // save order
+                orderRepository.saveOrder(order: orderDTO)
+                
+                // clean cart
+                cartRepository.removeAllItems()
+            }
+            
+        }
     }
     
     public func didTapConfirmDetailsButton() {

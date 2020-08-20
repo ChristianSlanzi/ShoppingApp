@@ -12,7 +12,14 @@ protocol DeliveryViewModelInputsType {
     func viewDidLoad()
     func didTapConfirmDetailsButton()
     func validate(usingFields fields: [FieldValidatable], completion: (Bool) -> ())
-    func saveDeliveryDetails(_ deliveryDTO: DeliveryDTO)
+    func saveDeliveryDetails(firstName: String,
+                             lastName: String,
+                             phoneNumber: String,
+                             email: String,
+                             billAddress: String,
+                             shipAddress: String,
+                             city: String,
+                             zip: String)
 }
 protocol DeliveryViewModelOutputsType: AnyObject {
     var reloadData: (() -> Void) { get set }
@@ -78,7 +85,25 @@ final class DeliveryViewModel: DeliveryViewModelType, DeliveryViewModelInputsTyp
         completion(isValid)
     }
     
-    public func saveDeliveryDetails(_ deliveryDTO: DeliveryDTO) {
+    public func saveDeliveryDetails(firstName: String,
+                                    lastName: String,
+                                    phoneNumber: String,
+                                    email: String,
+                                    billAddress: String,
+                                    shipAddress: String,
+                                    city: String,
+                                    zip: String) {
+        
+        // create delivery data transfer object
+        let deliveryDTO = DeliveryDTO(firstName: firstName,
+                                      lastName: lastName,
+                                      phoneNumber: phoneNumber,
+                                      emailAddress: email,
+                                      billingAddress: billAddress,
+                                      shippingAddress: shipAddress,
+                                      city: city,
+                                      zipCode: zip)
+        
         // save delivery details
         deliveryRepository.getDeliveryFor(phoneNumber: deliveryDTO.phoneNumber) { (item) in
             guard item != nil else {

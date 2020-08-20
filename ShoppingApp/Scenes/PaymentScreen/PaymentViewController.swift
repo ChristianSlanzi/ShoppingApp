@@ -63,6 +63,10 @@ final class PaymentViewController: CustomScrollViewController {
     @objc private func didTapConfirmDetailsButton(_ sender: Any) {
         viewModel.validate(usingFields: fields) { (isValid) in
             if isValid {
+                // Create and save Order
+                viewModel.saveOrderWithPayment(cardNumber: cardNumberTextField.validationText,
+                                               expiresIn: expiresInTextField.validationText,
+                                               ccv: cvvTextField.validationText)
                 // We will proceed to next screen
                 viewModel.inputs.didTapConfirmDetailsButton()
             }

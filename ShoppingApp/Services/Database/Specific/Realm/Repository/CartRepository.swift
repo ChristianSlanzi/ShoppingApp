@@ -18,12 +18,13 @@ enum CartRepositoryError: String, Error {
 // MARK: - CartRepositoryProtocol
 protocol CartRepositoryProtocol {
     
-    // MARK: - Methods
+    // MARK: - CRUD Methods
     func getCartItemFor(productId: Int, completionHandler: (CartItemDTO?) -> Void)
     func getAllCartItems(on sort: Sorted?, completionHandler: ([CartItemDTO]) -> Void)
     func saveCartItem(_ cartItem: CartItemDTO)
     func updateCartItem(_ cartItem: CartItemDTO)
     func removeCartItemFor(productId: Int, completionHandler:(Bool) -> Void)
+    func removeAllItems()
 }
 
 // MARK: - CartRepository
@@ -33,7 +34,7 @@ class CartRepository: BaseRepository<CartItemDTO> {
 
 // MARK: - CartRepositoryProtocol implementation
 extension CartRepository: CartRepositoryProtocol {
-
+    
     // MARK: - Methods
     func getCartItemFor(productId: Int, completionHandler: (CartItemDTO?) -> Void) {
         super.fetch(CartItemDAO.self, predicate: NSPredicate(format: "productId = \(productId)"), sorted: nil) { (cartItems) in
@@ -74,6 +75,14 @@ extension CartRepository: CartRepositoryProtocol {
                 completionHandler(false)
                 }
             }
+        }
+    }
+    
+    func removeAllItems() {
+        do {
+            try super.deleteAll(CartItemDAO.self)
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }

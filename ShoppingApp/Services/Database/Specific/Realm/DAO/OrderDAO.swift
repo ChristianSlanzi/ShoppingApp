@@ -10,7 +10,7 @@ import RealmSwift
 
 @objcMembers class OrderDAO: Object {
     
-    dynamic var id: Int = 0
+    dynamic var id: String = ""
     dynamic var items = List<CartItemDAO>()
     dynamic var createdAt = Date()
     dynamic var shipping: DeliveryDAO?
