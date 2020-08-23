@@ -59,6 +59,10 @@
 "payment_expiration_placeholder" = "Expires in";
 "payment_cvv_placeholder" = "Cvv";
 
+// MARK: - Order Result Screen
+"order_result_screen_title" = "Order Result";
+"order_result_mainscreen_button" = "Back to main";
+
 // MARK: - Data localization: TODO replace with json
 "category_0_name" = "Sales";
 "category_0_description" = "Sales";

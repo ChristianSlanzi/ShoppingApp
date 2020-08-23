@@ -76,7 +76,22 @@ final class PaymentViewController: CustomScrollViewController {
     // MARK: - MVVM Binding
     
     private func bind() {
+        viewModel.outputs.reloadData = { [weak self] in
+            guard let self = self else { return }
 
+            DispatchQueue.main.async {
+            
+            }
+        }
+        viewModel.outputs.updateInvalidFields = { [weak self] in
+            guard let self = self else { return }
+            for field in self.fields { field.setErrorMessage() }
+        }
+        
+        viewModel.outputs.showOrderResultScreen = { [weak self] orderId in
+            guard let self = self else { return }
+            self.flowDelegate?.startOrderResult(with: orderId)
+        }
     }
 }
 

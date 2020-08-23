@@ -12,6 +12,8 @@ protocol ShoppingCartFlowControllerDelegate: AnyObject {
     func startOrderSummary()
     func startOrderDelivery()
     func startPayment()
+    func startOrderResult(with orderId: String)
+    func backToMainScreen()
 }
 
 final class ShoppingCartFlowController: UIViewController, FlowProtocol {
@@ -31,8 +33,10 @@ final class ShoppingCartFlowController: UIViewController, FlowProtocol {
     
     func start() {
         let dbService = RealmDataManager(RealmProvider.default)
+        let orderService = RealmDataManager(RealmProvider.main)
+        
         let cartRepo = CartRepository(dbManager: dbService)
-        let orderRepo = OrderRepository(dbManager: dbService)
+        let orderRepo = OrderRepository(dbManager: orderService)
         let appDataManager = AppDataManager.shared
         let viewModel = ShoppingCartViewModel(input: ShoppingCartViewModel.Input(), orderRepository: orderRepo, cartRepository: cartRepo, dataManager: appDataManager)
         let shoppingCartViewController = ShoppingCartViewController(viewModel: viewModel)
@@ -44,8 +48,10 @@ final class ShoppingCartFlowController: UIViewController, FlowProtocol {
 extension ShoppingCartFlowController: ShoppingCartFlowControllerDelegate {
     func startOrderSummary() {
         let dbService = RealmDataManager(RealmProvider.default)
+        let orderService = RealmDataManager(RealmProvider.main)
+        
         let cartRepo = CartRepository(dbManager: dbService)
-        let orderRepo = OrderRepository(dbManager: dbService)
+        let orderRepo = OrderRepository(dbManager: orderService)
         let appDataManager = AppDataManager.shared
         let viewModel = OrderSummaryViewModel(input: OrderSummaryViewModel.Input(), orderRepository: orderRepo, cartRepository: cartRepo, dataManager: appDataManager)
         let orderSummaryViewController = OrderSummaryViewController(viewModel: viewModel)
@@ -64,9 +70,12 @@ extension ShoppingCartFlowController: ShoppingCartFlowControllerDelegate {
     
     func startPayment() {
         let dbService = RealmDataManager(RealmProvider.default)
+        let orderService = RealmDataManager(RealmProvider.main)
+        
         let cartRepo = CartRepository(dbManager: dbService)
         let deliveryRepo = DeliveryRepository(dbManager: dbService)
-        let orderRepo = OrderRepository(dbManager: dbService)
+        let orderRepo = OrderRepository(dbManager: orderService)
+        
         let viewModel = PaymentViewModel(input: PaymentViewModel.Input(),
                                          cartRepository: cartRepo,
                                          deliveryRepository: deliveryRepo,
@@ -74,5 +83,28 @@ extension ShoppingCartFlowController: ShoppingCartFlowControllerDelegate {
         let paymentViewController = PaymentViewController(viewModel: viewModel)
         paymentViewController.flowDelegate = self
         embeddedNavigationController.pushViewController(paymentViewController, animated: true)
+    }
+    
+    func startOrderResult(with orderId: String) {
+        let dbService = RealmDataManager(RealmProvider.default)
+        let orderService = RealmDataManager(RealmProvider.main)
+        
+        let cartRepo = CartRepository(dbManager: dbService)
+        let deliveryRepo = DeliveryRepository(dbManager: dbService)
+        let orderRepo = OrderRepository(dbManager: orderService)
+        let appDataManager = AppDataManager.shared
+        
+        let viewModel = OrderResultViewModel(input: OrderResultViewModel.Input(orderId: orderId),
+                                             cartRepository: cartRepo,
+                                             deliveryRepository: deliveryRepo,
+                                             orderRepository: orderRepo,
+                                             dataManager: appDataManager)
+        let orderResultViewController = OrderResultViewController(viewModel: viewModel)
+        orderResultViewController.flowDelegate = self
+        embeddedNavigationController.pushViewController(orderResultViewController, animated: true)
+    }
+    
+    func backToMainScreen() {
+        
     }
 }

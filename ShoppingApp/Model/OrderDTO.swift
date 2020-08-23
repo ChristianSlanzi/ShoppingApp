@@ -23,6 +23,12 @@ extension OrderDTO: MappableProtocol {
         let order = OrderDAO()
         order.id = id
         order.createdAt = createdAt
+        for item in items {
+            let itemDAO = CartItemDAO()
+            itemDAO.productId = item.productId
+            itemDAO.quantity = item.quantity
+            order.items.append(itemDAO)
+        }
         let shippingDao = DeliveryDAO()
         shippingDao.firstName = shipping.firstName
         shippingDao.lastName = shipping.lastName
@@ -32,7 +38,7 @@ extension OrderDTO: MappableProtocol {
         shippingDao.shippingAddress = shipping.shippingAddress
         shippingDao.city = shipping.city
         shippingDao.zipCode = shipping.zipCode
-
+        order.shipping = shippingDao
         return order
     }
     static func mapFromPersistenceObject(_ object: OrderDAO) -> OrderDTO {

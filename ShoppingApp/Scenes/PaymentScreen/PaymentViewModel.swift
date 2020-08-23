@@ -14,7 +14,9 @@ protocol PaymentViewModelInputsType {
     func validate(usingFields fields: [FieldValidatable], completion: (Bool) -> ())
 }
 protocol PaymentViewModelOutputsType: AnyObject {
+    var reloadData: (() -> Void) { get set }
     var updateInvalidFields: (() -> Void) { get set }
+    var showOrderResultScreen: ((String) -> Void) { get set }
 }
 
 protocol PaymentViewModelType {
@@ -36,6 +38,7 @@ final class PaymentViewModel: PaymentViewModelType, PaymentViewModelInputsType, 
     let deliveryRepository: DeliveryRepositoryProtocol
     let orderRepository: OrderRepositoryProtocol
     
+    private var orderId: String?
     private var input: Input
     
     init(input: Input,
@@ -89,13 +92,15 @@ final class PaymentViewModel: PaymentViewModelType, PaymentViewModelInputsType, 
                 guard let deliveryDTO = deliveries.first else { return } // TODO: show error
                 
                 // create order
-                let orderDTO = OrderDTO(id: UUID().uuidString,
+                orderId = UUID().uuidString
+                guard let orderId = orderId else { return }
+                let orderDTO = OrderDTO(id: orderId,
                                         items: items,
                                         createdAt: Date(),
                                         shipping: deliveryDTO)
                 
                 // save order
-                orderRepository.saveOrder(order: orderDTO)
+                orderRepository.saveOrder(orderDTO)
                 
                 // clean cart
                 cartRepository.removeAllItems()
@@ -105,18 +110,15 @@ final class PaymentViewModel: PaymentViewModelType, PaymentViewModelInputsType, 
     }
     
     public func didTapConfirmDetailsButton() {
-        //TODO:
-        // check that all fields are ok
-        // save payment details
-        
-        // move to main screen?
-        // outputs.showMainScreen()
+        guard let orderId = orderId else { return }
+        outputs.showOrderResultScreen(orderId)
     }
 
     //output
+    public var reloadData: (() -> Void) = { }
     public var updateInvalidFields: (() -> Void) = { }
+    public var showOrderResultScreen: ((String) -> Void) = { _ in }
     
     // MARK: - Helpers
     
-
 }

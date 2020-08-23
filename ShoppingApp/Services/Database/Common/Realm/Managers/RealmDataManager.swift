@@ -51,7 +51,7 @@ extension RealmDataManager: DataManagement {
             throw RealmError.eitherRealmIsNilOrNotRealmSpecificModel
         }
         try realm.write {
-            realm.add(object)
+            realm.add(object, update: .all)
         }
     }
     

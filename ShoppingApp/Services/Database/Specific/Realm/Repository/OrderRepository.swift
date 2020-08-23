@@ -12,8 +12,9 @@ import RealmSwift
 protocol OrderRepositoryProtocol {
     
     // MARK: - Methods
+    func getOrderFor(orderId: String, completionHandler: (OrderDTO?) -> Void) 
     func getAllOrders(on sort: Sorted?, completionHandler: ([OrderDTO]) -> Void)
-    func saveOrder(order: OrderDTO)
+    func saveOrder(_ order: OrderDTO)
     func updateOrder(_ order: OrderDTO)
 }
 
@@ -26,13 +27,20 @@ class OrderRepository: BaseRepository<OrderDTO> {
 extension OrderRepository: OrderRepositoryProtocol {
     
     // MARK: - Methods
+    func getOrderFor(orderId: String, completionHandler: (OrderDTO?) -> Void) {
+        
+        super.fetch(OrderDAO.self, predicate: NSPredicate(format: "id == %@", orderId), sorted: nil) { (orders) in
+            completionHandler(orders.map { OrderDTO.mapFromPersistenceObject($0) }.first)
+        }
+    }
+    
     func getAllOrders(on sort: Sorted?, completionHandler: ([OrderDTO]) -> Void) {
         super.fetch(OrderDAO.self, predicate: nil, sorted: sort) { (orders) in
             completionHandler(orders.map { OrderDTO.mapFromPersistenceObject($0) })
         }
     }
     
-    func saveOrder(order: OrderDTO) {
+    func saveOrder(_ order: OrderDTO) {
         do {
             try super.save(object: order.mapToPersistenceObject())
         } catch {

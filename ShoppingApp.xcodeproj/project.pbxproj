@@ -20,6 +20,8 @@
 		240F3F2D24E2F1E600FC8BE0 /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240F3F2A24E2F1E600FC8BE0 /* RealmProvider.swift */; };
 		240F3F2E24E2F1E600FC8BE0 /* RealmDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240F3F2C24E2F1E600FC8BE0 /* RealmDataManager.swift */; };
 		240F3F3124E31EF000FC8BE0 /* OrderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240F3F3024E31EF000FC8BE0 /* OrderRepository.swift */; };
+		2410DDAC24F013E9002E5433 /* OrderResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2410DDAB24F013E8002E5433 /* OrderResultViewController.swift */; };
+		2410DDAE24F01409002E5433 /* OrderResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2410DDAD24F01409002E5433 /* OrderResultViewModel.swift */; };
 		2413914024EABC1200422B32 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413913F24EABC1200422B32 /* UIViewController+Ext.swift */; };
 		2413914224EACC5A00422B32 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413914124EACC5A00422B32 /* PaymentViewController.swift */; };
 		2413914424EACC7500422B32 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413914324EACC7500422B32 /* PaymentViewModel.swift */; };
@@ -120,6 +122,8 @@
 		240F3F2A24E2F1E600FC8BE0 /* RealmProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
 		240F3F2C24E2F1E600FC8BE0 /* RealmDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDataManager.swift; sourceTree = "<group>"; };
 		240F3F3024E31EF000FC8BE0 /* OrderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRepository.swift; sourceTree = "<group>"; };
+		2410DDAB24F013E8002E5433 /* OrderResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResultViewController.swift; sourceTree = "<group>"; };
+		2410DDAD24F01409002E5433 /* OrderResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResultViewModel.swift; sourceTree = "<group>"; };
 		2413913F24EABC1200422B32 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		2413914124EACC5A00422B32 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		2413914324EACC7500422B32 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
@@ -389,6 +393,15 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		2410DDAA24F013AD002E5433 /* OrderResultScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2410DDAB24F013E8002E5433 /* OrderResultViewController.swift */,
+				2410DDAD24F01409002E5433 /* OrderResultViewModel.swift */,
+			);
+			path = OrderResultScreen;
+			sourceTree = "<group>";
+		};
 		2413914524EAD8B000422B32 /* FieldValidator */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,6 +509,7 @@
 				248A86F524E5EB6000EEC2F2 /* OrderSummaryScreen */,
 				241EC35524E84E2E00DB3E1C /* DeliveryScreen */,
 				241EC35624E84E3E00DB3E1C /* PaymentScreen */,
+				2410DDAA24F013AD002E5433 /* OrderResultScreen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1009,10 +1023,12 @@
 				24144D1F24E692EC00DD9B96 /* CartItemSummaryViewCell.swift in Sources */,
 				24C5EC8024DC9D480060EB3A /* WelcomeViewController.swift in Sources */,
 				2413914424EACC7500422B32 /* PaymentViewModel.swift in Sources */,
+				2410DDAE24F01409002E5433 /* OrderResultViewModel.swift in Sources */,
 				240F3F3124E31EF000FC8BE0 /* OrderRepository.swift in Sources */,
 				24AAECF424DF4FBE002A46BE /* Product.swift in Sources */,
 				24A17CB024DD9A3900829470 /* ShoppingCartViewController.swift in Sources */,
 				24C7CCB924DEB0F400ABFD0A /* AppStyle.swift in Sources */,
+				2410DDAC24F013E9002E5433 /* OrderResultViewController.swift in Sources */,
 				245ABD2524E34C0700F857BE /* UITableView+Ext.swift in Sources */,
 				24A9135A24EEC23F00045B19 /* DeliveryRepository.swift in Sources */,
 				24AAECEA24DF038D002A46BE /* AppDataManager.swift in Sources */,
