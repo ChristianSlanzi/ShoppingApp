@@ -62,6 +62,7 @@ final class ShoppingCartViewModel: ShoppingCartViewModelType, ShoppingCartViewMo
     }
     
     public func didTapOrderSummaryButton() {
+        guard elements.count > 0 else { return }
         startOrderSummaryScreen()
     }
 
