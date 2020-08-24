@@ -12,6 +12,7 @@ protocol OrderDetailsViewModelInputsType {
     func viewDidLoad()
 }
 protocol OrderDetailsViewModelOutputsType: AnyObject {
+    var reloadData: (() -> Void) { get set }
 }
 
 protocol OrderDetailsViewModelType {
@@ -32,16 +33,20 @@ final class OrderDetailsViewModel: OrderDetailsViewModelType, OrderDetailsViewMo
         var date: Observable<String> = Observable("")
     }
     
+    let dataManager: AppDataManagement
+    let cartRepository: CartRepositoryProtocol
     let orderRepository: OrderRepositoryProtocol
     
     private var input: Input
     public var output: Output
     
-    init(input: Input, element: OrderDTO, orderRepository: OrderRepositoryProtocol) {
+    init(input: Input, element: OrderDTO, orderRepository: OrderRepositoryProtocol, cartRepository: CartRepositoryProtocol, dataManager: AppDataManagement) {
         
         self.input = input
         self.output = Output()
+        self.cartRepository = cartRepository
         self.orderRepository = orderRepository
+        self.dataManager = dataManager
         self.element = Observable(element)
         
         bind()
@@ -55,7 +60,7 @@ final class OrderDetailsViewModel: OrderDetailsViewModelType, OrderDetailsViewMo
     }
     
     //output
-    
+    public var reloadData: (() -> Void) = {}
     
     // Binding
     private func bind() {
@@ -67,5 +72,19 @@ final class OrderDetailsViewModel: OrderDetailsViewModelType, OrderDetailsViewMo
     }
     
     // MARK: - Helpers
+    public func getElementsCount() -> Int {
+        return element.value.items.count
+    }
     
+    public func getElementAt(_ indexPath: IndexPath) -> CartItemDTO? {
+        let elements = element.value.items
+        guard indexPath.row < elements.count else { return nil }
+        return elements[indexPath.row]
+    }
+    
+    public func getCellViewModel(_ indexPath: IndexPath) -> OrderItemCellViewModel? {
+        guard let element = getElementAt(indexPath) else { return nil }
+        return OrderItemCellViewModel(input: OrderItemCellViewModel.Input(cartItem:
+        Observable(element)), dataManager: dataManager, cartRepository: cartRepository)
+    }
 }

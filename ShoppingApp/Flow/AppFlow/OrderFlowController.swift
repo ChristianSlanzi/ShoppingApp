@@ -45,12 +45,16 @@ final class OrderFlowController: UIViewController, FlowProtocol {
 extension OrderFlowController: OrderFlowControllerDelegate {
     
     func startOrderDetailsFor(order: OrderDTO) {
+        let dbService = RealmDataManager(RealmProvider.default)
         let orderService = RealmDataManager(RealmProvider.main)
+        
+        let cartRepo = CartRepository(dbManager: dbService)
         let orderRepo = OrderRepository(dbManager: orderService)
         
         let orderDetailsViewModel = OrderDetailsViewModel(input: OrderDetailsViewModel.Input(),
                                                           element: order,
-                                                          orderRepository: orderRepo)
+                                                          orderRepository: orderRepo, cartRepository:
+            cartRepo, dataManager: AppDataManager.shared)
         let orderDetailsViewController = OrderDetailsViewController(viewModel: orderDetailsViewModel)
         orderDetailsViewController.flowDelegate = self
         

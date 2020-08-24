@@ -22,6 +22,7 @@ final class OrderDetailsViewController: CustomScrollViewController {
     
     var orderId: UILabel!
     var orderDate: UILabel!
+    let tableView = UITableView()
     
     // MARK: - Viewcontroller Lifecycle
     
@@ -42,6 +43,11 @@ final class OrderDetailsViewController: CustomScrollViewController {
         viewModel.viewDidLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.reloadData()
+    }
+    
     // MARK: - Layout Methods
     
     internal override func setupViews() {
@@ -58,10 +64,23 @@ final class OrderDetailsViewController: CustomScrollViewController {
         orderDate.text = "orderinfo_date_placeholder".localized
         orderDate.backgroundColor = .white
         
+        setupTableView()
 
         addToContentView(orderId,
-                         orderDate
+                         orderDate,
+                         tableView
         )
+    }
+    
+    private func setupTableView() {
+        //tableView.frame = view.bounds
+        tableView.rowHeight = 80
+        //tableView.delegate = self
+        tableView.dataSource = self
+        tableView.removeExcessCells()
+
+        // register cell with tableView
+        tableView.register(OrderItemViewCell.self, forCellReuseIdentifier: OrderItemViewCell.reuseID)
     }
     
     internal override func setupConstraints() {
@@ -69,7 +88,7 @@ final class OrderDetailsViewController: CustomScrollViewController {
         
         orderId.translatesAutoresizingMaskIntoConstraints = false
         orderDate.translatesAutoresizingMaskIntoConstraints = false
-
+        tableView.translatesAutoresizingMaskIntoConstraints = false
 
         let padding: CGFloat = 20
         let labelHeight: CGFloat = 20
@@ -84,7 +103,7 @@ final class OrderDetailsViewController: CustomScrollViewController {
             orderId.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             orderId.trailingAnchor
                 .constraint(equalTo: trailingAnchor, constant: -padding),
-            orderId.heightAnchor.constraint(equalToConstant: 200)
+            orderId.heightAnchor.constraint(equalToConstant: labelHeight)
         ])
         
         NSLayoutConstraint.activate([
@@ -95,7 +114,14 @@ final class OrderDetailsViewController: CustomScrollViewController {
             orderDate.heightAnchor.constraint(equalToConstant: labelHeight)
         ])
         
-        setContentViewBottom(view: orderDate)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: orderDate.bottomAnchor, constant: 0),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -padding)
+        ])
+        
+        setContentViewBottom(view: tableView)
         
     }
     
@@ -110,5 +136,25 @@ final class OrderDetailsViewController: CustomScrollViewController {
             guard let self = self else { return }
             self.orderDate.text = date
         }
+        viewModel.outputs.reloadData = {
+            self.tableView.reloadData()
+        }
     }
+}
+
+// MARK: - Extension (Data Source)
+
+extension OrderDetailsViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //TODO: create a viewModel method to hide details
+        viewModel.getElementsCount()
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: OrderItemViewCell.reuseID, for: indexPath) as! OrderItemViewCell
+        cell.set(viewModel: viewModel.getCellViewModel(indexPath))
+        return cell
+    }
+
 }

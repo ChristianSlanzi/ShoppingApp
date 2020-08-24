@@ -53,6 +53,8 @@
 		248A86F924E5EBDF00EEC2F2 /* OrderSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A86F824E5EBDF00EEC2F2 /* OrderSummaryViewModel.swift */; };
 		248CFEC224F3F11800DD97EA /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CFEC124F3F11800DD97EA /* OrderDetailsViewController.swift */; };
 		248CFEC424F3F12A00DD97EA /* OrderDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CFEC324F3F12A00DD97EA /* OrderDetailsViewModel.swift */; };
+		248CFEC824F4140600DD97EA /* OrderItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CFEC624F4140500DD97EA /* OrderItemCellViewModel.swift */; };
+		248CFEC924F4140600DD97EA /* OrderItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CFEC724F4140500DD97EA /* OrderItemViewCell.swift */; };
 		24A17CA924DD744A00829470 /* ProductFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A17CA824DD744A00829470 /* ProductFlowController.swift */; };
 		24A17CAB24DD76F100829470 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A17CAA24DD76F100829470 /* MainFlowController.swift */; };
 		24A17CAE24DD99E800829470 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A17CAD24DD99E800829470 /* CategoriesViewController.swift */; };
@@ -162,6 +164,8 @@
 		248A86F824E5EBDF00EEC2F2 /* OrderSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSummaryViewModel.swift; sourceTree = "<group>"; };
 		248CFEC124F3F11800DD97EA /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
 		248CFEC324F3F12A00DD97EA /* OrderDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewModel.swift; sourceTree = "<group>"; };
+		248CFEC624F4140500DD97EA /* OrderItemCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItemCellViewModel.swift; sourceTree = "<group>"; };
+		248CFEC724F4140500DD97EA /* OrderItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItemViewCell.swift; sourceTree = "<group>"; };
 		24A17CA824DD744A00829470 /* ProductFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFlowController.swift; sourceTree = "<group>"; };
 		24A17CAA24DD76F100829470 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		24A17CAD24DD99E800829470 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -534,10 +538,20 @@
 		248CFEC024F3F0E400DD97EA /* OrderDetailsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				248CFEC524F413B200DD97EA /* Cells */,
 				248CFEC124F3F11800DD97EA /* OrderDetailsViewController.swift */,
 				248CFEC324F3F12A00DD97EA /* OrderDetailsViewModel.swift */,
 			);
 			path = OrderDetailsScreen;
+			sourceTree = "<group>";
+		};
+		248CFEC524F413B200DD97EA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				248CFEC624F4140500DD97EA /* OrderItemCellViewModel.swift */,
+				248CFEC724F4140500DD97EA /* OrderItemViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		24A17CAC24DD990D00829470 /* Scenes */ = {
@@ -1056,8 +1070,10 @@
 				24C5ECA424DCAC9D0060EB3A /* AppFlowController.swift in Sources */,
 				245ABD2824E34D2100F857BE /* CartItemViewCell.swift in Sources */,
 				248A86F724E5EBA400EEC2F2 /* OrderSummaryViewController.swift in Sources */,
+				248CFEC924F4140600DD97EA /* OrderItemViewCell.swift in Sources */,
 				240F3F2524E2F02A00FC8BE0 /* RealmObject+Storable.swift in Sources */,
 				24C5ECA024DCAA990060EB3A /* CompositionRoot.swift in Sources */,
+				248CFEC824F4140600DD97EA /* OrderItemCellViewModel.swift in Sources */,
 				248A541924EDD38A00F8C60D /* PaymentViewController+Ext.swift in Sources */,
 				24C7CCAD24DEA00100ABFD0A /* ShoppingCartFlowController.swift in Sources */,
 				2427D2FC24F2B84F00E7DB95 /* OrderFlowController.swift in Sources */,
