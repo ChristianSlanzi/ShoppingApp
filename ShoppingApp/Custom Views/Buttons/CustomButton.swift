@@ -11,7 +11,14 @@ import UIKit
 /// an app wide custom UIButton utility class
 class CustomButton: UIButton {
 
+    private var buttonColor: UIColor = .black
     // MARK: - Initializers
+    
+    override var isEnabled: Bool {
+        didSet {
+            self.backgroundColor = isEnabled ? buttonColor : .lightGray
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,15 +42,15 @@ class CustomButton: UIButton {
 
     /// Configure common visual properties of button
     private func configure() {
-        self |> filledRoundedButtonStyle(color: .black)
+        self |> filledRoundedButtonStyle(color: buttonColor)
         setTitleColor(.white, for: .normal)
         translatesAutoresizingMaskIntoConstraints = false
     }
 
     /// Configure button properties from a different class
     func set(backgroundColor: UIColor, title: String) {
-        //self.backgroundColor = backgroundColor
-        self |> filledRoundedButtonStyle(color: backgroundColor)
+        self.buttonColor = backgroundColor
+        self |> filledRoundedButtonStyle(color: buttonColor)
         setTitle(title, for: .normal)
     }
 }

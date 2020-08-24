@@ -124,7 +124,9 @@ extension ShoppingCartViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //TODO: create a viewModel method to hide details
-        viewModel.getElementsCount()
+        let count = viewModel.getElementsCount()
+        orderSummaryButton.isEnabled = count > 0
+        return count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
