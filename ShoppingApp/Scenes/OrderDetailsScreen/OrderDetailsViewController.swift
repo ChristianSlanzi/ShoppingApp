@@ -20,10 +20,8 @@ final class OrderDetailsViewController: CustomScrollViewController {
     
     // MARK: - UI Properties
     
-    var orderImage: UIImageView!
-    var orderName: UILabel!
-    var orderPrice: UILabel!
-    var orderDescription: UILabel!
+    var orderId: UILabel!
+    var orderDate: UILabel!
     
     // MARK: - Viewcontroller Lifecycle
     
@@ -51,40 +49,30 @@ final class OrderDetailsViewController: CustomScrollViewController {
         view.backgroundColor = .systemBackground
         title = "orderinfo_screen_title".localized
         
-        orderImage = UIImageView()
-        orderImage |> roundedStyle
-        orderImage.backgroundColor = .lightGray
+        orderId = UILabel()
+        orderId.text = "orderinfo_id_placeholder".localized
         
-        orderName = UILabel()
-        orderName.text = "orderinfo_order_placeholder".localized
+        orderId.backgroundColor = .white
         
-        orderName.backgroundColor = .white
-        
-        orderPrice = UILabel()
-        orderPrice.text = "orderinfo_price_placeholder".localized
-        orderPrice.backgroundColor = .white
-        
-        orderDescription = UILabel()
-        orderDescription.numberOfLines = 0
-        orderDescription.text = "orderinfo_description_placeholder".localized
-        orderDescription.backgroundColor = .white
+        orderDate = UILabel()
+        orderDate.text = "orderinfo_date_placeholder".localized
+        orderDate.backgroundColor = .white
         
 
-        addToContentView(orderImage,
-                         orderName,
-                         orderPrice,
-                         orderDescription
+        addToContentView(orderId,
+                         orderDate
         )
     }
     
     internal override func setupConstraints() {
         super.setupConstraints()
         
-        orderImage.translatesAutoresizingMaskIntoConstraints = false
-        orderName.translatesAutoresizingMaskIntoConstraints = false
-        orderPrice.translatesAutoresizingMaskIntoConstraints = false
-        orderDescription.translatesAutoresizingMaskIntoConstraints = false
+        orderId.translatesAutoresizingMaskIntoConstraints = false
+        orderDate.translatesAutoresizingMaskIntoConstraints = false
 
+
+        let padding: CGFloat = 20
+        let labelHeight: CGFloat = 20
         
         let topAnchor = getContentViewTopAnchor()
         let leadingAnchor = getContentViewLeadingAnchor()
@@ -92,48 +80,35 @@ final class OrderDetailsViewController: CustomScrollViewController {
         //let bottomAnchor = getContentViewBottomAnchor()
         
         NSLayoutConstraint.activate([
-            orderImage.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            orderImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            orderImage.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            orderImage.heightAnchor.constraint(equalToConstant: 200)
+            orderId.topAnchor.constraint(equalTo: topAnchor, constant: padding),
+            orderId.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            orderId.trailingAnchor
+                .constraint(equalTo: trailingAnchor, constant: -padding),
+            orderId.heightAnchor.constraint(equalToConstant: 200)
         ])
         
         NSLayoutConstraint.activate([
-            orderName.topAnchor.constraint(equalTo: orderImage.bottomAnchor, constant: 20),
-            orderName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            orderName.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            orderName.heightAnchor.constraint(equalToConstant: 30)
+            orderDate.topAnchor.constraint(equalTo: orderId.bottomAnchor, constant: padding),
+            orderDate.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            orderDate.trailingAnchor
+                .constraint(equalTo: trailingAnchor, constant: -padding),
+            orderDate.heightAnchor.constraint(equalToConstant: labelHeight)
         ])
         
-        NSLayoutConstraint.activate([
-            orderPrice.topAnchor.constraint(equalTo: orderName.bottomAnchor, constant: 20),
-            orderPrice.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            orderPrice.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            orderPrice.heightAnchor.constraint(equalToConstant: 30)
-        ])
-        
-        NSLayoutConstraint.activate([
-            orderDescription.topAnchor.constraint(equalTo: orderPrice.bottomAnchor, constant: 20),
-            orderDescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            orderDescription.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            orderDescription.heightAnchor.constraint(greaterThanOrEqualToConstant: 30)
-        ])
-        
-        setContentViewBottom(view: orderDescription)
+        setContentViewBottom(view: orderDate)
         
     }
     
     // MARK: - MVVM Binding
     
     private func bind() {
-        viewModel.output.id.bind { [weak self] (name) in
+        viewModel.output.id.bind { [weak self] (id) in
             guard let self = self else { return }
-            self.orderName.text = name
+            self.orderId.text = id
         }
-
+        viewModel.output.date.bind { [weak self] (date) in
+            guard let self = self else { return }
+            self.orderDate.text = date
+        }
     }
 }

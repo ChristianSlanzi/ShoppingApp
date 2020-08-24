@@ -69,6 +69,8 @@
 
 // MARK: - Order Detail Screen
 "orderinfo_screen_title" = "Order Details";
+"orderinfo_id_placeholder" = "Order Id";
+"orderinfo_date_placeholder" = "Order Creation Date";
 
 // MARK: - Data localization: TODO replace with json
 "category_0_name" = "Sales";
