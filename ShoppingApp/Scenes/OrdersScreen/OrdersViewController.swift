@@ -52,7 +52,7 @@ final class OrdersViewController: UIViewController {
     private func setupTableView() {
         //tableView.frame = view.bounds
         tableView.rowHeight = 80
-        //tableView.delegate = self
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.removeExcessCells()
 
@@ -68,7 +68,7 @@ final class OrdersViewController: UIViewController {
         }
         viewModel.outputs.startElementTarget = { element in
             //guard let self = self else { return }
-            //self.flowDelegate?.backToMainScreen()
+            self.flowDelegate?.startOrderDetailsFor(order: element)
         }
     }
     
@@ -88,6 +88,15 @@ extension OrdersViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
+    }
+}
+
+// MARK: - Extension (Delegate)
+
+extension OrdersViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didTapCellAt(indexPath: indexPath)
     }
 }
 

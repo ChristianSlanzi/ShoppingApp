@@ -65,15 +65,16 @@ final class OrderViewCell: UITableViewCell {
         orderDateLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            orderIdLabel.topAnchor.constraint(equalTo: self.topAnchor),
-            orderIdLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
-            orderIdLabel.heightAnchor.constraint(equalToConstant: 40),
-            orderIdLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4),
             
-            orderDateLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            orderDateLabel.topAnchor.constraint(equalTo: self.topAnchor),
             orderDateLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
             orderDateLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
             orderDateLabel.heightAnchor.constraint(equalToConstant: 40),
+            
+            orderIdLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            orderIdLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
+            orderIdLabel.heightAnchor.constraint(equalToConstant: 40),
+            orderIdLabel.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -padding)
             
         ])
     }

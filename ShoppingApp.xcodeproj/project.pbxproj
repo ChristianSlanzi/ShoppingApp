@@ -51,6 +51,8 @@
 		248A541924EDD38A00F8C60D /* PaymentViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A541824EDD38A00F8C60D /* PaymentViewController+Ext.swift */; };
 		248A86F724E5EBA400EEC2F2 /* OrderSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A86F624E5EBA400EEC2F2 /* OrderSummaryViewController.swift */; };
 		248A86F924E5EBDF00EEC2F2 /* OrderSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A86F824E5EBDF00EEC2F2 /* OrderSummaryViewModel.swift */; };
+		248CFEC224F3F11800DD97EA /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CFEC124F3F11800DD97EA /* OrderDetailsViewController.swift */; };
+		248CFEC424F3F12A00DD97EA /* OrderDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CFEC324F3F12A00DD97EA /* OrderDetailsViewModel.swift */; };
 		24A17CA924DD744A00829470 /* ProductFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A17CA824DD744A00829470 /* ProductFlowController.swift */; };
 		24A17CAB24DD76F100829470 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A17CAA24DD76F100829470 /* MainFlowController.swift */; };
 		24A17CAE24DD99E800829470 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A17CAD24DD99E800829470 /* CategoriesViewController.swift */; };
@@ -158,6 +160,8 @@
 		248A541824EDD38A00F8C60D /* PaymentViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaymentViewController+Ext.swift"; sourceTree = "<group>"; };
 		248A86F624E5EBA400EEC2F2 /* OrderSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSummaryViewController.swift; sourceTree = "<group>"; };
 		248A86F824E5EBDF00EEC2F2 /* OrderSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSummaryViewModel.swift; sourceTree = "<group>"; };
+		248CFEC124F3F11800DD97EA /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
+		248CFEC324F3F12A00DD97EA /* OrderDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewModel.swift; sourceTree = "<group>"; };
 		24A17CA824DD744A00829470 /* ProductFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFlowController.swift; sourceTree = "<group>"; };
 		24A17CAA24DD76F100829470 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		24A17CAD24DD99E800829470 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -527,6 +531,15 @@
 			path = OrderSummaryScreen;
 			sourceTree = "<group>";
 		};
+		248CFEC024F3F0E400DD97EA /* OrderDetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				248CFEC124F3F11800DD97EA /* OrderDetailsViewController.swift */,
+				248CFEC324F3F12A00DD97EA /* OrderDetailsViewModel.swift */,
+			);
+			path = OrderDetailsScreen;
+			sourceTree = "<group>";
+		};
 		24A17CAC24DD990D00829470 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,6 +553,7 @@
 				241EC35624E84E3E00DB3E1C /* PaymentScreen */,
 				2410DDAA24F013AD002E5433 /* OrderResultScreen */,
 				2427D2FD24F2B94600E7DB95 /* OrdersScreen */,
+				248CFEC024F3F0E400DD97EA /* OrderDetailsScreen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1048,6 +1062,7 @@
 				24C7CCAD24DEA00100ABFD0A /* ShoppingCartFlowController.swift in Sources */,
 				2427D2FC24F2B84F00E7DB95 /* OrderFlowController.swift in Sources */,
 				24A17CAE24DD99E800829470 /* CategoriesViewController.swift in Sources */,
+				248CFEC424F3F12A00DD97EA /* OrderDetailsViewModel.swift in Sources */,
 				24F50D6624E13351001B2A6B /* ProductDetailsViewController.swift in Sources */,
 				24144D2124E6933400DD9B96 /* CartItemSummaryViewModel.swift in Sources */,
 				240F3F1E24E2EFA000FC8BE0 /* MappableProtocol.swift in Sources */,
@@ -1066,6 +1081,7 @@
 				24A9135A24EEC23F00045B19 /* DeliveryRepository.swift in Sources */,
 				24AAECEA24DF038D002A46BE /* AppDataManager.swift in Sources */,
 				2413914E24EAD8B000422B32 /* PasswordRule.swift in Sources */,
+				248CFEC224F3F11800DD97EA /* OrderDetailsViewController.swift in Sources */,
 				248A86F924E5EBDF00EEC2F2 /* OrderSummaryViewModel.swift in Sources */,
 				24B7A47D24E589FF00A69FCD /* AddToBagControl.swift in Sources */,
 				241EC35A24E84F1000DB3E1C /* DeliveryViewModel.swift in Sources */,

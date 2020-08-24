@@ -67,6 +67,9 @@
 // MARK: - Orders List Screen
 "orders_list_screen_title" = "Completed Orders";
 
+// MARK: - Order Detail Screen
+"orderinfo_screen_title" = "Order Details";
+
 // MARK: - Data localization: TODO replace with json
 "category_0_name" = "Sales";
 "category_0_description" = "Sales";
