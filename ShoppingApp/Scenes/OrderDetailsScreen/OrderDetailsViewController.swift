@@ -77,6 +77,7 @@ final class OrderDetailsViewController: CustomScrollViewController {
         tableView.rowHeight = 80
         //tableView.delegate = self
         tableView.dataSource = self
+        tableView.isScrollEnabled = false
         tableView.removeExcessCells()
 
         // register cell with tableView
@@ -99,15 +100,8 @@ final class OrderDetailsViewController: CustomScrollViewController {
         //let bottomAnchor = getContentViewBottomAnchor()
         
         NSLayoutConstraint.activate([
-            orderId.topAnchor.constraint(equalTo: topAnchor, constant: padding),
-            orderId.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
-            orderId.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -padding),
-            orderId.heightAnchor.constraint(equalToConstant: labelHeight)
-        ])
-        
-        NSLayoutConstraint.activate([
-            orderDate.topAnchor.constraint(equalTo: orderId.bottomAnchor, constant: padding),
+            orderDate.topAnchor.constraint(equalTo: topAnchor, constant: padding),
+            
             orderDate.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             orderDate.trailingAnchor
                 .constraint(equalTo: trailingAnchor, constant: -padding),
@@ -115,7 +109,17 @@ final class OrderDetailsViewController: CustomScrollViewController {
         ])
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: orderDate.bottomAnchor, constant: 0),
+            orderId.topAnchor.constraint(equalTo: orderDate.bottomAnchor, constant: padding),
+            orderId.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            orderId.trailingAnchor
+                .constraint(equalTo: trailingAnchor, constant: -padding),
+            orderId.heightAnchor.constraint(equalToConstant: labelHeight)
+        ])
+        
+        
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: orderId.bottomAnchor, constant: 30),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -padding)

@@ -33,7 +33,8 @@ final class OrderItemCellViewModel: OrderItemCellViewModelType, OrderItemCellVie
     
     struct Output {
         var name: Observable<String> = Observable("")
-        //var price: Observable<String> = Observable("")
+        var price: Observable<String> = Observable("")
+        var quantity: Observable<String> = Observable("")
         var imageUrl: Observable<String> = Observable("")
     }
         
@@ -69,7 +70,8 @@ final class OrderItemCellViewModel: OrderItemCellViewModelType, OrderItemCellVie
             guard let self = self else { return }
 
             self.output.name = Observable(product.name)
-            //self.output.price = Observable("\(element.price) " + element.currency)
+            self.output.price = Observable("\(product.price) " + product.currency)
+            self.output.quantity = Observable("\(element.quantity)")
 
             self.output.imageUrl = Observable(product.imageUrl)
         }

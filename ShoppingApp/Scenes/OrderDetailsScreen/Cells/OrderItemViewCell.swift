@@ -18,6 +18,8 @@ final class OrderItemViewCell: UITableViewCell {
     // MARK: - UI Properties
     let productImageView = UIImageView(frame: .zero)
     let productNameLabel = UILabel(frame: .zero)
+    let productPriceLabel = UILabel(frame: .zero)
+    let productQuantityLabel = UILabel(frame: .zero)
     
     // MARK: - Initializers
     
@@ -44,11 +46,17 @@ final class OrderItemViewCell: UITableViewCell {
      }
     
     private func bind() {
+        self.viewModel?.output.imageUrl.bind({ (url) in
+            self.productImageView.image = UIImage(named: url)
+        })
         self.viewModel?.output.name.bind({ (name) in
             self.productNameLabel.text = name
         })
-        self.viewModel?.output.imageUrl.bind({ (url) in
-            self.productImageView.image = UIImage(named: url)
+        self.viewModel?.output.price.bind({ (price) in
+            self.productPriceLabel.text = price
+        })
+        self.viewModel?.output.quantity.bind({ (quantity) in
+            self.productQuantityLabel.text = quantity
         })
     }
     
@@ -59,7 +67,7 @@ final class OrderItemViewCell: UITableViewCell {
         productImageView.backgroundColor = .lightGray
         productImageView |> roundedStyle
         
-        addSubviews(productImageView, productNameLabel)
+        addSubviews(productImageView, productNameLabel, productPriceLabel, productQuantityLabel)
     }
     
     private func setupConstraints() {
@@ -67,6 +75,8 @@ final class OrderItemViewCell: UITableViewCell {
         
         productImageView.translatesAutoresizingMaskIntoConstraints = false
         productNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        productPriceLabel.translatesAutoresizingMaskIntoConstraints = false
+        productQuantityLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             productImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
@@ -74,10 +84,19 @@ final class OrderItemViewCell: UITableViewCell {
             productImageView.heightAnchor.constraint(equalToConstant: 60),
             productImageView.widthAnchor.constraint(equalToConstant: 60),
             
-            productNameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            productNameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
             productNameLabel.leadingAnchor.constraint(equalTo: productImageView.trailingAnchor, constant: 24),
             productNameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
-            productNameLabel.heightAnchor.constraint(equalToConstant: 40),
+            productNameLabel.heightAnchor.constraint(equalToConstant: 20),
+            
+            productPriceLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -padding),
+            productPriceLabel.leadingAnchor.constraint(equalTo: productImageView.trailingAnchor, constant: 24),
+            productPriceLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
+            productPriceLabel.heightAnchor.constraint(equalToConstant: 20),
+            
+            productQuantityLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            productQuantityLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding*2),
+            productQuantityLabel.heightAnchor.constraint(equalToConstant: 40),
             
         ])
     }
