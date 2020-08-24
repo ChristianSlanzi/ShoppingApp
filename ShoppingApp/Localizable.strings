@@ -13,6 +13,7 @@
 // MARK: - TabBar
 "tabbar_shop_title" = "Shop";
 "tabbar_cart_title" = "Cart";
+"tabbar_orders_title" = "Orders";
 
 // MARK: - Categories Screen
 "categories_screen_title" = "Categories";
@@ -62,6 +63,9 @@
 // MARK: - Order Result Screen
 "order_result_screen_title" = "Order Result";
 "order_result_mainscreen_button" = "Back to main";
+
+// MARK: - Orders List Screen
+"orders_list_screen_title" = "Completed Orders";
 
 // MARK: - Data localization: TODO replace with json
 "category_0_name" = "Sales";

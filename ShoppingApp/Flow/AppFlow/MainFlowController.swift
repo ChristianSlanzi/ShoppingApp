@@ -18,7 +18,8 @@ final class MainFlowController: UIViewController, FlowProtocol {
     
     func start() {
         tabController.viewControllers = [startProductFlow(),
-                                         startShoppingCartFlow()]
+                                         startShoppingCartFlow(),
+                                         startOrderCartFlow()]
         add(childController: tabController)
     }
     
@@ -35,6 +36,14 @@ final class MainFlowController: UIViewController, FlowProtocol {
             UITabBarItem(title: "tabbar_cart_title".localized, image: UIImage(named: "icons-cart"), tag: 1)
         shoppingCartFlowController.start()
         return shoppingCartFlowController
+    }
+    
+    private func startOrderCartFlow() -> UIViewController {
+        let orderFlowController = OrderFlowController(parent: self)
+        orderFlowController.tabBarItem =
+            UITabBarItem(title: "tabbar_orders_title".localized, image: UIImage(named: "icons-orders"), tag: 2)
+        orderFlowController.start()
+        return orderFlowController
     }
     
 }
