@@ -8,17 +8,30 @@
 
 import Foundation
 
-// DATE FROM STRING
-extension String{
-    func dateFromString() -> Date? {
+// MARK: -  BASE64 CONVERSION
+public extension String {
+    func toBase64() -> String? {
+        let data = self.data(using: String.Encoding.utf8)
+        return data?.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+    }
+}
+
+// MARK: - DATE FROM STRING
+public extension String{
+    func dateFromDateTimeString() -> Date? {
+        return dateFromString(format: "yyyy-MM-dd HH:mm:ss")
+    }
+    func dateFromString(format: String) -> Date? {
         let dateTimeFormatter = DateFormatter()
-        dateTimeFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateTimeFormatter.dateFormat = format
+        dateTimeFormatter.timeZone = TimeZone.current
+        dateTimeFormatter.locale = Locale.current
         return dateTimeFormatter.date(from: self)
     }
 }
 
-extension String {
-    // ACCESS LOCALIZED STRING
+// MARK: - ACCESS LOCALIZED STRING
+public extension String {
     var localized: String {
         return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
     }

@@ -62,7 +62,7 @@ final class OrderCellViewModel: OrderCellViewModelType, OrderCellViewModelInputs
             guard let self = self else { return }
 
             self.output.id = Observable(self.input.order.value.id)
-            self.output.date = Observable(self.input.order.value.createdAt.description)
+            self.output.date = Observable(self.input.order.value.createdAt.toDayMonthYearTimeString())
 
         }
         

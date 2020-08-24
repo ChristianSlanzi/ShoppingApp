@@ -67,7 +67,7 @@ final class OrderDetailsViewModel: OrderDetailsViewModelType, OrderDetailsViewMo
         self.element.bind { [weak self] (element) in
             guard let self = self else { return }
             self.output.id = Observable(element.id)
-            self.output.date = Observable(element.createdAt.description)
+            self.output.date = Observable(element.createdAt.toDayMonthYearTimeString())
         }
     }
     
