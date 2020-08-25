@@ -16,8 +16,10 @@ final class OrderViewCell: UITableViewCell {
     var viewModel: OrderCellViewModel?
     
     // MARK: - UI Properties
+    let orderIdIcon = UIImageView(frame: .zero)
     let orderIdLabel = UILabel(frame: .zero)
     let orderDateLabel = UILabel(frame: .zero)
+    let orderDateIcon = UIImageView(frame: .zero)
     
     // MARK: - Initializers
     
@@ -55,27 +57,50 @@ final class OrderViewCell: UITableViewCell {
         accessoryType = .none
         selectionStyle = .none
         
-        addSubviews(orderIdLabel, orderDateLabel)
+        orderIdIcon.image = UIImage(named: "icons-orders")?.withRenderingMode(.alwaysTemplate)
+        orderIdIcon.contentMode = .scaleAspectFill
+        orderIdIcon.backgroundColor = .clear
+        orderIdIcon.tintColor = .systemGreen
+        
+        orderDateIcon.image = UIImage(named: "icon-calendar")
+        orderDateIcon.contentMode = .scaleAspectFill
+        
+        orderIdLabel.font = .systemFont(ofSize: 12)
+        orderDateLabel.font = .systemFont(ofSize: 12)
+        
+        addSubviews(orderIdIcon, orderIdLabel, orderDateIcon, orderDateLabel)
     }
     
     private func setupConstraints() {
         let padding: CGFloat = 12
         
+        orderIdIcon.translatesAutoresizingMaskIntoConstraints = false
         orderIdLabel.translatesAutoresizingMaskIntoConstraints = false
         orderDateLabel.translatesAutoresizingMaskIntoConstraints = false
-        
+        orderDateIcon.translatesAutoresizingMaskIntoConstraints = false
+
         NSLayoutConstraint.activate([
             
-            orderDateLabel.topAnchor.constraint(equalTo: self.topAnchor),
-            orderDateLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
+            orderIdIcon.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
+            orderIdIcon.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
+            orderIdIcon.heightAnchor.constraint(equalToConstant: 20),
+            orderIdIcon.widthAnchor.constraint(equalToConstant: 20),
+            
+            orderIdLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: padding/2),
+            orderIdLabel.leadingAnchor.constraint(equalTo: self.orderIdIcon.trailingAnchor, constant: padding),
+            orderIdLabel.heightAnchor.constraint(equalToConstant: 32),
+            orderIdLabel.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -padding),
+            
+            orderDateIcon.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -padding),
+            orderDateIcon.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
+            orderDateIcon.heightAnchor.constraint(equalToConstant: 20),
+            orderDateIcon.widthAnchor.constraint(equalToConstant: 20),
+            
+            orderDateLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -padding/2),
+            orderDateLabel.leadingAnchor.constraint(equalTo: self.orderDateIcon.trailingAnchor, constant: padding),
             orderDateLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
-            orderDateLabel.heightAnchor.constraint(equalToConstant: 40),
-            
-            orderIdLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            orderIdLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
-            orderIdLabel.heightAnchor.constraint(equalToConstant: 40),
-            orderIdLabel.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -padding)
-            
+            orderDateLabel.heightAnchor.constraint(equalToConstant: 32)
+
         ])
     }
 }
