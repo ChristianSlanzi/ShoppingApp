@@ -20,6 +20,7 @@ final class MainFlowController: UIViewController, FlowProtocol {
         tabController.viewControllers = [startProductFlow(),
                                          startShoppingCartFlow(),
                                          startOrderCartFlow()]
+        tabController.tabBar.tintColor = Colors.darkGreen
         add(childController: tabController)
     }
     

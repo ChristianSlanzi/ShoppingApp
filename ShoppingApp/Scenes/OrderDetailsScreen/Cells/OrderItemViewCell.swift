@@ -64,6 +64,10 @@ final class OrderItemViewCell: UITableViewCell {
         accessoryType = .none
         selectionStyle = .none
         
+        productNameLabel.font = .systemFont(ofSize: 14)
+        productPriceLabel.font = .systemFont(ofSize: 14)
+        productQuantityLabel.font = .systemFont(ofSize: 14)
+        
         productImageView.backgroundColor = .lightGray
         productImageView |> roundedStyle
         
