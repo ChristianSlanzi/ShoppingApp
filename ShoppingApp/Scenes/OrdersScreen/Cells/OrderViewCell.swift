@@ -16,10 +16,10 @@ final class OrderViewCell: UITableViewCell {
     var viewModel: OrderCellViewModel?
     
     // MARK: - UI Properties
-    let orderIdIcon = UIImageView(frame: .zero)
+    let orderIdIcon = OrderIcon(color: Colors.darkGreen)
     let orderIdLabel = UILabel(frame: .zero)
     let orderDateLabel = UILabel(frame: .zero)
-    let orderDateIcon = UIImageView(frame: .zero)
+    let orderDateIcon = CalendarIcon()
     
     // MARK: - Initializers
     
@@ -57,16 +57,8 @@ final class OrderViewCell: UITableViewCell {
         accessoryType = .none
         selectionStyle = .none
         
-        orderIdIcon.image = UIImage(named: "icons-orders")?.withRenderingMode(.alwaysTemplate)
-        orderIdIcon.contentMode = .scaleAspectFill
-        orderIdIcon.backgroundColor = .clear
-        orderIdIcon.tintColor = .systemGreen
-        
-        orderDateIcon.image = UIImage(named: "icon-calendar")
-        orderDateIcon.contentMode = .scaleAspectFill
-        
-        orderIdLabel.font = .systemFont(ofSize: 12)
-        orderDateLabel.font = .systemFont(ofSize: 12)
+        orderIdLabel.font = .systemFont(ofSize: 14)
+        orderDateLabel.font = .systemFont(ofSize: 14)
         
         addSubviews(orderIdIcon, orderIdLabel, orderDateIcon, orderDateLabel)
     }

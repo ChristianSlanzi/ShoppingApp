@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum Colors {
+    static let darkGreen = UIColor.init(hexFromString: "#006400")  
+}
+
 enum SFSymbols {
     static let location = UIImage(systemName: "mappin.and.ellipse")
     static let repos = UIImage(systemName: "folder")

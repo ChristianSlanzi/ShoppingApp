@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24073F8524F52EAA0079869D /* OrderIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24073F8424F52EAA0079869D /* OrderIcon.swift */; };
+		24073F8724F532940079869D /* CalendarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24073F8624F532940079869D /* CalendarIcon.swift */; };
 		240F3F0724E2942600FC8BE0 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240F3F0624E2942600FC8BE0 /* String+Ext.swift */; };
 		240F3F0924E2949100FC8BE0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 240F3F0824E2949100FC8BE0 /* Localizable.strings */; };
 		240F3F0B24E2D7B000FC8BE0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 240F3F0A24E2D7B000FC8BE0 /* Podfile */; };
@@ -119,6 +121,8 @@
 
 /* Begin PBXFileReference section */
 		06E1BB1D76DF395F3C9D5C30 /* Pods_ShoppingAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24073F8424F52EAA0079869D /* OrderIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderIcon.swift; sourceTree = "<group>"; };
+		24073F8624F532940079869D /* CalendarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarIcon.swift; sourceTree = "<group>"; };
 		240F3F0624E2942600FC8BE0 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		240F3F0824E2949100FC8BE0 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		240F3F0A24E2D7B000FC8BE0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -256,6 +260,15 @@
 				7FD6F4798F8E5927A3756F8B /* Pods-ShoppingAppTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		24073F8324F52E730079869D /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				24073F8424F52EAA0079869D /* OrderIcon.swift */,
+				24073F8624F532940079869D /* CalendarIcon.swift */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 		240F3F0524E2940400FC8BE0 /* String */ = {
@@ -810,6 +823,7 @@
 		24C7CCAE24DEAFC400ABFD0A /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				24073F8324F52E730079869D /* Icons */,
 				245577AD24E93F3C00CE2A05 /* Text */,
 				24B7A47B24E589DE00A69FCD /* Controls */,
 				24F50D6924E13F85001B2A6B /* ViewControllers */,
@@ -1100,6 +1114,7 @@
 				2413914424EACC7500422B32 /* PaymentViewModel.swift in Sources */,
 				2427D30424F2C01F00E7DB95 /* OrderViewCell.swift in Sources */,
 				2410DDAE24F01409002E5433 /* OrderResultViewModel.swift in Sources */,
+				24073F8524F52EAA0079869D /* OrderIcon.swift in Sources */,
 				240F3F3124E31EF000FC8BE0 /* OrderRepository.swift in Sources */,
 				24AAECF424DF4FBE002A46BE /* Product.swift in Sources */,
 				24A17CB024DD9A3900829470 /* ShoppingCartViewController.swift in Sources */,
@@ -1128,6 +1143,7 @@
 				2413915024EAD8B000422B32 /* EmailRule.swift in Sources */,
 				24F50D6B24E13FA1001B2A6B /* CustomScrollViewController.swift in Sources */,
 				240F3F2E24E2F1E600FC8BE0 /* RealmDataManager.swift in Sources */,
+				24073F8724F532940079869D /* CalendarIcon.swift in Sources */,
 				2413914D24EAD8B000422B32 /* FieldValidatable.swift in Sources */,
 				240F3F1F24E2EFA000FC8BE0 /* DataManagement.swift in Sources */,
 				24AAECE724DEF9A5002A46BE /* CategoryViewCell.swift in Sources */,
