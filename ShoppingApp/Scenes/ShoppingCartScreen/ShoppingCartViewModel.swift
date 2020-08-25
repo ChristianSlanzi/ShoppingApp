@@ -10,6 +10,7 @@ import Foundation
 
 protocol ShoppingCartViewModelInputsType {
     func viewDidLoad()
+    func refreshData()
     func didTapOrderSummaryButton()
 }
 protocol ShoppingCartViewModelOutputsType: AnyObject {
@@ -48,6 +49,11 @@ final class ShoppingCartViewModel: ShoppingCartViewModelType, ShoppingCartViewMo
     
     //input
     public func viewDidLoad() {
+        Current.analytics.track(.loadedScreen(screenName: "Shopping Cart"))
+        refreshData()
+    }
+    
+    public func refreshData() {
         Current.cartRepository.getAllCartItems(on: nil, completionHandler: { (items) in
             self.elements = items
             self.outputs.reloadData()

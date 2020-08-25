@@ -42,6 +42,7 @@ final class WelcomeViewModel: WelcomeViewModelType, WelcomeViewModelInputsType, 
     
     //input
     public func viewDidLoad() {
+        Current.analytics.track(.loadedScreen(screenName: "Welcome"))
     }
     
     public func didTapStartButton() {

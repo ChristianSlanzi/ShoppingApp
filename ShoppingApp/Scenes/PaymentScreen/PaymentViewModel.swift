@@ -46,6 +46,7 @@ final class PaymentViewModel: PaymentViewModelType, PaymentViewModelInputsType, 
     
     //input
     public func viewDidLoad() {
+        Current.analytics.track(.loadedScreen(screenName: "Payment"))
     }
     
     func validate(usingFields fields: [FieldValidatable], completion: (Bool) -> ()) {

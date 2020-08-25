@@ -43,7 +43,7 @@ final class ShoppingCartViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.viewDidLoad()
+        viewModel.refreshData()
     }
     
     // MARK: - Layout Methods

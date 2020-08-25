@@ -46,6 +46,7 @@ final class OrderSummaryViewModel: OrderSummaryViewModelType, OrderSummaryViewMo
     
     //input
     public func viewDidLoad() {
+        Current.analytics.track(.loadedScreen(screenName: "Order Summary"))
         Current.cartRepository.getAllCartItems(on: nil, completionHandler: { (items) in
             self.elements = items
         })

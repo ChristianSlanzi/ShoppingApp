@@ -55,6 +55,7 @@ final class DeliveryViewModel: DeliveryViewModelType, DeliveryViewModelInputsTyp
     
     //input
     public func viewDidLoad() {
+        Current.analytics.track(.loadedScreen(screenName: "Delivery Options"))
         Current.deliveryRepository.getAllDeliverys(on: nil) { (items) in
             self.elements = items
         }

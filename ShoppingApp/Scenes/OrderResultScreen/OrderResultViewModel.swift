@@ -47,6 +47,7 @@ final class OrderResultViewModel: OrderResultViewModelType, OrderResultViewModel
     
     //input
     public func viewDidLoad() {
+        Current.analytics.track(.loadedScreen(screenName: "Order Result"))
         Current.orderRepository.getOrderFor(orderId: input.orderId, completionHandler: { (item) in
             self.element = item
             guard let elements = item?.items else { return }

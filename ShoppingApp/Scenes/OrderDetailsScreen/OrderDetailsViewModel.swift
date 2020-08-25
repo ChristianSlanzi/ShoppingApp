@@ -57,6 +57,7 @@ final class OrderDetailsViewModel: OrderDetailsViewModelType, OrderDetailsViewMo
     
     //input
     public func viewDidLoad() {
+        Current.analytics.track(.loadedScreen(screenName: "Order Details for order \(element.value.id)"))
     }
     
     //output

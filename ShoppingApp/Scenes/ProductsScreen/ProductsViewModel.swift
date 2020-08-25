@@ -46,6 +46,7 @@ final class ProductsViewModel: ProductsViewModelType, ProductsViewModelInputsTyp
     
     //input
     public func viewDidLoad() {
+        Current.analytics.track(.loadedScreen(screenName: "Products of category \(input.category.name)"))
         elements = Current.dataManager.getAllProductsFor(categoryId: input.category.id)
     }
     

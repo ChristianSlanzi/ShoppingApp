@@ -50,6 +50,7 @@ final class OrdersViewModel: OrdersViewModelType, OrdersViewModelInputsType, Ord
     
     //input
     public func viewDidLoad() {
+        Current.analytics.track(.loadedScreen(screenName: "Completed Orders"))
         orderRepository.getAllOrders(on: nil, completionHandler: { [weak self] (orders) in
             guard let self = self else { return }
             self.elements = orders

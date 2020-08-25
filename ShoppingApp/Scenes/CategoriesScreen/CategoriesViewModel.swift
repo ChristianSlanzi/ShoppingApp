@@ -44,6 +44,7 @@ final class CategoriesViewModel: CategoriesViewModelType, CategoriesViewModelInp
     
     //input
     public func viewDidLoad() {
+        Current.analytics.track(.loadedScreen(screenName: "Categories"))
         elements = Current.dataManager.getAllCategories()
     }
     

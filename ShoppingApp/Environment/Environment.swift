@@ -9,6 +9,8 @@
 import Foundation
 
 struct Environment {
+    
+    var analytics = Analytics()
 
     var dataManager: AppDataManagement = AppDataManager.shared
     

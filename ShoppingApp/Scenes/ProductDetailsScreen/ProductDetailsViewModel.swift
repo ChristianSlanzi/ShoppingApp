@@ -56,6 +56,7 @@ final class ProductDetailsViewModel: ProductDetailsViewModelType, ProductDetails
     
     //input
     public func viewDidLoad() {
+        Current.analytics.track(.loadedScreen(screenName: "Product \(element.value.name)"))
     }
     
     public func didTapAddToCartButton() {
