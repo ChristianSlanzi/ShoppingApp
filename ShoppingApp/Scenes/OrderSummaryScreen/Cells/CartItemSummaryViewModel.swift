@@ -23,9 +23,6 @@ protocol CartItemSummaryViewModelType {
 
 final class CartItemSummaryViewModel: CartItemSummaryViewModelType, CartItemSummaryViewModelInputsType, CartItemSummaryViewModelOutputsType {
     
-    private let dataManager: AppDataManagement
-    private let cartRepository: CartRepositoryProtocol
-    
     struct Input {
         //passing in data the viewModel needs from the view controller
         let cartItem: Observable<CartItemDTO>
@@ -43,11 +40,9 @@ final class CartItemSummaryViewModel: CartItemSummaryViewModelType, CartItemSumm
     private var input: Input
     public var output: Output
     
-    init(input: Input, dataManager: AppDataManagement, cartRepository: CartRepositoryProtocol) {
+    init(input: Input) {
         self.input = input
         self.output = Output()
-        self.dataManager = dataManager
-        self.cartRepository = cartRepository
         self.cartValue = CartValueViewModel(id: input.cartItem.value.productId, stepValue: input.cartItem.value.quantity)
         bind()
     }
@@ -66,7 +61,7 @@ final class CartItemSummaryViewModel: CartItemSummaryViewModelType, CartItemSumm
 
     // Binding
     private func bind() {
-        guard let product = dataManager.getProductFor(productId: input.cartItem.value.productId) else { return }
+        guard let product = Current.dataManager.getProductFor(productId: input.cartItem.value.productId) else { return }
         
         self.input.cartItem.bind { [weak self] (element) in
             guard let self = self else { return }
@@ -82,7 +77,7 @@ final class CartItemSummaryViewModel: CartItemSummaryViewModelType, CartItemSumm
             print(item)
             guard let self = self else { return }
             let itemDTO = CartItemDTO(productId: item.skuId, quantity: item.stepValue)
-            self.cartRepository.updateCartItem(itemDTO)
+            Current.cartRepository.updateCartItem(itemDTO)
         }
     }
     

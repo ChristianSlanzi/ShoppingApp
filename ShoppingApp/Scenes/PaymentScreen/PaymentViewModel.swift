@@ -34,21 +34,11 @@ final class PaymentViewModel: PaymentViewModelType, PaymentViewModelInputsType, 
         
     }
     
-    let cartRepository: CartRepositoryProtocol
-    let deliveryRepository: DeliveryRepositoryProtocol
-    let orderRepository: OrderRepositoryProtocol
-    
     private var orderId: String?
     private var input: Input
     
-    init(input: Input,
-         cartRepository: CartRepositoryProtocol,
-         deliveryRepository: DeliveryRepositoryProtocol,
-         orderRepository: OrderRepositoryProtocol) {
+    init(input: Input) {
         self.input = input
-        self.cartRepository = cartRepository
-        self.deliveryRepository = deliveryRepository
-        self.orderRepository = orderRepository
     }
     
     var inputs: PaymentViewModelInputsType { return self }
@@ -84,11 +74,11 @@ final class PaymentViewModel: PaymentViewModelType, PaymentViewModelInputsType, 
                                      ccv: String) {
         
         // retrieve cart items
-        cartRepository.getAllCartItems(on: nil) { (items) in
+        Current.cartRepository.getAllCartItems(on: nil) { (items) in
             guard !items.isEmpty else { return } //TODO: show error
             
             // retrieve delivery options
-            deliveryRepository.getAllDeliverys(on: nil) { (deliveries) in
+            Current.deliveryRepository.getAllDeliverys(on: nil) { (deliveries) in
                 guard let deliveryDTO = deliveries.first else { return } // TODO: show error
                 
                 // create order
@@ -100,10 +90,10 @@ final class PaymentViewModel: PaymentViewModelType, PaymentViewModelInputsType, 
                                         shipping: deliveryDTO)
                 
                 // save order
-                orderRepository.saveOrder(orderDTO)
+                Current.orderRepository.saveOrder(orderDTO)
                 
                 // clean cart
-                cartRepository.removeAllItems()
+                Current.cartRepository.removeAllItems()
             }
             
         }

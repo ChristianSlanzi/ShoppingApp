@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24073F8524F52EAA0079869D /* OrderIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24073F8424F52EAA0079869D /* OrderIcon.swift */; };
 		24073F8724F532940079869D /* CalendarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24073F8624F532940079869D /* CalendarIcon.swift */; };
+		24073F8A24F549FC0079869D /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24073F8924F549FC0079869D /* Environment.swift */; };
 		240F3F0724E2942600FC8BE0 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240F3F0624E2942600FC8BE0 /* String+Ext.swift */; };
 		240F3F0924E2949100FC8BE0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 240F3F0824E2949100FC8BE0 /* Localizable.strings */; };
 		240F3F0B24E2D7B000FC8BE0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 240F3F0A24E2D7B000FC8BE0 /* Podfile */; };
@@ -123,6 +124,7 @@
 		06E1BB1D76DF395F3C9D5C30 /* Pods_ShoppingAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24073F8424F52EAA0079869D /* OrderIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderIcon.swift; sourceTree = "<group>"; };
 		24073F8624F532940079869D /* CalendarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarIcon.swift; sourceTree = "<group>"; };
+		24073F8924F549FC0079869D /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		240F3F0624E2942600FC8BE0 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		240F3F0824E2949100FC8BE0 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		240F3F0A24E2D7B000FC8BE0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -269,6 +271,14 @@
 				24073F8624F532940079869D /* CalendarIcon.swift */,
 			);
 			path = Icons;
+			sourceTree = "<group>";
+		};
+		24073F8824F549CE0079869D /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				24073F8924F549FC0079869D /* Environment.swift */,
+			);
+			path = Environment;
 			sourceTree = "<group>";
 		};
 		240F3F0524E2940400FC8BE0 /* String */ = {
@@ -734,6 +744,7 @@
 				24C7CCAE24DEAFC400ABFD0A /* Custom Views */,
 				24C5ECA524DCB3600060EB3A /* Utils */,
 				24C5EC9E24DCAA830060EB3A /* Composition */,
+				24073F8824F549CE0079869D /* Environment */,
 				24C5ECA124DCAC540060EB3A /* Flow */,
 				24A17CAC24DD990D00829470 /* Scenes */,
 				24C5EC7B24DC9D480060EB3A /* AppDelegate.swift */,
@@ -1108,6 +1119,7 @@
 				24F50D6624E13351001B2A6B /* ProductDetailsViewController.swift in Sources */,
 				24144D2124E6933400DD9B96 /* CartItemSummaryViewModel.swift in Sources */,
 				240F3F1E24E2EFA000FC8BE0 /* MappableProtocol.swift in Sources */,
+				24073F8A24F549FC0079869D /* Environment.swift in Sources */,
 				2413915124EAD8B000422B32 /* Rule.swift in Sources */,
 				24144D1F24E692EC00DD9B96 /* CartItemSummaryViewCell.swift in Sources */,
 				24C5EC8024DC9D480060EB3A /* WelcomeViewController.swift in Sources */,

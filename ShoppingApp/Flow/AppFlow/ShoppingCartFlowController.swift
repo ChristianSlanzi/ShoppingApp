@@ -32,13 +32,7 @@ final class ShoppingCartFlowController: UIViewController, FlowProtocol {
     }
     
     func start() {
-        let dbService = RealmDataManager(RealmProvider.default)
-        let orderService = RealmDataManager(RealmProvider.main)
-        
-        let cartRepo = CartRepository(dbManager: dbService)
-        let orderRepo = OrderRepository(dbManager: orderService)
-        let appDataManager = AppDataManager.shared
-        let viewModel = ShoppingCartViewModel(input: ShoppingCartViewModel.Input(), orderRepository: orderRepo, cartRepository: cartRepo, dataManager: appDataManager)
+        let viewModel = ShoppingCartViewModel(input: ShoppingCartViewModel.Input())
         let shoppingCartViewController = ShoppingCartViewController(viewModel: viewModel)
         shoppingCartViewController.flowDelegate = self
         embeddedNavigationController.viewControllers = [shoppingCartViewController]
@@ -47,58 +41,28 @@ final class ShoppingCartFlowController: UIViewController, FlowProtocol {
 
 extension ShoppingCartFlowController: ShoppingCartFlowControllerDelegate {
     func startOrderSummary() {
-        let dbService = RealmDataManager(RealmProvider.default)
-        let orderService = RealmDataManager(RealmProvider.main)
-        
-        let cartRepo = CartRepository(dbManager: dbService)
-        let orderRepo = OrderRepository(dbManager: orderService)
-        let appDataManager = AppDataManager.shared
-        let viewModel = OrderSummaryViewModel(input: OrderSummaryViewModel.Input(), orderRepository: orderRepo, cartRepository: cartRepo, dataManager: appDataManager)
+        let viewModel = OrderSummaryViewModel(input: OrderSummaryViewModel.Input())
         let orderSummaryViewController = OrderSummaryViewController(viewModel: viewModel)
         orderSummaryViewController.flowDelegate = self
         embeddedNavigationController.pushViewController(orderSummaryViewController, animated: true)
     }
     
     func startOrderDelivery() {
-        let dbService = RealmDataManager(RealmProvider.default)
-        let deliveryRepo = DeliveryRepository(dbManager: dbService)
-        let viewModel = DeliveryViewModel(input: DeliveryViewModel.Input(), deliveryRepository: deliveryRepo)
+        let viewModel = DeliveryViewModel(input: DeliveryViewModel.Input())
         let deliveryViewController = DeliveryViewController(viewModel: viewModel)
         deliveryViewController.flowDelegate = self
         embeddedNavigationController.pushViewController(deliveryViewController, animated: true)
     }
     
     func startPayment() {
-        let dbService = RealmDataManager(RealmProvider.default)
-        let orderService = RealmDataManager(RealmProvider.main)
-        
-        let cartRepo = CartRepository(dbManager: dbService)
-        let deliveryRepo = DeliveryRepository(dbManager: dbService)
-        let orderRepo = OrderRepository(dbManager: orderService)
-        
-        let viewModel = PaymentViewModel(input: PaymentViewModel.Input(),
-                                         cartRepository: cartRepo,
-                                         deliveryRepository: deliveryRepo,
-                                         orderRepository: orderRepo)
+        let viewModel = PaymentViewModel(input: PaymentViewModel.Input())
         let paymentViewController = PaymentViewController(viewModel: viewModel)
         paymentViewController.flowDelegate = self
         embeddedNavigationController.pushViewController(paymentViewController, animated: true)
     }
     
     func startOrderResult(with orderId: String) {
-        let dbService = RealmDataManager(RealmProvider.default)
-        let orderService = RealmDataManager(RealmProvider.main)
-        
-        let cartRepo = CartRepository(dbManager: dbService)
-        let deliveryRepo = DeliveryRepository(dbManager: dbService)
-        let orderRepo = OrderRepository(dbManager: orderService)
-        let appDataManager = AppDataManager.shared
-        
-        let viewModel = OrderResultViewModel(input: OrderResultViewModel.Input(orderId: orderId),
-                                             cartRepository: cartRepo,
-                                             deliveryRepository: deliveryRepo,
-                                             orderRepository: orderRepo,
-                                             dataManager: appDataManager)
+        let viewModel = OrderResultViewModel(input: OrderResultViewModel.Input(orderId: orderId))
         let orderResultViewController = OrderResultViewController(viewModel: viewModel)
         orderResultViewController.flowDelegate = self
         embeddedNavigationController.pushViewController(orderResultViewController, animated: true)

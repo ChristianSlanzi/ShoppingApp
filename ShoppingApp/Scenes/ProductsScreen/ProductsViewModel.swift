@@ -24,7 +24,6 @@ protocol ProductsViewModelType {
 
 final class ProductsViewModel: ProductsViewModelType, ProductsViewModelInputsType, ProductsViewModelOutputsType {
     
-    private let dataManager: AppDataManager
     private var elements: [Product] = []
     
     struct Input {
@@ -38,9 +37,8 @@ final class ProductsViewModel: ProductsViewModelType, ProductsViewModelInputsTyp
     
     private var input: Input
     
-    init(input: Input, dataManager: AppDataManager) {
+    init(input: Input) {
         self.input = input
-        self.dataManager = dataManager
     }
     
     var inputs: ProductsViewModelInputsType { return self }
@@ -48,7 +46,7 @@ final class ProductsViewModel: ProductsViewModelType, ProductsViewModelInputsTyp
     
     //input
     public func viewDidLoad() {
-        elements = dataManager.getAllProductsFor(categoryId: input.category.id)
+        elements = Current.dataManager.getAllProductsFor(categoryId: input.category.id)
     }
     
     public func didTapCellAt(indexPath: IndexPath) {

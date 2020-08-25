@@ -36,22 +36,10 @@ final class OrderResultViewModel: OrderResultViewModelType, OrderResultViewModel
         
     }
     
-    let dataManager: AppDataManagement
-    let cartRepository: CartRepositoryProtocol
-    let deliveryRepository: DeliveryRepositoryProtocol
-    let orderRepository: OrderRepositoryProtocol
-    
     private var input: Input
     
-    init(input: Input,
-         cartRepository: CartRepositoryProtocol,
-         deliveryRepository: DeliveryRepositoryProtocol,
-         orderRepository: OrderRepositoryProtocol, dataManager: AppDataManagement) {
+    init(input: Input) {
         self.input = input
-        self.cartRepository = cartRepository
-        self.deliveryRepository = deliveryRepository
-        self.orderRepository = orderRepository
-        self.dataManager = dataManager
     }
     
     var inputs: OrderResultViewModelInputsType { return self }
@@ -59,7 +47,7 @@ final class OrderResultViewModel: OrderResultViewModelType, OrderResultViewModel
     
     //input
     public func viewDidLoad() {
-        orderRepository.getOrderFor(orderId: input.orderId, completionHandler: { (item) in
+        Current.orderRepository.getOrderFor(orderId: input.orderId, completionHandler: { (item) in
             self.element = item
             guard let elements = item?.items else { return }
             self.elements = elements
@@ -92,7 +80,7 @@ final class OrderResultViewModel: OrderResultViewModelType, OrderResultViewModel
     public func getCellViewModel(_ indexPath: IndexPath) -> CartItemSummaryViewModel? {
         guard let element = getElementAt(indexPath) else { return nil }
         return CartItemSummaryViewModel(input: CartItemSummaryViewModel.Input(cartItem:
-        Observable(element)), dataManager: dataManager, cartRepository: cartRepository)
+        Observable(element)))
     }
 
 }

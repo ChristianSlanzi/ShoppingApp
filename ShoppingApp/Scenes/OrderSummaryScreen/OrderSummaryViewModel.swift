@@ -34,18 +34,11 @@ final class OrderSummaryViewModel: OrderSummaryViewModelType, OrderSummaryViewMo
         
     }
     
-    let dataManager: AppDataManagement
-    let cartRepository: CartRepositoryProtocol
-    let orderRepository: OrderRepositoryProtocol
-    
     private var input: Input
     
-    init(input: Input, orderRepository: OrderRepositoryProtocol, cartRepository: CartRepositoryProtocol, dataManager: AppDataManagement) {
+    init(input: Input) {
         self.input = input
         //self.output = Output()
-        self.cartRepository = cartRepository
-        self.orderRepository = orderRepository
-        self.dataManager = dataManager
     }
     
     var inputs: OrderSummaryViewModelInputsType { return self }
@@ -53,7 +46,7 @@ final class OrderSummaryViewModel: OrderSummaryViewModelType, OrderSummaryViewMo
     
     //input
     public func viewDidLoad() {
-        cartRepository.getAllCartItems(on: nil, completionHandler: { (items) in
+        Current.cartRepository.getAllCartItems(on: nil, completionHandler: { (items) in
             self.elements = items
         })
         self.outputs.reloadData()
@@ -80,7 +73,7 @@ final class OrderSummaryViewModel: OrderSummaryViewModelType, OrderSummaryViewMo
     public func getCellViewModel(_ indexPath: IndexPath) -> CartItemSummaryViewModel? {
         guard let element = getElementAt(indexPath) else { return nil }
         return CartItemSummaryViewModel(input: CartItemSummaryViewModel.Input(cartItem:
-        Observable(element)), dataManager: dataManager, cartRepository: cartRepository)
+        Observable(element)))
     }
     
 }

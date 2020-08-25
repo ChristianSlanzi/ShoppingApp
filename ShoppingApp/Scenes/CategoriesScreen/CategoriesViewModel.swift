@@ -23,7 +23,6 @@ protocol CategoriesViewModelType {
 
 final class CategoriesViewModel: CategoriesViewModelType, CategoriesViewModelInputsType, CategoriesViewModelOutputsType {
     
-    private let dataManager: AppDataManager
     private var elements: [Category] = []
     
     struct Input {
@@ -36,9 +35,8 @@ final class CategoriesViewModel: CategoriesViewModelType, CategoriesViewModelInp
     
     private var input: Input
     
-    init(input: Input, dataManager: AppDataManager) {
+    init(input: Input) {
         self.input = input
-        self.dataManager = dataManager
     }
     
     var inputs: CategoriesViewModelInputsType { return self }
@@ -46,7 +44,7 @@ final class CategoriesViewModel: CategoriesViewModelType, CategoriesViewModelInp
     
     //input
     public func viewDidLoad() {
-        elements = dataManager.getAllCategories()
+        elements = Current.dataManager.getAllCategories()
     }
     
     public func didTapCellAt(indexPath: IndexPath) {

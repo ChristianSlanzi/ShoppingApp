@@ -44,13 +44,10 @@ final class DeliveryViewModel: DeliveryViewModelType, DeliveryViewModelInputsTyp
         
     }
     
-    let deliveryRepository: DeliveryRepositoryProtocol
-    
     private var input: Input
     
-    init(input: Input, deliveryRepository: DeliveryRepositoryProtocol) {
+    init(input: Input) {
         self.input = input
-        self.deliveryRepository = deliveryRepository
     }
     
     var inputs: DeliveryViewModelInputsType { return self }
@@ -58,7 +55,7 @@ final class DeliveryViewModel: DeliveryViewModelType, DeliveryViewModelInputsTyp
     
     //input
     public func viewDidLoad() {
-        deliveryRepository.getAllDeliverys(on: nil) { (items) in
+        Current.deliveryRepository.getAllDeliverys(on: nil) { (items) in
             self.elements = items
         }
         self.outputs.reloadData()
@@ -105,12 +102,12 @@ final class DeliveryViewModel: DeliveryViewModelType, DeliveryViewModelInputsTyp
                                       zipCode: zip)
         
         // save delivery details
-        deliveryRepository.getDeliveryFor(phoneNumber: deliveryDTO.phoneNumber) { (item) in
+        Current.deliveryRepository.getDeliveryFor(phoneNumber: deliveryDTO.phoneNumber) { (item) in
             guard item != nil else {
-                deliveryRepository.saveDelivery(delivery: deliveryDTO)
+                Current.deliveryRepository.saveDelivery(delivery: deliveryDTO)
                 return
             }
-            deliveryRepository.updateDelivery(deliveryDTO)
+            Current.deliveryRepository.updateDelivery(deliveryDTO)
         }
     }
     

@@ -38,18 +38,14 @@ final class ProductDetailsViewModel: ProductDetailsViewModelType, ProductDetails
         var imageUrl: Observable<String> = Observable("")
     }
     
-    let cartRepository: CartRepositoryProtocol
-    let orderRepository: OrderRepositoryProtocol
-    
     private var input: Input
     public var output: Output
     
-    init(input: Input, element: Product, orderRepository: OrderRepositoryProtocol, cartRepository: CartRepositoryProtocol) {
+    init(input: Input, element: Product) {
         
         self.input = input
         self.output = Output()
-        self.cartRepository = cartRepository
-        self.orderRepository = orderRepository
+        
         self.element = Observable(element)
         
         bind()
@@ -89,15 +85,15 @@ final class ProductDetailsViewModel: ProductDetailsViewModelType, ProductDetails
     // MARK: - Helpers
     private func addProductToCart() {
         let product = element.value
-        cartRepository.getCartItemFor(productId: product.id) { (item) in
+        Current.cartRepository.getCartItemFor(productId: product.id) { (item) in
             guard let item = item else {
                 let itemDTO = CartItemDTO(productId: product.id, quantity: 1)
-                cartRepository.saveCartItem(itemDTO)
+                Current.cartRepository.saveCartItem(itemDTO)
                 didAddElementToCart()
                 return
             }
             let itemDTO = CartItemDTO(productId: product.id, quantity: item.quantity + 1)
-            cartRepository.updateCartItem(itemDTO)
+            Current.cartRepository.updateCartItem(itemDTO)
             didAddElementToCart()
         }
     }

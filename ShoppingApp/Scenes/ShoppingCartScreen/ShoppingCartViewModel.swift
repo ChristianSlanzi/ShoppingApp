@@ -35,19 +35,12 @@ final class ShoppingCartViewModel: ShoppingCartViewModelType, ShoppingCartViewMo
 
     }
     
-    let dataManager: AppDataManagement
-    let cartRepository: CartRepositoryProtocol
-    let orderRepository: OrderRepositoryProtocol
-    
     private var input: Input
     public var output: Output
     
-    init(input: Input, orderRepository: OrderRepositoryProtocol, cartRepository: CartRepositoryProtocol, dataManager: AppDataManagement) {
+    init(input: Input) {
         self.input = input
         self.output = Output()
-        self.cartRepository = cartRepository
-        self.orderRepository = orderRepository
-        self.dataManager = dataManager
     }
     
     var inputs: ShoppingCartViewModelInputsType { return self }
@@ -55,7 +48,7 @@ final class ShoppingCartViewModel: ShoppingCartViewModelType, ShoppingCartViewMo
     
     //input
     public func viewDidLoad() {
-        cartRepository.getAllCartItems(on: nil, completionHandler: { (items) in
+        Current.cartRepository.getAllCartItems(on: nil, completionHandler: { (items) in
             self.elements = items
             self.outputs.reloadData()
         })
@@ -83,14 +76,14 @@ final class ShoppingCartViewModel: ShoppingCartViewModelType, ShoppingCartViewMo
     public func getCellViewModel(_ indexPath: IndexPath) -> CartItemCellViewModel? {
         guard let element = getElementAt(indexPath) else { return nil }
         return CartItemCellViewModel(input: CartItemCellViewModel.Input(cartItem:
-        Observable(element)), dataManager: dataManager, cartRepository: cartRepository)
+        Observable(element)))
     }
     
     public func deleteElementAt(_ indexPath: IndexPath, _ completion: @escaping (Result<Void, CartRepositoryError>)-> Void) {
         
         guard let element = getElementAt(indexPath) else { return } //TODO send a completion error
         
-        cartRepository.removeCartItemFor(productId: element.productId) { result in
+        Current.cartRepository.removeCartItemFor(productId: element.productId) { result in
             if result == true {
                 elements.remove(at: indexPath.row)
                 completion(.success(()))

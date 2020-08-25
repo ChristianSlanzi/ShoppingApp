@@ -44,7 +44,7 @@ final class ProductFlowController: UIViewController, FlowProtocol {
         
         embeddedNavigationController.viewControllers = [productListController]
         */
-        let categoriesViewModel = CategoriesViewModel(input: CategoriesViewModel.Input(), dataManager: AppDataManager.shared
+        let categoriesViewModel = CategoriesViewModel(input: CategoriesViewModel.Input()
         )
         let categoriesViewController = CategoriesViewController(viewModel: categoriesViewModel)
         categoriesViewController.flowDelegate = self
@@ -55,7 +55,7 @@ final class ProductFlowController: UIViewController, FlowProtocol {
 
 extension ProductFlowController: ProductFlowControllerDelegate {
     func startProductListFor(category: Category) {
-        let productsViewModel = ProductsViewModel(input: ProductsViewModel.Input(category: category), dataManager: AppDataManager.shared
+        let productsViewModel = ProductsViewModel(input: ProductsViewModel.Input(category: category)
         )
         let productsViewController = ProductsViewController(viewModel: productsViewModel)
         productsViewController.flowDelegate = self
@@ -64,14 +64,8 @@ extension ProductFlowController: ProductFlowControllerDelegate {
     }
     
     func startProductDetailsFor(product: Product) {
-        let dbService = RealmDataManager(RealmProvider.default)
-        let orderService = RealmDataManager(RealmProvider.main)
-        
-        let cartRepo = CartRepository(dbManager: dbService)
-        let orderRepo = OrderRepository(dbManager: orderService)
-        
-        
-        let productDetailsViewModel = ProductDetailsViewModel(input: ProductDetailsViewModel.Input(), element: product, orderRepository: orderRepo, cartRepository: cartRepo)
+
+        let productDetailsViewModel = ProductDetailsViewModel(input: ProductDetailsViewModel.Input(), element: product)
         let productDetailsViewController = ProductDetailsViewController(viewModel: productDetailsViewModel)
         productDetailsViewController.flowDelegate = self
         
