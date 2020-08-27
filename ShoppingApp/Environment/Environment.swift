@@ -9,11 +9,13 @@
 import Foundation
 
 struct Environment {
-    
-    var date: () -> Date = Date.init
-    
     var analytics = Analytics()
-
+    var calendar = Calendar.autoupdatingCurrent
+    var date: () -> Date = Date.init
+    var device = Device()
+    var screen = Screen()
+    var version = Version()
+    
     var dataManager: AppDataManagement = AppDataManager.shared
     
     var cartRepository: CartRepositoryProtocol = CartRepository(dbManager: RealmDataManager(RealmProvider.default))
@@ -21,10 +23,6 @@ struct Environment {
     var orderRepository: OrderRepositoryProtocol = OrderRepository(dbManager: RealmDataManager(RealmProvider.main))
     
     var deliveryRepository: DeliveryRepositoryProtocol = DeliveryRepository(dbManager: RealmDataManager(RealmProvider.default))
-    
-    var device = Device()
-    var screen = Screen()
-    var version = Version()
 }
 
 var Current = Environment()
@@ -39,15 +37,17 @@ var Current = Environment()
 // ====================================================
 
 extension Environment {
-    static let mock = Environment(date: { .mock },
-                                  analytics: .mock,
+    static let mock = Environment(analytics: .mock,
+                                  calendar: .mock,
+                                  date: { .mock },
+                                  device: .mock,
+                                  screen: .mock,
+                                  version: .mock,
                                   dataManager: AppDataManager.mock,
                                   cartRepository: CartRepository.mock,
                                   orderRepository: OrderRepository.mock,
-                                  deliveryRepository: DeliveryRepository.mock,
-                                  device: .mock,
-                                  screen: .mock,
-                                  version: .mock)
+                                  deliveryRepository: DeliveryRepository.mock
+                                  )
 }
 
 extension Analytics {
@@ -85,4 +85,9 @@ extension Screen {
 extension Version {
     static let mock = Version(build: "42", release: "0.0.1")
 }
+
+extension Calendar {
+    static let mock = Calendar(identifier: .gregorian)
+}
+//TODO: extract Locale
 
