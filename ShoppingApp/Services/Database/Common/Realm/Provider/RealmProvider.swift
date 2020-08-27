@@ -33,6 +33,7 @@ struct RealmProvider {
     // MARK: - Configuration
     private static let defaultConfig = Realm.Configuration(schemaVersion: 1)
     private static let mainConfig = Realm.Configuration(fileURL: URL.inDocumentsFolder(fileName: "main.realm"), schemaVersion: 1)
+    private static let mockConfig = Realm.Configuration(fileURL: URL.inDocumentsFolder(fileName: "mock.realm"), schemaVersion: 1)
     
     // MARK: - Realm Instances
     public static var `default`: Realm? = {
@@ -40,5 +41,8 @@ struct RealmProvider {
     }()
     public static var main: Realm? = {
         return RealmProvider(config: RealmProvider.mainConfig).realm
+    }()
+    public static var mock: Realm? = {
+        return RealmProvider(config: RealmProvider.mockConfig).realm
     }()
 }
