@@ -10,6 +10,8 @@ import Foundation
 
 struct Environment {
     
+    var date: () -> Date = Date.init
+    
     var analytics = Analytics()
 
     var dataManager: AppDataManagement = AppDataManager.shared
@@ -19,25 +21,43 @@ struct Environment {
     var orderRepository: OrderRepositoryProtocol = OrderRepository(dbManager: RealmDataManager(RealmProvider.main))
     
     var deliveryRepository: DeliveryRepositoryProtocol = DeliveryRepository(dbManager: RealmDataManager(RealmProvider.default))
+    
+    var device = Device()
+    var screen = Screen()
+    var version = Version()
 }
 
-var Current = Environment()//Environment.mock//
-
+var Current = Environment()
+//var Current = Environment.mock
 
 // MARK: - Mock Environment
 
+// ====================================================
+//
+//                  Dependency Mocks
+//
+// ====================================================
+
 extension Environment {
-    static let mock = Environment(analytics: .mock,
+    static let mock = Environment(date: { .mock },
+                                  analytics: .mock,
                                   dataManager: AppDataManager.mock,
                                   cartRepository: CartRepository.mock,
                                   orderRepository: OrderRepository.mock,
-                                  deliveryRepository: DeliveryRepository.mock)
+                                  deliveryRepository: DeliveryRepository.mock,
+                                  device: .mock,
+                                  screen: .mock,
+                                  version: .mock)
 }
 
 extension Analytics {
     static let mock = Analytics(track: { event in
         print("Mock track", event)
     })
+}
+
+extension Date {
+    static let mock = Date(timeIntervalSinceReferenceDate: 557152051)
 }
 
 extension AppDataManager {
@@ -53,3 +73,16 @@ extension OrderRepository {
 extension DeliveryRepository {
     static let mock = DeliveryRepository(dbManager: RealmDataManager(RealmProvider.mock))
 }
+
+extension Device {
+    static let mock = Device(systemName: "Mock iOS", systemVersion: "11.mock")
+}
+
+extension Screen {
+    static let mock = Screen(height: "568", width: "376")
+}
+
+extension Version {
+    static let mock = Version(build: "42", release: "0.0.1")
+}
+

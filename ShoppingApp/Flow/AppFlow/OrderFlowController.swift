@@ -30,10 +30,7 @@ final class OrderFlowController: UIViewController, FlowProtocol {
     }
     
     func start() {
-        let orderService = RealmDataManager(RealmProvider.main)
-        let orderRepo = OrderRepository(dbManager: orderService)
-        
-        let ordersViewModel = OrdersViewModel(input: OrdersViewModel.Input(), dataManager: AppDataManager.shared, orderRepository: orderRepo)
+        let ordersViewModel = OrdersViewModel(input: OrdersViewModel.Input())
         
         let ordersViewController = OrdersViewController(viewModel: ordersViewModel)
         ordersViewController.flowDelegate = self
@@ -45,16 +42,8 @@ final class OrderFlowController: UIViewController, FlowProtocol {
 extension OrderFlowController: OrderFlowControllerDelegate {
     
     func startOrderDetailsFor(order: OrderDTO) {
-        let dbService = RealmDataManager(RealmProvider.default)
-        let orderService = RealmDataManager(RealmProvider.main)
-        
-        let cartRepo = CartRepository(dbManager: dbService)
-        let orderRepo = OrderRepository(dbManager: orderService)
-        
         let orderDetailsViewModel = OrderDetailsViewModel(input: OrderDetailsViewModel.Input(),
-                                                          element: order,
-                                                          orderRepository: orderRepo, cartRepository:
-            cartRepo, dataManager: AppDataManager.shared)
+                                                          element: order)
         let orderDetailsViewController = OrderDetailsViewController(viewModel: orderDetailsViewModel)
         orderDetailsViewController.flowDelegate = self
         

@@ -24,9 +24,6 @@ protocol OrdersViewModelType {
 
 final class OrdersViewModel: OrdersViewModelType, OrdersViewModelInputsType, OrdersViewModelOutputsType {
 
-    private let dataManager: AppDataManagement
-    let orderRepository: OrderRepositoryProtocol
-    
     private var elements: [OrderDTO] = []
     
     struct Input {
@@ -39,10 +36,8 @@ final class OrdersViewModel: OrdersViewModelType, OrdersViewModelInputsType, Ord
     
     private var input: Input
     
-    init(input: Input, dataManager: AppDataManagement, orderRepository: OrderRepositoryProtocol) {
+    init(input: Input) {
         self.input = input
-        self.dataManager = dataManager
-        self.orderRepository = orderRepository
     }
     
     var inputs: OrdersViewModelInputsType { return self }
@@ -51,7 +46,7 @@ final class OrdersViewModel: OrdersViewModelType, OrdersViewModelInputsType, Ord
     //input
     public func viewDidLoad() {
         Current.analytics.track(.loadedScreen(screenName: "Completed Orders"))
-        orderRepository.getAllOrders(on: nil, completionHandler: { [weak self] (orders) in
+        Current.orderRepository.getAllOrders(on: nil, completionHandler: { [weak self] (orders) in
             guard let self = self else { return }
             self.elements = orders
             self.outputs.reloadData()
@@ -81,6 +76,6 @@ final class OrdersViewModel: OrdersViewModelType, OrdersViewModelInputsType, Ord
     public func getCellViewModel(_ indexPath: IndexPath) -> OrderCellViewModel? {
         guard let element = getElementAt(indexPath) else { return nil }
         return OrderCellViewModel(input: OrderCellViewModel.Input(order:
-        Observable(element)), dataManager: dataManager)
+        Observable(element)), dataManager: Current.dataManager)
     }
 }

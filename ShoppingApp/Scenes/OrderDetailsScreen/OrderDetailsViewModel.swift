@@ -33,20 +33,13 @@ final class OrderDetailsViewModel: OrderDetailsViewModelType, OrderDetailsViewMo
         var date: Observable<String> = Observable("")
     }
     
-    let dataManager: AppDataManagement
-    let cartRepository: CartRepositoryProtocol
-    let orderRepository: OrderRepositoryProtocol
-    
     private var input: Input
     public var output: Output
     
-    init(input: Input, element: OrderDTO, orderRepository: OrderRepositoryProtocol, cartRepository: CartRepositoryProtocol, dataManager: AppDataManagement) {
+    init(input: Input, element: OrderDTO) {
         
         self.input = input
         self.output = Output()
-        self.cartRepository = cartRepository
-        self.orderRepository = orderRepository
-        self.dataManager = dataManager
         self.element = Observable(element)
         
         bind()
@@ -86,6 +79,6 @@ final class OrderDetailsViewModel: OrderDetailsViewModelType, OrderDetailsViewMo
     public func getCellViewModel(_ indexPath: IndexPath) -> OrderItemCellViewModel? {
         guard let element = getElementAt(indexPath) else { return nil }
         return OrderItemCellViewModel(input: OrderItemCellViewModel.Input(cartItem:
-        Observable(element)), dataManager: dataManager, cartRepository: cartRepository)
+            Observable(element)), dataManager: Current.dataManager, cartRepository: Current.cartRepository)
     }
 }
