@@ -85,7 +85,7 @@ class ProductsViewModelTests: XCTestCase {
     private func makeSut(dataManager: AppDataManager) -> ProductsViewModel {
         let category = dataManager.getCategoryAt(index: 0)!
         let input = ProductsViewModel.Input(category: category)
-        let sut = ProductsViewModel(input: input, dataManager: dataManager)
+        let sut = ProductsViewModel(input: input)
         return sut
     }
     

@@ -82,7 +82,7 @@ class CategoriesViewModelTests: XCTestCase {
     // MARK: - Helpers
     private func makeSut(dataManager: AppDataManager) -> CategoriesViewModel {
         let input = CategoriesViewModel.Input()
-        let sut = CategoriesViewModel(input: input, dataManager: dataManager)
+        let sut = CategoriesViewModel(input: input)
         return sut
     }
 }

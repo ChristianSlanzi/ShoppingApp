@@ -37,7 +37,7 @@ class ProductDetailsViewModelTests: XCTestCase {
     // MARK: - Helpers
     private func makeSut(product: Product) -> ProductDetailsViewModel {
         let input = ProductDetailsViewModel.Input()
-        let sut = ProductDetailsViewModel(input: input, element: product, orderRepository: DummyOrderRepository(), cartRepository: DummyCartRepository())
+        let sut = ProductDetailsViewModel(input: input, element: product)
         return sut
     }
     
@@ -50,13 +50,22 @@ class ProductDetailsViewModelTests: XCTestCase {
 }
 
 fileprivate class DummyOrderRepository: OrderRepositoryProtocol {
+    // CRUD
+    func saveOrder(_ order: OrderDTO) {}
+    func getOrderFor(orderId: String, completionHandler: (OrderDTO?) -> Void) {}
+    func getCartItemFor(productId: Int, completionHandler: (CartItemDTO?) -> Void) {}
     func getAllOrders(on sort: Sorted?, completionHandler: ([OrderDTO]) -> Void) {}
-    func saveOrder(order: OrderDTO) {}
     func updateOrder(_ order: OrderDTO) {}
+    func removeCartItemFor(productId: Int, completionHandler: (Bool) -> Void) {}
+    func removeAllItems() {}
 }
 
 fileprivate class DummyCartRepository: CartRepositoryProtocol {
+    // CRUD
+    func saveCartItem(_ cartItem: CartItemDTO) {}
+    func getCartItemFor(productId: Int, completionHandler: (CartItemDTO?) -> Void) {}
     func getAllCartItems(on sort: Sorted?, completionHandler: ([CartItemDTO]) -> Void) {}
-    func saveCartItem(cartItem: CartItemDTO) {}
     func updateCartItem(_ cartItem: CartItemDTO) {}
+    func removeCartItemFor(productId: Int, completionHandler: (Bool) -> Void) {}
+    func removeAllItems() {}
 }
