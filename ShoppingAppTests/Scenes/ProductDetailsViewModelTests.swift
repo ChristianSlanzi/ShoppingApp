@@ -34,8 +34,48 @@ class ProductDetailsViewModelTests: XCTestCase {
         }
     }
     
+    func testAddProductToCart() {
+        // given
+        let expectation = XCTestExpectation(description: "callback called")
+        let product = makeTestProduct()
+        let sut = makeSut(product: product)
+        
+        // when
+        sut.inputs.viewDidLoad()
+        sut.inputs.didTapAddToCartButton()
+        sut.inputs.didTapAddToCartButton()
+        // then
+        Current.cartRepository.getCartItemFor(productId: product.id) {  (item) in
+            XCTAssertEqual(item?.quantity, 2)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: TIMEOUT_1_SEC)
+    }
+    
+    func testDidTapOrderNowButtonCallbackCalled() {
+        // given
+        let expectation = XCTestExpectation(description: "callback called")
+        let product = makeTestProduct()
+        let sut = makeSut(product: product)
+        
+        // then
+        sut.outputs.startOrderSummaryScreen = {
+           expectation.fulfill()
+        }
+        
+        // when
+        sut.inputs.viewDidLoad()
+        sut.inputs.didTapOrderNowButton()
+        
+        wait(for: [expectation], timeout: TIMEOUT_1_SEC)
+    }
+    
     // MARK: - Helpers
     private func makeSut(product: Product) -> ProductDetailsViewModel {
+        
+        Current = Environment.mock
+        Current.cartRepository.removeAllItems()
+        
         let input = ProductDetailsViewModel.Input()
         let sut = ProductDetailsViewModel(input: input, element: product)
         return sut
@@ -45,7 +85,6 @@ class ProductDetailsViewModelTests: XCTestCase {
         let product = Product(id: 0, categoryId: 0, name: "Test Product", description: "Test Product Description", imageUrl: "test-product-url", price: 10.0, currency: "Euro")
         return product
     }
-    
 
 }
 
