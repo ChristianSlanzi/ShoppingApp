@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Utils
 
 /// an app wide custom UIButton utility class
 class CustomButton: UIButton {

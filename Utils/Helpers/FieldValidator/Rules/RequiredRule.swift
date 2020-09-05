@@ -10,15 +10,15 @@ open class RequiredRule: Rule {
     
     private var message: String
     
-    init(message: String = "Required") {
+    public init(message: String = "Required") {
         self.message = message
     }
     
-    func validate(value: String) -> Bool {
+    public func validate(value: String) -> Bool {
         return !value.isEmpty
     }
     
-    func errorMessage() -> String {
+    public func errorMessage() -> String {
         return message
     }
 }

@@ -8,20 +8,20 @@
 
 import Foundation
 
-class MinimumLenghtRule: Rule {
+public class MinimumLenghtRule: Rule {
     
     let MIN_LENGTH = 3
     private var message: String
     
-    init(message: String) {
+    public init(message: String) {
         self.message = message
     }
     
-    func validate(value: String) -> Bool {
+    public func validate(value: String) -> Bool {
         return value.count > MIN_LENGTH
     }
     
-    func errorMessage() -> String {
+    public func errorMessage() -> String {
         return message
     }
 }

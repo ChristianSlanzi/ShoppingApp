@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension URL {
+public extension URL {
     
     // returns an absolute URL to the desired file in documents folder
     static func inDocumentsFolder(fileName: String) -> URL {

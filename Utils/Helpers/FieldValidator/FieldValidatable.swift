@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol FieldValidatable {
+public protocol FieldValidatable {
     var validationRules: [Rule] { get }
     var validationText: String { get }
 }

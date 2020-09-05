@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
 
     /// Pin edges of View to its SuperView
     func pinToEdges(of superview: UIView) {

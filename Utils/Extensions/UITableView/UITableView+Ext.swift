@@ -9,7 +9,7 @@
 import UIKit
 
 /// extension to remove excess lines on empty cells in UITableView
-extension UITableView {
+public extension UITableView {
 
     func removeExcessCells() {
         tableFooterView = UIView(frame: .zero)
@@ -17,7 +17,7 @@ extension UITableView {
 }
 
 // not used in this app. Future reference.
-extension UITableView {
+public extension UITableView {
 
     func reloadDataOnMainThread() {
         DispatchQueue.main.async { self.reloadData() }

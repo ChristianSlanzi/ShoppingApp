@@ -9,9 +9,9 @@
 import UIKit
 
 /// a collection of utility functions to build collection views
-enum CollectionViewHelper {
+public enum CollectionViewHelper {
 
-    static func createColumnedFlowLayout(in view: UIView, numberOfColums: Int, itemHeight: CGFloat) -> UICollectionViewFlowLayout {
+    public static func createColumnedFlowLayout(in view: UIView, numberOfColums: Int, itemHeight: CGFloat) -> UICollectionViewFlowLayout {
         let width = view.bounds.width // screen width
         let padding: CGFloat = 12 // UIEdgeInsets
         let minimumItemSpacing: CGFloat = 10 // column width

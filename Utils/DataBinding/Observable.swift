@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Observable<T> {
+public class Observable<T> {
 
-    var value: T {
+    public var value: T {
         didSet {
             listener?(value)
         }
@@ -18,11 +18,11 @@ class Observable<T> {
 
     private var listener: ((T) -> Void)?
 
-    init(_ value: T) {
+    public init(_ value: T) {
         self.value = value
     }
 
-    func bind(_ closure: @escaping (T) -> Void) {
+    public func bind(_ closure: @escaping (T) -> Void) {
         closure(value)
         listener = closure
     }

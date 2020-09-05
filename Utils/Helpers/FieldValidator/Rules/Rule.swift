@@ -6,7 +6,7 @@
 //  Copyright © 2020 Christian Slanzi. All rights reserved.
 //
 
-protocol Rule {
+public protocol Rule {
     func validate(value: String) -> Bool
     func errorMessage() -> String
 }

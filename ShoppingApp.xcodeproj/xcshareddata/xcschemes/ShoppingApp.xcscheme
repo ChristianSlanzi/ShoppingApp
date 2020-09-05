@@ -39,6 +39,16 @@
                ReferencedContainer = "container:ShoppingApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "246033492503766600C99A2E"
+               BuildableName = "UtilsTests.xctest"
+               BlueprintName = "UtilsTests"
+               ReferencedContainer = "container:ShoppingApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

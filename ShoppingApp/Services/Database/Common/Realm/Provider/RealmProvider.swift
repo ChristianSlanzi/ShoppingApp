@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import Utils
 
 // MARK: - RealmProvider
 struct RealmProvider {

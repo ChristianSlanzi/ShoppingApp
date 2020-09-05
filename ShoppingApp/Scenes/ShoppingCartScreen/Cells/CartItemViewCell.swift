@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Utils
 
 final class CartItemViewCell: UITableViewCell {
     

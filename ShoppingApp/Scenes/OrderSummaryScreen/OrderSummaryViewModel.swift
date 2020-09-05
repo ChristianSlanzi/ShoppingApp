@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Utils
 
 protocol OrderSummaryViewModelInputsType {
     func viewDidLoad()

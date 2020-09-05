@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Utils
 
 protocol CartItemCellViewModelInputsType {
     func viewDidLoad()

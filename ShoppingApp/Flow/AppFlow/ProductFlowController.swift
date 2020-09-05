@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Utils
 
 protocol ProductFlowControllerDelegate: AnyObject {
     func startProductListFor(category: Category)

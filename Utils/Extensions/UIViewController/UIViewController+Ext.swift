@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-extension UIViewController {
+public extension UIViewController {
 
     /// Creates and presents a custom alert on the main thread
     func presentAlertOnMainThread(title: String, message: String, buttonTitle: String) {
