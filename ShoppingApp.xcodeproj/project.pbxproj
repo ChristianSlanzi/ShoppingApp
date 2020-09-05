@@ -49,6 +49,7 @@
 		245ABD2224E33D5700F857BE /* CartItemDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245ABD2124E33D5700F857BE /* CartItemDAO.swift */; };
 		245ABD2524E34C0700F857BE /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245ABD2424E34C0700F857BE /* UITableView+Ext.swift */; };
 		245ABD2824E34D2100F857BE /* CartItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245ABD2724E34D2100F857BE /* CartItemViewCell.swift */; };
+		2460333A2503748800C99A2E /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246033392503748800C99A2E /* AppConstants.swift */; };
 		246F952624F5AFE700692B50 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246F952524F5AFE700692B50 /* Analytics.swift */; };
 		248A541524EDC68600F8C60D /* DeliveryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A541424EDC68600F8C60D /* DeliveryDTO.swift */; };
 		248A541724EDC83500F8C60D /* DeliveryDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A541624EDC83500F8C60D /* DeliveryDAO.swift */; };
@@ -166,6 +167,7 @@
 		245ABD2124E33D5700F857BE /* CartItemDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemDAO.swift; sourceTree = "<group>"; };
 		245ABD2424E34C0700F857BE /* UITableView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		245ABD2724E34D2100F857BE /* CartItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemViewCell.swift; sourceTree = "<group>"; };
+		246033392503748800C99A2E /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		246F952524F5AFE700692B50 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		248A541424EDC68600F8C60D /* DeliveryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDTO.swift; sourceTree = "<group>"; };
 		248A541624EDC83500F8C60D /* DeliveryDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDAO.swift; sourceTree = "<group>"; };
@@ -766,6 +768,7 @@
 				24C5EC8624DC9D490060EB3A /* LaunchScreen.storyboard */,
 				24C5EC8924DC9D490060EB3A /* Info.plist */,
 				240F3F0824E2949100FC8BE0 /* Localizable.strings */,
+				246033392503748800C99A2E /* AppConstants.swift */,
 			);
 			path = ShoppingApp;
 			sourceTree = "<group>";
@@ -1200,6 +1203,7 @@
 				24A7471A24DEC6170066A4DB /* CategoriesViewModel.swift in Sources */,
 				240F3F2D24E2F1E600FC8BE0 /* RealmProvider.swift in Sources */,
 				24C7CCB624DEB07800ABFD0A /* FunctionalComposition.swift in Sources */,
+				2460333A2503748800C99A2E /* AppConstants.swift in Sources */,
 				240F3F2024E2EFA000FC8BE0 /* BaseRepository.swift in Sources */,
 				24AAECED24DF0618002A46BE /* Category.swift in Sources */,
 			);
