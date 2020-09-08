@@ -37,4 +37,10 @@ public extension Date {
         dateTimeFormatter.dateFormat = "dd.MM.yyyy HH:mm"
         return dateTimeFormatter.string(from: self)
     }
+    func toMonthYearString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM yyyy"
+
+        return dateFormatter.string(from: self)
+    }
 }

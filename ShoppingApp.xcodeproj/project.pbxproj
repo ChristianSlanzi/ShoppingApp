@@ -104,6 +104,8 @@
 		24C7CCB924DEB0F400ABFD0A /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7CCB824DEB0F300ABFD0A /* AppStyle.swift */; };
 		24C7CCBC24DEB1B100ABFD0A /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7CCBB24DEB1B100ABFD0A /* WelcomeViewModel.swift */; };
 		24D67AE224FA641E0006C450 /* ShoppingCartViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D67AE124FA641E0006C450 /* ShoppingCartViewModelTests.swift */; };
+		24DAD69B2506E42D00E47DEE /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DAD6992506E42D00E47DEE /* UICollectionView+Ext.swift */; };
+		24DAD69E2506E45300E47DEE /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DAD69D2506E45300E47DEE /* UIImageView+Ext.swift */; };
 		24E1F1AB24E3F49A00042FCA /* CartRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E1F1AA24E3F49A00042FCA /* CartRepository.swift */; };
 		24E1F1AD24E42E2100042FCA /* CartItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E1F1AC24E42E2100042FCA /* CartItemCellViewModel.swift */; };
 		24F50D6624E13351001B2A6B /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D6524E13351001B2A6B /* ProductDetailsViewController.swift */; };
@@ -268,6 +270,8 @@
 		24C7CCB824DEB0F300ABFD0A /* AppStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		24C7CCBB24DEB1B100ABFD0A /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		24D67AE124FA641E0006C450 /* ShoppingCartViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewModelTests.swift; sourceTree = "<group>"; };
+		24DAD6992506E42D00E47DEE /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
+		24DAD69D2506E45300E47DEE /* UIImageView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		24E1F1AA24E3F49A00042FCA /* CartRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRepository.swift; sourceTree = "<group>"; };
 		24E1F1AC24E42E2100042FCA /* CartItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCellViewModel.swift; sourceTree = "<group>"; };
 		24F50D6524E13351001B2A6B /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
@@ -653,6 +657,8 @@
 		2460336E250376F900C99A2E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				24DAD69C2506E45300E47DEE /* UIImageView */,
+				24DAD6982506E42D00E47DEE /* UICollectionView */,
 				2460336F250376F900C99A2E /* UIColor */,
 				24603371250376F900C99A2E /* UIView */,
 				24603373250376F900C99A2E /* Date */,
@@ -984,6 +990,22 @@
 			path = WelcomeScreen;
 			sourceTree = "<group>";
 		};
+		24DAD6982506E42D00E47DEE /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				24DAD6992506E42D00E47DEE /* UICollectionView+Ext.swift */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		24DAD69C2506E45300E47DEE /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				24DAD69D2506E45300E47DEE /* UIImageView+Ext.swift */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
 		24F50D6424E132E1001B2A6B /* ProductDetailsScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -1286,8 +1308,10 @@
 				24603387250376FA00C99A2E /* CollectionViewHelper.swift in Sources */,
 				24603385250376FA00C99A2E /* Rule.swift in Sources */,
 				2460338D250376FA00C99A2E /* UIViewController+Child.swift in Sources */,
+				24DAD69B2506E42D00E47DEE /* UICollectionView+Ext.swift in Sources */,
 				2460338C250376FA00C99A2E /* URL+Document.swift in Sources */,
 				24603389250376FA00C99A2E /* UIColor+Ext.swift in Sources */,
+				24DAD69E2506E45300E47DEE /* UIImageView+Ext.swift in Sources */,
 				2460338F250376FA00C99A2E /* UITableView+Ext.swift in Sources */,
 				24603380250376FA00C99A2E /* Constants.swift in Sources */,
 				24603384250376FA00C99A2E /* EmailRule.swift in Sources */,
