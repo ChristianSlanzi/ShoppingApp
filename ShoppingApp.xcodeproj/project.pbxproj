@@ -10,6 +10,7 @@
 		24073F8524F52EAA0079869D /* OrderIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24073F8424F52EAA0079869D /* OrderIcon.swift */; };
 		24073F8724F532940079869D /* CalendarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24073F8624F532940079869D /* CalendarIcon.swift */; };
 		24073F8A24F549FC0079869D /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24073F8924F549FC0079869D /* Environment.swift */; };
+		2409C776251029CC00473472 /* FunctionalSetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2409C775251029CC00473472 /* FunctionalSetters.swift */; };
 		240F3F0924E2949100FC8BE0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 240F3F0824E2949100FC8BE0 /* Localizable.strings */; };
 		240F3F0B24E2D7B000FC8BE0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 240F3F0A24E2D7B000FC8BE0 /* Podfile */; };
 		240F3F1E24E2EFA000FC8BE0 /* MappableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240F3F1524E2EFA000FC8BE0 /* MappableProtocol.swift */; };
@@ -103,6 +104,7 @@
 		24C7CCB124DEB01900ABFD0A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7CCB024DEB01900ABFD0A /* CustomButton.swift */; };
 		24C7CCB924DEB0F400ABFD0A /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7CCB824DEB0F300ABFD0A /* AppStyle.swift */; };
 		24C7CCBC24DEB1B100ABFD0A /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7CCBB24DEB1B100ABFD0A /* WelcomeViewModel.swift */; };
+		24D5DD3B2508421600E6F943 /* HighOrderFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D5DD3A2508421600E6F943 /* HighOrderFunctions.swift */; };
 		24D67AE224FA641E0006C450 /* ShoppingCartViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D67AE124FA641E0006C450 /* ShoppingCartViewModelTests.swift */; };
 		24DAD69B2506E42D00E47DEE /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DAD6992506E42D00E47DEE /* UICollectionView+Ext.swift */; };
 		24DAD69E2506E45300E47DEE /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DAD69D2506E45300E47DEE /* UIImageView+Ext.swift */; };
@@ -170,6 +172,7 @@
 		24073F8424F52EAA0079869D /* OrderIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderIcon.swift; sourceTree = "<group>"; };
 		24073F8624F532940079869D /* CalendarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarIcon.swift; sourceTree = "<group>"; };
 		24073F8924F549FC0079869D /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		2409C775251029CC00473472 /* FunctionalSetters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalSetters.swift; sourceTree = "<group>"; };
 		240F3F0824E2949100FC8BE0 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		240F3F0A24E2D7B000FC8BE0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		240F3F1524E2EFA000FC8BE0 /* MappableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappableProtocol.swift; sourceTree = "<group>"; };
@@ -269,6 +272,7 @@
 		24C7CCB024DEB01900ABFD0A /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		24C7CCB824DEB0F300ABFD0A /* AppStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		24C7CCBB24DEB1B100ABFD0A /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		24D5DD3A2508421600E6F943 /* HighOrderFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighOrderFunctions.swift; sourceTree = "<group>"; };
 		24D67AE124FA641E0006C450 /* ShoppingCartViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewModelTests.swift; sourceTree = "<group>"; };
 		24DAD6992506E42D00E47DEE /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 		24DAD69D2506E45300E47DEE /* UIImageView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
@@ -650,6 +654,8 @@
 			isa = PBXGroup;
 			children = (
 				2460336D250376F900C99A2E /* FunctionalComposition.swift */,
+				24D5DD3A2508421600E6F943 /* HighOrderFunctions.swift */,
+				2409C775251029CC00473472 /* FunctionalSetters.swift */,
 			);
 			path = Functional;
 			sourceTree = "<group>";
@@ -1308,6 +1314,8 @@
 				24603387250376FA00C99A2E /* CollectionViewHelper.swift in Sources */,
 				24603385250376FA00C99A2E /* Rule.swift in Sources */,
 				2460338D250376FA00C99A2E /* UIViewController+Child.swift in Sources */,
+				2409C776251029CC00473472 /* FunctionalSetters.swift in Sources */,
+				24D5DD3B2508421600E6F943 /* HighOrderFunctions.swift in Sources */,
 				24DAD69B2506E42D00E47DEE /* UICollectionView+Ext.swift in Sources */,
 				2460338C250376FA00C99A2E /* URL+Document.swift in Sources */,
 				24603389250376FA00C99A2E /* UIColor+Ext.swift in Sources */,

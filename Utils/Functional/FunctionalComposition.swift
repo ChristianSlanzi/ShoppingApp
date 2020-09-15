@@ -6,7 +6,7 @@
 //  Copyright © 2020 Christian Slanzi. All rights reserved.
 //
 
-// Pipe operator: i.e., 2 |> incr |> square
+// Pipe-or operator: i.e., 2 |> incr |> square
 precedencegroup ForwardApplication {
     associativity: left
 }
@@ -32,6 +32,8 @@ public func >>> <A, B, C>(f: @escaping (A) -> B, g: @escaping (B) -> C) -> ((A) 
     }
 }
 
+// 2 |> incr >>> square (first increment, then square)
+
 // Fish operator
 precedencegroup EffectfulComposition {
     associativity: left
@@ -50,7 +52,7 @@ public func >=> <A, B, C>(
     }
 }
 
-// Diamond operator
+// Diamond operator (combine 2 functions on the same type in one function)
 precedencegroup SingleTypeComposition {
     associativity: right
     higherThan: ForwardApplication
