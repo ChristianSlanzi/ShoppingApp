@@ -64,6 +64,7 @@
 		2460338F250376FA00C99A2E /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2460337B250376F900C99A2E /* UITableView+Ext.swift */; };
 		24603390250376FA00C99A2E /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2460337D250376F900C99A2E /* String+Ext.swift */; };
 		24603391250376FA00C99A2E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2460337F250376FA00C99A2E /* Observable.swift */; };
+		24625CAC25116A17008571A4 /* FunctionalKeyPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24625CAB25116A17008571A4 /* FunctionalKeyPaths.swift */; };
 		246F952624F5AFE700692B50 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246F952524F5AFE700692B50 /* Analytics.swift */; };
 		248A541524EDC68600F8C60D /* DeliveryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A541424EDC68600F8C60D /* DeliveryDTO.swift */; };
 		248A541724EDC83500F8C60D /* DeliveryDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A541624EDC83500F8C60D /* DeliveryDAO.swift */; };
@@ -227,6 +228,7 @@
 		2460337B250376F900C99A2E /* UITableView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		2460337D250376F900C99A2E /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		2460337F250376FA00C99A2E /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		24625CAB25116A17008571A4 /* FunctionalKeyPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalKeyPaths.swift; sourceTree = "<group>"; };
 		246F952524F5AFE700692B50 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		248A541424EDC68600F8C60D /* DeliveryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDTO.swift; sourceTree = "<group>"; };
 		248A541624EDC83500F8C60D /* DeliveryDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDAO.swift; sourceTree = "<group>"; };
@@ -355,6 +357,13 @@
 				24073F8924F549FC0079869D /* Environment.swift */,
 			);
 			path = Environment;
+			sourceTree = "<group>";
+		};
+		240CDDEC2513A2A70088D629 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Labels;
 			sourceTree = "<group>";
 		};
 		240F3F0C24E2EB9D00FC8BE0 /* Services */ = {
@@ -656,6 +665,7 @@
 				2460336D250376F900C99A2E /* FunctionalComposition.swift */,
 				24D5DD3A2508421600E6F943 /* HighOrderFunctions.swift */,
 				2409C775251029CC00473472 /* FunctionalSetters.swift */,
+				24625CAB25116A17008571A4 /* FunctionalKeyPaths.swift */,
 			);
 			path = Functional;
 			sourceTree = "<group>";
@@ -962,6 +972,7 @@
 		24C7CCAE24DEAFC400ABFD0A /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				240CDDEC2513A2A70088D629 /* Labels */,
 				24073F8324F52E730079869D /* Icons */,
 				245577AD24E93F3C00CE2A05 /* Text */,
 				24B7A47B24E589DE00A69FCD /* Controls */,
@@ -1307,6 +1318,7 @@
 				24603390250376FA00C99A2E /* String+Ext.swift in Sources */,
 				24603391250376FA00C99A2E /* Observable.swift in Sources */,
 				24603382250376FA00C99A2E /* PasswordRule.swift in Sources */,
+				24625CAC25116A17008571A4 /* FunctionalKeyPaths.swift in Sources */,
 				2460338B250376FA00C99A2E /* Date+Ext.swift in Sources */,
 				24603381250376FA00C99A2E /* FieldValidatable.swift in Sources */,
 				24603386250376FA00C99A2E /* RequiredRule.swift in Sources */,

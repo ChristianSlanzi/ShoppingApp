@@ -66,11 +66,11 @@ func <<< <A, B, C>(_ f: @escaping (B) -> C, _ g: @escaping (A) -> B) -> (A) -> C
 //    |> (first <<< second) { !$0 }
 
 // and compose
-private func incr(_ x: Int) -> Int {
+fileprivate func incr(_ x: Int) -> Int {
     return x + 1
 }
 
-private func nestedComposition() {
+fileprivate func nestedComposition() {
     let nested = ((1, true), "Swift")
     
     let new = nested
@@ -101,7 +101,7 @@ private func transformationInIsolation() {
 
 // and even we can combine we our functional map
 
-private func test() {
+fileprivate func test() {
     let tupleArray = [(42, ["Swift", "Objective-C"]), (1729, ["Haskell", "Purescript"])]
     
     let addEsclamationToAllStringsArray = tupleArray |> (map <<< second <<< map) { $0 + "!"}
