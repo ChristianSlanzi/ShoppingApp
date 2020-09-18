@@ -1,8 +1,8 @@
 //
 //  ValidableTextControl.swift
-//  ShoppingApp
+//  CustomViews
 //
-//  Created by Christian Slanzi on 17.08.20.
+//  Created by Christian Slanzi on 22.02.20.
 //  Copyright © 2020 Christian Slanzi. All rights reserved.
 //
 

@@ -23,6 +23,8 @@ struct Environment {
     var orderRepository: OrderRepositoryProtocol = OrderRepository(dbManager: RealmDataManager(RealmProvider.main))
     
     var deliveryRepository: DeliveryRepositoryProtocol = DeliveryRepository(dbManager: RealmDataManager(RealmProvider.default))
+    
+    var theme: Theme = SettingsService.shared.appTheme
 }
 
 var Current = Environment()

@@ -76,6 +76,8 @@ extension DeliveryViewController {
         zipCodetextField.translatesAutoresizingMaskIntoConstraints = false
         commentsTextView.translatesAutoresizingMaskIntoConstraints = false
         
+        setContentViewTopAnchor(view.topAnchor)
+        
         let topAnchor = getContentViewTopAnchor()
         let leadingAnchor = getContentViewLeadingAnchor()
         let trailingAnchor = getContentViewTrailingAnchor()

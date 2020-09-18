@@ -1,20 +1,13 @@
 //
 //  AddToBagControl.swift
-//  GreenGrocery
+//  CustomViews
 //
-//  Created by Christian Slanzi on 30.04.20.
+//  Created by Christian Slanzi on 22.02.20.
 //  Copyright © 2020 Christian Slanzi. All rights reserved.
 //
 
 import Foundation
 import UIKit
-
-public protocol CustomViewProtocol {
-    func setupViews()
-    func setupBehaviors()
-    func setupConstraints()
-    func setupActions()
-}
 
 // add a closure so that we send the step value to the controller
 typealias BagClosure = ((skuId: Int, stepValue: Int)) -> ()

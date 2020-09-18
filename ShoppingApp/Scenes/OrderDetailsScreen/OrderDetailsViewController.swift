@@ -104,6 +104,8 @@ final class OrderDetailsViewController: CustomScrollViewController {
         let padding: CGFloat = 20
         let labelHeight: CGFloat = 20
         
+        setContentViewTopAnchor(view.topAnchor)
+        
         let topAnchor = getContentViewTopAnchor()
         let leadingAnchor = getContentViewLeadingAnchor()
         let trailingAnchor = getContentViewTrailingAnchor()

@@ -1,16 +1,20 @@
 //
 //  CustomScrollViewController.swift
-//  ShoppingApp
+//  CustomViews
 //
-//  Created by Christian Slanzi on 10.08.20.
+//  Created by Christian Slanzi on 22.02.20.
 //  Copyright © 2020 Christian Slanzi. All rights reserved.
 //
 
 import UIKit
 
-class CustomScrollViewController: UIViewController {
+public class CustomScrollViewController: BaseViewController {
     
     var bottomConstraint: NSLayoutConstraint?
+    
+    public var contentViews: [UIView] {
+        return scrollContentView.subviews
+    }
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -24,33 +28,34 @@ class CustomScrollViewController: UIViewController {
         return scrollView
     }()
     
-    init() {
+    override init() {
         //self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupViews()
         setupConstraints()
     }
     
-    func setupViews() {
-
+    public override func setupViews() {
+        super.setupViews()
         view.addSubview(scrollView)
         scrollView.addSubview(scrollContentView)
         
     }
     
-    @objc dynamic func setupConstraints() {
+    @objc dynamic public override func setupConstraints() {
+        super.setupConstraints()
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor),
             scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -89,6 +94,10 @@ class CustomScrollViewController: UIViewController {
         return scrollContentView.trailingAnchor
     }
     
+    func setContentViewTopAnchor(_ anchor: NSLayoutYAxisAnchor) {
+        NSLayoutConstraint.activate([scrollView.topAnchor.constraint(equalTo: anchor)])
+    }
+    
     func setContentViewBottom(view: UIView) {
         guard let bottomConstraint = bottomConstraint else { return }
         scrollContentView.removeConstraint(bottomConstraint)
@@ -98,6 +107,20 @@ class CustomScrollViewController: UIViewController {
         scrollContentView.addConstraint(self.bottomConstraint!)
         scrollContentView.setNeedsUpdateConstraints()
     }
+    
+    public func scrollRectToVisible(_ bounds: CGRect, animated: Bool) {
+        self.scrollView.scrollRectToVisible(bounds, animated: true)
+    }
+    
+    public func setContentInsets(_ insets: UIEdgeInsets) {
+        scrollView.contentInset = insets
+        scrollView.scrollIndicatorInsets = insets
+    }
+    
+    //public func setContentScrollIndicatorInsets(_ insets: UIEdgeInsets) {
+    //    scrollView.scrollIndicatorInsets = insets
+    //}
+    
 }
 
 

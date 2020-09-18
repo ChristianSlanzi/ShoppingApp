@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240176CB2514152700BC7038 /* GettersKeyPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240176CA2514152700BC7038 /* GettersKeyPaths.swift */; };
 		24073F8524F52EAA0079869D /* OrderIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24073F8424F52EAA0079869D /* OrderIcon.swift */; };
 		24073F8724F532940079869D /* CalendarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24073F8624F532940079869D /* CalendarIcon.swift */; };
 		24073F8A24F549FC0079869D /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24073F8924F549FC0079869D /* Environment.swift */; };
@@ -75,6 +76,24 @@
 		248CFEC424F3F12A00DD97EA /* OrderDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CFEC324F3F12A00DD97EA /* OrderDetailsViewModel.swift */; };
 		248CFEC824F4140600DD97EA /* OrderItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CFEC624F4140500DD97EA /* OrderItemCellViewModel.swift */; };
 		248CFEC924F4140600DD97EA /* OrderItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248CFEC724F4140500DD97EA /* OrderItemViewCell.swift */; };
+		2490C4BF2514D652008B3D75 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4BA2514D652008B3D75 /* CustomView.swift */; };
+		2490C4C02514D652008B3D75 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4BB2514D652008B3D75 /* BaseViewController.swift */; };
+		2490C4C12514D652008B3D75 /* CustomScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4BC2514D652008B3D75 /* CustomScrollViewController.swift */; };
+		2490C4C22514D652008B3D75 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4BD2514D652008B3D75 /* Modal.swift */; };
+		2490C4C32514D652008B3D75 /* CaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4BE2514D652008B3D75 /* CaptionView.swift */; };
+		2490C4C72514D6CE008B3D75 /* InfoNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4C52514D6CE008B3D75 /* InfoNotification.swift */; };
+		2490C4C82514D6CE008B3D75 /* PopupNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4C62514D6CE008B3D75 /* PopupNotification.swift */; };
+		2490C4DA2514D81B008B3D75 /* ColorUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4CB2514D81B008B3D75 /* ColorUpdatable.swift */; };
+		2490C4DB2514D81B008B3D75 /* ColorThemeObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4CC2514D81B008B3D75 /* ColorThemeObserving.swift */; };
+		2490C4DC2514D81B008B3D75 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4CD2514D81B008B3D75 /* Theme.swift */; };
+		2490C4DD2514D81B008B3D75 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4D02514D81B008B3D75 /* UIColor+Palette.swift */; };
+		2490C4DE2514D81B008B3D75 /* UITabBar+ColorUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4D22514D81B008B3D75 /* UITabBar+ColorUpdatable.swift */; };
+		2490C4DF2514D81B008B3D75 /* UINavigationBar+ColorUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4D42514D81B008B3D75 /* UINavigationBar+ColorUpdatable.swift */; };
+		2490C4E02514D81B008B3D75 /* UILabel+ColorUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4D62514D81B008B3D75 /* UILabel+ColorUpdatable.swift */; };
+		2490C4E12514D81B008B3D75 /* CustomNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4D82514D81B008B3D75 /* CustomNotification.swift */; };
+		2490C4E22514D81B008B3D75 /* ThemeUsageExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4D92514D81B008B3D75 /* ThemeUsageExample.swift */; };
+		2490C4E52514D8EC008B3D75 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4E42514D8EC008B3D75 /* SettingsService.swift */; };
+		2490C4E82514DA52008B3D75 /* UserDefaultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4E72514DA52008B3D75 /* UserDefaultExtensions.swift */; };
 		24A17CA924DD744A00829470 /* ProductFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A17CA824DD744A00829470 /* ProductFlowController.swift */; };
 		24A17CAB24DD76F100829470 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A17CAA24DD76F100829470 /* MainFlowController.swift */; };
 		24A17CAE24DD99E800829470 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A17CAD24DD99E800829470 /* CategoriesViewController.swift */; };
@@ -113,7 +132,6 @@
 		24E1F1AD24E42E2100042FCA /* CartItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E1F1AC24E42E2100042FCA /* CartItemCellViewModel.swift */; };
 		24F50D6624E13351001B2A6B /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D6524E13351001B2A6B /* ProductDetailsViewController.swift */; };
 		24F50D6824E133E5001B2A6B /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D6724E133E5001B2A6B /* ProductDetailsViewModel.swift */; };
-		24F50D6B24E13FA1001B2A6B /* CustomScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D6A24E13FA1001B2A6B /* CustomScrollViewController.swift */; };
 		24F50D6E24E1714A001B2A6B /* WelcomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D6D24E1714A001B2A6B /* WelcomeViewModelTests.swift */; };
 		24F50D7024E17533001B2A6B /* CategoriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D6F24E17533001B2A6B /* CategoriesViewModelTests.swift */; };
 		24F50D7324E17583001B2A6B /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F50D7224E17583001B2A6B /* TestConstants.swift */; };
@@ -170,6 +188,7 @@
 
 /* Begin PBXFileReference section */
 		06E1BB1D76DF395F3C9D5C30 /* Pods_ShoppingAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		240176CA2514152700BC7038 /* GettersKeyPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettersKeyPaths.swift; sourceTree = "<group>"; };
 		24073F8424F52EAA0079869D /* OrderIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderIcon.swift; sourceTree = "<group>"; };
 		24073F8624F532940079869D /* CalendarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarIcon.swift; sourceTree = "<group>"; };
 		24073F8924F549FC0079869D /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -239,6 +258,24 @@
 		248CFEC324F3F12A00DD97EA /* OrderDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewModel.swift; sourceTree = "<group>"; };
 		248CFEC624F4140500DD97EA /* OrderItemCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItemCellViewModel.swift; sourceTree = "<group>"; };
 		248CFEC724F4140500DD97EA /* OrderItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItemViewCell.swift; sourceTree = "<group>"; };
+		2490C4BA2514D652008B3D75 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		2490C4BB2514D652008B3D75 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2490C4BC2514D652008B3D75 /* CustomScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomScrollViewController.swift; sourceTree = "<group>"; };
+		2490C4BD2514D652008B3D75 /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
+		2490C4BE2514D652008B3D75 /* CaptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptionView.swift; sourceTree = "<group>"; };
+		2490C4C52514D6CE008B3D75 /* InfoNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoNotification.swift; sourceTree = "<group>"; };
+		2490C4C62514D6CE008B3D75 /* PopupNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupNotification.swift; sourceTree = "<group>"; };
+		2490C4CB2514D81B008B3D75 /* ColorUpdatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUpdatable.swift; sourceTree = "<group>"; };
+		2490C4CC2514D81B008B3D75 /* ColorThemeObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorThemeObserving.swift; sourceTree = "<group>"; };
+		2490C4CD2514D81B008B3D75 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		2490C4D02514D81B008B3D75 /* UIColor+Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
+		2490C4D22514D81B008B3D75 /* UITabBar+ColorUpdatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBar+ColorUpdatable.swift"; sourceTree = "<group>"; };
+		2490C4D42514D81B008B3D75 /* UINavigationBar+ColorUpdatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+ColorUpdatable.swift"; sourceTree = "<group>"; };
+		2490C4D62514D81B008B3D75 /* UILabel+ColorUpdatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+ColorUpdatable.swift"; sourceTree = "<group>"; };
+		2490C4D82514D81B008B3D75 /* CustomNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNotification.swift; sourceTree = "<group>"; };
+		2490C4D92514D81B008B3D75 /* ThemeUsageExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeUsageExample.swift; sourceTree = "<group>"; };
+		2490C4E42514D8EC008B3D75 /* SettingsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
+		2490C4E72514DA52008B3D75 /* UserDefaultExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultExtensions.swift; sourceTree = "<group>"; };
 		24A17CA824DD744A00829470 /* ProductFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFlowController.swift; sourceTree = "<group>"; };
 		24A17CAA24DD76F100829470 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		24A17CAD24DD99E800829470 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -282,7 +319,6 @@
 		24E1F1AC24E42E2100042FCA /* CartItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCellViewModel.swift; sourceTree = "<group>"; };
 		24F50D6524E13351001B2A6B /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		24F50D6724E133E5001B2A6B /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
-		24F50D6A24E13FA1001B2A6B /* CustomScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollViewController.swift; sourceTree = "<group>"; };
 		24F50D6D24E1714A001B2A6B /* WelcomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModelTests.swift; sourceTree = "<group>"; };
 		24F50D6F24E17533001B2A6B /* CategoriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModelTests.swift; sourceTree = "<group>"; };
 		24F50D7224E17583001B2A6B /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
@@ -369,6 +405,7 @@
 		240F3F0C24E2EB9D00FC8BE0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				2490C4E32514D8EC008B3D75 /* Settings */,
 				246F952424F5AF8000692B50 /* Analytics */,
 				240F3F0D24E2EDA900FC8BE0 /* Database */,
 			);
@@ -666,6 +703,7 @@
 				24D5DD3A2508421600E6F943 /* HighOrderFunctions.swift */,
 				2409C775251029CC00473472 /* FunctionalSetters.swift */,
 				24625CAB25116A17008571A4 /* FunctionalKeyPaths.swift */,
+				240176CA2514152700BC7038 /* GettersKeyPaths.swift */,
 			);
 			path = Functional;
 			sourceTree = "<group>";
@@ -673,6 +711,7 @@
 		2460336E250376F900C99A2E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2490C4E62514DA52008B3D75 /* UserDefaults */,
 				24DAD69C2506E45300E47DEE /* UIImageView */,
 				24DAD6982506E42D00E47DEE /* UICollectionView */,
 				2460336F250376F900C99A2E /* UIColor */,
@@ -786,6 +825,115 @@
 				248CFEC724F4140500DD97EA /* OrderItemViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		2490C4B92514D652008B3D75 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2490C4BA2514D652008B3D75 /* CustomView.swift */,
+				2490C4BB2514D652008B3D75 /* BaseViewController.swift */,
+				2490C4BC2514D652008B3D75 /* CustomScrollViewController.swift */,
+				2490C4BD2514D652008B3D75 /* Modal.swift */,
+				2490C4BE2514D652008B3D75 /* CaptionView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2490C4C42514D6CE008B3D75 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				2490C4C52514D6CE008B3D75 /* InfoNotification.swift */,
+				2490C4C62514D6CE008B3D75 /* PopupNotification.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		2490C4C92514D81B008B3D75 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				2490C4CA2514D81B008B3D75 /* Color Updating */,
+				2490C4CE2514D81B008B3D75 /* Extensions */,
+				2490C4D72514D81B008B3D75 /* Notifications */,
+				2490C4D92514D81B008B3D75 /* ThemeUsageExample.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		2490C4CA2514D81B008B3D75 /* Color Updating */ = {
+			isa = PBXGroup;
+			children = (
+				2490C4CB2514D81B008B3D75 /* ColorUpdatable.swift */,
+				2490C4CC2514D81B008B3D75 /* ColorThemeObserving.swift */,
+				2490C4CD2514D81B008B3D75 /* Theme.swift */,
+			);
+			path = "Color Updating";
+			sourceTree = "<group>";
+		};
+		2490C4CE2514D81B008B3D75 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2490C4CF2514D81B008B3D75 /* UIColor Extensions */,
+				2490C4D12514D81B008B3D75 /* UITabBar Extensions */,
+				2490C4D32514D81B008B3D75 /* UINavigationBar Extensions */,
+				2490C4D52514D81B008B3D75 /* UILabel Extensions */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2490C4CF2514D81B008B3D75 /* UIColor Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2490C4D02514D81B008B3D75 /* UIColor+Palette.swift */,
+			);
+			path = "UIColor Extensions";
+			sourceTree = "<group>";
+		};
+		2490C4D12514D81B008B3D75 /* UITabBar Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2490C4D22514D81B008B3D75 /* UITabBar+ColorUpdatable.swift */,
+			);
+			path = "UITabBar Extensions";
+			sourceTree = "<group>";
+		};
+		2490C4D32514D81B008B3D75 /* UINavigationBar Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2490C4D42514D81B008B3D75 /* UINavigationBar+ColorUpdatable.swift */,
+			);
+			path = "UINavigationBar Extensions";
+			sourceTree = "<group>";
+		};
+		2490C4D52514D81B008B3D75 /* UILabel Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2490C4D62514D81B008B3D75 /* UILabel+ColorUpdatable.swift */,
+			);
+			path = "UILabel Extensions";
+			sourceTree = "<group>";
+		};
+		2490C4D72514D81B008B3D75 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				2490C4D82514D81B008B3D75 /* CustomNotification.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		2490C4E32514D8EC008B3D75 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2490C4E42514D8EC008B3D75 /* SettingsService.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2490C4E62514DA52008B3D75 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				2490C4E72514DA52008B3D75 /* UserDefaultExtensions.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		24A17CAC24DD990D00829470 /* Scenes */ = {
@@ -972,6 +1120,9 @@
 		24C7CCAE24DEAFC400ABFD0A /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				2490C4C92514D81B008B3D75 /* Theme */,
+				2490C4C42514D6CE008B3D75 /* Notification */,
+				2490C4B92514D652008B3D75 /* Base */,
 				240CDDEC2513A2A70088D629 /* Labels */,
 				24073F8324F52E730079869D /* Icons */,
 				245577AD24E93F3C00CE2A05 /* Text */,
@@ -1035,7 +1186,6 @@
 		24F50D6924E13F85001B2A6B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				24F50D6A24E13FA1001B2A6B /* CustomScrollViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1319,11 +1469,13 @@
 				24603391250376FA00C99A2E /* Observable.swift in Sources */,
 				24603382250376FA00C99A2E /* PasswordRule.swift in Sources */,
 				24625CAC25116A17008571A4 /* FunctionalKeyPaths.swift in Sources */,
+				240176CB2514152700BC7038 /* GettersKeyPaths.swift in Sources */,
 				2460338B250376FA00C99A2E /* Date+Ext.swift in Sources */,
 				24603381250376FA00C99A2E /* FieldValidatable.swift in Sources */,
 				24603386250376FA00C99A2E /* RequiredRule.swift in Sources */,
 				24603388250376FA00C99A2E /* FunctionalComposition.swift in Sources */,
 				24603387250376FA00C99A2E /* CollectionViewHelper.swift in Sources */,
+				2490C4E82514DA52008B3D75 /* UserDefaultExtensions.swift in Sources */,
 				24603385250376FA00C99A2E /* Rule.swift in Sources */,
 				2460338D250376FA00C99A2E /* UIViewController+Child.swift in Sources */,
 				2409C776251029CC00473472 /* FunctionalSetters.swift in Sources */,
@@ -1350,17 +1502,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2490C4DA2514D81B008B3D75 /* ColorUpdatable.swift in Sources */,
 				24AAECF024DF4F20002A46BE /* ProductsViewController.swift in Sources */,
 				24ACB3D524E1EBD900AF2AB7 /* OrderDTO.swift in Sources */,
+				2490C4E12514D81B008B3D75 /* CustomNotification.swift in Sources */,
+				2490C4E02514D81B008B3D75 /* UILabel+ColorUpdatable.swift in Sources */,
 				24C5ECA424DCAC9D0060EB3A /* AppFlowController.swift in Sources */,
 				245ABD2824E34D2100F857BE /* CartItemViewCell.swift in Sources */,
 				246F952624F5AFE700692B50 /* Analytics.swift in Sources */,
+				2490C4DE2514D81B008B3D75 /* UITabBar+ColorUpdatable.swift in Sources */,
+				2490C4C82514D6CE008B3D75 /* PopupNotification.swift in Sources */,
 				248A86F724E5EBA400EEC2F2 /* OrderSummaryViewController.swift in Sources */,
 				248CFEC924F4140600DD97EA /* OrderItemViewCell.swift in Sources */,
 				240F3F2524E2F02A00FC8BE0 /* RealmObject+Storable.swift in Sources */,
 				24C5ECA024DCAA990060EB3A /* CompositionRoot.swift in Sources */,
 				248CFEC824F4140600DD97EA /* OrderItemCellViewModel.swift in Sources */,
 				248A541924EDD38A00F8C60D /* PaymentViewController+Ext.swift in Sources */,
+				2490C4C22514D652008B3D75 /* Modal.swift in Sources */,
 				24C7CCAD24DEA00100ABFD0A /* ShoppingCartFlowController.swift in Sources */,
 				2427D2FC24F2B84F00E7DB95 /* OrderFlowController.swift in Sources */,
 				24A17CAE24DD99E800829470 /* CategoriesViewController.swift in Sources */,
@@ -1370,8 +1528,10 @@
 				240F3F1E24E2EFA000FC8BE0 /* MappableProtocol.swift in Sources */,
 				24073F8A24F549FC0079869D /* Environment.swift in Sources */,
 				24144D1F24E692EC00DD9B96 /* CartItemSummaryViewCell.swift in Sources */,
+				2490C4C02514D652008B3D75 /* BaseViewController.swift in Sources */,
 				24C5EC8024DC9D480060EB3A /* WelcomeViewController.swift in Sources */,
 				2413914424EACC7500422B32 /* PaymentViewModel.swift in Sources */,
+				2490C4C72514D6CE008B3D75 /* InfoNotification.swift in Sources */,
 				2427D30424F2C01F00E7DB95 /* OrderViewCell.swift in Sources */,
 				2410DDAE24F01409002E5433 /* OrderResultViewModel.swift in Sources */,
 				24073F8524F52EAA0079869D /* OrderIcon.swift in Sources */,
@@ -1387,18 +1547,22 @@
 				24B7A47D24E589FF00A69FCD /* AddToBagControl.swift in Sources */,
 				241EC35A24E84F1000DB3E1C /* DeliveryViewModel.swift in Sources */,
 				2427D30124F2B97700E7DB95 /* OrdersViewModel.swift in Sources */,
+				2490C4DD2514D81B008B3D75 /* UIColor+Palette.swift in Sources */,
 				24ACB3D724E1ED5400AF2AB7 /* CartItemDTO.swift in Sources */,
 				24A17CA924DD744A00829470 /* ProductFlowController.swift in Sources */,
 				24C7CCBC24DEB1B100ABFD0A /* WelcomeViewModel.swift in Sources */,
 				240F3F2224E2EFA000FC8BE0 /* Storable.swift in Sources */,
 				248A541724EDC83500F8C60D /* DeliveryDAO.swift in Sources */,
+				2490C4DB2514D81B008B3D75 /* ColorThemeObserving.swift in Sources */,
 				24A17CAB24DD76F100829470 /* MainFlowController.swift in Sources */,
+				2490C4BF2514D652008B3D75 /* CustomView.swift in Sources */,
 				24C7CCB124DEB01900ABFD0A /* CustomButton.swift in Sources */,
-				24F50D6B24E13FA1001B2A6B /* CustomScrollViewController.swift in Sources */,
 				240F3F2E24E2F1E600FC8BE0 /* RealmDataManager.swift in Sources */,
 				24073F8724F532940079869D /* CalendarIcon.swift in Sources */,
 				240F3F1F24E2EFA000FC8BE0 /* DataManagement.swift in Sources */,
 				24AAECE724DEF9A5002A46BE /* CategoryViewCell.swift in Sources */,
+				2490C4DF2514D81B008B3D75 /* UINavigationBar+ColorUpdatable.swift in Sources */,
+				2490C4E52514D8EC008B3D75 /* SettingsService.swift in Sources */,
 				2427D30624F2E84C00E7DB95 /* OrderCellViewModel.swift in Sources */,
 				245ABD2024E33ACA00F857BE /* OrderDAO.swift in Sources */,
 				24C5EC7C24DC9D480060EB3A /* AppDelegate.swift in Sources */,
@@ -1409,6 +1573,7 @@
 				24ACB3D324E1E76400AF2AB7 /* ShoppingCartViewModel.swift in Sources */,
 				24AAECF724DF51A9002A46BE /* ProductViewCell.swift in Sources */,
 				2427D2FF24F2B96600E7DB95 /* OrdersViewController.swift in Sources */,
+				2490C4E22514D81B008B3D75 /* ThemeUsageExample.swift in Sources */,
 				241EC35824E84ED200DB3E1C /* DeliveryViewController.swift in Sources */,
 				24C5EC7E24DC9D480060EB3A /* SceneDelegate.swift in Sources */,
 				24F50D6824E133E5001B2A6B /* ProductDetailsViewModel.swift in Sources */,
@@ -1420,9 +1585,12 @@
 				24E1F1AB24E3F49A00042FCA /* CartRepository.swift in Sources */,
 				24A7471A24DEC6170066A4DB /* CategoriesViewModel.swift in Sources */,
 				240F3F2D24E2F1E600FC8BE0 /* RealmProvider.swift in Sources */,
+				2490C4C12514D652008B3D75 /* CustomScrollViewController.swift in Sources */,
+				2490C4DC2514D81B008B3D75 /* Theme.swift in Sources */,
 				2460333A2503748800C99A2E /* AppConstants.swift in Sources */,
 				240F3F2024E2EFA000FC8BE0 /* BaseRepository.swift in Sources */,
 				24AAECED24DF0618002A46BE /* Category.swift in Sources */,
+				2490C4C32514D652008B3D75 /* CaptionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

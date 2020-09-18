@@ -99,6 +99,8 @@ final class ProductDetailsViewController: CustomScrollViewController {
         addToCartButton.translatesAutoresizingMaskIntoConstraints = false
         orderNowButton.translatesAutoresizingMaskIntoConstraints = false
         
+        setContentViewTopAnchor(view.topAnchor)
+        
         let topAnchor = getContentViewTopAnchor()
         let leadingAnchor = getContentViewLeadingAnchor()
         let trailingAnchor = getContentViewTrailingAnchor()

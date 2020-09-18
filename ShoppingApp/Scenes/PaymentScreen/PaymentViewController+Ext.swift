@@ -40,6 +40,8 @@ extension PaymentViewController {
         expiresInTextField.translatesAutoresizingMaskIntoConstraints = false
         cvvTextField.translatesAutoresizingMaskIntoConstraints = false
         
+        setContentViewTopAnchor(view.topAnchor)
+        
         let topAnchor = getContentViewTopAnchor()
         let leadingAnchor = getContentViewLeadingAnchor()
         let trailingAnchor = getContentViewTrailingAnchor()

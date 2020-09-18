@@ -1,8 +1,8 @@
 //
 //  CustomButton.swift
-//  GitHubFollowers
+//  CustomViews
 //
-//  Created by Christian Slanzi on 21.07.20.
+//  Created by Christian Slanzi on 22.02.20.
 //  Copyright © 2020 Christian Slanzi. All rights reserved.
 //
 
