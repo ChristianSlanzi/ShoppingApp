@@ -581,6 +581,25 @@
 			path = PaymentScreen;
 			sourceTree = "<group>";
 		};
+		242000CE2519497300980F91 /* Core Module */ = {
+			isa = PBXGroup;
+			children = (
+				242000CF2519499500980F91 /* Components */,
+				2490C4C92514D81B008B3D75 /* Theme */,
+			);
+			path = "Core Module";
+			sourceTree = "<group>";
+		};
+		242000CF2519499500980F91 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2490C4B92514D652008B3D75 /* Base */,
+				245577AD24E93F3C00CE2A05 /* TextFields */,
+				2490C4C42514D6CE008B3D75 /* Notification */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		2427D2FD24F2B94600E7DB95 /* OrdersScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,13 +619,13 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		245577AD24E93F3C00CE2A05 /* Text */ = {
+		245577AD24E93F3C00CE2A05 /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
 				245577AE24E93F9400CE2A05 /* CustomTextField.swift */,
 				2413915324EADA0000422B32 /* ValidableTextControl.swift */,
 			);
-			path = Text;
+			path = TextFields;
 			sourceTree = "<group>";
 		};
 		245ABD1E24E3376600F857BE /* DAO */ = {
@@ -830,11 +849,11 @@
 		2490C4B92514D652008B3D75 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				2490C4BA2514D652008B3D75 /* CustomView.swift */,
 				2490C4BB2514D652008B3D75 /* BaseViewController.swift */,
-				2490C4BC2514D652008B3D75 /* CustomScrollViewController.swift */,
-				2490C4BD2514D652008B3D75 /* Modal.swift */,
 				2490C4BE2514D652008B3D75 /* CaptionView.swift */,
+				2490C4BC2514D652008B3D75 /* CustomScrollViewController.swift */,
+				2490C4BA2514D652008B3D75 /* CustomView.swift */,
+				2490C4BD2514D652008B3D75 /* Modal.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1057,6 +1076,7 @@
 		24C5EC7A24DC9D480060EB3A /* ShoppingApp */ = {
 			isa = PBXGroup;
 			children = (
+				242000CE2519497300980F91 /* Core Module */,
 				2460333C2503760800C99A2E /* Modules */,
 				240F3F0C24E2EB9D00FC8BE0 /* Services */,
 				24AAECEB24DF05E0002A46BE /* Model */,
@@ -1120,12 +1140,8 @@
 		24C7CCAE24DEAFC400ABFD0A /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				2490C4C92514D81B008B3D75 /* Theme */,
-				2490C4C42514D6CE008B3D75 /* Notification */,
-				2490C4B92514D652008B3D75 /* Base */,
 				240CDDEC2513A2A70088D629 /* Labels */,
 				24073F8324F52E730079869D /* Icons */,
-				245577AD24E93F3C00CE2A05 /* Text */,
 				24B7A47B24E589DE00A69FCD /* Controls */,
 				24F50D6924E13F85001B2A6B /* ViewControllers */,
 				24C7CCAF24DEB00100ABFD0A /* Buttons */,
