@@ -123,3 +123,27 @@ private func testMakeUrlRequest() {
  
     */
 }
+
+extension User {
+    static let template = User(favoriteFoods: [Food(name: "Tacos"), Food(name: "Nachos")],
+                               location: Location(name: "Brooklyn"),
+                               name: "Blob")
+}
+
+func testUserDemographyComposition() { // helpful for unit testing
+    
+    let noFavoriteFoods = (prop(\User.favoriteFoods)) { _ in [] }
+    let healthyEater = (prop(\User.favoriteFoods)) { _ in
+        [Food(name: "Kale"), Food(name: "Broccoli")]
+    }
+    let domestic = (prop(\User.location.name)) { _ in "Brooklyn" }
+    let international = (prop(\User.location.name)) { _ in "Copenhagen" }
+    
+    let healthyInternational = User.template
+        |> healthyEater
+        |> international
+    
+    let boringLocal = .template
+                        |> noFavoriteFoods
+                        |> domestic
+}
