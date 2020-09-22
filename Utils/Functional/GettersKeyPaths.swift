@@ -91,4 +91,60 @@ func testComparableTheir() {
         .min(by: their(get(\.email)))?.email
 }
 
+// REDUCE
+// start with a initial value and iterate on each element performing the given operation
+// i.e. sum array's values
+// [1,2,3]
+//   .reduce(0, +)
 
+// what if I want to reduce on a struct?
+// I can use a closure.
+
+struct Episode {
+    let title: String
+    let viewCount: Int
+}
+let episodes = [
+    Episode(title: "Functions", viewCount: 961),
+    Episode(title: "Side Effects", viewCount: 841),
+    Episode(title: "UIKit Styling with Functions", viewCount: 108),
+    Episode(title: "Algebraic Data Types", viewCount: 729)
+]
+
+func testReduce() {
+    episodes
+   .reduce(0) { $0 + $1.viewCount } // short but not clear
+}
+
+// we need a combining function
+func combining<Root, Value>(
+    _ f: @escaping (Root) -> Value,
+    by g: @escaping (Value, Value) -> Value) -> (Value, Root) -> Value {
+    return { value, root in
+        g(value, f(root))
+    }
+}
+
+func testReduceWithCombining() {
+    episodes
+        .reduce(0, combining(get(\.viewCount), by: +)) //more readable
+}
+
+// Operator overload?
+prefix operator ^
+prefix func ^ <Root, Value>(kp: KeyPath<Root, Value>) -> (Root) -> Value {
+    return get(kp)
+}
+
+func testOperatorOverload() {
+    let getId = ^\User.id
+    users.map(^\.id)
+    users.map(^\.email.count)
+    users.map(^\.email.count >>> String.init)
+    users.filter(^\.isStaff)
+    users.filter((!) <<< ^\.isStaff)
+    users.sorted(by: their(^\.email))
+    users.sorted(by: their(^\.email, >))
+    users.max(by: their(^\.email.count))
+    users.min(by: their(^\.email.count))
+}
