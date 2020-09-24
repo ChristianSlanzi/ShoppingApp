@@ -67,6 +67,7 @@
 		24603391250376FA00C99A2E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2460337F250376FA00C99A2E /* Observable.swift */; };
 		24625CAC25116A17008571A4 /* FunctionalKeyPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24625CAB25116A17008571A4 /* FunctionalKeyPaths.swift */; };
 		246F952624F5AFE700692B50 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246F952524F5AFE700692B50 /* Analytics.swift */; };
+		247F374A251D3707000AA342 /* FlatMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247F3749251D3707000AA342 /* FlatMaps.swift */; };
 		248A541524EDC68600F8C60D /* DeliveryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A541424EDC68600F8C60D /* DeliveryDTO.swift */; };
 		248A541724EDC83500F8C60D /* DeliveryDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A541624EDC83500F8C60D /* DeliveryDAO.swift */; };
 		248A541924EDD38A00F8C60D /* PaymentViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A541824EDD38A00F8C60D /* PaymentViewController+Ext.swift */; };
@@ -250,6 +251,7 @@
 		2460337F250376FA00C99A2E /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		24625CAB25116A17008571A4 /* FunctionalKeyPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalKeyPaths.swift; sourceTree = "<group>"; };
 		246F952524F5AFE700692B50 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		247F3749251D3707000AA342 /* FlatMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatMaps.swift; sourceTree = "<group>"; };
 		248A541424EDC68600F8C60D /* DeliveryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDTO.swift; sourceTree = "<group>"; };
 		248A541624EDC83500F8C60D /* DeliveryDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDAO.swift; sourceTree = "<group>"; };
 		248A541824EDD38A00F8C60D /* PaymentViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaymentViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -725,6 +727,7 @@
 				2409C775251029CC00473472 /* FunctionalSetters.swift */,
 				24625CAB25116A17008571A4 /* FunctionalKeyPaths.swift */,
 				240176CA2514152700BC7038 /* GettersKeyPaths.swift */,
+				247F3749251D3707000AA342 /* FlatMaps.swift */,
 			);
 			path = Functional;
 			sourceTree = "<group>";
@@ -1491,6 +1494,7 @@
 			files = (
 				24603383250376FA00C99A2E /* MinimumLenghtRule.swift in Sources */,
 				2460338A250376FA00C99A2E /* UIView+Ext.swift in Sources */,
+				247F374A251D3707000AA342 /* FlatMaps.swift in Sources */,
 				2460338E250376FA00C99A2E /* UIViewController+Ext.swift in Sources */,
 				24603390250376FA00C99A2E /* String+Ext.swift in Sources */,
 				24603391250376FA00C99A2E /* Observable.swift in Sources */,
