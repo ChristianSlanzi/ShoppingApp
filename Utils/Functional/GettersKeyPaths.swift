@@ -148,3 +148,9 @@ func testOperatorOverload() {
     users.max(by: their(^\.email.count))
     users.min(by: their(^\.email.count))
 }
+
+func absurd<A>(_ never: Never) -> A {
+    switch never {
+    
+    }
+}
