@@ -61,7 +61,7 @@ final class CartItemViewCell: UITableViewCell {
         productImageView.backgroundColor = .lightGray
         productImageView |> roundedStyle
         
-        addSubviews(productImageView, productNameLabel, quantityControl)
+        contentView.addSubviews(productImageView, productNameLabel, quantityControl)
     }
     
     private func setupConstraints() {
