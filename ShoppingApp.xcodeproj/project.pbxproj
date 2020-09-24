@@ -94,6 +94,7 @@
 		2490C4E22514D81B008B3D75 /* ThemeUsageExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4D92514D81B008B3D75 /* ThemeUsageExample.swift */; };
 		2490C4E52514D8EC008B3D75 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4E42514D8EC008B3D75 /* SettingsService.swift */; };
 		2490C4E82514DA52008B3D75 /* UserDefaultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490C4E72514DA52008B3D75 /* UserDefaultExtensions.swift */; };
+		249AD707251B939C00403A7A /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249AD706251B939C00403A7A /* Bundle+Ext.swift */; };
 		24A17CA924DD744A00829470 /* ProductFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A17CA824DD744A00829470 /* ProductFlowController.swift */; };
 		24A17CAB24DD76F100829470 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A17CAA24DD76F100829470 /* MainFlowController.swift */; };
 		24A17CAE24DD99E800829470 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A17CAD24DD99E800829470 /* CategoriesViewController.swift */; };
@@ -276,6 +277,7 @@
 		2490C4D92514D81B008B3D75 /* ThemeUsageExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeUsageExample.swift; sourceTree = "<group>"; };
 		2490C4E42514D8EC008B3D75 /* SettingsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		2490C4E72514DA52008B3D75 /* UserDefaultExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultExtensions.swift; sourceTree = "<group>"; };
+		249AD706251B939C00403A7A /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
 		24A17CA824DD744A00829470 /* ProductFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFlowController.swift; sourceTree = "<group>"; };
 		24A17CAA24DD76F100829470 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		24A17CAD24DD99E800829470 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -730,6 +732,7 @@
 		2460336E250376F900C99A2E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				249AD705251B938900403A7A /* Bundle */,
 				2490C4E62514DA52008B3D75 /* UserDefaults */,
 				24DAD69C2506E45300E47DEE /* UIImageView */,
 				24DAD6982506E42D00E47DEE /* UICollectionView */,
@@ -953,6 +956,14 @@
 				2490C4E72514DA52008B3D75 /* UserDefaultExtensions.swift */,
 			);
 			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		249AD705251B938900403A7A /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				249AD706251B939C00403A7A /* Bundle+Ext.swift */,
+			);
+			path = Bundle;
 			sourceTree = "<group>";
 		};
 		24A17CAC24DD990D00829470 /* Scenes */ = {
@@ -1495,6 +1506,7 @@
 				24603385250376FA00C99A2E /* Rule.swift in Sources */,
 				2460338D250376FA00C99A2E /* UIViewController+Child.swift in Sources */,
 				2409C776251029CC00473472 /* FunctionalSetters.swift in Sources */,
+				249AD707251B939C00403A7A /* Bundle+Ext.swift in Sources */,
 				24D5DD3B2508421600E6F943 /* HighOrderFunctions.swift in Sources */,
 				24DAD69B2506E42D00E47DEE /* UICollectionView+Ext.swift in Sources */,
 				2460338C250376FA00C99A2E /* URL+Document.swift in Sources */,
