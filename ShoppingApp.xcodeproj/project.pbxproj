@@ -32,6 +32,7 @@
 		24144D2124E6933400DD9B96 /* CartItemSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24144D2024E6933400DD9B96 /* CartItemSummaryViewModel.swift */; };
 		241EC35824E84ED200DB3E1C /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241EC35724E84ED200DB3E1C /* DeliveryViewController.swift */; };
 		241EC35A24E84F1000DB3E1C /* DeliveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241EC35924E84F1000DB3E1C /* DeliveryViewModel.swift */; };
+		24211834251E897200D7EDA8 /* Tagged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24211833251E897200D7EDA8 /* Tagged.swift */; };
 		2427D2FC24F2B84F00E7DB95 /* OrderFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2427D2FB24F2B84F00E7DB95 /* OrderFlowController.swift */; };
 		2427D2FF24F2B96600E7DB95 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2427D2FE24F2B96600E7DB95 /* OrdersViewController.swift */; };
 		2427D30124F2B97700E7DB95 /* OrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2427D30024F2B97700E7DB95 /* OrdersViewModel.swift */; };
@@ -68,6 +69,7 @@
 		24625CAC25116A17008571A4 /* FunctionalKeyPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24625CAB25116A17008571A4 /* FunctionalKeyPaths.swift */; };
 		246F952624F5AFE700692B50 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246F952524F5AFE700692B50 /* Analytics.swift */; };
 		247F374A251D3707000AA342 /* FlatMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247F3749251D3707000AA342 /* FlatMaps.swift */; };
+		247F374F251D4731000AA342 /* CompositionWithoutOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247F374E251D4731000AA342 /* CompositionWithoutOperators.swift */; };
 		248A541524EDC68600F8C60D /* DeliveryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A541424EDC68600F8C60D /* DeliveryDTO.swift */; };
 		248A541724EDC83500F8C60D /* DeliveryDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A541624EDC83500F8C60D /* DeliveryDAO.swift */; };
 		248A541924EDD38A00F8C60D /* PaymentViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A541824EDD38A00F8C60D /* PaymentViewController+Ext.swift */; };
@@ -215,6 +217,7 @@
 		24144D2024E6933400DD9B96 /* CartItemSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemSummaryViewModel.swift; sourceTree = "<group>"; };
 		241EC35724E84ED200DB3E1C /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
 		241EC35924E84F1000DB3E1C /* DeliveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewModel.swift; sourceTree = "<group>"; };
+		24211833251E897200D7EDA8 /* Tagged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tagged.swift; sourceTree = "<group>"; };
 		2427D2FB24F2B84F00E7DB95 /* OrderFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFlowController.swift; sourceTree = "<group>"; };
 		2427D2FE24F2B96600E7DB95 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		2427D30024F2B97700E7DB95 /* OrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewModel.swift; sourceTree = "<group>"; };
@@ -252,6 +255,7 @@
 		24625CAB25116A17008571A4 /* FunctionalKeyPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalKeyPaths.swift; sourceTree = "<group>"; };
 		246F952524F5AFE700692B50 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		247F3749251D3707000AA342 /* FlatMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatMaps.swift; sourceTree = "<group>"; };
+		247F374E251D4731000AA342 /* CompositionWithoutOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionWithoutOperators.swift; sourceTree = "<group>"; };
 		248A541424EDC68600F8C60D /* DeliveryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDTO.swift; sourceTree = "<group>"; };
 		248A541624EDC83500F8C60D /* DeliveryDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDAO.swift; sourceTree = "<group>"; };
 		248A541824EDD38A00F8C60D /* PaymentViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaymentViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -728,6 +732,8 @@
 				24625CAB25116A17008571A4 /* FunctionalKeyPaths.swift */,
 				240176CA2514152700BC7038 /* GettersKeyPaths.swift */,
 				247F3749251D3707000AA342 /* FlatMaps.swift */,
+				247F374E251D4731000AA342 /* CompositionWithoutOperators.swift */,
+				24211833251E897200D7EDA8 /* Tagged.swift */,
 			);
 			path = Functional;
 			sourceTree = "<group>";
@@ -1496,6 +1502,7 @@
 				2460338A250376FA00C99A2E /* UIView+Ext.swift in Sources */,
 				247F374A251D3707000AA342 /* FlatMaps.swift in Sources */,
 				2460338E250376FA00C99A2E /* UIViewController+Ext.swift in Sources */,
+				24211834251E897200D7EDA8 /* Tagged.swift in Sources */,
 				24603390250376FA00C99A2E /* String+Ext.swift in Sources */,
 				24603391250376FA00C99A2E /* Observable.swift in Sources */,
 				24603382250376FA00C99A2E /* PasswordRule.swift in Sources */,
@@ -1513,6 +1520,7 @@
 				249AD707251B939C00403A7A /* Bundle+Ext.swift in Sources */,
 				24D5DD3B2508421600E6F943 /* HighOrderFunctions.swift in Sources */,
 				24DAD69B2506E42D00E47DEE /* UICollectionView+Ext.swift in Sources */,
+				247F374F251D4731000AA342 /* CompositionWithoutOperators.swift in Sources */,
 				2460338C250376FA00C99A2E /* URL+Document.swift in Sources */,
 				24603389250376FA00C99A2E /* UIColor+Ext.swift in Sources */,
 				24DAD69E2506E45300E47DEE /* UIImageView+Ext.swift in Sources */,
