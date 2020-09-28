@@ -106,52 +106,56 @@ final class ProductDetailsViewController: CustomScrollViewController {
         let trailingAnchor = getContentViewTrailingAnchor()
         //let bottomAnchor = getContentViewBottomAnchor()
         
+        let margin: CGFloat = .grid_unit(6)
+        let labelHeight: CGFloat = .grid_unit(8)
+        let buttonHeight: CGFloat = .grid_unit(13)
+            
         NSLayoutConstraint.activate([
-            productImage.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            productImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            productImage.topAnchor.constraint(equalTo: topAnchor, constant: margin),
+            productImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: margin),
             productImage.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
+                .constraint(equalTo: trailingAnchor, constant: -margin),
             productImage.heightAnchor.constraint(equalToConstant: 200)
         ])
         
         NSLayoutConstraint.activate([
-            productName.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 20),
-            productName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            productName.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: margin),
+            productName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: margin),
             productName.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            productName.heightAnchor.constraint(equalToConstant: 30)
+                .constraint(equalTo: trailingAnchor, constant: -margin),
+            productName.heightAnchor.constraint(equalToConstant: labelHeight)
         ])
         
         NSLayoutConstraint.activate([
-            productPrice.topAnchor.constraint(equalTo: productName.bottomAnchor, constant: 20),
-            productPrice.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            productPrice.topAnchor.constraint(equalTo: productName.bottomAnchor, constant: margin),
+            productPrice.leadingAnchor.constraint(equalTo: leadingAnchor, constant: margin),
             productPrice.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            productPrice.heightAnchor.constraint(equalToConstant: 30)
+                .constraint(equalTo: trailingAnchor, constant: -margin),
+            productPrice.heightAnchor.constraint(equalToConstant: labelHeight)
         ])
         
         NSLayoutConstraint.activate([
-            productDescription.topAnchor.constraint(equalTo: productPrice.bottomAnchor, constant: 20),
-            productDescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            productDescription.topAnchor.constraint(equalTo: productPrice.bottomAnchor, constant: margin),
+            productDescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: margin),
             productDescription.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            productDescription.heightAnchor.constraint(greaterThanOrEqualToConstant: 30)
+                .constraint(equalTo: trailingAnchor, constant: -margin),
+            productDescription.heightAnchor.constraint(greaterThanOrEqualToConstant: labelHeight)
         ])
         
         NSLayoutConstraint.activate([
-            addToCartButton.topAnchor.constraint(equalTo: productDescription.bottomAnchor, constant: 20),
-            addToCartButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            addToCartButton.topAnchor.constraint(equalTo: productDescription.bottomAnchor, constant: margin),
+            addToCartButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: margin),
             addToCartButton.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            addToCartButton.heightAnchor.constraint(equalToConstant: 50)
+                .constraint(equalTo: trailingAnchor, constant: -margin),
+            addToCartButton.heightAnchor.constraint(equalToConstant: buttonHeight)
         ])
         
         NSLayoutConstraint.activate([
-            orderNowButton.topAnchor.constraint(equalTo: addToCartButton.bottomAnchor, constant: 20),
-            orderNowButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            orderNowButton.topAnchor.constraint(equalTo: addToCartButton.bottomAnchor, constant: margin),
+            orderNowButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: margin),
             orderNowButton.trailingAnchor
-                .constraint(equalTo: trailingAnchor, constant: -20),
-            orderNowButton.heightAnchor.constraint(equalToConstant: 50)
+                .constraint(equalTo: trailingAnchor, constant: -margin),
+            orderNowButton.heightAnchor.constraint(equalToConstant: buttonHeight)
         ])
         
         setContentViewBottom(view: orderNowButton)

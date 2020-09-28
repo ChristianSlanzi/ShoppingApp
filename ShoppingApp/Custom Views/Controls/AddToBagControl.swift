@@ -17,7 +17,7 @@ class AddToBagControl: UIControl, CustomViewProtocol {
     lazy var topStack: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.backgroundColor = .green
+        //stackView.backgroundColor = .green
         stackView.axis = .vertical
         stackView.distribution = .fill
         return stackView
@@ -26,7 +26,7 @@ class AddToBagControl: UIControl, CustomViewProtocol {
     lazy var bottomStack: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.backgroundColor = .red
+        //stackView.backgroundColor = .red
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         return stackView

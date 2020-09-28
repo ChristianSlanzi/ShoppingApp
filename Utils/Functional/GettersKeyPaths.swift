@@ -131,12 +131,13 @@ func testReduceWithCombining() {
 }
 
 // Operator overload?
+
 prefix operator ^
-prefix func ^ <Root, Value>(kp: KeyPath<Root, Value>) -> (Root) -> Value {
+public prefix func ^ <Root, Value>(kp: KeyPath<Root, Value>) -> (Root) -> Value {
     return get(kp)
 }
 
-func testOperatorOverload() {
+fileprivate func testOperatorOverload() {
     let getId = ^\User.id
     users.map(^\.id)
     users.map(^\.email.count)

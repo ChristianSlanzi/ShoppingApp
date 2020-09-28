@@ -60,9 +60,9 @@ final class ProductViewCell: UICollectionViewCell {
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
-        let vPadding: CGFloat = 12
-        let hPadding: CGFloat = 8
-        let labelHeight: CGFloat = 20
+        let vPadding: CGFloat = .grid_unit(3)
+        let hPadding: CGFloat = .grid_unit(2)
+        let labelHeight: CGFloat = .grid_unit(6)
 
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),

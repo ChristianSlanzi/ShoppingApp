@@ -17,6 +17,10 @@ public func |> <A, B>(a: A, f: (A) -> B) -> B {
     return f(a)
 }
 
+func |> <A, B>(a: A, f: (A) throws -> B) throws -> B {
+    return try f(a)
+}
+
 //forward compose operator
 precedencegroup ForwardComposition {
     associativity: left
@@ -29,6 +33,12 @@ infix operator >>>
 public func >>> <A, B, C>(f: @escaping (A) -> B, g: @escaping (B) -> C) -> ((A) -> C) {
     return { a in
         g(f(a))
+    }
+}
+
+func >>> <A, B, C>(f: @escaping (A) throws -> B, g: @escaping (B) throws -> C) -> ((A) throws -> C) {
+    return { a in
+        try g(f(a))
     }
 }
 
@@ -60,22 +70,34 @@ precedencegroup SingleTypeComposition {
 
 infix operator <> : SingleTypeComposition
 
-public func <> <A: AnyObject>(f: @escaping (A) -> A,
+public func <> <A: Any>(f: @escaping (A) -> A,
                               g: @escaping (A) -> A) -> (A) -> A {
    return f >>> g
 }
 
-public func <> <A: AnyObject>(f: @escaping (A) -> Void, g: @escaping (A) -> Void) -> (A) -> Void {
+public func <> <A: Any>(f: @escaping (A) -> Void, g: @escaping (A) -> Void) -> (A) -> Void {
   return { a in
     f(a)
     g(a)
   }
 }
 
-public func <> <A: AnyObject>(f: @escaping (inout A) -> Void,
+public func <> <A: Any>(f: @escaping (inout A) -> Void,
                               g: @escaping (inout A) -> Void) -> (inout A) -> Void {
    return { a in
     f(&a)
     g(&a)
    }
 }
+
+
+struct CoolOperator {
+    let name: String
+    let readableName: String
+}
+
+let knownOperators = [
+    CoolOperator(name: "<>", readableName: "Diamond"),
+    CoolOperator(name: "|>", readableName: "Pipe")
+]
+

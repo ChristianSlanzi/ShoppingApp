@@ -97,6 +97,9 @@ final class ShoppingCartViewController: UIViewController {
 
 extension ShoppingCartViewController {
     private func setupConstraints() {
+        
+        let buttonHeight: CGFloat = .grid_unit(13)
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         orderSummaryButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -113,7 +116,7 @@ extension ShoppingCartViewController {
             orderSummaryButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             orderSummaryButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             orderSummaryButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            orderSummaryButton.heightAnchor.constraint(equalToConstant: 50)
+            orderSummaryButton.heightAnchor.constraint(equalToConstant: buttonHeight)
         ])
     }
 }

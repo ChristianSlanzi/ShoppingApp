@@ -83,6 +83,9 @@ final class WelcomeViewController: UIViewController {
 
 extension WelcomeViewController {
     private func setupConstraints() {
+        
+        let buttonHeight: CGFloat = .grid_unit(13)
+        
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
@@ -94,7 +97,7 @@ extension WelcomeViewController {
             startButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
             startButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             startButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            startButton.heightAnchor.constraint(equalToConstant: 50)
+            startButton.heightAnchor.constraint(equalToConstant: buttonHeight)
         ])
     }
 }

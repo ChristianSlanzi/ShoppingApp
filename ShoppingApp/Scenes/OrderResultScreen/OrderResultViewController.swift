@@ -87,6 +87,9 @@ final class OrderResultViewController: UIViewController {
 
 extension OrderResultViewController {
     private func setupConstraints() {
+        
+        let buttonHeight: CGFloat = .grid_unit(13)
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         mainScreenButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -103,7 +106,7 @@ extension OrderResultViewController {
             mainScreenButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             mainScreenButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             mainScreenButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            mainScreenButton.heightAnchor.constraint(equalToConstant: 50)
+            mainScreenButton.heightAnchor.constraint(equalToConstant: buttonHeight)
         ])
     }
 }

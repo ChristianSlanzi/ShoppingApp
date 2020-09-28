@@ -52,6 +52,8 @@ extension PaymentViewController {
         let fieldHeight = CGFloat(40)
         let textHeight = CGFloat(90)
         
+        let buttonHeight: CGFloat = .grid_unit(13)
+        
         NSLayoutConstraint.activate([
             cardNumberTextField.topAnchor.constraint(equalTo: topAnchor, constant: topPadding),
             cardNumberTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: hPadding),
@@ -81,7 +83,7 @@ extension PaymentViewController {
             confirmDetailsButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: hPadding),
             confirmDetailsButton.trailingAnchor
                 .constraint(equalTo: trailingAnchor, constant: -hPadding),
-            confirmDetailsButton.heightAnchor.constraint(equalToConstant: 50)
+            confirmDetailsButton.heightAnchor.constraint(equalToConstant: buttonHeight)
         ])
         
         setContentViewBottom(view: confirmDetailsButton)

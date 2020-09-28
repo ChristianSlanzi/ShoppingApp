@@ -84,6 +84,9 @@ final class OrderSummaryViewController: UIViewController {
 
 extension OrderSummaryViewController {
     private func setupConstraints() {
+        
+        let buttonHeight: CGFloat = .grid_unit(13)
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         orderDeliveryButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -100,7 +103,7 @@ extension OrderSummaryViewController {
             orderDeliveryButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             orderDeliveryButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             orderDeliveryButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            orderDeliveryButton.heightAnchor.constraint(equalToConstant: 50)
+            orderDeliveryButton.heightAnchor.constraint(equalToConstant: buttonHeight)
         ])
     }
 }
