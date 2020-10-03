@@ -8,9 +8,9 @@
 
 import Foundation
 
-public func get<Root, Value>(_ kp: KeyPath<Root, Value>) -> (Root) -> Value {
+public func get<Root, Value>(_ keyPath: KeyPath<Root, Value>) -> (Root) -> Value {
     return { root in
-        root[keyPath: kp]
+        root[keyPath: keyPath]
     }
 }
 

@@ -68,7 +68,7 @@
 		24603391250376FA00C99A2E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2460337F250376FA00C99A2E /* Observable.swift */; };
 		24625CAC25116A17008571A4 /* FunctionalKeyPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24625CAB25116A17008571A4 /* FunctionalKeyPaths.swift */; };
 		246F952624F5AFE700692B50 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246F952524F5AFE700692B50 /* Analytics.swift */; };
-		247C6A9225227AFE0090DA11 /* CGFloat+Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247C6A9125227AFE0090DA11 /* CGFloat+Grid.swift */; };
+		247C6A97252283A30090DA11 /* FunctionalUIStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247C6A96252283A30090DA11 /* FunctionalUIStyling.swift */; };
 		247F374A251D3707000AA342 /* FlatMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247F3749251D3707000AA342 /* FlatMaps.swift */; };
 		247F374F251D4731000AA342 /* CompositionWithoutOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247F374E251D4731000AA342 /* CompositionWithoutOperators.swift */; };
 		248A541524EDC68600F8C60D /* DeliveryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A541424EDC68600F8C60D /* DeliveryDTO.swift */; };
@@ -258,7 +258,7 @@
 		2460337F250376FA00C99A2E /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		24625CAB25116A17008571A4 /* FunctionalKeyPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalKeyPaths.swift; sourceTree = "<group>"; };
 		246F952524F5AFE700692B50 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
-		247C6A9125227AFE0090DA11 /* CGFloat+Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Grid.swift"; sourceTree = "<group>"; };
+		247C6A96252283A30090DA11 /* FunctionalUIStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalUIStyling.swift; sourceTree = "<group>"; };
 		247F3749251D3707000AA342 /* FlatMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatMaps.swift; sourceTree = "<group>"; };
 		247F374E251D4731000AA342 /* CompositionWithoutOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionWithoutOperators.swift; sourceTree = "<group>"; };
 		248A541424EDC68600F8C60D /* DeliveryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDTO.swift; sourceTree = "<group>"; };
@@ -744,6 +744,7 @@
 				247F374E251D4731000AA342 /* CompositionWithoutOperators.swift */,
 				24211833251E897200D7EDA8 /* Tagged.swift */,
 				24BEA6E6251F856500A1A480 /* Contravariance.swift */,
+				247C6A96252283A30090DA11 /* FunctionalUIStyling.swift */,
 			);
 			path = Functional;
 			sourceTree = "<group>";
@@ -838,14 +839,6 @@
 				246F952524F5AFE700692B50 /* Analytics.swift */,
 			);
 			path = Analytics;
-			sourceTree = "<group>";
-		};
-		247C6A9025227AA70090DA11 /* GridUnit */ = {
-			isa = PBXGroup;
-			children = (
-				247C6A9125227AFE0090DA11 /* CGFloat+Grid.swift */,
-			);
-			path = GridUnit;
 			sourceTree = "<group>";
 		};
 		248A86F524E5EB6000EEC2F2 /* OrderSummaryScreen */ = {
@@ -1187,7 +1180,6 @@
 		24C7CCAE24DEAFC400ABFD0A /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				247C6A9025227AA70090DA11 /* GridUnit */,
 				240CDDEC2513A2A70088D629 /* Labels */,
 				24073F8324F52E730079869D /* Icons */,
 				24B7A47B24E589DE00A69FCD /* Controls */,
@@ -1545,6 +1537,7 @@
 				24603391250376FA00C99A2E /* Observable.swift in Sources */,
 				24603382250376FA00C99A2E /* PasswordRule.swift in Sources */,
 				24625CAC25116A17008571A4 /* FunctionalKeyPaths.swift in Sources */,
+				247C6A97252283A30090DA11 /* FunctionalUIStyling.swift in Sources */,
 				240176CB2514152700BC7038 /* GettersKeyPaths.swift in Sources */,
 				2460338B250376FA00C99A2E /* Date+Ext.swift in Sources */,
 				24603381250376FA00C99A2E /* FieldValidatable.swift in Sources */,
@@ -1599,7 +1592,6 @@
 				248A541924EDD38A00F8C60D /* PaymentViewController+Ext.swift in Sources */,
 				2490C4C22514D652008B3D75 /* Modal.swift in Sources */,
 				24C7CCAD24DEA00100ABFD0A /* ShoppingCartFlowController.swift in Sources */,
-				247C6A9225227AFE0090DA11 /* CGFloat+Grid.swift in Sources */,
 				2427D2FC24F2B84F00E7DB95 /* OrderFlowController.swift in Sources */,
 				24A17CAE24DD99E800829470 /* CategoriesViewController.swift in Sources */,
 				248CFEC424F3F12A00DD97EA /* OrderDetailsViewModel.swift in Sources */,
