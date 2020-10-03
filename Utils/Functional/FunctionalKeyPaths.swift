@@ -11,7 +11,7 @@
 // if you give this function a keypath, you get back a composable setter
 // then if you give the composable setter a way to transform the value
 // you get back a way to transform the root
-
+/*
 public func prop<Root, Value>(_ keyPath: WritableKeyPath<Root, Value>)
     -> (@escaping (Value) -> Value)
     -> (Root) -> Root {
@@ -127,17 +127,18 @@ public func mut<Root, Value>(
     return mver(keyPath) { $0 = value }
 }
 
-/*
-public prefix func ^ <Root, Value>(_ kp: WritableKeyPath<Root, Value>)
-    -> (@escaping (inout Value) -> Void)
-    -> (inout Root) -> Void {
-    return { update in
-        return { root in
-            update(&root[keyPath: kp])
-        }
-    }
-}
- */
+
+
+//public prefix func ^ <Root, Value>(_ kp: WritableKeyPath<Root, Value>)
+//    -> (@escaping (inout Value) -> Void)
+//    -> (inout Root) -> Void {
+//    return { update in
+//        return { root in
+//            update(&root[keyPath: kp])
+//        }
+//    }
+//}
+
 
 
 /// Produces an immutable setter function for a given key path and update function.
@@ -269,4 +270,4 @@ public func mver<Root, Value>(
 
     return mprop(keyPath)(update)
 }
-
+*/

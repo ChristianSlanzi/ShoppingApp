@@ -1,4 +1,5 @@
 PODS:
+  - Overture (0.5.0)
   - Realm (5.0.1):
     - Realm/Headers (= 5.0.1)
   - Realm/Headers (5.0.1)
@@ -6,17 +7,20 @@ PODS:
     - Realm (= 5.0.1)
 
 DEPENDENCIES:
+  - Overture
   - RealmSwift
 
 SPEC REPOS:
   trunk:
+    - Overture
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
+  Overture: 2e6252ead5da6d3347f758047f27a31cb469d59d
   Realm: d36cfc336d76d2e15b13651beb6050f49354de4b
   RealmSwift: f29ae0ceaf4fbaf4803c40bbebd838ea2beb903a
 
-PODFILE CHECKSUM: 09e776d26f90ac1858baf2a816181069f2a5a9dc
+PODFILE CHECKSUM: d02948791798402255daac273b99c185358821f1
 
 COCOAPODS: 1.8.4

@@ -6,6 +6,10 @@
 //  Copyright © 2020 Christian Slanzi. All rights reserved.
 //
 
+
+
+/*
+
 // MARK: curry function
 // given a function that goes from A,B to C we return a new function
 // that goes from A to a function from B to C
@@ -29,28 +33,6 @@ public func curry<A, B, C>(_ f: @escaping (A, B) -> C) -> (A) -> (B) -> C {
 public func flip<A, B, C>(_ f: @escaping (A) -> (B) -> C) -> (B) -> (A) -> C {
     return { b in { a in f(a)(b) } }
 }
-
-// now we can write this
-public let stringWithEncoding = flip(curry(String.init(data:encoding:)))
-
-// and even combine like this
-public let utf8String = stringWithEncoding(.utf8)
-
-// and now use like this
-let data = Data(base64Encoded: "some data")!
-let encodedString = data |> utf8String  //utf8String(data)
-
-// we can also use all static methods from String like as:
-
-// "Hello".uppercased(with: Locale.init(identifier: "en"))
-// that results in
-// "HELLO"
-
-public let uppercasedWithLocale = flip(String.uppercased(with:))
-public let uppercasedWithEn = uppercasedWithLocale(Locale.init(identifier: "en"))
-
-// so now we can use it like this:
-// "Hello" |> uppercasedWithEn
 
 // but... there's an uppercased overload that takes no argument...
 // so flip won't work with it...
@@ -101,3 +83,51 @@ public func filter<A>(_ p: @escaping (A) -> Bool) -> ([A]) -> [A] {
 
 // and now use it like this
 // filter { $0 > 5 } >>> map(incr >>> square)
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+import Overture
+
+// now we can write this
+public let stringWithEncoding = flip(curry(String.init(data:encoding:)))
+
+// and even combine like this
+public let utf8String = stringWithEncoding(.utf8)
+
+// and now use like this
+let data = Data(base64Encoded: "some data")!
+let encodedString = data |> utf8String  //utf8String(data)
+
+// we can also use all static methods from String like as:
+
+// "Hello".uppercased(with: Locale.init(identifier: "en"))
+// that results in
+// "HELLO"
+
+public let uppercasedWithLocale = flip(String.uppercased(with:))
+public let uppercasedWithEn = uppercasedWithLocale(Locale.init(identifier: "en"))
+
+// so now we can use it like this:
+// "Hello" |> uppercasedWithEn
+
+
+
+
+
+
+
+
+
+

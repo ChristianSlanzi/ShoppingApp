@@ -10,6 +10,13 @@ target 'ShoppingApp' do
   xcodeproj 'ShoppingApp.xcodeproj'
   # Pods for ShoppingApp
   pod 'RealmSwift'
+  pod 'Overture'
+  
+  target 'Utils' do
+    inherit! :search_paths
+    # Pods for Utils
+    pod 'Overture'
+  end
 
   target 'ShoppingAppTests' do
     inherit! :search_paths
