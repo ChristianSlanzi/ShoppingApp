@@ -62,20 +62,17 @@ final class WelcomeViewController: UIViewController {
         with(startButton, primaryButtonStyle)
         startButton.setTitle("welcome_start_button".localized)
         
-        
-        startButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-        
         view.addSubviews(welcomeLabel, startButton)
         
     }
     
     // MARK: - MVVM Binding
-    
-    @objc private func didTapButton(_ sender: Any) {
-        viewModel.inputs.didTapStartButton()
-    }
-    
+
     private func bind() {
+        startButton.didTouchUpInside = { (sender) in
+            self.viewModel.inputs.didTapStartButton()
+        }
+        
         viewModel.outputs.showMainScreen = {
             //guard let self = self else { return }
             self.flowDelegate?.welcomeControllerDidFinish(self)

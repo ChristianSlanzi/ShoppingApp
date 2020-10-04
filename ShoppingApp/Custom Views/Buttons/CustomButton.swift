@@ -11,10 +11,30 @@ import Utils
 
 /// an app wide custom UIButton utility class
 class CustomButton: UIButton {
-
+    
     private var buttonColor: UIColor = .black
     private var textColor: UIColor = .white
     private var title: String = "Button"
+    
+    typealias DidTapButton = (CustomButton) -> ()
+    
+    @objc public var didTouchUpInside: DidTapButton? {
+        didSet {
+            if didTouchUpInside != nil {
+                addTarget(self, action: #selector(didTouchUpInside(_:)), for: .touchUpInside)
+            } else {
+                removeTarget(self, action: #selector(didTouchUpInside(_:)), for: .touchUpInside)
+            }
+        }
+    }
+    
+    // MARK: - Actions
+
+    @objc private func didTouchUpInside(_ sender: UIButton) {
+        if let handler = didTouchUpInside {
+            handler(self)
+        }
+    }
     
     // MARK: - Initializers
     
@@ -23,17 +43,17 @@ class CustomButton: UIButton {
             self.backgroundColor = isEnabled ? buttonColor : .lightGray
         }
     }
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
-
+    
     /// init required by the API to support storyboards
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     /// Configure object specific visual properties of button
     convenience init(backgroundColor: UIColor, title: String) {
         self.init(frame: .zero) // size created by autolayout
@@ -41,9 +61,9 @@ class CustomButton: UIButton {
         self |> filledRoundedButtonStyle(color: backgroundColor)
         self.setTitle(title, for: .normal)
     }
-
+    
     // MARK: - Layout Methods
-
+    
     /// Configure common visual properties of button
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
@@ -51,7 +71,7 @@ class CustomButton: UIButton {
         setTitleColor(textColor, for: .normal)
         self.setTitle(title, for: .normal)
     }
-
+    
     /// Configure button properties from a different class
     func set(backgroundColor: UIColor, title: String) {
         self.buttonColor = backgroundColor
