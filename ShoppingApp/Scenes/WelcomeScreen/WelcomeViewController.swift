@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Overture 
 
 final class WelcomeViewController: UIViewController {
 
@@ -58,7 +59,10 @@ final class WelcomeViewController: UIViewController {
         
         welcomeLabel.text = "welcome_label_title".localized
         
-        startButton.set(backgroundColor: .systemGreen, title: "welcome_start_button".localized)
+        with(startButton, primaryButtonStyle)
+        startButton.setTitle("welcome_start_button".localized)
+        
+        
         startButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         
         view.addSubviews(welcomeLabel, startButton)

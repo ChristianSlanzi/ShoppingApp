@@ -10,6 +10,31 @@ import UIKit
 import Utils
 import Overture
 
+// PALETTE
+
+// buttons
+let primaryButtonColor = UIColor.systemGreen
+let primaryTextButtonColor = UIColor.white
+
+let secondaryButtonColor = UIColor.systemYellow
+let secondaryTextButtonColor = UIColor.white
+
+// labels
+let primaryTextLabelColor = UIColor.black
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // NEW WAY using Overture
 
 public extension CGFloat {
@@ -24,13 +49,86 @@ public let autoLayoutStyle = mut(\UIView.translatesAutoresizingMaskIntoConstrain
 
 public let verticalStackView = mut(\UIStackView.axis, .vertical)
 
+public let baseStackViewStyle = concat(
+    generousMargins,
+    verticalStackView,
+    mut(\.isLayoutMarginsRelativeArrangement, true),
+    autoLayoutStyle
+)
 
+public let bolded: (inout UIFont) -> Void = { $0 = $0.bolded }
 
+public let baseTextButtonStyle = concat(
+    mut(\UIButton.titleLabel!.font, UIFont.preferredFont(forTextStyle: .subheadline)),
+    mver(\UIButton.titleLabel!.font!, bolded)
+)
 
+public let secondaryTextButtonStyle = concat(
+    baseTextButtonStyle,
+    { $0.setTitleColor(secondaryTextButtonColor, for: .normal)}
+)
 
+public let primaryTextButtonStyle = concat(
+    baseTextButtonStyle,
+    { $0.setTitleColor(primaryTextButtonColor, for: .normal)}
+)
 
+public let baseButtonStyle = concat(
+    baseTextButtonStyle,
+    mut(\.contentEdgeInsets, .init(top: .grid_unit(2), left: .grid_unit(4), bottom: .grid_unit(2), right: .grid_unit(4)))
+)
 
+//let roundedButtonStyle =
+//  baseButtonStyle
+//    <> roundedStyle
 
+let roundedButtonStyle = concat(
+    baseButtonStyle,
+    roundedStyle
+)
+
+//let filledButtonStyle =
+//  roundedButtonStyle
+//  <> filledStyle(color: .black)
+
+func filledButtonStyle(color: UIColor) -> (UIButton) -> Void {
+    return {
+      $0.backgroundColor = color
+    }
+}
+
+let filledButtonStyle = concat(
+    baseButtonStyle, {
+        $0.backgroundColor = .black
+        $0.tintColor = .white
+    }
+)
+
+public func roundedStyle(cornerRadius: CGFloat) -> (UIView) -> Void {
+    return concat(
+        mut(\.layer.cornerRadius, cornerRadius),
+        mut(\.layer.masksToBounds, true)
+    )
+}
+
+let baseRoundedStyle = roundedStyle(cornerRadius: 10)
+
+let baseFilledButtonStyle = concat(
+    baseButtonStyle,
+    baseRoundedStyle
+)
+
+let primaryButtonStyle = concat(
+    baseFilledButtonStyle,
+    primaryTextButtonStyle,
+    { $0.setBackgroundImage(.from(color: primaryButtonColor), for: .normal) }
+)
+
+let secondaryButtonStyle = concat(
+    baseFilledButtonStyle,
+    secondaryTextButtonStyle,
+    { $0.setBackgroundImage(.from(color: secondaryButtonColor), for: .normal) }
+)
 
 // OLD WAY
 
@@ -66,9 +164,7 @@ let baseTextFieldStyle: (UITextField) -> Void =
       tf.heightAnchor.constraint(equalToConstant: 44).isActive = true
 }
 
-let roundedButtonStyle =
-  baseButtonStyle
-    <> roundedStyle
+
 
 let filledBlackButtonStyle =
   roundedButtonStyle
@@ -81,15 +177,7 @@ let borderButtonStyle  =
   roundedButtonStyle
     <> borderStyle(color: .black, width: 2)
 
-//let filledButtonStyle =
-//  roundedButtonStyle
-//  <> filledStyle(color: .black)
 
-func filledButtonStyle(color: UIColor) -> (UIButton) -> Void {
-    return {
-      $0.backgroundColor = color
-    }
-}
 
 func filledRoundedButtonStyle(color: UIColor) -> (UIButton) -> Void {
     return roundedButtonStyle

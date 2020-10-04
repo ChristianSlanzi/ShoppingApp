@@ -8,6 +8,7 @@
 
 import UIKit
 import Utils
+import Overture
 
 final class ProductDetailsViewController: CustomScrollViewController {
     
@@ -73,11 +74,13 @@ final class ProductDetailsViewController: CustomScrollViewController {
         productDescription.backgroundColor = .white
         
         addToCartButton = CustomButton()
-        addToCartButton.set(backgroundColor: .systemYellow, title: "productinfo_addtocart_button".localized)
+        with(addToCartButton, secondaryButtonStyle)
+        addToCartButton.setTitle("productinfo_addtocart_button".localized)
         addToCartButton.addTarget(self, action: #selector(didTapAddToCartButton), for: .touchUpInside)
         
         orderNowButton = CustomButton()
-        orderNowButton.set(backgroundColor: .systemGreen, title: "productinfo_ordernow_button".localized)
+        with(orderNowButton, primaryButtonStyle)
+        orderNowButton.setTitle("productinfo_ordernow_button".localized)
         orderNowButton.addTarget(self, action: #selector(didTapOrderNowButton), for: .touchUpInside)
 
         addToContentView(productImage,

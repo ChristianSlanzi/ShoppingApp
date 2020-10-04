@@ -13,6 +13,9 @@ import Utils
 class CustomButton: UIButton {
 
     private var buttonColor: UIColor = .black
+    private var textColor: UIColor = .white
+    private var title: String = "Button"
+    
     // MARK: - Initializers
     
     override var isEnabled: Bool {
@@ -43,15 +46,20 @@ class CustomButton: UIButton {
 
     /// Configure common visual properties of button
     private func configure() {
-        self |> filledRoundedButtonStyle(color: buttonColor)
-        setTitleColor(.white, for: .normal)
         translatesAutoresizingMaskIntoConstraints = false
+        self |> filledRoundedButtonStyle(color: buttonColor)
+        setTitleColor(textColor, for: .normal)
+        self.setTitle(title, for: .normal)
     }
 
     /// Configure button properties from a different class
     func set(backgroundColor: UIColor, title: String) {
         self.buttonColor = backgroundColor
         self |> filledRoundedButtonStyle(color: buttonColor)
+        setTitle(title, for: .normal)
+    }
+    
+    func setTitle(_ title: String) {
         setTitle(title, for: .normal)
     }
 }
