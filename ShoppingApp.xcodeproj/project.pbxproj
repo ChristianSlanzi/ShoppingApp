@@ -67,10 +67,12 @@
 		24603390250376FA00C99A2E /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2460337D250376F900C99A2E /* String+Ext.swift */; };
 		24603391250376FA00C99A2E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2460337F250376FA00C99A2E /* Observable.swift */; };
 		24625CAC25116A17008571A4 /* FunctionalKeyPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24625CAB25116A17008571A4 /* FunctionalKeyPaths.swift */; };
+		24696BA0252A2F71007F28CE /* NonEmpty+SetAlgebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24696B9F252A2F71007F28CE /* NonEmpty+SetAlgebra.swift */; };
 		246F952624F5AFE700692B50 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246F952524F5AFE700692B50 /* Analytics.swift */; };
 		247F374A251D3707000AA342 /* FlatMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247F3749251D3707000AA342 /* FlatMaps.swift */; };
 		247F374F251D4731000AA342 /* CompositionWithoutOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247F374E251D4731000AA342 /* CompositionWithoutOperators.swift */; };
 		24896E502529B049009C87D6 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24896E4F2529B049009C87D6 /* UIImage+Ext.swift */; };
+		24896E5E2529D6A2009C87D6 /* NonEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24896E5D2529D6A2009C87D6 /* NonEmpty.swift */; };
 		248A541524EDC68600F8C60D /* DeliveryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A541424EDC68600F8C60D /* DeliveryDTO.swift */; };
 		248A541724EDC83500F8C60D /* DeliveryDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A541624EDC83500F8C60D /* DeliveryDAO.swift */; };
 		248A541924EDD38A00F8C60D /* PaymentViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A541824EDD38A00F8C60D /* PaymentViewController+Ext.swift */; };
@@ -258,10 +260,12 @@
 		2460337D250376F900C99A2E /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		2460337F250376FA00C99A2E /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		24625CAB25116A17008571A4 /* FunctionalKeyPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalKeyPaths.swift; sourceTree = "<group>"; };
+		24696B9F252A2F71007F28CE /* NonEmpty+SetAlgebra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NonEmpty+SetAlgebra.swift"; sourceTree = "<group>"; };
 		246F952524F5AFE700692B50 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		247F3749251D3707000AA342 /* FlatMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatMaps.swift; sourceTree = "<group>"; };
 		247F374E251D4731000AA342 /* CompositionWithoutOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionWithoutOperators.swift; sourceTree = "<group>"; };
 		24896E4F2529B049009C87D6 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		24896E5D2529D6A2009C87D6 /* NonEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonEmpty.swift; sourceTree = "<group>"; };
 		248A541424EDC68600F8C60D /* DeliveryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDTO.swift; sourceTree = "<group>"; };
 		248A541624EDC83500F8C60D /* DeliveryDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDAO.swift; sourceTree = "<group>"; };
 		248A541824EDD38A00F8C60D /* PaymentViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaymentViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -741,6 +745,7 @@
 		2460336C250376F900C99A2E /* Functional */ = {
 			isa = PBXGroup;
 			children = (
+				24896E5C2529D68A009C87D6 /* NonEmpty */,
 				24FFC98D2520DCCD0053112D /* Test */,
 				2460336D250376F900C99A2E /* FunctionalComposition.swift */,
 				24D5DD3A2508421600E6F943 /* HighOrderFunctions.swift */,
@@ -855,6 +860,15 @@
 				24896E4F2529B049009C87D6 /* UIImage+Ext.swift */,
 			);
 			path = UIImage;
+			sourceTree = "<group>";
+		};
+		24896E5C2529D68A009C87D6 /* NonEmpty */ = {
+			isa = PBXGroup;
+			children = (
+				24896E5D2529D6A2009C87D6 /* NonEmpty.swift */,
+				24696B9F252A2F71007F28CE /* NonEmpty+SetAlgebra.swift */,
+			);
+			path = NonEmpty;
 			sourceTree = "<group>";
 		};
 		248A86F524E5EB6000EEC2F2 /* OrderSummaryScreen */ = {
@@ -1575,6 +1589,7 @@
 			files = (
 				24603383250376FA00C99A2E /* MinimumLenghtRule.swift in Sources */,
 				2460338A250376FA00C99A2E /* UIView+Ext.swift in Sources */,
+				24696BA0252A2F71007F28CE /* NonEmpty+SetAlgebra.swift in Sources */,
 				24B8E1D125210BB800D4579C /* UIButton+Ext.swift in Sources */,
 				247F374A251D3707000AA342 /* FlatMaps.swift in Sources */,
 				2460338E250376FA00C99A2E /* UIViewController+Ext.swift in Sources */,
@@ -1596,6 +1611,7 @@
 				24BEA6E7251F856500A1A480 /* Contravariance.swift in Sources */,
 				24896E502529B049009C87D6 /* UIImage+Ext.swift in Sources */,
 				249AD707251B939C00403A7A /* Bundle+Ext.swift in Sources */,
+				24896E5E2529D6A2009C87D6 /* NonEmpty.swift in Sources */,
 				24D5DD3B2508421600E6F943 /* HighOrderFunctions.swift in Sources */,
 				24DAD69B2506E42D00E47DEE /* UICollectionView+Ext.swift in Sources */,
 				247F374F251D4731000AA342 /* CompositionWithoutOperators.swift in Sources */,
