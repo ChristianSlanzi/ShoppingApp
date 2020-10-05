@@ -13,14 +13,14 @@ import Overture
 // PALETTE
 
 // buttons
-let primaryButtonColor = UIColor.systemGreen
-let primaryTextButtonColor = UIColor.white
+let primaryButtonColor: UIColor = .systemGreen
+let primaryTextButtonColor: UIColor? = .white
 
-let secondaryButtonColor = UIColor.systemYellow
-let secondaryTextButtonColor = UIColor.white
+let secondaryButtonColor: UIColor = .systemYellow
+let secondaryTextButtonColor: UIColor? = .white
 
 // labels
-let primaryTextLabelColor = UIColor.black
+let primaryTextLabelColor: UIColor? = .black
 
 
 
@@ -65,12 +65,12 @@ public let baseTextButtonStyle = concat(
 
 public let secondaryTextButtonStyle = concat(
     baseTextButtonStyle,
-    { $0.setTitleColor(secondaryTextButtonColor, for: .normal)}
+    mut(\.normalTitleColor, secondaryTextButtonColor)
 )
 
 public let primaryTextButtonStyle = concat(
     baseTextButtonStyle,
-    { $0.setTitleColor(primaryTextButtonColor, for: .normal)}
+    mut(\.normalTitleColor, primaryTextButtonColor)
 )
 
 public let baseButtonStyle = concat(
@@ -121,14 +121,16 @@ let baseFilledButtonStyle = concat(
 let primaryButtonStyle = concat(
     baseFilledButtonStyle,
     primaryTextButtonStyle,
-    { $0.setBackgroundImage(.from(color: primaryButtonColor), for: .normal) }
+    mut(\.normalBackgroundImage, .from(color: primaryButtonColor))
 )
 
 let secondaryButtonStyle = concat(
     baseFilledButtonStyle,
     secondaryTextButtonStyle,
-    { $0.setBackgroundImage(.from(color: secondaryButtonColor), for: .normal) }
+    mut(\.normalBackgroundImage, .from(color: secondaryButtonColor))
 )
+
+let smallCapsLabelStyle = mut(\UILabel.font, UIFont.preferredFont(forTextStyle: .headline).smallCaps)
 
 // OLD WAY
 

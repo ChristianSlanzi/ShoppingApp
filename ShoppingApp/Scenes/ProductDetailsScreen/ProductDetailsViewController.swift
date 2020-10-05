@@ -76,12 +76,10 @@ final class ProductDetailsViewController: CustomScrollViewController {
         addToCartButton = CustomButton()
         with(addToCartButton, secondaryButtonStyle)
         addToCartButton.setTitle("productinfo_addtocart_button".localized)
-        addToCartButton.addTarget(self, action: #selector(didTapAddToCartButton), for: .touchUpInside)
         
         orderNowButton = CustomButton()
         with(orderNowButton, primaryButtonStyle)
         orderNowButton.setTitle("productinfo_ordernow_button".localized)
-        orderNowButton.addTarget(self, action: #selector(didTapOrderNowButton), for: .touchUpInside)
 
         addToContentView(productImage,
                          productName,
@@ -162,19 +160,20 @@ final class ProductDetailsViewController: CustomScrollViewController {
         ])
         
         setContentViewBottom(view: orderNowButton)
-        
     }
     
     // MARK: - MVVM Binding
-    @objc private func didTapAddToCartButton(_ sender: Any) {
-        viewModel.inputs.didTapAddToCartButton()
-    }
-    
-    @objc private func didTapOrderNowButton(_ sender: Any) {
-        viewModel.inputs.didTapOrderNowButton()
-    }
-    
     private func bind() {
+        
+        // Input
+        addToCartButton.didTouchUpInside = { (sender) in
+            self.viewModel.inputs.didTapAddToCartButton()
+        }
+        orderNowButton.didTouchUpInside = { (sender) in
+            self.viewModel.inputs.didTapOrderNowButton()
+        }
+        
+        // Output
         viewModel.output.name.bind { [weak self] (name) in
             guard let self = self else { return }
             self.productName.text = name

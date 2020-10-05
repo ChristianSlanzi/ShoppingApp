@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Overture
 
 final class ShoppingCartViewController: UIViewController {
     
@@ -54,9 +55,9 @@ final class ShoppingCartViewController: UIViewController {
         
         setupTableView()
         
-        orderSummaryButton.set(backgroundColor: .systemGreen, title: "shoppingcart_ordersummary_button".localized)
-        orderSummaryButton.addTarget(self, action: #selector(didTapOrderSummaryButton), for: .touchUpInside)
-        
+        with(orderSummaryButton, primaryButtonStyle)
+        orderSummaryButton.setTitle("shoppingcart_ordersummary_button".localized)
+
         view.addSubviews(tableView, orderSummaryButton)
     }
     
@@ -74,6 +75,13 @@ final class ShoppingCartViewController: UIViewController {
     // MARK: - MVVM Binding
     
     private func bind() {
+        
+        // Input
+        orderSummaryButton.didTouchUpInside = { (sender) in
+            self.viewModel.inputs.didTapOrderSummaryButton()
+        }
+            
+        // Output
         viewModel.outputs.reloadData = { [weak self] in
             guard let self = self else { return }
 
@@ -87,10 +95,6 @@ final class ShoppingCartViewController: UIViewController {
             self.flowDelegate?.startOrderSummary()
         }
     }
-    
-    @objc private func didTapOrderSummaryButton(_ sender: Any) {
-        viewModel.inputs.didTapOrderSummaryButton()
-    }
 }
 
 // MARK: - UI Costraints
@@ -101,7 +105,6 @@ extension ShoppingCartViewController {
         let buttonHeight: CGFloat = .grid_unit(13)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        orderSummaryButton.translatesAutoresizingMaskIntoConstraints = false
         
         //let topConstraintConstant: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 20 : 80
 

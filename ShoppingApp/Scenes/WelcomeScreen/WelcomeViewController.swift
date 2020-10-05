@@ -63,7 +63,6 @@ final class WelcomeViewController: UIViewController {
         startButton.setTitle("welcome_start_button".localized)
         
         view.addSubviews(welcomeLabel, startButton)
-        
     }
     
     // MARK: - MVVM Binding

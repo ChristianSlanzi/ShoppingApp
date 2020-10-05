@@ -8,6 +8,7 @@
 
 import UIKit
 import Utils
+import Overture
 
 final class DeliveryViewController: CustomScrollViewController {
     
@@ -63,14 +64,14 @@ final class DeliveryViewController: CustomScrollViewController {
         commentsTextView = UITextView()
         commentsTextView |> roundedStyle <> borderStyle(color: .lightGray, width: 1)
         
-        confirmDetailsButton.set(backgroundColor: .systemGreen, title: "orderdelivery_confirmdetails_button".localized)
-        confirmDetailsButton.addTarget(self, action: #selector(didTapConfirmDetailsButton), for: .touchUpInside)
+        with(confirmDetailsButton, primaryButtonStyle)
+        confirmDetailsButton.setTitle("orderdelivery_confirmdetails_button".localized)
         
         for field in fields { addToContentView(field) }
         addToContentView( commentsTextView, confirmDetailsButton )
     }
     
-    @objc private func didTapConfirmDetailsButton(_ sender: Any) {
+    @objc private func didConfirmDetails() {
         viewModel.validate(usingFields: fields) { (isValid) in
             if isValid {
                 // Create and save Delivery
@@ -91,6 +92,12 @@ final class DeliveryViewController: CustomScrollViewController {
     // MARK: - MVVM Binding
     
     private func bind() {
+        // Input
+        confirmDetailsButton.didTouchUpInside = { (sender) in
+            self.didConfirmDetails()
+        }
+        
+        // Output
         viewModel.outputs.reloadData = { [weak self] in
             guard let self = self else { return }
 

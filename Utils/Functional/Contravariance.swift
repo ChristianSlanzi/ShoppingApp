@@ -8,7 +8,7 @@
 
 import UIKit
 
-func wrapView(padding: UIEdgeInsets) -> (UIView) -> UIView {
+public func wrapView(padding: UIEdgeInsets) -> (UIView) -> UIView {
     return { subview in
         let wrapper = UIView()
         subview.translatesAutoresizingMaskIntoConstraints = false

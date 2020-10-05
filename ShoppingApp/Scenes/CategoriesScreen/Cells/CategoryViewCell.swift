@@ -8,6 +8,7 @@
 
 import UIKit
 import Utils
+import Overture
 
 final class CategoryViewCell: UICollectionViewCell {
     // MARK: - Properties
@@ -15,7 +16,11 @@ final class CategoryViewCell: UICollectionViewCell {
     static let reuseID = "CategoryViewCell"
     
     let nameLabel = UILabel(frame: .zero)
+    lazy var nameLabelWrapper: UIView = wrapView(padding: UIEdgeInsets.init(top: .grid_unit(1), left: .grid_unit(2), bottom: .grid_unit(1), right: .grid_unit(2)))(self.nameLabel)
+    
     let descriptionLabel = UILabel(frame: .zero)
+    lazy var descriptionLabelWrapper: UIView = wrapView(padding: UIEdgeInsets.init(top: .grid_unit(1), left: .grid_unit(2), bottom: .grid_unit(1), right: .grid_unit(2)))(self.descriptionLabel)
+    
     let imageView = UIImageView(frame: .zero)
 
     // MARK: - Initializers
@@ -42,13 +47,34 @@ final class CategoryViewCell: UICollectionViewCell {
     private func setupViews() {
         self |> roundedStyle
         backgroundColor = .lightGray //.systemBackground
-        addSubviews(imageView, nameLabel, descriptionLabel)
+        addSubviews(imageView, nameLabelWrapper, descriptionLabelWrapper)
         
         nameLabel.text = "categories_category_placeholder".localized
-        nameLabel.textColor = .white
+        
+        with(self.nameLabel, concat(
+            smallCapsLabelStyle,
+            mut(\.textColor, .white)
+        ))
+        
+        with( nameLabelWrapper,
+            concat(
+                autoLayoutStyle,
+                baseRoundedStyle,
+                mut(\UIView.backgroundColor, UIColor.init(white: 0, alpha: 0.3))
+        ))
         
         descriptionLabel.text = "categories_description_placeholder".localized
-        descriptionLabel.textColor = .white
+        
+        with(self.descriptionLabel, concat(
+            mut(\.textColor, .white)
+        ))
+        
+        with( descriptionLabelWrapper,
+            concat(
+                autoLayoutStyle,
+                baseRoundedStyle,
+                mut(\UIView.backgroundColor, UIColor.init(white: 0, alpha: 0.3))
+        ))
         
         imageView.backgroundColor = .lightGray
         imageView.clipsToBounds = true
@@ -56,8 +82,6 @@ final class CategoryViewCell: UICollectionViewCell {
     }
     
     private func setupConstraints() {
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
         let vPadding: CGFloat = .grid_unit(3)
@@ -72,17 +96,15 @@ final class CategoryViewCell: UICollectionViewCell {
         ])
         
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: vPadding),
-            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: hPadding),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -hPadding),
-            nameLabel.heightAnchor.constraint(equalToConstant: labelHeight)
+            nameLabelWrapper.topAnchor.constraint(equalTo: contentView.topAnchor, constant: vPadding),
+            nameLabelWrapper.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: hPadding),
+            nameLabelWrapper.heightAnchor.constraint(equalToConstant: labelHeight)
         ])
         
         NSLayoutConstraint.activate([
-            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -vPadding),
-            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: hPadding),
-            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -hPadding),
-            descriptionLabel.heightAnchor.constraint(equalToConstant: labelHeight)
+            descriptionLabelWrapper.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -vPadding),
+            descriptionLabelWrapper.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: hPadding),
+            descriptionLabelWrapper.heightAnchor.constraint(equalToConstant: labelHeight)
         ])
     }
 }

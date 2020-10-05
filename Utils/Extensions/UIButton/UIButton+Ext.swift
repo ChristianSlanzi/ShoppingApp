@@ -13,4 +13,8 @@ public extension UIButton {
         get { return self.backgroundImage(for: .normal)}
         set { self.setBackgroundImage(newValue, for: .normal)}
     }
+    var normalTitleColor: UIColor? {
+        get { return self.titleColor(for: .normal)}
+        set { self.setTitleColor(newValue, for: .normal)}
+    }
 }

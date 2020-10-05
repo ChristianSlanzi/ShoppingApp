@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Overture
 
 final class OrderSummaryViewController: UIViewController {
     
@@ -49,8 +50,8 @@ final class OrderSummaryViewController: UIViewController {
         
         setupTableView()
         
-        orderDeliveryButton.set(backgroundColor: .systemGreen, title: "ordersummary_delivery_button".localized)
-        orderDeliveryButton.addTarget(self, action: #selector(didTapOrderDeliveryButton), for: .touchUpInside)
+        with(orderDeliveryButton, primaryButtonStyle)
+        orderDeliveryButton.setTitle("ordersummary_delivery_button".localized)
         
         view.addSubviews(tableView, orderDeliveryButton)
     }
@@ -69,14 +70,16 @@ final class OrderSummaryViewController: UIViewController {
     // MARK: - MVVM Binding
     
     private func bind() {
+        //Input
+        orderDeliveryButton.didTouchUpInside = { (sender) in
+            self.viewModel.inputs.didTapOrderDeliveryButton()
+        }
+        
+        // Output
         viewModel.outputs.showOrderDeliveryScreen = {
             //guard let self = self else { return }
             self.flowDelegate?.startOrderDelivery()
         }
-    }
-    
-    @objc private func didTapOrderDeliveryButton(_ sender: Any) {
-        viewModel.inputs.didTapOrderDeliveryButton()
     }
 }
 
