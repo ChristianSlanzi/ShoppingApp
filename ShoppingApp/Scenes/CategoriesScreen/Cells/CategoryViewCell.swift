@@ -45,9 +45,13 @@ final class CategoryViewCell: UICollectionViewCell {
     // MARK: - Layout Methods
 
     private func setupViews() {
-        self |> roundedStyle
-        backgroundColor = .lightGray //.systemBackground
-        addSubviews(imageView, nameLabelWrapper, descriptionLabelWrapper)
+        
+        with( self,
+            concat(
+                autoLayoutStyle,
+                baseRoundedStyle,
+                mut(\.backgroundColor, .lightGray)
+        ))
         
         nameLabel.text = "categories_category_placeholder".localized
         
@@ -76,9 +80,15 @@ final class CategoryViewCell: UICollectionViewCell {
                 mut(\UIView.backgroundColor, UIColor.init(white: 0, alpha: 0.3))
         ))
         
-        imageView.backgroundColor = .lightGray
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
+        with( imageView,
+            concat(
+                autoLayoutStyle,
+                baseRoundedStyle,
+                mut(\.backgroundColor, .lightGray),
+                mut(\.contentMode, .scaleAspectFill)
+        ))
+        
+        addSubviews(imageView, nameLabelWrapper, descriptionLabelWrapper)
     }
     
     private func setupConstraints() {
