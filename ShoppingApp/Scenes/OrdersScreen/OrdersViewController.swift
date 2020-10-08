@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Overture
 
 final class OrdersViewController: UIViewController {
     
@@ -51,9 +52,10 @@ final class OrdersViewController: UIViewController {
     
     private func setupTableView() {
         //tableView.frame = view.bounds
-        tableView.rowHeight = 80
-        tableView.delegate = self
-        tableView.dataSource = self
+        with(tableView, concat(autoLayoutStyle,
+                               mut(\.rowHeight, 80),
+                               mut(\.delegate, self),
+                               mut(\.dataSource, self)))
         tableView.removeExcessCells()
 
         // register cell with tableView

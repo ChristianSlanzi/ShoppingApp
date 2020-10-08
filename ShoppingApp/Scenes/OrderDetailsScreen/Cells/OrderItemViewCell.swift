@@ -8,6 +8,7 @@
 
 import UIKit
 import Utils
+import Overture
 
 final class OrderItemViewCell: UITableViewCell {
     
@@ -65,23 +66,27 @@ final class OrderItemViewCell: UITableViewCell {
         accessoryType = .none
         selectionStyle = .none
         
+        with( productNameLabel, concat( autoLayoutStyle ))
         productNameLabel.font = .systemFont(ofSize: 14)
-        productPriceLabel.font = .systemFont(ofSize: 14)
-        productQuantityLabel.font = .systemFont(ofSize: 14)
         
-        productImageView.backgroundColor = .lightGray
-        productImageView |> roundedStyle
+        with( productPriceLabel, concat( autoLayoutStyle ))
+        productPriceLabel.font = .systemFont(ofSize: 14)
+        
+        with( productQuantityLabel, concat( autoLayoutStyle ))
+        productQuantityLabel.font = .systemFont(ofSize: 14)
+
+        with( productImageView,
+            concat(
+                autoLayoutStyle,
+                baseRoundedStyle,
+                mut(\.backgroundColor, .lightGray)
+        ))
         
         addSubviews(productImageView, productNameLabel, productPriceLabel, productQuantityLabel)
     }
     
     private func setupConstraints() {
         let padding: CGFloat = 12
-        
-        productImageView.translatesAutoresizingMaskIntoConstraints = false
-        productNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        productPriceLabel.translatesAutoresizingMaskIntoConstraints = false
-        productQuantityLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             productImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),

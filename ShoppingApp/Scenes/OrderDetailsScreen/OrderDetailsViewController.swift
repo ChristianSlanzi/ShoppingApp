@@ -58,26 +58,21 @@ final class OrderDetailsViewController: CustomScrollViewController {
         super.setupViews()
         view.backgroundColor = .systemBackground
         title = "orderinfo_screen_title".localized
-        
-        orderIdLabel.text = "orderinfo_id_placeholder".localized
-        
-        orderIdLabel.backgroundColor = .white
-        
-        orderDateLabel.text = "orderinfo_date_placeholder".localized
-        orderDateLabel.backgroundColor = .white
-        
-        
+
         with(orderIdIcon, autoLayoutStyle)
         with(orderDateIcon, autoLayoutStyle)
         
-        with(orderIdLabel, autoLayoutStyle)
-        with(orderDateLabel, autoLayoutStyle)
-        
-        
-        
+        with(orderIdLabel, concat(autoLayoutStyle,
+                                  mut(\.backgroundColor, .white)))
         orderIdLabel.font = .systemFont(ofSize: 14)
-        orderDateLabel.font = .systemFont(ofSize: 14)
+        orderIdLabel.text = "orderinfo_id_placeholder".localized
         
+        
+        with(orderDateLabel, concat(autoLayoutStyle,
+                                   mut(\.backgroundColor, .white)))
+        orderDateLabel.font = .systemFont(ofSize: 14)
+        orderDateLabel.text = "orderinfo_date_placeholder".localized
+
         setupTableView()
 
         addToContentView(orderIdIcon,
@@ -89,11 +84,10 @@ final class OrderDetailsViewController: CustomScrollViewController {
     }
     
     private func setupTableView() {
-        //tableView.frame = view.bounds
-        tableView.rowHeight = 80
-        //tableView.delegate = self
-        tableView.dataSource = self
-        tableView.isScrollEnabled = false
+        with(tableView, concat(autoLayoutStyle,
+                               mut(\.rowHeight, 80),
+                               mut(\.isScrollEnabled, false),
+                               mut(\.dataSource, self)))
         tableView.removeExcessCells()
 
         // register cell with tableView
@@ -102,9 +96,7 @@ final class OrderDetailsViewController: CustomScrollViewController {
     
     internal override func setupConstraints() {
         super.setupConstraints()
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-
+    
         let padding: CGFloat = 20
         let labelHeight: CGFloat = 20
         
