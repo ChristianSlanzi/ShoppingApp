@@ -11,6 +11,7 @@ import Utils
 import Overture
 
 final class CategoryViewCell: UICollectionViewCell {
+    
     // MARK: - Properties
 
     static let reuseID = "CategoryViewCell"

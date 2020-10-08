@@ -8,21 +8,25 @@
 
 import UIKit
 import Utils
+import Overture
 
 extension PaymentViewController {
     
     internal func setupFields() {
         
+        with(cardNumberTextField, concat(autoLayoutStyle))
         cardNumberTextField
             .configure(title: "payment_cardnumber_placeholder".localized,
                        validationRules: [RequiredRule()],
                        contentType: .creditCardNumber)
         
+        with(expiresInTextField, concat(autoLayoutStyle))
         expiresInTextField
             .configure(title: "payment_expiration_placeholder".localized,
                        validationRules: [RequiredRule()],
                        contentType: .telephoneNumber)
         
+        with(cvvTextField, concat(autoLayoutStyle))
         cvvTextField
             .configure(title: "payment_cvv_placeholder".localized,
                        validationRules: [RequiredRule()],
@@ -35,10 +39,6 @@ extension PaymentViewController {
     
     override func setupConstraints() {
         super.setupConstraints()
-        
-        cardNumberTextField.translatesAutoresizingMaskIntoConstraints = false
-        expiresInTextField.translatesAutoresizingMaskIntoConstraints = false
-        cvvTextField.translatesAutoresizingMaskIntoConstraints = false
         
         setContentViewTopAnchor(view.topAnchor)
         

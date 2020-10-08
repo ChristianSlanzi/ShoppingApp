@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Overture
 
 final class PaymentViewController: CustomScrollViewController {
     
@@ -53,7 +54,9 @@ final class PaymentViewController: CustomScrollViewController {
         
         setupFields()
         
-        confirmDetailsButton.set(backgroundColor: .systemGreen, title: "orderdelivery_confirmdetails_button".localized)
+        with(confirmDetailsButton, primaryButtonStyle)
+        confirmDetailsButton.setTitle("orderdelivery_confirmdetails_button".localized)
+        
         confirmDetailsButton.addTarget(self, action: #selector(didTapConfirmDetailsButton), for: .touchUpInside)
         
         for field in fields { addToContentView(field) }

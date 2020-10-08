@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Overture
 
 final class OrderResultViewController: UIViewController {
     
@@ -49,17 +50,19 @@ final class OrderResultViewController: UIViewController {
         
         setupTableView()
         
-        mainScreenButton.set(backgroundColor: .systemGreen, title: "order_result_mainscreen_button".localized)
+        with(mainScreenButton, primaryButtonStyle)
+        mainScreenButton.setTitle("order_result_mainscreen_button".localized)
+        
         mainScreenButton.addTarget(self, action: #selector(didTapMainScreenButton), for: .touchUpInside)
         
         view.addSubviews(tableView, mainScreenButton)
     }
     
     private func setupTableView() {
-        //tableView.frame = view.bounds
-        tableView.rowHeight = 80
-        //tableView.delegate = self
-        tableView.dataSource = self
+        
+        with(tableView, concat(autoLayoutStyle,
+                               mut(\.rowHeight, 80),
+                               mut(\.dataSource, self)))
         tableView.removeExcessCells()
 
         // register cell with tableView

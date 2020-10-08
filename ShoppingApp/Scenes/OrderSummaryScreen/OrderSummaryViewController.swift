@@ -50,7 +50,7 @@ final class OrderSummaryViewController: UIViewController {
         
         setupTableView()
         
-        with(orderDeliveryButton, primaryButtonStyle)
+        with(orderDeliveryButton, concat(autoLayoutStyle, primaryButtonStyle))
         orderDeliveryButton.setTitle("ordersummary_delivery_button".localized)
         
         view.addSubviews(tableView, orderDeliveryButton)
@@ -58,9 +58,11 @@ final class OrderSummaryViewController: UIViewController {
     
     private func setupTableView() {
         //tableView.frame = view.bounds
-        tableView.rowHeight = 80
         //tableView.delegate = self
-        tableView.dataSource = self
+        
+        with(tableView, concat(autoLayoutStyle,
+                               mut(\.rowHeight, 80),
+                               mut(\.dataSource, self)))
         tableView.removeExcessCells()
 
         // register cell with tableView
@@ -89,9 +91,6 @@ extension OrderSummaryViewController {
     private func setupConstraints() {
         
         let buttonHeight: CGFloat = .grid_unit(13)
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        orderDeliveryButton.translatesAutoresizingMaskIntoConstraints = false
         
         //let topConstraintConstant: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 20 : 80
 

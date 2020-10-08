@@ -8,46 +8,55 @@
 
 import UIKit
 import Utils
+import Overture
 
 extension DeliveryViewController {
     
     internal func setupFields() {
         
+        with(firstNameTextField, concat(autoLayoutStyle))
         firstNameTextField
             .configure(title: "orderdelivery_firstname_placeholder".localized,
                        validationRules: [RequiredRule()],
                        contentType: .username)
         
+        with(lastNameTextField, concat(autoLayoutStyle))
         lastNameTextField
             .configure(title: "orderdelivery_lastname_placeholder".localized,
                        validationRules: [RequiredRule()],
                        contentType: .username)
         
+        with(phoneTextField, concat(autoLayoutStyle))
         phoneTextField
             .configure(title: "orderdelivery_phone_placeholder".localized,
                        validationRules: [RequiredRule()],
                        contentType: .telephoneNumber)
         
+        with(mailTextField, concat(autoLayoutStyle))
         mailTextField
             .configure(title: "orderdelivery_mail_placeholder".localized,
                        validationRules: [RequiredRule(), EmailRule()],
                        contentType: .emailAddress)
         
+        with(billingAddressTextField, concat(autoLayoutStyle))
         billingAddressTextField
             .configure(title: "orderdelivery_billing_placeholder".localized,
                        validationRules: [RequiredRule()],
                        contentType: .streetAddressLine1)
         
+        with(shippingAddressTextField, concat(autoLayoutStyle))
         shippingAddressTextField
             .configure(title: "orderdelivery_shipping_placeholder".localized,
                        validationRules: [RequiredRule()],
                        contentType: .streetAddressLine1)
         
+        with(cityTextField, concat(autoLayoutStyle))
         cityTextField
             .configure(title: "orderdelivery_city_placeholder".localized,
                        validationRules: [RequiredRule()],
                        contentType: .addressCity)
         
+        with(zipCodetextField, concat(autoLayoutStyle))
         zipCodetextField
             .configure(title: "orderdelivery_zipcode_placeholder".localized,
                        validationRules: [RequiredRule()],
@@ -65,17 +74,7 @@ extension DeliveryViewController {
     
     override func setupConstraints() {
         super.setupConstraints()
-        
-        firstNameTextField.translatesAutoresizingMaskIntoConstraints = false
-        lastNameTextField.translatesAutoresizingMaskIntoConstraints = false
-        phoneTextField.translatesAutoresizingMaskIntoConstraints = false
-        mailTextField.translatesAutoresizingMaskIntoConstraints = false
-        billingAddressTextField.translatesAutoresizingMaskIntoConstraints = false
-        shippingAddressTextField.translatesAutoresizingMaskIntoConstraints = false
-        cityTextField.translatesAutoresizingMaskIntoConstraints = false
-        zipCodetextField.translatesAutoresizingMaskIntoConstraints = false
-        commentsTextView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         setContentViewTopAnchor(view.topAnchor)
         
         let topAnchor = getContentViewTopAnchor()

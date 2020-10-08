@@ -22,10 +22,10 @@ final class ProductDetailsViewController: CustomScrollViewController {
     
     // MARK: - UI Properties
     
-    var productImage: UIImageView!
-    var productName: UILabel!
-    var productPrice: UILabel!
-    var productDescription: UILabel!
+    var productImage = UIImageView()
+    var productName = UILabel()
+    var productPrice = UILabel()
+    var productDescription = UILabel()
     var addToCartButton: CustomButton!
     var orderNowButton: CustomButton!
     
@@ -55,23 +55,35 @@ final class ProductDetailsViewController: CustomScrollViewController {
         view.backgroundColor = .systemBackground
         title = "productinfo_screen_title".localized
         
-        productImage = UIImageView()
-        productImage |> roundedStyle
-        productImage.backgroundColor = .lightGray
+        with( productImage,
+            concat(
+                autoLayoutStyle,
+                baseRoundedStyle,
+                mut(\.backgroundColor, .lightGray)
+        ))
         
-        productName = UILabel()
         productName.text = "productinfo_product_placeholder".localized
+        with( productName,
+            concat(
+                autoLayoutStyle,
+                mut(\.backgroundColor, .white)
+        ))
         
-        productName.backgroundColor = .white
-        
-        productPrice = UILabel()
         productPrice.text = "productinfo_price_placeholder".localized
-        productPrice.backgroundColor = .white
+        with( productPrice,
+            concat(
+                autoLayoutStyle,
+                mut(\.backgroundColor, .white)
+        ))
         
-        productDescription = UILabel()
-        productDescription.numberOfLines = 0
         productDescription.text = "productinfo_description_placeholder".localized
-        productDescription.backgroundColor = .white
+        with( productDescription,
+            concat(
+                autoLayoutStyle,
+                baseRoundedStyle,
+                mut(\.backgroundColor, .white),
+                mut(\.numberOfLines, 0)
+        ))
         
         addToCartButton = CustomButton()
         with(addToCartButton, secondaryButtonStyle)
@@ -92,11 +104,7 @@ final class ProductDetailsViewController: CustomScrollViewController {
     
     internal override func setupConstraints() {
         super.setupConstraints()
-        
-        productImage.translatesAutoresizingMaskIntoConstraints = false
-        productName.translatesAutoresizingMaskIntoConstraints = false
-        productPrice.translatesAutoresizingMaskIntoConstraints = false
-        productDescription.translatesAutoresizingMaskIntoConstraints = false
+
         addToCartButton.translatesAutoresizingMaskIntoConstraints = false
         orderNowButton.translatesAutoresizingMaskIntoConstraints = false
         

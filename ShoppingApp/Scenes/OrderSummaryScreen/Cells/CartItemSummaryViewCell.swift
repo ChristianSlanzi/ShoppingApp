@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Overture
 
 final class CartItemSummaryViewCell: UITableViewCell {
     
@@ -66,7 +67,11 @@ final class CartItemSummaryViewCell: UITableViewCell {
         accessoryType = .none
         selectionStyle = .none
         
-        totalPriceLabel.textAlignment = .right
+        with(productNameLabel, concat(autoLayoutStyle))
+        with(productPriceLabel, concat(autoLayoutStyle))
+        with(quantityLabel, concat(autoLayoutStyle))
+        with(totalPriceLabel, concat(autoLayoutStyle,
+                                     mut(\.textAlignment, .right)))
         
         addSubviews(productNameLabel,
                     productPriceLabel,
@@ -76,12 +81,6 @@ final class CartItemSummaryViewCell: UITableViewCell {
     
     private func setupConstraints() {
         let padding: CGFloat = 12
-        
-
-        productNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        productPriceLabel.translatesAutoresizingMaskIntoConstraints = false
-        quantityLabel.translatesAutoresizingMaskIntoConstraints = false
-        totalPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
 

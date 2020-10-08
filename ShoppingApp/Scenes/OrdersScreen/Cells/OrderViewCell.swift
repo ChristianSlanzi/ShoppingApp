@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Overture
 
 final class OrderViewCell: UITableViewCell {
     
@@ -57,7 +58,13 @@ final class OrderViewCell: UITableViewCell {
         accessoryType = .none
         selectionStyle = .none
         
+        with(orderIdIcon, autoLayoutStyle)
+        with(orderDateIcon, autoLayoutStyle)
+        
+        with(orderIdLabel, autoLayoutStyle)
         orderIdLabel.font = .systemFont(ofSize: 14)
+        
+        with(orderDateLabel, autoLayoutStyle)
         orderDateLabel.font = .systemFont(ofSize: 14)
         
         addSubviews(orderIdIcon, orderIdLabel, orderDateIcon, orderDateLabel)
@@ -66,11 +73,6 @@ final class OrderViewCell: UITableViewCell {
     private func setupConstraints() {
         let padding: CGFloat = 12
         
-        orderIdIcon.translatesAutoresizingMaskIntoConstraints = false
-        orderIdLabel.translatesAutoresizingMaskIntoConstraints = false
-        orderDateLabel.translatesAutoresizingMaskIntoConstraints = false
-        orderDateIcon.translatesAutoresizingMaskIntoConstraints = false
-
         NSLayoutConstraint.activate([
             
             orderIdIcon.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),

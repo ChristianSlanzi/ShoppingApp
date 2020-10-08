@@ -32,7 +32,7 @@ final class DeliveryViewController: CustomScrollViewController {
     
     var fields = [ValidableTextControl]()
     
-    var commentsTextView: UITextView!
+    var commentsTextView = UITextView()
     let confirmDetailsButton = CustomButton()
     
     // MARK: - Viewcontroller Lifecycle
@@ -60,9 +60,9 @@ final class DeliveryViewController: CustomScrollViewController {
         title = "orderdelivery_screen_title".localized
         
         setupFields()
-                    
-        commentsTextView = UITextView()
-        commentsTextView |> roundedStyle <> borderStyle(color: .lightGray, width: 1)
+        
+        with(commentsTextView, concat(autoLayoutStyle, baseRoundedStyle))
+        commentsTextView |> borderStyle(color: .lightGray, width: 1)
         
         with(confirmDetailsButton, primaryButtonStyle)
         confirmDetailsButton.setTitle("orderdelivery_confirmdetails_button".localized)

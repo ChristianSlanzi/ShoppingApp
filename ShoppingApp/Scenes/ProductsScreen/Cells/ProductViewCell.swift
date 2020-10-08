@@ -11,6 +11,7 @@ import Utils
 import Overture
 
 final class ProductViewCell: UICollectionViewCell {
+    
     // MARK: - Properties
 
     static let reuseID = "ProductViewCell"

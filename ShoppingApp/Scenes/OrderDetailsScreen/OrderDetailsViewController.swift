@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Overture
 
 final class OrderDetailsViewController: CustomScrollViewController {
     
@@ -21,8 +22,8 @@ final class OrderDetailsViewController: CustomScrollViewController {
     // MARK: - UI Properties
     
     let orderIdIcon = OrderIcon(color: Colors.darkGreen)
-    var orderIdLabel: UILabel!
-    var orderDateLabel: UILabel!
+    var orderIdLabel = UILabel()
+    var orderDateLabel = UILabel()
     let orderDateIcon = CalendarIcon()
     
     let tableView = UITableView()
@@ -58,14 +59,21 @@ final class OrderDetailsViewController: CustomScrollViewController {
         view.backgroundColor = .systemBackground
         title = "orderinfo_screen_title".localized
         
-        orderIdLabel = UILabel()
         orderIdLabel.text = "orderinfo_id_placeholder".localized
         
         orderIdLabel.backgroundColor = .white
         
-        orderDateLabel = UILabel()
         orderDateLabel.text = "orderinfo_date_placeholder".localized
         orderDateLabel.backgroundColor = .white
+        
+        
+        with(orderIdIcon, autoLayoutStyle)
+        with(orderDateIcon, autoLayoutStyle)
+        
+        with(orderIdLabel, autoLayoutStyle)
+        with(orderDateLabel, autoLayoutStyle)
+        
+        
         
         orderIdLabel.font = .systemFont(ofSize: 14)
         orderDateLabel.font = .systemFont(ofSize: 14)
@@ -95,10 +103,6 @@ final class OrderDetailsViewController: CustomScrollViewController {
     internal override func setupConstraints() {
         super.setupConstraints()
         
-        orderIdIcon.translatesAutoresizingMaskIntoConstraints = false
-        orderIdLabel.translatesAutoresizingMaskIntoConstraints = false
-        orderDateLabel.translatesAutoresizingMaskIntoConstraints = false
-        orderDateIcon.translatesAutoresizingMaskIntoConstraints = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
 
         let padding: CGFloat = 20
@@ -137,11 +141,7 @@ final class OrderDetailsViewController: CustomScrollViewController {
                 .constraint(equalTo: trailingAnchor, constant: -padding),
             orderDateLabel.heightAnchor.constraint(equalToConstant: labelHeight)
         ])
-        
-        
-        
-        
-        
+
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: orderDateLabel.bottomAnchor, constant: 30),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),

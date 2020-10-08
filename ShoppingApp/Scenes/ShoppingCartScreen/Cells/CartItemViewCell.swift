@@ -8,6 +8,7 @@
 
 import UIKit
 import Utils
+import Overture
 
 final class CartItemViewCell: UITableViewCell {
     
@@ -58,18 +59,28 @@ final class CartItemViewCell: UITableViewCell {
         accessoryType = .none
         selectionStyle = .none
         
-        productImageView.backgroundColor = .lightGray
-        productImageView |> roundedStyle
+        with( productImageView,
+            concat(
+                autoLayoutStyle,
+                baseRoundedStyle,
+                mut(\.backgroundColor, .lightGray)
+        ))
+        
+        with( productNameLabel,
+            concat(
+                autoLayoutStyle
+        ))
+        
+        with( quantityControl,
+            concat(
+                autoLayoutStyle
+        ))
         
         contentView.addSubviews(productImageView, productNameLabel, quantityControl)
     }
     
     private func setupConstraints() {
         let padding: CGFloat = 12
-        
-        productImageView.translatesAutoresizingMaskIntoConstraints = false
-        productNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        quantityControl.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             productImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
