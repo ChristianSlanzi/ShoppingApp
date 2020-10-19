@@ -16,6 +16,23 @@ public extension String {
     }
 }
 
+// MARK: -  ENCODE STRING TO SEND AS A QUERYSTRING IN AN URL
+public extension String {
+    func enconde() -> String {
+        let customAllowedSet =  CharacterSet(charactersIn: "=\"#%/<>?@\\^`{|}&").inverted
+        let escapedString = self.addingPercentEncoding(withAllowedCharacters: customAllowedSet)
+        return escapedString ?? ""
+    }
+}
+
+// MARK: -  REMOVE HTML CODE FROM A STRING
+public extension String {
+    func removeHtml() -> String {
+        let str = self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        return str
+    }
+}
+
 // MARK: - DATE FROM STRING
 public extension String{
     func dateFromDateTimeString() -> Date? {
@@ -34,5 +51,8 @@ public extension String{
 public extension String {
     var localized: String {
         return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
+    }
+    func localizedInModule(_ bundle: Bundle = Bundle.main, tableName: String = "Localizable") -> String {
+        return NSLocalizedString(self, tableName: tableName, bundle: bundle, value: "", comment: "")
     }
 }

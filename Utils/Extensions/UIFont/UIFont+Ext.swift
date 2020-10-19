@@ -8,19 +8,19 @@
 
 import UIKit
 
-extension UIFont {
+public extension UIFont {
     /// Returns a bolded version of `self`.
-    public var bolded: UIFont {
+    var bolded: UIFont {
         return self.fontDescriptor.withSymbolicTraits(.traitBold).map { UIFont(descriptor: $0, size: 0.0) } ?? self
     }
     
     /// Returns a italicized version of `self`.
-    public var italicized: UIFont {
+    var italicized: UIFont {
         return self.fontDescriptor.withSymbolicTraits(.traitItalic)
             .map { UIFont(descriptor: $0, size: 0.0) } ?? self
     }
     
-    public var smallCaps: UIFont {
+    var smallCaps: UIFont {
         let attributes: [UIFontDescriptor.FeatureKey: Any] = [
             .featureIdentifier: kLowerCaseType,
             .typeIdentifier: kLowerCaseSmallCapsSelector
