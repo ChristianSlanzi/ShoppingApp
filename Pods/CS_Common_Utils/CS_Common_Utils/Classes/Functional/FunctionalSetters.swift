@@ -52,11 +52,6 @@ public func second<A, B, C>(_ f: @escaping (B) -> C) -> ((A, B)) -> (A, C) {
 
 // but looks strange. we need a backward composing opreator
 
-
-
-import Overture
-
-
 precedencegroup BackwardsComposition {
     associativity: left
 }
@@ -102,15 +97,4 @@ private func transformationInIsolation() {
     nested |> transformation
 }
 */ // but hard to compile.
-
-
-// and even we can combine we our functional map
-
-fileprivate func test() {
-    let tupleArray = [(42, ["Swift", "Objective-C"]), (1729, ["Haskell", "Purescript"])]
-    
-    let addEsclamationToAllStringsArray = tupleArray |> (map <<< second <<< map) { $0 + "!"}
-    
-    print(addEsclamationToAllStringsArray)
-}
 

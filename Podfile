@@ -1,6 +1,8 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
-platform :ios, '11.0'
+source 'https://github.com/christianslanzi/Specs.git'
+
+platform :ios, '13.0'
 
 workspace 'ShoppingApp.xcworkspace'
 
@@ -11,12 +13,7 @@ target 'ShoppingApp' do
   # Pods for ShoppingApp
   pod 'RealmSwift'
   pod 'Overture'
-  
-  target 'Utils' do
-    inherit! :search_paths
-    # Pods for Utils
-    pod 'Overture'
-  end
+  pod 'CS_Common_Utils', git: 'https://github.com/christianslanzi/CS_Common_Utils.git'
 
   target 'ShoppingAppTests' do
     inherit! :search_paths

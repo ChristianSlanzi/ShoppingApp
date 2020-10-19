@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Utils
+import CS_Common_Utils
 
 class ValidableTextControl: UIControl {
     

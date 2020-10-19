@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Utils
+import CS_Common_Utils
 
 protocol OrderItemCellViewModelInputsType {
     func viewDidLoad()

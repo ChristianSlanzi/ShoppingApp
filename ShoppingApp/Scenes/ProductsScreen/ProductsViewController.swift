@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Utils
+import CS_Common_Utils
 
 final class ProductsViewController: UIViewController {
     
