@@ -1,6 +1,9 @@
  #  shoppingapp-ios
  
- #  Overview:
+ ### Status
+ [![Build Status](https://travis-ci.com/ChristianSlanzi/ShoppingApp.svg?branch=main)](https://travis-ci.com/ChristianSlanzi/ShoppingApp)
+
+#  Overview:
 
  This project is a show case and is intentionally open-ended. The project will be assessed on code quality, UI/UX, and overall quality and feel of the app.
 
