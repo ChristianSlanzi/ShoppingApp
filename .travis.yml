@@ -7,8 +7,8 @@ language: swift
 cache: cocoapods
 podfile: Podfile
 before_install:
-#- gem install cocoapods # Since Travis is not always on latest version
-- pod install #--project-directory=Example
+- gem install cocoapods # Since Travis is not always on latest version
+- pod install --verbose #--project-directory=Example
 
 script:
 - set -o pipefail && xcodebuild -workspace ShoppingApp.xcworkspace -scheme ShoppingApp -sdk iphonesimulator14.2 ONLY_ACTIVE_ARCH=NO | xcpretty
