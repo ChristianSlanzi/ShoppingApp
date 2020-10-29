@@ -2,17 +2,27 @@
 # * https://www.objc.io/issues/6-build-tools/travis-ci/
 # * https://github.com/supermarin/xcpretty#usage
 
-osx_image: xcode12.2
+# language: swift
+# osx_image: xcode12.2
+# cache: cocoapods
+# podfile: Podfile
+# 
+# before_install:
+#  - gem install cocoapods
+#  - pod repo update
+#  - pod install --verbose
+# 
+# script:
+# - set -o pipefail && xcodebuild -workspace ShoppingApp.xcworkspace -scheme ShoppingApp -sdk iphonesimulator14.2 ONLY_ACTIVE_ARCH=NO | xcpretty
+# #- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/CS_Common_Utils.xcworkspace -scheme CS_Common_Utils-Example -sdk iphonesimulator14.2 ONLY_ACTIVE_ARCH=NO | xcpretty
+# #- pod lib lint --allow-warnings
+
+
 language: swift
-cache: cocoapods
-podfile: Podfile
-
+osx_image: xcode12.2
+xcode_workspace: ShoppingApp.xcworkspace
+xcode_scheme: ShoppingApp
+xcode_destination: platform=iOS Simulator,OS=13.3,name=iPhone 11 Pro Max
 before_install:
- - gem install cocoapods
- - pod repo update
- - pod install --verbose
-
-script:
-- set -o pipefail && xcodebuild -workspace ShoppingApp.xcworkspace -scheme ShoppingApp -sdk iphonesimulator14.2 ONLY_ACTIVE_ARCH=NO | xcpretty
-#- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/CS_Common_Utils.xcworkspace -scheme CS_Common_Utils-Example -sdk iphonesimulator14.2 ONLY_ACTIVE_ARCH=NO | xcpretty
-#- pod lib lint --allow-warnings
+- gem install cocoapods
+- pod install
