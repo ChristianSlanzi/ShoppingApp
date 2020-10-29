@@ -1,5 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/christianslanzi/Specs.git'
-source 'https://github.com/CocoaPods/Specs/blob/master/Specs/9/4/5/RealmSwift/10.1.0/RealmSwift.podspec.json'
+#source 'https://github.com/CocoaPods/Specs/blob/master/Specs/9/4/5/RealmSwift/10.1.0/RealmSwift.podspec.json'
 
 platform :ios, '13.0'
 
